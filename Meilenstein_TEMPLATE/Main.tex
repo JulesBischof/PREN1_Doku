@@ -1,6 +1,7 @@
 \documentclass{scrartcl}                % use [twocolumn] option for two-column layout
 
-\input{settings/packages.tex}            % \usepackage{} statements and settings
+\input{settings/packages.tex}           % \usepackage{} statements
+\input{settings/settings.tex}           % custom commands and environments
 \addbibresource{references.bib}         % add .bib file - for examples see example folder
 
 % ============================================================================== %
@@ -17,6 +18,10 @@
 
 \section{new Subfile}
 \subfile{./subfiles/subfile_template.tex}
+\newpage
+
+\section{Technologierecherche}
+\subfile{./subfiles/research.tex}
 \newpage
 
 \end{document}
