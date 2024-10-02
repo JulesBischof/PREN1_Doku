@@ -1,9 +1,6 @@
 % !TEX root = ../main.tex
 \documentclass[../main.tex]{subfiles}
 
-\setlength{\extrarowheight}{1pt}    % Adds extra padding to rows
-\setlength{\arrayrulewidth}{0.2pt}  % Adjusts the thickness of the hline
-
 \begin{document}
 
 \noindent
@@ -16,37 +13,139 @@ deren weiterführende Benutzung.
 
 \subsection{Quellen}
 
-\begin{table}[htbp]
-  \centering
-  \begin{tabularx}{\textwidth}{
-      L{2cm}
-      L{2.5cm}
-      C{1cm}
-      L{2.5cm}
-      X
-    }
-    \toprule
-    \textbf{Thema} & \textbf{Stichwort} & \textbf{Grade} &
-    \textbf{Quelle} & \textbf{Beschreibung} \\
-    \midrule
-    \addlinespace[3pt]
-    Mathematik & Algebra & 9 & Buch A & Eine Einführung in die
-    Algebra mit ausführlichen Beispielen. \\
-    \addlinespace[3pt]
-    \hline
-    \addlinespace[3pt]
-    Physik & Mechanik & 8 & Buch B & Grundlegende Konzepte der
-    Mechanik werden erläutert. \\
-    \addlinespace[3pt]
-    \hline
-    \addlinespace[3pt]
-    Informatik & Programmierung & 7 & Online-Kurs D & Grundlagen
-    der Programmierung in Python für Einsteiger. \\
-    \addlinespace[3pt]
-    \bottomrule
-  \end{tabularx}
-  \caption{Quellensammlung}
-  \label{tab:sources}
-\end{table}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{} L{2.5cm} L{2.9cm} C{1cm} L{1.2cm} L{6cm} @{}}
+
+% Table header
+\toprule
+\textbf{Thema} & \textbf{Stichwort} & \textbf{Grade} & \textbf{Quelle} & \textbf{Beschreibung} \\
+\midrule
+\endfirsthead
+
+% Table header for subsequent pages
+\multicolumn{5}{c}%
+{{\bfseries \tablename\ \thetable{} -- Fortsetzung}} \\
+\toprule
+\textbf{Thema} & \textbf{Stichwort} & \textbf{Grade} & \textbf{Quelle} & \textbf{Beschreibung} \\
+\midrule
+\endhead
+
+% Footer for all pages except the last
+\midrule
+\multicolumn{5}{r}{{contd}} \\
+\caption{Quellensammlung}\label{tab:sources} \\
+\endfoot
+
+% Footer for the last page
+\bottomrule
+\caption{Quellensammlung}\label{tab:sources} \\
+\endlastfoot
+
+Simulator & Pfadfindung & 2 & \href{https://clementmihailescu.github.io/Pathfinding-Visualizer/\#}{Link} & Visualisierung verschiedener Pfadfindungsalgorithmen. \\
+\hline
+Simulator & Pfadfindung & 5 & \href{https://scholar.uwindsor.ca/cgi/viewcontent.cgi?article=9230\&context=etd}{Link} & Performance Evaluation von Pfadfindungsalgorithmen. \\
+\hline
+Simulator & Graph & 3 & \href{https://visjs.github.io/vis-network/examples/}{Link} & Erstellung von 2D Graphen. \\
+\hline
+Simulator & 2D-Simulation für autonome Fahrzeuge & 4 & \href{https://docs.unity3d.com/Simulation/manual/author/create-a-vehicle-model.html}{Link} & Simulationstool für Visualisierung. \\
+\hline
+Simulator & Sensoren und KI & 4 & \href{https://medium.com/@krish.bhoopati556/coding-the-road-ahead-self-driving-cars-with-javascript-and-ai-1995ecb2c1ec}{Link} & Programmierung von Sensoren und neuronalen Netzen in Javascript. \\
+\hline
+Simulator & Physik Auto & 4 & \href{https://www.asawicki.info/Mirror/Car\%20Physics\%20for\%20Games/Car\%20Physics\%20for\%20Games.html}{Link} & Simulation eines realistischen Fahrverhaltens. \\
+\hline
+Simulator & Editierbare Benutzeroberflächen & 5 & \href{https://github.com/tpan496/csgraph\_editor}{Link} & Benutzerfreundliche Oberfläche. \\
+\hline
+Simulator & Pfadfindung, Berechenbarkeit & 8 & \href{https://moribots.github.io/project/motion-planning}{Link} & Übersicht und Visualisierung verschiedener fortgeschrittener Pfadfindungsalgorithmen. \\
+\hline
+Simulator & Pfadfindung & 6 & \href{https://www.mcrl2.org/web/\_downloads/08c5ec296da673df304284f04f0e815a/state-space-exploration.pdf}{Link} & State Space Exploration: Grundlagen der Graphenexploration. \\
+\hline
+Simulator & Pfadfindung & 5 & \href{https://sites.gatech.edu/acds/mppi/}{Link} & Übersicht über Model Predictive Path Integral (MPPI). \\
+
+Simulator & Pfadfindung, Optimierungen & 7 & \href{https://ai.dmi.unibas.ch/\_files/teaching/hs21/po/slides/po-f01.pdf}{Link 1}, \href{https://www.math.leidenuniv.nl/\~{}kallenberglcm/Lecture-notes-MDP.pdf}{Link 2} & Markov Decision Processes (MDP): Modellierungen von Entscheidungen bei ungewissem Ausgang, welcher Weg ist wahrscheinlich der schnellste im Graph. \\
+\hline
+Simulator & Pfadfindung & 7 & \href{https://idm-lab.org/bib/abstracts/papers/aaai02b.pdf}{Link} & Detaillierte Beschreibung des D\textsuperscript{*}Lite Algorithmus. \\
+\hline
+Simulator & Pfadfindung & 4 & \href{http://sibgrapi.sid.inpe.br/col/sid.inpe.br/banon/2002/11.13.11.53/doc/269-275.pdf}{Link} & Euclidean Distance Transform für heuristische Entscheidungen bei Graphenproblemen. \\
+\hline
+Sensorik & Raumwahrnehmung, Image Processing & 5 & \href{http://www.robotics.stanford.edu/\~{}ang/papers/aaai08-Make3dDepthPerceptionSingleImage.pdf}{Link} & Depth Perception: Grundlagen für Raumwahrnehmung bei der Bildverarbeitung. \\
+\hline
+Sensorik & Homographie, Image Processing & 5 & \href{https://docs.opencv.org/4.x/d9/dab/tutorial\_homography.html}{Link} & Informationen, um verzerrte Bilder in verschiedene Perspektiven zu transformieren. \\
+\hline
+Sensorik & Kantenerkennung, Image Processing & 9 & \href{https://docs.opencv.org/4.x/da/d22/tutorial\_py\_canny.html}{Link 1}, \href{https://iopscience.iop.org/article/10.1088/1757-899X/1096/1/012079/pdf}{Link 2} & Erkennung von Kanten in Bildern, ermöglicht rudimentäre Kollisionserkennung. \\
+\hline
+Sensorik & Image Processing & 8 & \href{https://hal.science/hal-04132827/document}{Link} & Analyse von mehreren SLAM Algorithmen. \\
+\hline
+Elektrotechnik - Antriebe & BLDC Grundlagen & 10 & \href{https://www.microchip.com/en-us/application-notes/an885}{Link} & Application Note: Grundlagen BLDC Motoren. \\
+\hline
+Elektrotechnik - Antriebe & BLDC Grundlagen & 6 & \href{https://www.silabs.com/documents/public/application-notes/an0816-efm32-brushless-dc-motor-control.pdf}{Link} & Application Note: Grundlagen BLDC Motoren. \\
+\hline
+Elektrotechnik - Antriebe & Brushless DC Motor Fundamentals & 7 & \href{https://media.monolithicpower.com/document/Brushless\_DC\_Motor\_Fundamentals.pdf}{Link} & Application Note: Grundlagen BLDC Motoren. \\
+\hline
+Elektrotechnik - Antriebe & Stepping Motors Fundamentals & 10 & \href{https://www.microchip.com/en-us/application-notes/an907}{Link} & Application Note: Grundlagen Schrittmotoren. \\
+\hline
+Elektrotechnik - Antriebe & Stepping Motors Fundamentals & 7 & \href{https://download.beckhoff.com/download/document/application\_notes/dk9222-0410-0014.pdf}{Link} & Application Note: Grundlagen Schrittmotoren. \\
+
+Elektrotechnik - Antriebe & Stepper Motor Reference & 7 & \href{https://www.silabs.com/documents/public/application-notes/an155.pdf}{Link} & Application Note: Grundschaltungen Schrittmotoren. \\
+\hline
+Elektrotechnik - Energiemanagement & Li-Ion Batterie & 5 & \href{https://learning.oreilly.com/library/view/lithium-ion-batteries/9781466557338/}{Link} & Buch: Lithium-Ionen Batterien. \\
+\hline
+Elektrotechnik - Energiemanagement & Li-Ion Basics & 8 & \href{https://link.springer.com/book/10.1007/978-3-662-53071-9}{Link} & Buch: Batterietypen. \\
+\hline
+Elektrotechnik - Energiemanagement & Recycling Li-Ion; Li-Ion & / & \href{https://link.springer.com/book/10.1007/978-3-319-70572-9}{Link} & Buch: Recycling. \\
+\hline
+Elektrotechnik - Energiemanagement & Li-Ion Battery & 10 & \href{https://learning.oreilly.com/library/view/fundamentals-and-applications/9781118414781/}{Link} & Buch: Verschiedene Batterietypen. \\
+\hline
+Elektrotechnik - Energiemanagement & NiCad Battery Charge & 5 & \href{https://www.servocity.com/nicad-vs-nimh-batteries}{Link} & Beschreibung: NiCad vs. NiMH Batterien. \\
+\hline
+Elektrotechnik - Energiemanagement & NiCad Battery Basics & 10 & \href{https://learning.oreilly.com/library/view/rechargeable-batteries-applications/9780750670067/}{Link} & Buch: Grundlagen Nickel-Batterien, Ladevorgänge. \\
+\hline
+Elektrotechnik - Energiemanagement & Lead Acid Batteries; Batteries; Ni-Cd Batteries & 10 & \href{https://app.knovel.com/kn/resources/kpRBHPA003/toc}{Link} & Buch: Verschiedene Batterietypen sowie Ladeverfahren. \\
+\hline
+Elektrotechnik - Energiemanagement & Lead Acid Battery & 6 & \href{https://www.researchgate.net/publication/357913548\_LEAD-ACID\_BATTERY}{Link} & Research Paper über Blei-Akkumulatoren. \\
+\hline
+Elektrotechnik - Energiemanagement & Lead Acid Battery Charge & 4 & \href{https://www.ti.com/lit/an/slua055/slua055.pdf}{Link} & Application Note über Ladeverfahren zu Blei-Akkumulatoren. \\
+\hline
+Elektrotechnik - Energiemanagement & Lead Acid Battery & 2 & \href{https://ieeexplore.ieee.org/document/8684661}{Link} & Research Paper zu Blei-Akkumulatoren. \\
+
+Elektrotechnik - Energiemanagement & Battery Management; Li-Ion Battery & 8 & \href{https://learning.oreilly.com/library/view/battery-management-system/9781119154006/}{Link} & Buch über Batteriemanagementsysteme für Li-Ion Akkus. \\
+\hline
+Elektrotechnik - Energiemanagement & Battery Management; Li-Ion Battery & 7 & \href{https://app.knovel.com/kn/resources/kpSALIBM02/toc}{Link} & Buch über Batteriemanagement und Li-Ion Akkus. \\
+\hline
+Elektrotechnik - Energiemanagement & Battery Management; Li-Ion Battery & 6 & \href{https://app.knovel.com/kn/resources/kpBMSLLIB4/toc}{Link} & Buch über Batteriemanagement und Li-Ion Akkus. \\
+\hline
+Elektrotechnik - Sensoren & LiDAR und Ultraschall & 3 & \href{https://www.carwow.de/automagazin/auto-lexikon/auto-technologie/lidar-sensor-auto}{Link} & Unterschied von LiDAR und Radar für Abstandsmessung. \\
+\hline
+Elektrotechnik - Sensoren & Abstandsmessung & 4 & \href{https://ch.farnell.com/dfrobot/sen0259/laser-entfernungssensor-lidar/dp/3769959?cfm=true}{Link} & Möglicher LiDAR Sensor mit Time-of-Flight. \\
+\hline
+Elektrotechnik - Sensoren & Abstandsmessung & 4 & \href{https://www.az-delivery.de/products/3er-set-hc-sr04-ultraschallmodule}{Link} & Möglicher Ultraschallsensor. \\
+\hline
+Elektrotechnik - Sensoren & Pfadfindung & 5 & \href{https://intorobotics.com/types-of-sensors-for-target-detection-and-tracking/}{Link} & Verschiedene Sensoren für die Pfadfindung. \\
+\hline
+Elektrotechnik - Sensoren & Pfadfindung & 4 & \href{https://www.az-delivery.de/products/linienfolger-modul-mit-tcrt5000-und-analog-ausgang}{Link} & Möglicher Infrarotsensor für die Pfadfindung. \\
+\hline
+Elektrotechnik - Sensoren & Pfadfindung & 3 & \href{https://kiranjoy.blog/2018/08/19/calculate-speed-using-hall-effect-sensor/}{Link} & Geschwindigkeit und Strecke berechnen mit Hallsensor. \\
+\hline
+Elektrotechnik - Sensoren & Streckenerkennung & 8 & & \\
+\hline
+Maschinenbau & Mecanum Wheels Overview & 5 & \href{https://intapi.sciendo.com/pdf/10.2478/kbo-2022-0086}{Link} & Überblick über Mecanumräder und deren Verwendungszweck in der Industrie. \\
+\hline
+Maschinenbau & Räder & 7 & \href{https://www.quasi.ai/choosing-the-right-robotic-wheels-for-your-amr/}{Link} & Überblick und Auswahl verschiedener Rädertypen für einen Roboter. \\
+\hline
+Maschinenbau & Greifer & 7 & \href{https://qviro.com/blog/introduction-grippers/}{Link} & Funktionsweise von verschiedenen Greifermechanismen. \\
+\hline
+Maschinenbau & Greifer & 4 & \href{https://www.freise-automation.de/produkte/greifer-handhabungstechnik/}{Link} & Auswahl an Greifern und Linearführungen. \\
+
+Maschinenbau & Greifer & 6 & \href{https://automationspraxis.industrie.de/handling/greifer-fuer-roboter-grundlagen-funktion-und-hersteller/}{Link} & Funktionsweise von verschiedenen Greifermechanismen. \\
+\hline
+Maschinenbau & Linearführung & 5 & \href{https://blog.item24.com/automatisierte-produktion/mit-lineartechnik-automation-einfach-umsetzen/}{Link} & Überblick an Linearführungen. \\
+\hline
+Maschinenbau & Material & 2 & \href{https://www.evsint.com/de/materials-to-build-a-robot/}{Link} & Materialauswahl für Chassis. \\
+\hline
+Maschinenbau & Roboterkinematik & 7 & \href{https://www-home.htwg-konstanz.de/\~{}bittel/msi\_robo/Vorlesung/02\_Roboterkinematik.pdf}{Link} & Roboterkinematik für fahrende Systeme inklusive Linienverfolgung. \\
+\hline
+Maschinenbau & Bewegungsarten & 5 & \href{https://www.scinexx.de/dossierartikel/rollen-oder-laufen/}{Link} & Verschiedene Bewegungsarten für Roboter. \\
+\hline
+Maschinenbau & Robotik & 6 & \href{https://www.hs-koblenz.de/fileadmin/media/profiles/ingenieurwesen\_elektrotechnik\_und\_informationstechnik/ross/ROB/Material/handout.pdf}{Link} & Grundlagen der Robotik. \\
+\end{longtable}
 
 \end{document}
