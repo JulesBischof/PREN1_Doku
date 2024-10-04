@@ -1,5 +1,7 @@
 \documentclass{scrartcl}                % use [twocolumn] option for two-column layout
 
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+
 \input{settings/packages.tex}           % \usepackage{} statements
 \input{settings/settings.tex}           % custom commands and environments
 \addbibresource{references.bib}         % add .bib file - for examples see example folder
@@ -16,16 +18,15 @@
 \tableofcontents
 \newpage
 
-\section{Organigram}
-\subfile{./subfiles/organigram.tex}
-\newpage
-
 \section{Aufgabenstellung}
 \subfile{./subfiles/aufgabenstellung.tex}
 \newpage
 
 \section{Funktionszerlegung}
 \subfile{./subfiles/funktionszerlegung.tex}
+\newpage
+\section{Organigram}
+\subfile{./subfiles/organigram.tex}
 \newpage
 
 \section{Anforderungsliste}
