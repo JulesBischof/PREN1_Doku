@@ -42,9 +42,6 @@ welcher ein Ereignis eintreten könnte.
         \hline
         1           & unvorstellbar        & $>5\%$      \\
         \hline
-        %  >> neue Zeilen <<
-        %    &  &  \\
-        %    \hline
 
     \end{tabularx}
     \caption{Legende Eintrittswahrscheinlichkeit}~\label{tab:Legende_Eintrittswahrscheinlichkeit}
@@ -68,9 +65,7 @@ den Projekterfolg ist.
         \hline
         1           & unwesentlich         & Störung des Projekterfolgs   \\
         \hline
-        %  >> neue Zeilen <<
-        %    &  &  \\
-        %    \hline
+
     \end{tabularx}
     \caption{Legende Schadensausmass}~\label{tab:Legende_Schadensausmass}
 \end{table}
@@ -96,7 +91,7 @@ um die Notwendigkeit von Massnahmen zu kennzeichnen.
     \caption{Legende Bereichsdefinition}~\label{tab:Legende_Bereichsdefinition}
 \end{table}
 
-% -------------------------------------- Tabelle Massnahmen
+% =============================================== Tabelle erfasste Risiken ==================================================================
 
 \subsection{Erfasste Risiken}
 
@@ -113,14 +108,50 @@ Zeitpunkt. \\
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.5cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|}
         \hline
-        \textbf{\#} & \textbf{Risiko} & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen} \\
+        \textbf{\#} & \textbf{Risiko}                                                                              & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                                \\
+
+        \hline
+        \rowcolor{green!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_1}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Unterschiedliche Erwartungen an Projekterfolg                                                & 2           & 1           & Enttäuschung bei Teammitgliedern, Kommunikationsprobleme.                            \\
+
+        \hline
+        \rowcolor{green!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_2}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Abgaben werden verpasst durch mangelhaftes Zeitmanagement                                    & 2           & 2           & Testate werden nicht erteilt. Unstimmigkeiten der Teammitglieder untereinander       \\
 
         \hline
         \rowcolor{yellow!30}
-        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_1}1.\arabic{Erfasste_Risiken_counter_allg}
-                    &                 &             &             &                       \\
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_3}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Konzept wurde bis zum Ende des Semesters nicht zuende gedacht.                               & 3           & 2           & Im Pren 2 tauchen Probleme auf, welche vorgängig schon hätten erkannt werden können. \\
 
         \hline
+        \rowcolor{green!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_4}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Budget wird knapp, da Aufwände unterschätzt werden                                           & 4           & 3           & Es kann muss an falschen Enden gespart werden                                        \\
+
+        \hline
+        \rowcolor{yellow!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_5}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Personeller Ausfall, da im PREN2 Team einen Wechsel erfahren könnte oder Krankheit.          & 3           & 2           & Aufgaben müssen umverteilt werden.                                                   \\
+
+        \hline
+        \rowcolor{yellow!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_6}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Kommunikationsprobleme und fehlerhafte Absprachen der Teammitglieder untereinander           & 3           & 2           & Falsche Absprachen, Zeit wird verschwendet durch ineffizientes Arbeiten.             \\
+
+        \hline
+        \rowcolor{green!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_7}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Vergessene Anforderungen der Aufgabenstellung.                                               & 4           & 1           & Aufgabenstellung wird nicht erfüllt.                                                 \\
+
+        \hline
+        \rowcolor{red!30}
+        \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_8}1.\arabic{Erfasste_Risiken_counter_allg}
+                    & Fehlende Motivation durch schlechte Teilerfolge bei Konzeptionierung und Prototypenaufbauten & 2           & 1           & Stimmung im Team wird darunter leiden.                                               \\
+
+        \hline
+
     \end{tabularx}
     \caption{Erfasste Risiken mit Bewertung}~\label{tab:Erfasste_Risiken_allg}
 \end{table}
@@ -146,6 +177,7 @@ Zeitpunkt. \\
         \refstepcounter{Erfasste_Risiken_counter_mech}~\label{tabrow:risks_2_2}2.\arabic{Erfasste_Risiken_counter_mech}
                     & Fahrzeug überschreitet zugelassenes Gesamtgewicht, 2kg ist ein enger Rahmen.          & 4           & 3           & Disqualifizierung        \\
 
+        \hline
     \end{tabularx}
     \caption{Erfasste Risiken aus dem Maschinenbau-Bereich}~\label{tab:Erfasste_Risiken_mech}
 
@@ -160,27 +192,32 @@ Zeitpunkt. \\
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.5cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|}
         \hline
-        \textbf{\#} & \textbf{Risiko}                                                                                & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                     \\
+        \textbf{\#} & \textbf{Risiko}                                                                                  & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                            \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_1}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Fahrzeug kann Linie nicht erkennen und kommt deshalb von Linie ab                              & 4           & 5           & Disqualifizierung                                                         \\
+                    & Fahrzeug kann Linie nicht erkennen und kommt deshalb von Linie ab                                & 4           & 5           & Disqualifizierung                                                                \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_2}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Fahrzeug wird durch Lichtverhältnisse durch Umwelteinflüsse gestört.                           & 3           & 6           & Punktabzug durch abkommen von der Linie oder Kollisionen mit Hindernissen \\
+                    & Fahrzeug wird durch Lichtverhältnisse durch Umwelteinflüsse gestört.                             & 3           & 6           & Punktabzug durch abkommen von der Linie oder Kollisionen mit Hindernissen        \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_3}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Akku reicht nicht aus für beide Läufe mit Tests, da aufgrund von Gewicht zu eng dimensioniert. & 4           & 2           & Fahrzeug kann nicht in Ziel ankommen.                                     \\
+                    & Akku reicht nicht aus für beide Läufe mit Tests, da aufgrund von Gewicht zu eng dimensioniert.   & 4           & 2           & Fahrzeug kann nicht in Ziel ankommen.                                            \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_4}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Kommunikation verschiedener Microcontroller mit Hauptrechner gestört durch Umwelteinflüsse.    & 3           & 2           & Unter umständen falsche/keine Steuersignale                               \\
+                    & Kommunikation verschiedener Microcontroller mit Hauptrechner gestört durch Umwelteinflüsse.      & 3           & 2           & Unter umständen falsche/keine Steuersignale                                      \\
+
+        \hline
+        \rowcolor{yellow!30}
+        \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_5}3.\arabic{Erfasste_Risiken_counter_elektro}
+                    & Load-Regulation der Spannungsversorgung schlecht, da Leistungselektronik zu viel Strom benötigt. & 2           & 2           & Prozessoren und Sensorik könnten in Unterspannung geraten und müssten Neustarten \\
         \hline
 
     \end{tabularx}
@@ -204,6 +241,7 @@ Zeitpunkt. \\
         \refstepcounter{Erfasste_Risiken_counter_info}~\label{tabrow:risks_4_1}4.\arabic{Erfasste_Risiken_counter_info}
                     & Fahrzeug verliert Orientierung im Parcours und kann deshalb Ziel nicht erreichen. & 3           & 5           & Fahrzeug braucht lange, bis es Ziel zufällig erreicht. \\
 
+        \hline
     \end{tabularx}
     \caption{Erfasste Risiken aus dem Informatik-Bereich}~\label{tab:Erfasste_Risiken_info}
 \end{table}
@@ -219,14 +257,13 @@ Zeitpunkt. \\
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|}
         \hline
-        \textbf{Risiko \#} & \textbf{Massnahme}
-                           & \textbf{Neu EW}    \\
+        \textbf{Risiko \#}        & \textbf{Massnahme}
+                                  & \textbf{Neu EW}                                                        \\
 
         \hline
-        \rowcolor{yellow!30}
-        1.~\ref{}          &
-                           &                    \\
-        \\
+        \rowcolor{green!30}
+        1.~\ref{tabrow:risks_1_4} & Kostenpunkte bei jedem Entwicklungsschritt frühzeitig berücksichtigen.
+                                  & 1                                                                      \\
         \hline
 
     \end{tabularx}
@@ -251,7 +288,7 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|}
         \hline
         \textbf{Risiko \#}        & \textbf{Massnahme}
-                                  & \textbf{Neu EW}                                                                                                                                                               \\                                                                                                                                                                                                 \\
+                                  & \textbf{Neu EW}                                                                                                                                                               \\
 
         \hline
         \rowcolor{yellow!30}
@@ -309,6 +346,10 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
         3.~\ref{tabrow:risks_3_4} & Kommunikationsleitungen mindestens als twisted-Pairs mit GND - besser aber geschirmt ausführen.
                                   & 1                                                                                                                                                                                                      \\
 
+        \hline
+        \rowcolor{yellow!30}
+        3.~\ref{tabrow:risks_3_5} & Genügend Powerbudget "nach oben" Einplanen. Vor Spannungsversorgung für High-Level-Controller und Microcontroller aktive Filter (z.B. LDO oder ähnliches) vorsehen.
+                                  & 2                                                                                                                                                                                                      \\
         \hline
 
     \end{tabularx}
