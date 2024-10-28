@@ -7,32 +7,30 @@
 
 \begin{document}
 
-\subsection{Risikomanagement}
+\section{Risikomanagement}
 
 Das Risikomanagement wird nach der ALARP-Methode (\textit{engl. as low as
-    reasonable possible}) durchgeführt. Dafür werden Risiken im ersten Schritt
-detektiert und in einem nächsten Schritt durch Risikovermindernde Massnahmen
-auf ein Mass reduziert, welche ein vernünftiges Mass für Sicherheit bietet. Die
-Bewertung wird mit dem gesamten Team auf der subjektiven Einschätzung auf die
-Erfüllung der Aufgabe gestützt. Ziel ist es, zu einem möglichst frühen
-Zeitpunkt des Projektes kritisches Punkte des Projektes zu identifizieren und
-den Fokus auf entsprechende Punkte zu legen. \\
+    reasonably possible}) durchgeführt. Dafür werden Risiken im ersten Schritt
+identifiziert und anschliessend durch risikomindernde Massnahmen auf ein Niveau
+reduziert, das ein angemessenes Mass an Sicherheit bietet. Die Bewertung
+erfolgt im gesamten Team und basiert auf einer subjektiven Einschätzung zur
+Erfüllung der Aufgabe. Ziel ist es, möglichst früh im Projektverlauf kritische
+Punkte zu identifizieren und den Fokus auf diese zu legen. \
 
 % -------------------------------------- Erläuterung Bewertung
 
 \subsubsection*{Eintrittswahrscheinlichkeit (EW)}
 
-Die Eintrittswahrscheinlichkeit ist ein Mass für die wahscheinlichkeit, mit
-welcher ein Ereignis eintreten könnte.
+Die Eintrittswahrscheinlichkeit ist ein Mass für die Wahrscheinlichkeit, mit
+der ein Ereignis eintreten könnte.
 
-\begin{table}[H]
-    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{2cm}|}
+\begin{table}[H] \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{2cm}|}
         \hline
         \textbf{EW} & \textbf{Bezeichnung} & \textbf{\%} \\
         \hline
         6           & häufig               & $>90\%$     \\
         \hline
-        5           & wahscheinlich        & $>70\%$     \\
+        5           & wahrscheinlich       & $>70\%$     \\
         \hline
         4           & gelegentlich         & $>50\%$     \\
         \hline
@@ -42,14 +40,13 @@ welcher ein Ereignis eintreten könnte.
         \hline
         1           & unvorstellbar        & $>5\%$      \\
         \hline
-
     \end{tabularx}
-    \caption{Legende Eintrittswahrscheinlichkeit}~\label{tab:Legende_Eintrittswahrscheinlichkeit}
-\end{table}
+    \caption{Legende Eintrittswahrscheinlichkeit}~\label{tab
+    } \end{table}
 
 \subsubsection*{Schadensausmass (SA)}
 
-Das Schadensausmass ist ein Mass dafür, wie fatal ein eintretends Ereignis für
+Das Schadensausmass ist ein Mass dafür, wie fatal ein eintretendes Ereignis für
 den Projekterfolg ist.
 
 \begin{table}[H]
@@ -72,8 +69,8 @@ den Projekterfolg ist.
 
 \subsubsection*{Bereichsdefinition}
 
-Die entsprechenden Risiken sind mit der folgenden Colorierung farbig Codiert,
-um die Notwendigkeit von Massnahmen zu kennzeichnen.
+Die entsprechenden Risiken sind mit der folgenden Farbgebung codiert, um die
+Notwendigkeit von Massnahmen zu kennzeichnen.
 
 \begin{table}[H]
     \centering
@@ -102,60 +99,59 @@ Zeitpunkt. \\
 
 \subsubsection*{Allgemeines}
 
-\newcounter{Erfasste_Risiken_counter_allg} % define Rowcounter
+\newcounter{Erfasste_Risiken_counter_allg} % define row counter
 \setcounter{Erfasste_Risiken_counter_allg}{0}
 
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.5cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|}
         \hline
-        \textbf{\#} & \textbf{Risiko}                                                                              & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                                \\
+        \textbf{\#} & \textbf{Risiko}                                                                          & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                  \\
 
         \hline
         \rowcolor{green!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_1}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Unterschiedliche Erwartungen an Projekterfolg                                                & 2           & 1           & Enttäuschung bei Teammitgliedern, Kommunikationsprobleme.                            \\
+                    & Unterschiedliche Erwartungen an den Projekterfolg                                        & 2           & 1           & Enttäuschung bei Teammitgliedern, Kommunikationsprobleme               \\
 
         \hline
         \rowcolor{green!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_2}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Abgaben werden verpasst durch mangelhaftes Zeitmanagement                                    & 2           & 2           & Testate werden nicht erteilt. Unstimmigkeiten der Teammitglieder untereinander       \\
+                    & Verpasste Abgaben aufgrund mangelhaften Zeitmanagements                                  & 2           & 2           & Testate werden nicht erteilt. Unstimmigkeiten zwischen Teammitgliedern \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_3}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Konzept wurde bis zum Ende des Semesters nicht zuende gedacht.                               & 3           & 2           & Im Pren 2 tauchen Probleme auf, welche vorgängig schon hätten erkannt werden können. \\
+                    & Konzept wurde bis zum Ende des Semesters nicht vollständig durchdacht                    & 3           & 2           & Probleme treten in PREN 2 auf, die früher hätten erkannt werden können \\
 
         \hline
         \rowcolor{green!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_4}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Budget wird knapp, da Aufwände unterschätzt werden                                           & 4           & 3           & Es kann muss an falschen Enden gespart werden                                        \\
+                    & Budget wird knapp, da Aufwände unterschätzt wurden                                       & 4           & 3           & Es muss an kritischen Stellen gespart werden                           \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_5}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Personeller Ausfall, da im PREN2 Team einen Wechsel erfahren könnte oder Krankheit.          & 3           & 2           & Aufgaben müssen umverteilt werden.                                                   \\
+                    & Personeller Ausfall durch Teamwechsel in PREN2 oder Krankheit                            & 3           & 2           & Aufgaben müssen umverteilt werden                                      \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_6}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Kommunikationsprobleme und fehlerhafte Absprachen der Teammitglieder untereinander           & 3           & 2           & Falsche Absprachen, Zeit wird verschwendet durch ineffizientes Arbeiten.             \\
+                    & Kommunikationsprobleme und fehlerhafte Absprachen unter Teammitgliedern                  & 3           & 2           & Missverständnisse, ineffizientes Arbeiten führt zu Zeitverlust         \\
 
         \hline
         \rowcolor{green!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_7}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Vergessene Anforderungen der Aufgabenstellung.                                               & 4           & 1           & Aufgabenstellung wird nicht erfüllt.                                                 \\
+                    & Vergessene Anforderungen aus der Aufgabenstellung                                        & 4           & 1           & Aufgabenstellung wird nicht vollständig erfüllt                        \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_allg}~\label{tabrow:risks_1_8}1.\arabic{Erfasste_Risiken_counter_allg}
-                    & Fehlende Motivation durch schlechte Teilerfolge bei Konzeptionierung und Prototypenaufbauten & 2           & 1           & Stimmung im Team wird darunter leiden.                                               \\
+                    & Fehlende Motivation durch unzureichende Teilerfolge bei Konzeption und Prototypen Aufbau & 2           & 1           & Stimmung im Team leidet darunter                                       \\
 
         \hline
 
     \end{tabularx}
     \caption{Erfasste Risiken mit Bewertung}~\label{tab:Erfasste_Risiken_allg}
 \end{table}
-
 % ========= MECHANIK
 \subsubsection*{Mechanik}
 
@@ -165,90 +161,90 @@ Zeitpunkt. \\
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.5cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|}
         \hline
-        \textbf{\#} & \textbf{Risiko}                                                                       & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}    \\
+        \textbf{\#} & \textbf{Risiko}                                                                   & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}        \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_mech}~\label{tabrow:risks_2_1}2.\arabic{Erfasste_Risiken_counter_mech}
-                    & Fahrzeug kann Hindernis erfassen und aufnehmen, aber nicht genau genug positionieren. & 3           & 4           & Punktabzug bei Bewertung \\
+                    & Fahrzeug kann Hindernis erfassen und aufnehmen, jedoch nicht exakt positionieren. & 3           & 4           & Punktabzug bei der Bewertung \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_mech}~\label{tabrow:risks_2_2}2.\arabic{Erfasste_Risiken_counter_mech}
-                    & Fahrzeug überschreitet zugelassenes Gesamtgewicht, 2kg ist ein enger Rahmen.          & 4           & 3           & Disqualifizierung        \\
+                    & Fahrzeug überschreitet das zulässige Gesamtgewicht; 2 kg ist ein enger Rahmen.    & 4           & 3           & Disqualifikation             \\
 
         \hline
     \end{tabularx}
-    \caption{Erfasste Risiken aus dem Maschinenbau-Bereich}~\label{tab:Erfasste_Risiken_mech}
+    \caption{Erfasste Risiken im Bereich Mechanik}~\label{tab:Erfasste_Risiken_mech}
 
 \end{table}
 
-% ========= ELEKTRO
+% ========= ELEKTROTECHNIK
 \subsubsection*{Elektrotechnik}
 
-\newcounter{Erfasste_Risiken_counter_elektro} % define Rowcounter
+\newcounter{Erfasste_Risiken_counter_elektro} % define Row counter
 \setcounter{Erfasste_Risiken_counter_elektro}{0}
 
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.5cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|}
         \hline
-        \textbf{\#} & \textbf{Risiko}                                                                                  & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                            \\
+        \textbf{\#} & \textbf{Risiko}                                                                                                & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                                      \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_1}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Fahrzeug kann Linie nicht erkennen und kommt deshalb von Linie ab                                & 4           & 5           & Disqualifizierung                                                                \\
+                    & Fahrzeug kann Linie nicht erkennen und verlässt daher die Strecke.                                             & 4           & 5           & Disqualifikation                                                           \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_2}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Fahrzeug wird durch Lichtverhältnisse durch Umwelteinflüsse gestört.                             & 3           & 6           & Punktabzug durch abkommen von der Linie oder Kollisionen mit Hindernissen        \\
+                    & Fahrzeug wird durch Umwelteinflüsse wie Lichtverhältnisse gestört.                                             & 3           & 6           & Punktabzug durch Abkommen von der Linie oder Kollisionen mit Hindernissen  \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_3}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Akku reicht nicht aus für beide Läufe mit Tests, da aufgrund von Gewicht zu eng dimensioniert.   & 4           & 2           & Fahrzeug kann nicht in Ziel ankommen.                                            \\
+                    & Akku reicht nicht für beide Läufe mit Tests, da aufgrund des Gewichts zu knapp dimensioniert.                  & 4           & 2           & Fahrzeug kann das Ziel nicht erreichen.                                    \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_4}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Kommunikation verschiedener Microcontroller mit Hauptrechner gestört durch Umwelteinflüsse.      & 3           & 2           & Unter umständen falsche/keine Steuersignale                                      \\
+                    & Kommunikation zwischen verschiedenen Mikrocontrollern und dem Hauptrechner wird durch Umwelteinflüsse gestört. & 3           & 2           & Möglicherweise fehlerhafte oder keine Steuersignale                        \\
 
         \hline
         \rowcolor{yellow!30}
         \refstepcounter{Erfasste_Risiken_counter_elektro}~\label{tabrow:risks_3_5}3.\arabic{Erfasste_Risiken_counter_elektro}
-                    & Load-Regulation der Spannungsversorgung schlecht, da Leistungselektronik zu viel Strom benötigt. & 2           & 2           & Prozessoren und Sensorik könnten in Unterspannung geraten und müssten Neustarten \\
+                    & Lastregelung der Spannungsversorgung unzureichend, da Leistungselektronik zu viel Strom benötigt.              & 2           & 2           & Prozessoren und Sensorik könnten unterversorgt sein und neu starten müssen \\
         \hline
 
     \end{tabularx}
-    \caption{Erfasste Risiken aus dem Elektrotechnik-Bereich}~\label{tab:Erfasste_Risiken_elektro}
+    \caption{Erfasste Risiken im Bereich Elektrotechnik}~\label{tab:Erfasste_Risiken_elektro}
 
 \end{table}
 
 % ========= INFORMATIK
 \subsubsection*{Informatik}
 
-\newcounter{Erfasste_Risiken_counter_info} % define Rowcounter
+\newcounter{Erfasste_Risiken_counter_info} % define Row counter
 \setcounter{Erfasste_Risiken_counter_info}{0}
 
 \begin{table}[H]
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.5cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\raggedright\arraybackslash}X|}
         \hline
-        \textbf{\#} & \textbf{Risiko}                                                                   & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                  \\
+        \textbf{\#} & \textbf{Risiko}                                                             & \textbf{SA} & \textbf{EW} & \textbf{Auswirkungen}                                       \\
 
         \hline
         \rowcolor{red!30}
         \refstepcounter{Erfasste_Risiken_counter_info}~\label{tabrow:risks_4_1}4.\arabic{Erfasste_Risiken_counter_info}
-                    & Fahrzeug verliert Orientierung im Parcours und kann deshalb Ziel nicht erreichen. & 3           & 5           & Fahrzeug braucht lange, bis es Ziel zufällig erreicht. \\
+                    & Fahrzeug verliert die Orientierung im Parcours und erreicht das Ziel nicht. & 3           & 5           & Fahrzeug benötigt lange, bis es das Ziel zufällig erreicht. \\
 
         \hline
     \end{tabularx}
-    \caption{Erfasste Risiken aus dem Informatik-Bereich}~\label{tab:Erfasste_Risiken_info}
+    \caption{Erfasste Risiken im Bereich Informatik}~\label{tab:Erfasste_Risiken_info}
 \end{table}
 
 % ============================================ Massnahmen ======================================================
 
-\subsubsection{Erfasste Massnahmen}
+\subsection{Erfasste Massnahmen}
 
 % ========= ALLGEMEIN
 
@@ -258,26 +254,23 @@ Zeitpunkt. \\
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|}
         \hline
         \textbf{Risiko \#}        & \textbf{Massnahme}
-                                  & \textbf{Neu EW}                                                        \\
-
+                                  & \textbf{Neu EW}                                                                                                                     \\
         \hline
         \rowcolor{green!30}
-        1.~\ref{tabrow:risks_1_4} & Kostenpunkte bei jedem Entwicklungsschritt frühzeitig berücksichtigen.
-                                  & 1                                                                      \\
+        1.~\ref{tabrow:risks_1_4} & Kostenpunkte bei jedem Entwicklungsschritt frühzeitig berücksichtigen und als wichtiges Kriterium für Technologieentscheide werten.
+                                  & 1                                                                                                                                   \\
         \hline
-
     \end{tabularx}
-    \caption{Erfasste Massnahmen Allgemein betreffende Risiken}~\label{tab:Erfasste_Massnahmen_allg}
+    \caption{Erfasste Massnahmen für allgemein betreffende Risiken}~\label{tab:Erfasste_Massnahmen_allg}
 \end{table}
 
-Abbildung~\ref{fig:Diagramm_Risiko_allg} zeigt schematisch auf, wie die
-getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
+Abbildung~\ref{fig:Diagramm_Risiko_allg} zeigt schematisch, wie die getroffenen
+Massnahmen entsprechende Risiken für den Projekterfolg reduzieren.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{./Risks_Diagramm/Diagramm_Risiko_allg.pdf}
-    \caption{Grafische Darstellung Risikoanalyse Allgemein}
-    \label{fig:Diagramm_Risiko_allg}
+    \includegraphics[width=0.4\textwidth]{./Risks_Diagramm/Diagramm_Risiko_allg.pdf}
+    \caption{Grafische Darstellung der Risikoanalyse Allgemein}~\label{fig:Diagramm_Risiko_allg}
 \end{figure}
 
 % ========= MECHANIK
@@ -288,32 +281,28 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|}
         \hline
         \textbf{Risiko \#}        & \textbf{Massnahme}
-                                  & \textbf{Neu EW}                                                                                                                                                               \\
-
+                                  & \textbf{Neu EW}                                                                                                                                                                 \\
         \hline
         \rowcolor{yellow!30}
         2.~\ref{tabrow:risks_2_1} & Höhere Gewichtung auf dieses Detail in der Konzeptbewertung.
-                                  & 3                                                                                                                                                                             \\
-
+                                  & 3                                                                                                                                                                               \\
         \hline
         \rowcolor{green!30}
-        2.~\ref{tabrow:risks_2_2} & Gewicht der Bauteile frühzeitig überschlagen und bei jedem Entwicklungsschritt berücksichtigen. Liste führen für schon bekannte Gewichte und Budget für Baugruppen festlegen.
-                                  & 1                                                                                                                                                                             \\
-
+        2.~\ref{tabrow:risks_2_2} & Gewicht der Bauteile frühzeitig überschlagen und bei jedem Entwicklungsschritt berücksichtigen. Liste für bereits bekannte Gewichte führen und Budget für Baugruppen festlegen.
+                                  & 1                                                                                                                                                                               \\
         \hline
-
     \end{tabularx}
-    \caption{Erfasste Massnahmen Maschinenbau betreffende Risiken}~\label{tab:Erfasste_Massnahmen_mech}
+    \caption{Erfasste Massnahmen für die Mechanik betreffende Risiken}~\label{tab:Erfasste_Massnahmen_mech}
 \end{table}
 
-Abbildung~\ref{fig:Diagramm_Risiko_mechanik} zeigt schematisch auf, wie die
-getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
+Abbildung~\ref{fig:Diagramm_Risiko_mech} zeigt schematisch, wie die getroffenen
+Massnahmen entsprechende Risiken für den Projekterfolg reduzieren.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{./Risks_Diagramm/Diagramm_Risiko_mechanik.pdf}
-    \caption{Grafische Darstellung Risikoanalyse Maschinenbau}
-    \label{fig:Diagramm_Risiko_mechanik}
+    \includegraphics[width=0.4\textwidth]{./Risks_Diagramm/Diagramm_Risiko_mechanik.pdf}
+    \caption{Grafische Darstellung der Risikoanalyse Mechanik}
+    \label{fig:Diagramm_Risiko_mech}
 \end{figure}
 
 % ========= ELEKTRONIK
@@ -324,36 +313,36 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|}
         \hline
         \textbf{Risiko \#}        & \textbf{Massnahme}
-                                  & \textbf{Neu EW}                                                                                                                                                                                        \\
+                                  & \textbf{Neu EW}                                                                                                                                                                                             \\
 
         \hline
         \rowcolor{yellow!30}
-        3.~\ref{tabrow:risks_3_1} & Frühzeitiges Testen und optimieren der Genauigkeit der Sensorik. Möglichkeit bieten, nach Fahrzeugwinkel und gefahrener Strecke Fahrzeug zu Regeln. Technologieentscheid erst nach ausgiebigem Testen.
-                                  & 2                                                                                                                                                                                                      \\
+        3.~\ref{tabrow:risks_3_1} & Frühzeitiges Testen und Optimieren der Genauigkeit der Sensorik. Möglichkeit bieten, das Fahrzeug nach Fahrzeugwinkel und gefahrenen Strecken zu regeln. Technologieentscheid erst nach ausgiebigem Testen.
+                                  & 2                                                                                                                                                                                                           \\
 
         \hline
         \rowcolor{yellow!30}
-        3.~\ref{tabrow:risks_3_2} & Sensorik, welche optisch arbeitet, möglichst abgekapselt von Umwelt betreiben. Alternativ Wellenlängen, die das sichtbare Licht beinhalten, vermeiden.
-                                  & 3                                                                                                                                                                                                      \\
+        3.~\ref{tabrow:risks_3_2} & Sensorik, die optisch arbeitet, möglichst abgekapselt von der Umwelt betreiben. Alternativ Wellenlängen, die das sichtbare Licht beinhalten, vermeiden.
+                                  & 3                                                                                                                                                                                                           \\
 
         \hline
         \rowcolor{green!30}
-        3.~\ref{tabrow:risks_3_3} & Akku doppelt herstellen/einkaufen, Ladestation extern ausführen um immer einen voll geladenen Akku bereit zu haben.
-                                  & 1                                                                                                                                                                                                      \\
+        3.~\ref{tabrow:risks_3_3} & Akku doppelt herstellen/einkaufen, Ladestation extern ausführen, um immer einen vollgeladenen Akku bereit zu haben.
+                                  & 1                                                                                                                                                                                                           \\
 
         \hline
         \rowcolor{green!30}
-        3.~\ref{tabrow:risks_3_4} & Kommunikationsleitungen mindestens als twisted-Pairs mit GND - besser aber geschirmt ausführen.
-                                  & 1                                                                                                                                                                                                      \\
+        3.~\ref{tabrow:risks_3_4} & Kommunikationsleitungen mindestens als Twisted-Pairs mit GND – besser aber geschirmt ausführen.
+                                  & 1                                                                                                                                                                                                           \\
 
         \hline
         \rowcolor{yellow!30}
-        3.~\ref{tabrow:risks_3_5} & Genügend Powerbudget "nach oben" Einplanen. Vor Spannungsversorgung für High-Level-Controller und Microcontroller aktive Filter (z.B. LDO oder ähnliches) vorsehen.
-                                  & 2                                                                                                                                                                                                      \\
+        3.~\ref{tabrow:risks_3_5} & Genügend Spannungsreserve des Akkus „nach oben“ einplanen. Vor der Spannungsversorgung für High-Level-Controller und Mikrocontroller aktive Filter (z.B. LDO oder ähnliches) vorsehen.
+                                  & 2                                                                                                                                                                                                           \\
         \hline
 
     \end{tabularx}
-    \caption{Erfasste Massnahmen für Risikoanalyse}~\label{tab:Erfasste_Massnahmen}
+    \caption{Erfasste Massnahmen für Risikoanalyse}~\label{tab:Erfasste_Massnahmen_elektro}
 \end{table}
 
 Abbildung~\ref{fig:Diagramm_Risiko_elektro} zeigt schematisch auf, wie die
@@ -361,9 +350,8 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{./Risks_Diagramm/Diagramm_Risiko_elektro.pdf}
-    \caption{Grafische Darstellung Risikoanalyse Elektrotechnik}
-    \label{fig:Diagramm_Risiko_elektro}
+    \includegraphics[width=0.4\textwidth]{./Risks_Diagramm/Diagramm_Risiko_elektro.pdf}
+    \caption{Grafische Darstellung Risikoanalyse Elektrotechnik}~\label{fig:Diagramm_Risiko_elektro}
 \end{figure}
 
 % ========= INFORMATIK
@@ -374,17 +362,17 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
     \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}X|>{\centering\arraybackslash}p{0.75cm}|}
         \hline
         \textbf{Risiko \#}        & \textbf{Massnahme}
-                                  & \textbf{Neu EW}                             \\
+                                  & \textbf{Neu EW}                              \\
 
         \hline
         \rowcolor{yellow!30}
-        4.~\ref{tabrow:risks_4_1} & Fallbacklösung, Fahrzeug fährt immer links.
-                                  & 3                                           \\
+        4.~\ref{tabrow:risks_4_1} & Fallback-Lösung: Fahrzeug fährt immer links.
+                                  & 3                                            \\
 
         \hline
 
     \end{tabularx}
-    \caption{Erfasste Massnahmen für Risikoanalyse}~\label{tab:Erfasste_Massnahmen}
+    \caption{Erfasste Massnahmen für Risikoanalyse}~\label{tab:Erfasste_Massnahmen_info}
 \end{table}
 
 Abbildung~\ref{fig:Diagramm_Risiko_info} zeigt schematisch auf, wie die
@@ -392,9 +380,8 @@ getroffenen Massnahmen entsprechende Risiken auf den Projekterfolg reduzieren.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{./Risks_Diagramm/Diagramm_Risiko_info.pdf}
-    \caption{Grafische Darstellung Risikoanalyse Informatik}
-    \label{fig:Diagramm_Risiko_info}
+    \includegraphics[width=0.4\textwidth]{./Risks_Diagramm/Diagramm_Risiko_info.pdf}
+    \caption{Grafische Darstellung Risikoanalyse Informatik}~\label{fig:Diagramm_Risiko_info}
 \end{figure}
 
 \end{document}
