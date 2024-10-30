@@ -1,0 +1,98 @@
+\documentclass[main.tex]{subfiles} % Subfile-Class
+
+
+% ============================================================================== %
+%                            Subfile document                                    %
+% ============================================================================== %
+
+\begin{document}
+
+% Template
+
+\subsection{Nutzwertanalyse Simulation}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|p{0.14\linewidth}|p{0.15\linewidth}|p{0.115\linewidth}|p{0.08\linewidth}|p{0.09\linewidth}|p{0.08\linewidth}|p{0.09\linewidth}|}
+    \hline
+        &&&&&&\\[-9pt]
+        & \multirow{2}{*}{\textbf{Kriterien}} & Gewichtung & Punkte & Punkte & Punkte & Punkte \\[1pt]
+        &  & \{\%\} & \{1...10\} & gewichtet & \{1...10\} & gewichtet \\[1pt]
+        \hline
+        \hline
+        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
+        \multirow{5}{4em}{\textbf{Plattform}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Nativ}} & \multicolumn{2}{c|}{\textbf{Web-based}} \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Entwicklungs-aufwand & 40 & 2 & 8 & 8 & 32 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Performance & 20 & 7 & 14 & 4 & 8 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Bedienbarkeit & 40 & 4 & 16 & 7 & 28 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & \textbf{Summe} & \textbf{100} &  & \textbf{38} &  & \textbf{68} \\[1pt]
+        \hline
+        \hline
+        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
+        \multirow{6}{4em}{\textbf{Visualisier-ung}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{3D}} & \multicolumn{2}{c|}{\textbf{2D}} \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Entwicklungs-aufwand & 40 & 3 & 12 & 8 & 32 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Interaktions-möglichkeit & 10 & 6 & 6 & 5 & 5 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Realitätsnähe & 20 & 8 & 16 & 3 & 6 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Bedienbarkeit & 30 & 5 & 15 & 5 & 15 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & \textbf{Summe} & \textbf{100} &  & \textbf{49} &  & \textbf{58} \\[1pt]
+        \hline
+        \hline
+        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
+        \multirow{5}{4em}{\textbf{Auswertung}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{In-tool}} & \multicolumn{2}{c|}{\textbf{Export + Scripts}} \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Entwicklungs-aufwand & 30 & 5 & 15 & 5 & 15 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Flexibilität & 40 & 4 & 16 & 6 & 24 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Integration in Dokumentation & 30 & 2 & 6 & 8 & 24 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & \textbf{Summe} & \textbf{100} &  & \textbf{37} &  & \textbf{63} \\[1pt]
+        \hline
+        \hline
+        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
+        \multirow{6}{4em}{\textbf{Wieder-verwendbar-keit}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Splitting}} & \multicolumn{2}{c|}{\textbf{Kein Splitting}} \\[1pt]
+        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Front-/Backend}} & \multicolumn{2}{c|}{\textbf{}} \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Entwicklungs-aufwand & 40 & 3 & 12 & 7 & 28 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Austauschbar-keit & 30 & 8 & 24 & 2 & 6 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & Transpilation & 30 & 8 & 24 & 2 & 6 \\[1pt]
+        \cline{2-7}
+        &&&&&&\\[-9pt]
+        & \textbf{Summe} & \textbf{100} &  & \textbf{60} &  & \textbf{40} \\[1pt]
+        \hline
+        \hline
+        \multicolumn{2}{|c|}{} &&\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{} \\[-9pt]
+        \multicolumn{2}{|c|}{\textbf{Gesamtsumme}} &  & \multicolumn{2}{c|}{\textbf{46}} & \multicolumn{2}{c|}{\textbf{57.25}} \\[1pt]
+        \hline
+        \end{tabular}
+    \caption{Nutzwertanalyse Simulation}
+\end{table}
+
+\end{document}
