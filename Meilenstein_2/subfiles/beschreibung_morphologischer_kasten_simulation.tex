@@ -10,11 +10,19 @@
 % Template
 
 \subsubsection{Beschreibung der Lösungsvarianten Simulation}
-Im folgenden Abschnitt werden die drei Varianten aus dem morphologischen Kasten
+Im folgenden Abschnitt werden die zwei Varianten aus dem morphologischen Kasten für die Simulation
 schriftlich festgehalten.
 
 \subsubsection*{Rote Variante}
-\lipsum[4]
+Die Rote Variante der Simulation ist so konzipiert, dass sie auf allen gängigen Betriebssystemen (Windows, Linux und MacOS) lauffähig ist. Dadurch wird eine plattformunabhängige Entwicklung und Testung gewährleistet. Die Darstellung erfolgt in 2D, was eine klare und einfache Visualisierung der Simulation ermöglicht.
+
+Ein besonderes Merkmal dieser Variante ist die Möglichkeit, mehrere Pfadfindungsalgorithmen zu testen. Dies erlaubt es, den besten Algorithmus für die jeweilige Problemstellung zu evaluieren und die Effizienz des Fahrzeugs zu optimieren. Die Fahrzeugparameter sind editierbar, sodass Anpassungen vorgenommen werden können, um verschiedene Szenarien zu simulieren.
+
+Die Daten der Simulation werden in einer SQLite-Datenbank gespeichert, was eine dauerhafte und strukturierte Speicherung ermöglicht. Von dort aus können die Daten einfach exportiert und weiterverarbeitet werden. Für die Benutzeroberfläche wird ein JavaScript-Framework eingesetzt, und zwar Svelte, um eine moderne und reaktionsschnelle Webanwendung zu bieten. Im Gegensatz zu anderen Varianten wird in der Roten Variante kein Unterschied zwischen Frontend und Backend gemacht; die gesamte Simulation läuft innerhalb eines Webinterfaces mit Svelte.
+
+Zur Analyse der Simulationsergebnisse steht ein Dashboard zur Verfügung, über das verschiedene Metriken und Auswertungen eingesehen werden können. Die Simulationsgeschwindigkeit ist anpassbar, was es ermöglicht, die Simulation in unterschiedlichen Geschwindigkeiten zu testen und dadurch das Verhalten unter verschiedenen Bedingungen zu analysieren.
+
+Während der Simulation ist kein direkter Eingriff möglich, sodass die Simulation lediglich passiv beobachtet werden kann. Das Fahrverhalten des Fahrzeugs ist jedoch dynamisch anpassbar, was bedeutet, dass verschiedene Verhaltensweisen getestet und optimiert werden können. Insgesamt bietet die *Rote Variante* eine flexible, plattformunabhängige und gut analysierbare Simulationsumgebung mit modernen Webtechnologien und hoher Anpassungsfähigkeit.
 
 \subsubsection*{Grüne Variante}
 \lipsum[4]
