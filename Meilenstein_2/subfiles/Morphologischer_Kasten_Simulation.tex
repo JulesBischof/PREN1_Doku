@@ -1,0 +1,132 @@
+% \documentclass[DIV=21,12pt,captions=tableheading,landscape,a4paper]{scrreprt}
+% \usepackage{booktabs}
+% \usepackage{tikz} 
+
+
+
+
+\documentclass[main.tex]{subfiles} % Subfile-Class
+
+\begin{document}
+
+\begin{landscape} % Querformat beginnen
+  \thispagestyle{fancy}
+
+  % ======================================================= Moprhologischer Kasten Simulation
+
+  \subsubsection{Morphologischer Kasten Simulation}
+
+  \begin{tikzpicture}
+    \matrix[
+      matrix of nodes,
+      inner sep=0pt,
+      row sep=\zeilenabstand,
+      column sep=15pt,
+      nodes={font=\strut},
+      nodes in empty cells,
+      column 2/.style={text width=3.75cm},
+      column 3/.style={text width=3cm,align=center},
+      column 4/.style={text width=3cm,align=center},
+      column 5/.style={text width=3cm,align=center},
+      column 6/.style={text width=3cm,align=center},
+      column 7/.style={text width=3cm,align=center}
+    ](m){
+       & Betriebssystem
+       & Windows
+       & Linux
+       & MacOS
+       & Alle genannten OS
+       & -                              \\
+       & Darstellung
+       & 2-D
+       & 3-D
+       & mixed Reality
+       & 2-D mit Sensorfeedback
+       & -                              \\
+       & Pfadfindungsalgo
+       & Mehrere Algos
+       & A*-Algorithmus
+       & D*Lite
+       & Partikelfilter
+       & -                              \\
+       & Fahrzeugparameter
+       & editierbar
+       & fix
+       & lernfähige Parameter
+       & dynamisch anpassbar
+       & -                              \\
+       & Daten-Export
+       & Log-File
+       & CSV
+       & SQ-Lite
+       & JSON
+       & -                              \\
+       & Programmiersprache Frontend
+       & JavaScript
+       & Java (JavaFX)
+       & C++(QT)
+       & Python(Tkinter)
+       & -                              \\
+       & Programmiersprache Backend
+       & JavaScript
+       & Java
+       & C++
+       & Python
+       & -                              \\
+       & UI Technologie
+       & Webapplikation
+       & Desktop App
+       & CLI
+       & 3-D Simulation mit Interaktion
+       & -                              \\
+       & Auswertung
+       & Diagramme in MS Excel
+       & Log-Auswertung im Tool
+       & Live Dashboard mit Updates
+       & -
+       & -                              \\
+       & Simulations-geschwindigkeit
+       & Echtzeit
+       & Zeitraffer
+       & Verlangsamte Bewegung
+       & Anpassbar
+       & -                              \\
+       & Interaktions-möglichkeiten
+       & Passiv beobachten
+       & Eingreifen per Klick
+       & Eingreifen via Konsole
+       & Vollinteraktives Umfeld
+       & -                              \\
+       & Fahrverhalten
+       & konstant
+       & dynamisch (anpassbar)
+       & lernfähig
+       & -
+       & -                              \\
+    };
+    % Kopfzeile 
+    \node(ul)[anchor=south west]
+    at ([yshift={\zeilenabstand+\aboverulesep+\belowrulesep}]m.north west)
+    {Parameter};
+    \node(or)[anchor=south east] at (ul.north-|m-1-2.east){Ideen};
+    \foreach[count=\i from 3] \l in {1,2,3,4,5}
+    \node[anchor=base] at (or.base-|m-1-\i){\l};
+    % Tabellenlinien 
+    \draw[line width=\lightrulewidth](or.north-|ul.west)--(or.east|-ul.south)
+    ([yshift=-\aboverulesep]ul.south-|m.west)
+    --([yshift=-\aboverulesep]ul.south-|m.east);
+    \draw[line width=\heavyrulewidth]([yshift=\belowrulesep]or.north-|m.west)
+    --([yshift=\belowrulesep]or.north-|m.east)
+    ([yshift={-\aboverulesep}]m.south west)
+    --([yshift={-\aboverulesep}]m.south east);
+    % Verbindungslinien 
+    \begin{scope}[on background layer]
+      \verbindungslinie{green}{m-1-4}{m-2-3,m-3-5,m-4-4,m-5-6,m-6-4,m-7-4,m-8-4,m-9-5,m-10-3,m-11-3,m-12-5}
+      \verbindungslinie{red}{m-1-6}{m-2-3,m-3-3,m-4-3,m-5-5,m-6-3,m-7-6,m-8-3,m-9-5,m-10-6,m-11-3,m-12-4}
+    \end{scope}
+  \end{tikzpicture}
+  \captionof{table}{Morphologischer Kasten Simulation}\label{tab:morphKasten_simulation}
+
+\end{landscape} % Querformat beenden
+
+\end{document}

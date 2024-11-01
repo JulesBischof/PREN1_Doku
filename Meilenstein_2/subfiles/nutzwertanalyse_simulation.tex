@@ -9,120 +9,130 @@
 
 % Template
 
-\subsection{Nutzwertanalyse Simulation}
+\subsubsection{Nutzwertanalyse Simulation}
 
-\subsubsection{Plattform}
-Wie man an der Nutzwertanalyse auf der nächsten Seite erkennen kann, entschied man
-sich für eine web-basierte Lösung, in welcher die Simulation top-down in einem 2D-Format dargestellt wird.
-Hauptgrund für das Wählen einer webbasierten Lösung war die plattformübergreifende Verfügbarkeit einer
-solchen Software, da im Team mit unterschiedlichen Plattformen gearbeitet wird. Dadurch lässt sich
-nicht-funktionalen Aufwand bei der Entwicklung sparen, der nur dafür gebraucht worden wäre, um die Simulation
-bei allen aufzusetzen. Zusätzlich ist jedes Teammitglied mit Weboberflächen bestens vertraut und somit in
-der Lage, den Simulator ohne grosse Einarbeitungszeit zu bedienen.
+\subsubsection*{Plattform}
+Wie man an der Nutzwertanalyse auf der nächsten Seite erkennen kann, entschied
+man sich für eine web-basierte Lösung, in welcher die Simulation top-down in
+einem 2D-Format dargestellt wird. Hauptgrund für das Wählen einer webbasierten
+Lösung war die plattformübergreifende Verfügbarkeit einer solchen Software, da
+im Team mit unterschiedlichen Plattformen gearbeitet wird. Dadurch lässt sich
+nicht-funktionalen Aufwand bei der Entwicklung sparen, der nur dafür gebraucht
+worden wäre, um die Simulation bei allen aufzusetzen. Zusätzlich ist jedes
+Teammitglied mit Weboberflächen bestens vertraut und somit in der Lage, den
+Simulator ohne grosse Einarbeitungszeit zu bedienen.
 
-\subsubsection{Visualisierung \& Auswertung}
-Wir waren uns bereits früh in der Planung des Simulators einig, dass
-die Simulation nur in zwei Dimensionen dargestellt werden soll, da kein offensichtlicher Mehrwert in einer
-dreidimensionalen Darstellung gesehen wurde. Der verhältnismässig hohe Entwicklungsaufwand für keinen erkennbaren
-Mehrwert war der ausschlaggebende Grund für diese Entscheidung. Da der Simulator hauptsächlich als
-Testumgebung für unsere Pfadfindungsalgorithmen funktionieren wird, ist die realitätsnahe Darstellung der Simulation
-nicht von grosser Bedeutung. Die Bedienbarkeit der Simulation ist jedoch ein wichtiger Faktor, da
-die zu implementierenden Algorithmen ausgiebig getestet werden sollten und somit viel Zeit mit der Bedienung des Simulators verbracht wird.
-Deshalb wurde sich dafür entschieden, dass die Läufe der Simulation in einem Format gelogged werden sollen, das einen
-einfachen Export in ein anderes Format ermöglicht. So kann ein Nutzer der Simulation nach einem Lauf der Simulation mit
-beliebigen externen Tools die Daten weiterverarbeiten, analysieren und gegebenenfalls auch visualisieren.
+\subsubsection*{Visualisierung \& Auswertung}
+Wir waren uns bereits früh in der Planung des Simulators einig, dass die
+Simulation nur in zwei Dimensionen dargestellt werden soll, da kein
+offensichtlicher Mehrwert in einer dreidimensionalen Darstellung gesehen wurde.
+Der verhältnismässig hohe Entwicklungsaufwand für keinen erkennbaren Mehrwert
+war der ausschlaggebende Grund für diese Entscheidung. Da der Simulator
+hauptsächlich als Testumgebung für unsere Pfadfindungsalgorithmen funktionieren
+wird, ist die realitätsnahe Darstellung der Simulation nicht von grosser
+Bedeutung. Die Bedienbarkeit der Simulation ist jedoch ein wichtiger Faktor, da
+die zu implementierenden Algorithmen ausgiebig getestet werden sollten und
+somit viel Zeit mit der Bedienung des Simulators verbracht wird. Deshalb wurde
+sich dafür entschieden, dass die Läufe der Simulation in einem Format gelogged
+werden sollen, das einen einfachen Export in ein anderes Format ermöglicht. So
+kann ein Nutzer der Simulation nach einem Lauf der Simulation mit beliebigen
+externen Tools die Daten weiterverarbeiten, analysieren und gegebenenfalls auch
+visualisieren.
 
-\subsubsection{Wiederverwendbarkeit}
-Als letzter Punkt der Nutzwertanalyse wurde die Wiederverwendbarkeit der Simulation betrachtet.
-Mit der Wiederverwendbarkeit ist hauptsächlich gemeint, dass der Code so gestaltet werden soll, dass
-diser später auch auf der Hardware des Roboters verwenden werden kann. Das Konzept, das hier evaluiert wurde,
-hätte auf eine Frontend-Backend-Architektur gesetzt, bei welcher das Frontend die Simulation darstellt und das
-Backend per Request aufruft in welchem wir die eigentliche Logik der Pfadfindungsalgorithmen implementieren.
-In dieser Lösung wurde aber ein erheblich höherer Entwicklungsaufwand gesehen, wobei nicht einmal sicher ist,
-ob der geschriebene Code später wirklich wiederverwenden werden kann. Ein nachträgliches Transpilieren des Codes auf eine
-Sprache, die auf der Hardware des Roboters lauffähig ist, erachten wir nicht als Problem.
+\subsubsection*{Wiederverwendbarkeit}
+Als letzter Punkt der Nutzwertanalyse wurde die Wiederverwendbarkeit der
+Simulation betrachtet. Mit der Wiederverwendbarkeit ist hauptsächlich gemeint,
+dass der Code so gestaltet werden soll, dass diser später auch auf der Hardware
+des Roboters verwenden werden kann. Das Konzept, das hier evaluiert wurde,
+hätte auf eine Frontend-Backend-Architektur gesetzt, bei welcher das Frontend
+die Simulation darstellt und das Backend per Request aufruft in welchem wir die
+eigentliche Logik der Pfadfindungsalgorithmen implementieren. In dieser Lösung
+wurde aber ein erheblich höherer Entwicklungsaufwand gesehen, wobei nicht
+einmal sicher ist, ob der geschriebene Code später wirklich wiederverwenden
+werden kann. Ein nachträgliches Transpilieren des Codes auf eine Sprache, die
+auf der Hardware des Roboters lauffähig ist, erachten wir nicht als Problem.
 
 \begin{table}[ht]
     \centering
     \begin{tabular}{|p{0.14\linewidth}|p{0.15\linewidth}|p{0.115\linewidth}|p{0.08\linewidth}|p{0.09\linewidth}|p{0.08\linewidth}|p{0.09\linewidth}|}
-    \hline
-        &&&&&&\\[-9pt]
-        & \multirow{2}{*}{\textbf{Kriterien}} & Gewichtung & Punkte & Punkte & Punkte & Punkte \\[1pt]
-        &  & \{\%\} & \{1...10\} & gewichtet & \{1...10\} & gewichtet \\[1pt]
+        \hline
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & \multirow{2}{*}{\textbf{Kriterien}} & Gewichtung                                   & Punkte                                         & Punkte      & Punkte     & Punkte      \\[1pt]
+                                                           &                                     & \{\%\}                                       & \{1...10\}                                     & gewichtet   & \{1...10\} & gewichtet   \\[1pt]
         \hline
         \hline
-        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
-        \multirow{5}{4em}{\textbf{Plattform}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Nativ}} & \multicolumn{2}{c|}{\textbf{Web-based}} \\[1pt]
+                                                           & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{}                        & \multicolumn{2}{c|}{}                                                                   \\[-9pt]
+        \multirow{5}{4em}{\textbf{Plattform}}              & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{\textbf{Nativ}}          & \multicolumn{2}{c|}{\textbf{Web-based}}                                                 \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Entwicklungs-aufwand & 40 & 2 & 8 & 8 & 32 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Entwicklungs-aufwand                & 40                                           & 2                                              & 8           & 8          & 32          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Performance & 20 & 7 & 14 & 4 & 8 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Performance                         & 20                                           & 7                                              & 14          & 4          & 8           \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Bedienbarkeit & 40 & 4 & 16 & 7 & 28 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Bedienbarkeit                       & 40                                           & 4                                              & 16          & 7          & 28          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & \textbf{Summe} & \textbf{100} &  & \textbf{38} &  & \textbf{68} \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & \textbf{Summe}                      & \textbf{100}                                 &                                                & \textbf{38} &            & \textbf{68} \\[1pt]
         \hline
         \hline
-        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
-        \multirow{6}{4em}{\textbf{Visualisier-ung}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{3D}} & \multicolumn{2}{c|}{\textbf{2D}} \\[1pt]
+                                                           & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{}                        & \multicolumn{2}{c|}{}                                                                   \\[-9pt]
+        \multirow{6}{4em}{\textbf{Visualisier-ung}}        & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{\textbf{3D}}             & \multicolumn{2}{c|}{\textbf{2D}}                                                        \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Entwicklungs-aufwand & 40 & 3 & 12 & 8 & 32 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Entwicklungs-aufwand                & 40                                           & 3                                              & 12          & 8          & 32          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Interaktions-möglichkeit & 10 & 6 & 6 & 5 & 5 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Interaktions-möglichkeit            & 10                                           & 6                                              & 6           & 5          & 5           \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Realitätsnähe & 20 & 8 & 16 & 3 & 6 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Realitätsnähe                       & 20                                           & 8                                              & 16          & 3          & 6           \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Bedienbarkeit & 30 & 5 & 15 & 5 & 15 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Bedienbarkeit                       & 30                                           & 5                                              & 15          & 5          & 15          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & \textbf{Summe} & \textbf{100} &  & \textbf{49} &  & \textbf{58} \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & \textbf{Summe}                      & \textbf{100}                                 &                                                & \textbf{49} &            & \textbf{58} \\[1pt]
         \hline
         \hline
-        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
-        \multirow{5}{4em}{\textbf{Auswertung}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{In-tool}} & \multicolumn{2}{c|}{\textbf{Export + Scripts}} \\[1pt]
+                                                           & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{}                        & \multicolumn{2}{c|}{}                                                                   \\[-9pt]
+        \multirow{5}{4em}{\textbf{Auswertung}}             & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{\textbf{In-tool}}        & \multicolumn{2}{c|}{\textbf{Export + Scripts}}                                          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Entwicklungs-aufwand & 30 & 5 & 15 & 5 & 15 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Entwicklungs-aufwand                & 30                                           & 5                                              & 15          & 5          & 15          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Flexibilität & 40 & 4 & 16 & 6 & 24 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Flexibilität                        & 40                                           & 4                                              & 16          & 6          & 24          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Integration in Dokumentation & 30 & 2 & 6 & 8 & 24 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Integration in Dokumentation        & 30                                           & 2                                              & 6           & 8          & 24          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & \textbf{Summe} & \textbf{100} &  & \textbf{37} &  & \textbf{63} \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & \textbf{Summe}                      & \textbf{100}                                 &                                                & \textbf{37} &            & \textbf{63} \\[1pt]
         \hline
         \hline
-        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} \\[-9pt]
-        \multirow{6}{4em}{\textbf{Wieder-verwendbar-keit}} & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Splitting}} & \multicolumn{2}{c|}{\textbf{Kein Splitting}} \\[1pt]
-        & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{\textbf{Front-/Backend}} & \multicolumn{2}{c|}{\textbf{}} \\[1pt]
+                                                           & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{}                        & \multicolumn{2}{c|}{}                                                                   \\[-9pt]
+        \multirow{6}{4em}{\textbf{Wieder-verwendbar-keit}} & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{\textbf{Splitting}}      & \multicolumn{2}{c|}{\textbf{Kein Splitting}}                                            \\[1pt]
+                                                           & \multicolumn{2}{c|}{}               & \multicolumn{2}{c|}{\textbf{Front-/Backend}} & \multicolumn{2}{c|}{\textbf{}}                                                          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Entwicklungs-aufwand & 40 & 3 & 12 & 7 & 28 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Entwicklungs-aufwand                & 40                                           & 3                                              & 12          & 7          & 28          \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Austauschbar-keit & 30 & 8 & 24 & 2 & 6 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Austauschbar-keit                   & 30                                           & 8                                              & 24          & 2          & 6           \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & Transpilation & 30 & 8 & 24 & 2 & 6 \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & Transpilation                       & 30                                           & 8                                              & 24          & 2          & 6           \\[1pt]
         \cline{2-7}
-        &&&&&&\\[-9pt]
-        & \textbf{Summe} & \textbf{100} &  & \textbf{60} &  & \textbf{40} \\[1pt]
+                                                           &                                     &                                              &                                                &             &            &             \\[-9pt]
+                                                           & \textbf{Summe}                      & \textbf{100}                                 &                                                & \textbf{60} &            & \textbf{40} \\[1pt]
         \hline
         \hline
-        \multicolumn{2}{|c|}{} &&\multicolumn{2}{c|}{}&\multicolumn{2}{c|}{} \\[-9pt]
-        \multicolumn{2}{|c|}{\textbf{Gesamtsumme}} &  & \multicolumn{2}{c|}{\textbf{46}} & \multicolumn{2}{c|}{\textbf{57.25}} \\[1pt]
+        \multicolumn{2}{|c|}{}                             &                                     & \multicolumn{2}{c|}{}                        & \multicolumn{2}{c|}{}                                                                   \\[-9pt]
+        \multicolumn{2}{|c|}{\textbf{Gesamtsumme}}         &                                     & \multicolumn{2}{c|}{\textbf{46}}             & \multicolumn{2}{c|}{\textbf{57.25}}                                                     \\[1pt]
         \hline
-        \end{tabular}
+    \end{tabular}
     \caption{Nutzwertanalyse Simulation}
 \end{table}
 

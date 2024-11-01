@@ -2,36 +2,42 @@
 % \usepackage{booktabs}
 % \usepackage{tikz} 
 
-\usetikzlibrary{matrix, backgrounds} 
+% \usetikzlibrary{matrix, backgrounds} 
 
-\newcommand\zeilenabstand{10pt} 
+% \newcommand\zeilenabstand{10pt} 
 
-\def\GetNodeColumn(#1-#2-#3){#3}
+% \def\GetNodeColumn(#1-#2-#3){#3}
 
-\tikzset{vp/.style={circle, fill, inner sep=2pt}} 
-\newcommand\verbindungslinie[4][10pt]{ 
-  \node[#2, vp] at ([yshift=-.15*\zeilenabstand]#3.south) {};
-  \edef\co{\noexpand\GetNodeColumn(#3)}
-  \foreach[remember=\p as \lastp (initially #3)] \p in {#4} 
-    \edef\cl{\noexpand\GetNodeColumn(\lastp)}
-    \edef\cp{\noexpand\GetNodeColumn(\p)}
-    \draw[ultra thick, #2, draw opacity=.4]
-        ([yshift=-.15*\zeilenabstand,xshift={#1*(\co-\cl)}]\lastp.south) -- 
-        ([yshift=-.15*\zeilenabstand,xshift={#1*(\co-\cp)}]\p.south) 
-        node[vp] {}; 
-} 
+% \tikzset{vp/.style={circle, fill, inner sep=2pt}} 
+% \newcommand\verbindungslinie[4][10pt]{ 
+%   \node[#2, vp] at ([yshift=-.15*\zeilenabstand]#3.south) {};
+%   \edef\co{\noexpand\GetNodeColumn(#3)}
+%   \foreach[remember=\p as \lastp (initially #3)] \p in {#4} 
+%     \edef\cl{\noexpand\GetNodeColumn(\lastp)}
+%     \edef\cp{\noexpand\GetNodeColumn(\p)}
+%     \draw[ultra thick, #2, draw opacity=.4]
+%         ([yshift=-.15*\zeilenabstand,xshift={#1*(\co-\cl)}]\lastp.south) -- 
+%         ([yshift=-.15*\zeilenabstand,xshift={#1*(\co-\cp)}]\p.south) 
+%         node[vp] {}; 
+% } 
 
 
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
 \begin{document}
 
+\subsubsection{Morphologischer Kasten Pfadfinder}
+
+Die nachfolgenden Tabellen zeigen eine Zusammenstellung verschiedener
+Lösungsvarianten nach der Methode des morphologischen Kastens. Es werden drei
+Lösungskonzepte ausgearbeitet, welche im Anschluss in einer Nutzwertanalyse
+gegenübergestellt werden. Die Lösungskombinationen werden mittels
+verschiedenfarbiger Linien dargestellt. Die einzelnen Merkmale sind durch ein
+gemeinsames Brainstorming basierend auf Kriterien aus der Anforderungsliste
+entstanden. Die Kriterien sind in verschiedene Kategorien zusammengefasst.
+
 \begin{landscape} % Querformat beginnen
   \thispagestyle{fancy}
-
-  \section{Evaluation der Lösungsprinzipien}\label{sec:morphologischer_Kasten}
-
-  \subsection{Morphologischer Kasten Pfandfinder}
 
   \begin{tikzpicture}
     \matrix[
@@ -104,7 +110,7 @@
        & reine Vorplanung                              \\
        & Controller
        & Gesamte Regelung auf HLC
-       & Sensorik \& Aktorik über uC, Berechnung auf HLC
+       & Aufteilung auf $\mu$C \& HLC
        & -
        & -
        & -                                             \\
@@ -323,122 +329,7 @@
     node[xshift=\zeilenabstand,rotate=90]{Chassis}
     (m-9-1.south west);
   \end{tikzpicture}
-  \captionof{table}{Morphologischer Kasten}\label{morphKasten}
-
-  % ======================================================= Moprhologischer Kasten Simulation
-
-  \subsection{Morphologischer Kasten Simulation}
-
-  \begin{tikzpicture}
-    \matrix[
-      matrix of nodes,
-      inner sep=0pt,
-      row sep=\zeilenabstand,
-      column sep=15pt,
-      nodes={font=\strut},
-      nodes in empty cells,
-      column 2/.style={text width=3.75cm},
-      column 3/.style={text width=3cm,align=center},
-      column 4/.style={text width=3cm,align=center},
-      column 5/.style={text width=3cm,align=center},
-      column 6/.style={text width=3cm,align=center},
-      column 7/.style={text width=3cm,align=center}
-    ](m){
-       & Betriebssystem
-       & Windows
-       & Linux
-       & MacOS
-       & Alle genannten OS
-       & -                              \\
-       & Darstellung
-       & 2-D
-       & 3-D
-       & mixed Reality
-       & 2-D mit Sensorfeedback
-       & -                              \\
-       & Pfadfindungsalgo
-       & Mehrere Algos
-       & A*-Algorithmus
-       & D*Lite
-       & Partikelfilter
-       & -                              \\
-       & Fahrzeugparameter
-       & editierbar
-       & fix
-       & lernfähige Parameter
-       & dynamisch anpassbar
-       & -                              \\
-       & Daten-Export
-       & Log-File
-       & CSV
-       & SQ-Lite
-       & JSON
-       & -                              \\
-       & Programmiersprache Frontend
-       & JavaScript
-       & Java (JavaFX)
-       & C++(QT)
-       & Python(Tkinter)
-       & -                              \\
-       & Programmiersprache Backend
-       & JavaScript
-       & Java
-       & C++
-       & Python
-       & -                              \\
-       & UI Technologie
-       & Webapplikation
-       & Desktop App
-       & CLI
-       & 3-D Simulation mit Interaktion
-       & -                              \\
-       & Auswertung
-       & Diagramme in MS Excel
-       & Log-Auswertung im Tool
-       & Live Dashboard mit Updates
-       & -
-       & -                              \\
-       & Simulations-geschwindigkeit
-       & Echtzeit
-       & Zeitraffer
-       & Verlangsamte Bewegung
-       & Anpassbar
-       & -                              \\
-       & Interaktions-möglichkeiten
-       & Passiv beobachten
-       & Eingreifen per Klick
-       & Eingreifen via Konsole
-       & Vollinteraktives Umfeld
-       & -                              \\
-       & Fahrverhalten
-       & konstant
-       & dynamisch (anpassbar)
-       & lernfähig
-       & -
-       & -                              \\
-    };
-    % Kopfzeile 
-    \node(ul)[anchor=south west]
-    at ([yshift={\zeilenabstand+\aboverulesep+\belowrulesep}]m.north west)
-    {Parameter};
-    \node(or)[anchor=south east] at (ul.north-|m-1-2.east){Ideen};
-    \foreach[count=\i from 3] \l in {1,2,3,4,5}
-    \node[anchor=base] at (or.base-|m-1-\i){\l};
-    % Tabellenlinien 
-    \draw[line width=\lightrulewidth](or.north-|ul.west)--(or.east|-ul.south)
-    ([yshift=-\aboverulesep]ul.south-|m.west)
-    --([yshift=-\aboverulesep]ul.south-|m.east);
-    \draw[line width=\heavyrulewidth]([yshift=\belowrulesep]or.north-|m.west)
-    --([yshift=\belowrulesep]or.north-|m.east)
-    ([yshift={-\aboverulesep}]m.south west)
-    --([yshift={-\aboverulesep}]m.south east);
-    % Verbindungslinien 
-    \begin{scope}[on background layer]
-      \verbindungslinie{green}{m-1-4}{m-2-3,m-3-5,m-4-4,m-5-6,m-6-4,m-7-4,m-8-4,m-9-5,m-10-3,m-11-3,m-12-5}
-      \verbindungslinie{red}{m-1-6}{m-2-3,m-3-3,m-4-3,m-5-5,m-6-3,m-7-6,m-8-3,m-9-5,m-10-6,m-11-3,m-12-4}
-    \end{scope}
-  \end{tikzpicture}
-  \captionof{table}{Morphologischer Kasten Simulation}\label{morphKasten}
+  \captionof{table}{Morphologischer Kasten}\label{tab:morphKasten_pfadfinder}
 
 \end{landscape} % Querformat beenden
 

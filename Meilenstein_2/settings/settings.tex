@@ -5,3 +5,22 @@
 \setlength{\parindent}{0pt} % kein Einzug nach Absatz
 % \setlength{\parindent}{15pt} % Standardmässiger Einzug
 % \noindent % Temporär keinen Einzug
+
+\usetikzlibrary{matrix, backgrounds} 
+
+\newcommand\zeilenabstand{10pt} 
+
+\def\GetNodeColumn(#1-#2-#3){#3}
+
+\tikzset{vp/.style={circle, fill, inner sep=2pt}} 
+\newcommand\verbindungslinie[4][10pt]{ 
+  \node[#2, vp] at ([yshift=-.15*\zeilenabstand]#3.south) {};
+  \edef\co{\noexpand\GetNodeColumn(#3)}
+  \foreach[remember=\p as \lastp (initially #3)] \p in {#4} 
+    \edef\cl{\noexpand\GetNodeColumn(\lastp)}
+    \edef\cp{\noexpand\GetNodeColumn(\p)}
+    \draw[ultra thick, #2, draw opacity=.4]
+        ([yshift=-.15*\zeilenabstand,xshift={#1*(\co-\cl)}]\lastp.south) -- 
+        ([yshift=-.15*\zeilenabstand,xshift={#1*(\co-\cp)}]\p.south) 
+        node[vp] {}; 
+} 
