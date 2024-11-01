@@ -9,24 +9,92 @@
 
 % Template
 
-
 \section{Auswahl der optimalen Lösungskombinationen}
-Im folgenden Abschnitt werden die drei Varianten aus dem morphologischen Kasten schriftlich festgehalten.
+Im folgenden Abschnitt werden die drei Varianten aus dem morphologischen Kasten
+schriftlich festgehalten.
 
 \subsection{Rote Variante}
-Die rote Variante bahnt sich den Weg durch das Netzwerk, indem diese immer zu den nächsten Nodes vorausschaut. Es ist daher ein probabilistischer Algorithmus, welcher das Netzwerk bei der Fahrt aufzeichnet. Die verschiedenen Nodes sowie die Verbindungslinien können mit einem Liniensensor aus einem Infrarot-Array detektiert werden. Damit das Fahrzeug auf der Linie bleibt und nicht den Fliesenfugen nachfährt, wird ein zweites Infrarot-Array als Liniensensor eingebaut. Bevor eine Strecke befahren wird, wird bereits mit einem LIDAR geprüft, ob eine Pylone auf dem nächsten Wegpunkt sein wird. Es wird ebenfalls der Unterschied zwischen einer Pylone und einem Hindernis mit dem LIDAR erkannt. Dafür wird der Höhenunterschied beider Objekte ausgenutzt. Um Kollisionen mit Hindernissen auf der Strecke zu verhindern und diese gleichzeitig gezielt zu lokalisieren, wird eine Lichtschranke verwendet, welche durch das Hindernis unterbrochen wird. Damit die aktuelle Position im Graph möglichst exakt bestimmt werden kann, wird ein Gyroskop für die Winkelbestimmung verwendet, sowie die gefahrene Strecke gemessen. Mit beiden Werten kann der Graph grob nachgerechnet werden. Somit werden der Graph und die fehlenden Linien probabilistisch bestimmt. Die Antriebsregelung sowie die Sensorauswertungen werden auf einem Microcontroller ausgewertet. Die Steuersignale werden mit einem HLC berechnet.\newline
-Der Energiespeicher ist ein Lithium-Ionen-Akku und der Akkustand wird durch ein LCD angezeigt. Wenn das Ziel erreicht wird, wird dies mit einem Piezo-Alarm ausgegeben. Für die Zielerkennung wird eine Kamera eingesetzt, welche die Beschriftung der Nodes erkennen kann.\newline
-Das Fahrzeug fährt mit zwei Gummirädern und einer Kugel und wird von bidirektionalen Schrittmotoren angetrieben. Die Hindernis-Aufnahmevorrichtung wird mit einem Klemmgreifer, welcher von oben ohne Winkelausrichtung zupackt, realisiert. Bei der Umplatzierung des Hindernisses dreht sich das Fahrzeug um 180 Grad und positioniert es am korrekten Ort anhand der gefahrenen Distanz und des Liniensensors. Nach dem Absetzen des Hindernisses fährt es noch ein Stück rückwärts und dreht sich wieder um 180 Grad zurück. Die Z-Positionierung wird mit einem Linearmodul realisiert. Das Fahrzeug kann im Notfall durch den Buzzer gestoppt werden.
+Die rote Variante bahnt sich den Weg durch das Netzwerk, indem diese immer zu
+den nächsten Nodes vorausschaut. Es ist daher ein probabilistischer
+Algorithmus, welcher das Netzwerk bei der Fahrt aufzeichnet. Die verschiedenen
+Nodes sowie die Verbindungslinien können mit einem Liniensensor aus einem
+Phototransistor-Array detektiert werden. Damit das Fahrzeug auf der Linie
+bleibt und nicht den Fliesenfugen nachfährt, wird ein zweites
+Phototransistor-Array als Liniensensor eingebaut. Bevor eine Strecke befahren
+wird, wird bereits mit einem LIDAR geprüft, ob eine Pylone auf dem nächsten
+Wegpunkt sein wird. Es wird ebenfalls der Unterschied zwischen einer Pylone und
+einem Hindernis mit dem LIDAR erkannt. Dafür wird der Höhenunterschied beider
+Objekte ausgenutzt. Um Kollisionen mit Hindernissen auf der Strecke zu
+verhindern und diese gleichzeitig gezielt zu lokalisieren, wird eine
+Lichtschranke verwendet, welche durch das Hindernis unterbrochen wird. Damit
+die aktuelle Position im Graph möglichst exakt bestimmt werden kann, wird ein
+Gyroskop für die Winkelbestimmung verwendet, sowie die gefahrene Strecke
+gemessen. Mit beiden Werten kann der Graph grob nachkonstruiert werden. Somit
+werden der Graph und die fehlenden Linien probabilistisch bestimmt. Die
+Antriebe sowie die Sensoren werden auf einem Microcontroller angesteuert. Die
+Steuersignale werden mit einem High-Level-Controller(\textit{HLC}), z.B. einem
+Raspberry Pi, berechnet.
+
+Der Energiespeicher ist ein Lithium-Akku und der Akkustand wird durch eine
+LCD-Anzeige angezeigt. Wenn das Ziel erreicht wird, wird dies mit einem
+Piezo-Alarm ausgegeben. Für die Zielerkennung wird eine Kamera eingesetzt,
+welche die Beschriftung der Nodes erkennen kann.
+
+Das Fahrzeug fährt mit zwei Gummirädern und wird mit
+Schrittmotoren angetrieben. Einen dritten Auflagepunkt bildet eine nachlaufende Kugel. Die Hindernis-Aufnahmevorrichtung
+wird mit einem Klemmgreifer, welcher von oben ohne Winkelausrichtung zupackt,
+realisiert. Bei der Umplatzierung des Hindernisses dreht sich das Fahrzeug um
+180 Grad und positioniert es am korrekten Ort anhand der gefahrenen Distanz und
+des Liniensensors. Nach dem Absetzen des Hindernisses fährt es noch ein Stück
+rückwärts und dreht sich wieder um 180 Grad zurück. Die Z-Positionierung wird
+mit einem Linearmodul realisiert. Das Fahrzeug kann im Notfall durch einen Buzzer
+gestoppt werden.
 
 \subsection{Blaue Variante}
-Die Pfadfindung in der blauen Variante ist ähnlich der roten Variante. Jedoch werden in der blauen Variante die Nodes mittels einer Kamera detektiert. Die Kamera wird ausserdem verwendet, um den Weg durch das Netzwerk zu bestimmen. Hiermit wird am Start ein Bild des Netzwerks erstellt. Mithilfe dieses Bildes wird der Weg entsprechend den gesperrten Wegpunkten, Hindernissen und der  Strecke gewichtet und möglichst optimal abgefahren. Der Rest der Umwelterfassung ist identisch mit der roten Variante.\newline
-Der Energiespeicher ist ein Lithium-Ionen-Akku, welcher den Energiestand durch ein LCD angibt. Die Zielerkennung wird durch eine reine Navigation ermöglicht und die Zielankunft wird mit dem Piezo-Alarm mitgeteilt.\newline
-Das Fahrzeug wird mit einer mittleren Achse mit zwei Gummirädern gelenkt und hat vorne und hinten je eine Kugel zur Stützung. Für den Antrieb des Fahrzeugs wird ein DC-Motor verwendet. Ein Hindernis wird mit einem Gabelstapler durch die jeweiligen Löcher im Hindernis aufgenommen. Das Fahrzeug hat eine symmetrische Bauform und kann deshalb nach dem Absetzen des Hindernisses Rückwärts weiterfahren. Durch die gefahrene Distanz und durch den Liniensensor weiss das Fahrzeug exakt, wo es das Hindernis absetzen muss. Die Z-Positionierung wird mit einem Linearmodul ermöglicht. Im Notfall kann das Fahrzeug mit einem Buzzer gestoppt werden.
+Die Pfadfindung in der blauen Variante ist ähnlich der roten Variante. Jedoch
+werden in der blauen Variante die Nodes mittels einer Kamera detektiert. Die
+Kamera wird ausserdem verwendet, um den Weg durch das Netzwerk zu bestimmen.
+Hierzu wird am Start ein Bild des Netzwerks erstellt. Mithilfe dieses Bildes
+wird der Weg entsprechend den gesperrten Wegpunkten, Hindernissen und der
+Strecke gewichtet und möglichst optimal abgefahren. Der Rest der
+Umwelterfassung ist identisch mit der roten Variante.
+
+Der Energiespeicher ist ein Lithium-Akku, welcher den Energiestand durch eine
+LCD-Anzeige angibt. Die Zielerkennung wird durch eine reine Navigation
+ermöglicht und die Zielankunft wird mit dem Piezo-Alarm mitgeteilt.
+
+Das Fahrzeug wird mit einer mittleren Achse mit zwei Gummirädern gelenkt und
+hat vorne und hinten je eine Kugel zur Stützung. Für den Antrieb des Fahrzeugs
+wird ein DC-Motor verwendet. Ein Hindernis wird mit einem Gabelstapler durch
+die jeweiligen Löcher im Hindernis aufgenommen. Das Fahrzeug hat eine
+symmetrische Bauform und kann deshalb nach dem Absetzen des Hindernisses
+Rückwärts weiterfahren. Durch die gefahrene Distanz und durch den Liniensensor
+weiss das Fahrzeug exakt, wo es das Hindernis absetzen muss. Die
+Z-Positionierung wird mit einem Linearmodul ermöglicht. Im Notfall kann das
+Fahrzeug mit einem Buzzer gestoppt werden.
 
 \subsection{Grüne Variante}
-Bei der grünen Variante wird auf Brut-Force gesetzt, also durch ein rein systematisches Ausprobieren aller möglichen Lösungen soll ein Weg durch das Netzwerk gefunden werden. Die Nodes, Linien und die Fliesenfugen werden mittels Bilderkennung erfasst und unterschieden. Auf ein Detektieren der fehlenden Linien wird verzichtet. Auch die Hindernisse und Pylonen werden mit Bilderkennung erkannt und unterschieden. Die aktuelle Position im Netzwerk wird durch den Fahrwinkel und die gefahrene Strecke laufend berechnet. Um Kollisionen mit einem Hindernis zu verhindern, wird eine Lichtschranke verwendet. Aufgrund der Brute-Force-Taktik wird bei der Kartenerkennung nur auf auftretende Ereignisse reagiert. Weil eine hohe Rechenleistung anfällt, wird die gesamte Regelung auf einem HLC realisiert.\newline
-Ein Nickel-Cadmium-Akku versorgt das Fahrzeug mit genug Energie. Der Akku-Stand wird mit mehreren LEDs angezeigt. Die Ankunft im Ziel wird durch die Bilderkennung erkannt und mit einem Lautsprecher ausgegeben.\newline
-Damit das Fahrzeug möglichst manövrierfähig ist, werden Mecanumräder mit einer Panzerlenkung verwendet. Als Antrieb werden DC-Motoren genommen. Die Hindernis-Aufnahmevorrichtung ist ein Klemmgreifer, welcher rotierbar ist. Somit wird das Hindernis um das Fahrzeug herumgedreht. Das Hindernis wird mit der Kamera positioniert. Die Z-Positionierung wird mit einer Hebebühne realisiert. Das Fahrzeug kann jederzeit mit einem Buzzer gestoppt werden.
+Bei der grünen Variante wird auf Brute-Force gesetzt, also durch ein rein
+systematisches Ausprobieren aller möglichen Lösungen soll ein Weg durch das
+Netzwerk gefunden werden. Die Nodes, Linien und die Fliesenfugen werden mittels
+Bilderkennung erfasst und unterschieden. Auf ein Detektieren der fehlenden
+Linien wird verzichtet. Auch die Hindernisse und Pylonen werden mit
+Bilderkennung erkannt und unterschieden. Die aktuelle Position im Netzwerk wird
+durch den Fahrwinkel und die gefahrene Strecke laufend berechnet. Um
+Kollisionen mit einem Hindernis zu verhindern, wird eine Lichtschranke
+verwendet. Aufgrund der Brute-Force-Taktik wird bei der Kartenerkennung nur auf
+auftretende Ereignisse reagiert. Weil eine hohe Rechenleistung anfällt, wird
+die gesamte Regelung auf einem HLC realisiert.
 
+Ein Nickel-Cadmium-Akku versorgt das Fahrzeug mit genug Energie. Der Akku-Stand
+wird mit mehreren LEDs angezeigt. Die Ankunft im Ziel wird durch die
+Bilderkennung erkannt und mit einem Lautsprecher ausgegeben.
+
+Damit das Fahrzeug möglichst manövrierfähig ist, werden Mecanumräder mit einer
+Panzerlenkung verwendet. Als Antrieb werden DC-Motoren genommen. Die
+Hindernis-Aufnahmevorrichtung ist ein Klemmgreifer, welcher rotierbar ist.
+Somit wird das Hindernis um das Fahrzeug herumgedreht. Das Hindernis wird mit
+der Kamera positioniert. Die Z-Positionierung wird mit einer Hebebühne
+realisiert. Das Fahrzeug kann jederzeit mit einem Buzzer gestoppt werden.
 
 \end{document}
