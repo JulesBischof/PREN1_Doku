@@ -11,21 +11,36 @@
 
 \subsection{Nutzwertanalyse Simulation}
 
-Wie man an der Nutzwertanalyse auf der nächsten Seite erkennen kann, entschieden wir
-uns für ein web-basierte Lösung, in welchem wir die Simulation top-down in einem 2d-Format darstellen.
-Hauptgrund für das Wählen einer web-basierten Lösung war die plattformübergreifende Verfügbarkeit einer
-solchen Software, da wir im Team mit unterschiedlichen Plattformen arbeiten. Dadurch lässt sich
-nicht-funktionalen Aufwand bei der Entwicklung sparen, der nur dafür gebraucht worden wäre um die Simulation
+\subsubsection{Plattform}
+Wie man an der Nutzwertanalyse auf der nächsten Seite erkennen kann, entschied man
+sich für eine web-basierte Lösung, in welcher die Simulation top-down in einem 2d-Format dargestellt wird.
+Hauptgrund für das Wählen einer webbasierten Lösung war die plattformübergreifende Verfügbarkeit einer
+solchen Software, da im Team mit unterschiedlichen Plattformen gearbeitet wird. Dadurch lässt sich
+nicht-funktionalen Aufwand bei der Entwicklung sparen, der nur dafür gebraucht worden wäre, um die Simulation
 bei allen aufzusetzen. Zusätzlich ist jedes Teammitglied mit Weboberflächen bestens vertraut und somit in
-der Lage den Simulator ohne grosse Einarbeitungszeit zu bedienen.
-\\\\
-Wir waren uns bereits früh in der Planung des Simulators einig, dass wir
-die Simulation nur in zwei Dimensionen darstellen wollen, da wir keinen Mehrwert in einer
-dreidimensionalen Darstellung sahen. Der verhältnismässig hohe Entwicklungsaufwand für keinen erkennbaren
-Mehrwert war der ausschlaggebende Grund für unsere Entscheidung. Da wir den Simulator hauptsächlich als
-Testumgebung für unsere Pfadfindungsalgorithmen sehen, ist die die realitätsnahe Darstellung dder Simulation
-nicht von grosser Bedeutung. Die Bedienbarkeit der Simulation ist jedoch ein wichtiger Faktor, da wir
-die zu implementierenden Algorithmen ausgiebig testen wollen und somit viel Zeit mit der Bedienung verbracht wird.
+der Lage, den Simulator ohne grosse Einarbeitungszeit zu bedienen.
+
+\subsubsection{Visualisierung \& Auswertung}
+Wir waren uns bereits früh in der Planung des Simulators einig, dass
+die Simulation nur in zwei Dimensionen dargestellt werden soll, da kein offensichtlicher Mehrwert in einer
+dreidimensionalen Darstellung gesehen wurde. Der verhältnismässig hohe Entwicklungsaufwand für keinen erkennbaren
+Mehrwert war der ausschlaggebende Grund für diese Entscheidung. Da der Simulator hauptsächlich als
+Testumgebung für unsere Pfadfindungsalgorithmen funktionieren wird, ist die realitätsnahe Darstellung der Simulation
+nicht von grosser Bedeutung. Die Bedienbarkeit der Simulation ist jedoch ein wichtiger Faktor, da
+die zu implementierenden Algorithmen ausgiebig getestet werden sollten und somit viel Zeit mit der Bedienung des Simulators verbracht wird.
+Deswegen entschied man sich auch, dass die Läufe der Simulation in einem Format gelogged werden sollen, das einen
+einfachen Export in ein anderes Format ermöglicht. So kann ein Nutzer der Simulation nach einem Lauf der Simulation mit
+beliebigen externen Tools die Daten weiterverarbeiten, analysieren und gegebenenfalls auch visualisieren.
+
+\subsubsection{Wiederverwendbarkeit}
+Als letzter Punkt der Nutzwertanalyse wurde die Wiederverwendbarkeit der Simulation betrachtet.
+Mit der Wiederverwendbarkeit ist hauptsächlich gemeint, dass der Code so gestaltet werden soll, dass
+diser später auch auf der Hardware des Roboters verwenden werden kann. Das Konzept, das hier evaluiert wurde,
+hätte auf eine Frontend-Backend-Architektur gesetzt, bei welcher das Frontend die Simulation darstellt und das
+Backend per Request aufruft in welchem wir die eigentliche Logik der Pfadfindungsalgorithmen implementieren.
+In dieser Lösung wurde aber ein erheblich höherer Entwicklungsaufwand gesehen, wobei nicht einmal sicher ist,
+ob der geschriebene Code später wirklich wiederverwenden werden kann. Ein nachträgliches Transpilieren des Codes auf eine
+Sprache, die auf der Hardware des Roboters lauffähig ist, erachten wir nicht als Problem.
 
 \begin{table}[ht]
     \centering
