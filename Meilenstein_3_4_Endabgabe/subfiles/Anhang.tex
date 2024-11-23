@@ -9,17 +9,25 @@
 
 \section{Anhang}
 
-\subfile{./Anhang_subfiles/subfile_template.tex}
+% Anhang aus Inhaltsverzeichnis entfernen
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % Reduziert Tiefe auf 0
+\appendix
+
 \newpage
 
-Anforderungsliste
+\tableofcontents
 
-Risikoanalyse
+\subfile{./Anhang_subfiles/Evaluation_Elektronik_subfiles/Boardnetz.tex}
+\newpage
 
-Morphologischen Kasten
+% Anforderungsliste
 
-Projektplan
+% Risikoanalyse
 
-Technologierecherche
+% Morphologischen Kasten
+
+% Projektplan
+
+% Technologierecherche
 
 \end{document}
