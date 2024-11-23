@@ -16,11 +16,10 @@ Pfadfinders. Wie die Evaluation der Energieversorgung ergeben hat, siehe Anhang
 XXXXXXXXXX, wird der Roboter über einen 4S-LiPo mit Energie versorgt. Die
 Ausgangsspannung von 14.4V wird auf dem selbst entwickelten DC-PowerBoard
 mittels eines Abwärtsstellers auf 12V geregelt. Dieses Board bietet ausserdem
-die Möglichkeit, über ein Netzteil in einem Bereich von 12 bis 18 V gespiesen
-zu werden und dabei den Akku selbsttätig zu trennen. Dadurch ist der Roboter
-bei Entwicklungs- und Einrichtungsaufgaben nicht zwingend auf die
-Energieversorgung via Batterie angewiesen, sondern kann auch über ein Netzteil
-betrieben werden.
+die Möglichkeit, über ein Netzteil in einem Bereich von 12 bis 18 V versorgt zu
+werden und dabei den Akku selbsttätig zu trennen. Dadurch ist der Roboter bei
+Entwicklungs- und Einrichtungsaufgaben nicht zwingend auf die Energieversorgung
+via Batterie angewiesen, sondern kann auch über ein Netzteil betrieben werden.
 
 Die Batteriespannung und der Batteriestrom werden über einen ADC überwacht und
 können via $I^2C$ vom Raspberry Pi ausgelesen werden.
@@ -49,7 +48,13 @@ Dadurch wird verhindert, dass sich Spannungsspitzen oder Ripples durch zum
 Beispiel die anlaufenden Motoren im gesamten System verteilen und andere
 Elektronik stört. Die jeweils vorgeschalteten Gleichtaktdrosseln verhindern,
 dass sich Störungen, verursacht durch laufende Motoren und deren EMI, im System
-verteilen. Das Blockschaltbild in Abbildung XXXXXXXXX zeigt die
-Spannungsverteilung konzeptionell. %%%%%% ABBILDUNG BLOCKSCHALTBILD
+verteilen. Das Blockschaltbild in Abbildung~\ref{PowerBoard_Blockschaltbild}
+zeigt die Spannungsverteilung konzeptionell.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 1\linewidth]{fig_Boardnetz/PowerBoard-Blockschaltbild.pdf}
+    \caption{PowerBoard Blockschaltbild}~\label{PowerBoard_Blockschaltbild}
+\end{figure}
 
 \end{document}

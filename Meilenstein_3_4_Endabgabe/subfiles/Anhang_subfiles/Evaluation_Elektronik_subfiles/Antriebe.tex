@@ -7,7 +7,7 @@
 
 \begin{document}
 
-\section{Konzeption Antriebe}
+\section{Konzepterstellung Antriebe}
 
 Dieser Abschnitt befasst sich mit den Antrieben des Pfadfinders. Dabei werden
 sowohl verschiedene Motorenkonzepte diskutiert, als auch potentiell
@@ -15,7 +15,7 @@ Einsatzfähige Motoren herausgesucht. Im Abschluss wird noch Konzeptionell
 zusammengefasst wie diese Antriebe anzusteuern sind.
 
 % ===================================================
-\subsection{Anforderungen}
+\subsection*{Anforderungen}
 
 \begin{description}
     \item[Beschleunigung] Eine selbstgesetzte, ehrgeizige Anforderung an das Gerät ist,
@@ -52,21 +52,21 @@ Die Anforderungen an den Akku schliessen aufgrund der 12V-Boardnetzspannung
 Industrietaugliche 24V-Motoren bereits aus. Diese sind zwar sehr robust,
 allerdings in den meisten Fällen auch sehr schwer.
 
-\subsubsection{Leistungsanforderungen an Motoren}
+\subsubsection*{Leistungsanforderungen an Motoren}
 
 ==============================================================================
 Text Yanik zu Dimensionierung
 ==============================================================================
 
 % ===================================================
-\subsection{Konzeption}
+\subsection*{Konzeption}
 
 Aus den Leistungsanforderungen an die Motoren heraus lässt sich auf dem Markt
 schauen, welche Motoren potentiell zur Verfügung stehen könnten. Diese lassen
 sich wiederrum in den Kriterien Kosten, Gewicht, Leistung und
 Entwicklungsaufwand gegeneinander vergleichen.
 
-\subsubsection{Konzept 1 - Bipolarer Schrittmotor} % =========
+\subsubsection*{Konzept 1 - Bipolarer Schrittmotor} % =========
 
 Die Wahl für einen Bipolaren Schrittmotor fällt, da er bei gleichem Gewicht
 eine grössere Ausnutzung der Spulen bringt - woraus eine höhere Leistung bei
@@ -119,7 +119,7 @@ Tabelle~\ref{tab:Schrittmotorentreiber_different}.
     \label{tab:Schrittmotorentreiber_different}
 \end{table}
 
-\subsubsection{Konzept 2 - Radnabenmotor} % =========
+\subsubsection*{Konzept 2 - Radnabenmotor} % =========
 
 Es gibt fertig zu kaufende Radnaben auf dem Markt, welche zum teil bereits
 sowohl Endstufen als auch eine Ansteuerung beinhalten.
@@ -141,7 +141,7 @@ und besitzt einen integrierten Encoder. Ein grosser Nachteil dagegen ist, dass
 mit diesem Motor das ehrgeizige Ziel einer Beschleunigung von $2 \frac{m}{s^2}$
 voraussichtlich nicht erreicht werden kann.
 
-\subsubsection{Konzept 3 - BLDC-Motor} % =========
+\subsubsection*{Konzept 3 - BLDC-Motor} % =========
 
 BLDC Motoren bieten den grossen Vorteil, dass sie bei kleinem Gewicht eine hohe
 Leistung erreichen können. Ihr Drehmoment hingegen ist eher gering - woraus die
@@ -192,7 +192,7 @@ Als Vertreter dieser Produktgruppe ist der folgende zu nennen.
     \caption{BLDC-Treiber}
 \end{table}
 
-\subsubsection{Fazit und Entscheid aus der Konzeptionsphase}  % =========
+\subsubsection*{Fazit und Entscheid aus der Konzeptionsphase}  % =========
 
 In der Gruppe ist der Entscheid darauf gefallen, den Schrittmotor von DFRobot,
 gezeigt in Abbildung~\ref{fig:DFROBOT_FIT0278}, in Kombination mit den
@@ -241,12 +241,12 @@ Positionsregelung befasst, während der High-Level-Controller lediglich
 Entscheidungen trifft, in welche Richtung gefahren werden muss.
 
 % ===================================================
-\subsection{Entwicklung und Dimensionierung}
+\subsection*{Entwicklung und Dimensionierung}
 
 % ===================================================
-\subsection{Versuche}
+\subsection*{Versuche}
 
 % ===================================================
-\subsection{Fazit und Ausblick}
+\subsection*{Fazit und Ausblick}
 
 \end{document}
