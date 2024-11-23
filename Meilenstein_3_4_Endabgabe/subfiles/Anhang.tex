@@ -1,6 +1,5 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
-
 % ============================================================================== %
 %                            Anhang document                                    %
 % ============================================================================== %
@@ -8,16 +7,12 @@
 \begin{document}
 
 \section{Anhang}
-
-% Anhang aus Inhaltsverzeichnis entfernen
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % Reduziert Tiefe auf 0
 \appendix
 
+\subfile{./Anhang_subfiles/Evaluation_Elektronik_subfiles/Boardnetz.tex}
 \newpage
 
-\tableofcontents
-
-\subfile{./Anhang_subfiles/Evaluation_Elektronik_subfiles/Boardnetz.tex}
+\subfile{./Anhang_subfiles/Evaluation_Elektronik_subfiles/Antriebe.tex}
 \newpage
 
 % Anforderungsliste
