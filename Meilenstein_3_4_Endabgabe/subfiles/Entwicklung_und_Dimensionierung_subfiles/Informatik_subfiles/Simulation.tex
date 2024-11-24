@@ -15,6 +15,26 @@ Im Laufe der Entwicklung wurde immer mehr klar, dass es durch das Wegnehmen von 
 zu einem Navigationsproblem kommen kann. Deswegen hat man sich dafür entschieden, nicht mit den Algorithmen
 Dijkstra und D*Lite weiterzufahren. Vollständigkeitshalber sind sie aber noch im Simulator enthalten.
 
+\paragraph{Manuelle Bearbeitung von Knoten und Kanten}
+
+Der Simulator erlaubt eine intuitive manuelle Bearbeitung von Knoten und Kanten im Graphen direkt über die Benutzeroberfläche. Dies ermöglicht es dem Nutzer, die Simulation individuell anzupassen und spezifische Szenarien zu testen:
+
+\begin{itemize}
+    \item \textbf{Knoten bearbeiten}:  
+    Durch einfaches Klicken auf einen Knoten wird ein Pylon auf diesen gesetzt. Der Pylon repräsentiert ein Hindernis auf dem Knoten. Ein erneutes Klicken entfernt den Pylon wieder, wodurch der Knoten frei wird.
+
+    \item \textbf{Kanten bearbeiten}:  
+    Kanten durchlaufen drei Zustände, die durch wiederholtes Klicken in einem zyklischen Ablauf geändert werden können:
+    \begin{enumerate}
+        \item \textit{Normale Strecke}: Die Kante ist ohne Hindernis befahrbar.
+        \item \textit{Entfernte Strecke}: Die Kante wird entfernt, was im UI durch eine gestrichelte Linie angezeigt wird.
+        \item \textit{Strecke mit Schranke}: Die Kante ist befahrbar, hat jedoch eine Schranke, die zusätzliche Fahrzeit oder eine andere Einschränkung symbolisiert.
+    \end{enumerate}
+    Nach einem weiteren Klick kehrt die Kante wieder in den Ausgangszustand als normale Strecke zurück. Dieser Zyklus wird im UI visuell hervorgehoben, um den aktuellen Zustand klar darzustellen.
+\end{itemize}
+
+Diese Funktionen bieten eine flexible Möglichkeit, den Graphen an spezifische Anforderungen anzupassen und verschiedene Hindernisszenarien zu simulieren.
+
 \paragraph{Funktionen und Modus-Optionen}
 
 Der Simulator bietet drei verschiedene Betriebsmodi. Diese werden durch Tabs voneinander graphisch getrennt:
