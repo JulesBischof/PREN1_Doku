@@ -17,7 +17,7 @@ Dijkstra und D*Lite weiterzufahren. Vollständigkeitshalber sind sie aber noch i
 
 \paragraph{Manuelle Bearbeitung von Knoten und Kanten}
 
-Der Simulator erlaubt eine intuitive manuelle Bearbeitung von Knoten und Kanten im Graphen direkt über die Benutzeroberfläche. Dies ermöglicht es dem Nutzer, die Simulation individuell anzupassen und spezifische Szenarien zu testen:
+Der Simulator erlaubt eine intuitive manuelle Bearbeitung von Knoten und Kanten im Graphen direkt über die Benutzeroberfläche. Dies ermöglicht es dem Nutzer, die Simulation individuell anzupassen und spezifische Szenarien zu testen~\ref{fig:DashboardGraph}:
 
 \begin{itemize}
     \item \textbf{Knoten bearbeiten}:  
@@ -33,26 +33,15 @@ Der Simulator erlaubt eine intuitive manuelle Bearbeitung von Knoten und Kanten 
     Nach einem weiteren Klick kehrt die Kante wieder in den Ausgangszustand als normale Strecke zurück. Dieser Zyklus wird im UI visuell hervorgehoben, um den aktuellen Zustand klar darzustellen.
 \end{itemize}
 
-Diese Funktionen bieten eine flexible Möglichkeit, den Graphen an spezifische Anforderungen anzupassen und verschiedene Hindernisszenarien zu simulieren.
-
-\paragraph{Funktionen und Modus-Optionen}
-
-Der Simulator bietet drei verschiedene Betriebsmodi. Diese werden durch Tabs voneinander graphisch getrennt:
-
-\begin{itemize}
-    \item \textbf{Interactive run}:
-    Dieser Modus erlaubt die interaktive Nutzung des Simulators, wobei spezifische Funktionen und Parameter durch den Benutzer \{tbd\} angepasst werden können.
-
-    \item \textbf{Parameterized run}:  
-    In diesem Modus können mehrere Durchläufe automatisiert durchgeführt werden. Es ist möglich, Parameter wie die Fahrzeit auf verschiedenen Strecken (normale Strecken vs. Strecken mit Barrieren), die Anzahl der zu simulierenden Durchläufe (z. B. 100 Runs) und andere Variablen zu spezifizieren. Der Simulator generiert dabei zufällige Graphen und löst diese mittels eines heuristikbasierten Tiefensuchalgorithmus (DFS).
-
-    \item \textbf{Explore Map}:  
-    In diesem Modus wird der heuristikbasierte DFS-Algorithmus visuell dargestellt. Der Nutzer kann das Ziel pro Durchlauf selbst bestimmen, wodurch der Graph Schritt für Schritt aufgedeckt wird. Diese Visualisierung identifiziert auch Knoten, die durch mathematische Berechnungen erkannt werden, obwohl der Roboter diese nicht direkt besucht hat. Wenn eine neu entdeckte Kante eine bereits bekannte Kante schneidet, wird anhand linearer Algebra auf die Existenz eines Knotens geschlossen.
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Simulation/Graph.png}
+    \caption{Section für Graph im Dashboard}~\label{fig:DashboardGraph}
+\end{figure}
 
 \paragraph{Visualisierung und Steuerung}
 
-Die Steuerung und Visualisierung des Graphen erfolgt über ein benutzerfreundliches Dashboard. Es stehen drei wesentliche Optionen zur Verfügung:
+Die Steuerung und Visualisierung des Graphen erfolgt über ein benutzerfreundliches Dashboard. Es stehen drei wesentliche Optionen zur Verfügung~\ref{fig:DashboardGraph}:
 
 \begin{itemize}
     \item \textbf{Randomized Graph}:  
@@ -65,9 +54,32 @@ Die Steuerung und Visualisierung des Graphen erfolgt über ein benutzerfreundlic
     Stellt den Zustand aller Knoten und Kanten auf ihre Standardeinstellungen zurück. Unterschiedliche Stati wie \emph{probed} (gelb), \emph{visited} (grün), \emph{restricted} (rot) oder \emph{finished} (blau) werden visuell hervorgehoben und erlauben eine präzise Nachverfolgung des Algorithmus.
 \end{itemize}
 
+Diese Funktionen bieten eine flexible Möglichkeit, den Graphen an spezifische Anforderungen anzupassen und verschiedene Hindernisszenarien zu simulieren.
+
+\paragraph{Funktionen und Modus-Optionen}
+
+Der Simulator bietet drei verschiedene Betriebsmodi. Diese werden durch Tabs voneinander graphisch getrennt~\ref{fig:DashboardConfig}:
+
+\begin{itemize}
+    \item \textbf{Interactive run}:
+    Dieser Modus erlaubt die interaktive Nutzung des Simulators, wobei spezifische Funktionen und Parameter durch den Benutzer \{tbd!!!!!!\} angepasst werden können.
+
+    \item \textbf{Parameterized run}:  
+    In diesem Modus können mehrere Durchläufe automatisiert durchgeführt werden. Es ist möglich, Parameter wie die Fahrzeit auf verschiedenen Strecken (normale Strecken vs. Strecken mit Barrieren), die Anzahl der zu simulierenden Durchläufe (z. B. 100 Runs) und andere Variablen zu spezifizieren. Der Simulator generiert dabei zufällige Graphen und löst diese mittels eines heuristikbasierten Tiefensuchalgorithmus (DFS).
+
+    \item \textbf{Explore Map}:  
+    In diesem Modus wird der heuristikbasierte DFS-Algorithmus visuell dargestellt. Der Nutzer kann das Ziel pro Durchlauf selbst bestimmen, wodurch der Graph Schritt für Schritt aufgedeckt wird. Diese Visualisierung identifiziert auch Knoten, die durch mathematische Berechnungen erkannt werden, obwohl der Roboter diese nicht direkt besucht hat. Wenn eine neu entdeckte Kante eine bereits bekannte Kante schneidet, wird anhand linearer Algebra auf die Existenz eines Knotens geschlossen.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Simulation/SimulatorConfig.png}
+    \caption{Bereich für Betriebsmodi und deren Konfiguration}~\label{fig:DashboardConfig}
+\end{figure}
+
 \paragraph{Log-Analyse}
 
-Der Simulator enthält ein integriertes Log-System, das die Entscheidungen des Algorithmus dokumentiert. Die Logs können direkt im Dashboard gelesen oder als CSV-Datei exportiert werden. Folgende Funktionen stehen zur Verfügung:
+Der Simulator enthält ein integriertes Log-System, das die Entscheidungen des Algorithmus dokumentiert. Die Logs können direkt im Dashboard gelesen oder als CSV-Datei exportiert werden. Folgende Funktionen stehen zur Verfügung~\ref{fig:DashboardLogs}:
 
 \begin{itemize}
     \item \textbf{Clear Logs}:  
@@ -79,6 +91,12 @@ Der Simulator enthält ein integriertes Log-System, das die Entscheidungen des A
     \item \textbf{Clear Screen}:  
     Entfernt die Logs aus der Ansicht, ohne diese zu löschen.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Simulation/SimulatorLogs.png}
+    \caption{Bereich für Anzeige, Export und Löschung der Logs}~\label{fig:DashboardLogs}
+\end{figure}
 
 Die Persistenz der Logs gewährleistet, dass auch nach dem Entfernen vom Bildschirm sämtliche Daten für den Export erhalten bleiben.
 
