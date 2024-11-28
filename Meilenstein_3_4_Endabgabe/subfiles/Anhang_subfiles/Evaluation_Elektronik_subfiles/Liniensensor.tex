@@ -1,0 +1,69 @@
+\documentclass[main.tex]{subfiles} % Subfile-Class
+
+
+% ============================================================================== %
+%                            Subfile document                                    %
+% ============================================================================== %
+
+\begin{document}
+
+% Template
+
+\section{Dimensionierung Liniensensor mit UV und IR Lichtspektren}
+
+Im folgendem Abschnitt wird untersucht ob sich das infrarot Spektrum oder das ultraviolette Spektrum besser für
+die Unterscheidung des Klebebands zum Wettkampfuntergrund eignet. Zuerst müssen aber alle Komponenten der Messzellen, 
+welche mit unterschiedlichen Wellenlängen emittierenden Dioden und Fototransistoren ausgestattet sind, berechnet werden.
+
+
+\subsection{Dimensionierung IR-Messzelle}
+In diesem Abschnitt wird eine IR-Messzelle dimensionert. Gemäss Datenblatt kann über dem IR-Emitter von 1.3 bis 2V
+abfallen. Die Speisespannung beträgt 3.3V. Der maximaler Strom beträgt 100mA. Der Strom wird gewählt, dass er ungefähr im 
+Bereich von 10mA bis 60mA fällt. Dies wurde so gewählt, das nicht zu viel Leistung verbraucht wird, aber der Emitter trotzdem 
+mit genügen Strom versorgt wird. Daraus resultiert die folgende Widersandsberechnung:
+\[
+    R_{max} = \frac{U_q - U_{LED}}{I_{LEDmin}} = \frac{3.3V - 1.3V}{0.01A} = 200ohm
+\]
+\[
+    R_{min} = \frac{U_q - U_{LED}}{I_{LEDmax}} = \frac{3.3V - 1.3V}{0.03A} = 33.33ohm
+\]
+Daraus resultiert ein Potentiometer Rp1 von 200ohm und ein R1.1 von 33ohm.
+
+Nun wird der Widerstand R1.3 Dimensioniert. Die Speisespannung von 3.3V wird direkt von einem Microcontoller übernommen
+und der Fototransistor wird als Konstantstromquelle betrachtet. Der daraus resultierende Strom wurde in einem Versuch gemessen
+und im AnhangXYZ dokumentiert. Daher resultiert der Widerstand:... !!!!!Werte nachfragen!!!!!!
+
+%===========================================================================================================%
+
+\subsection{Dimensionierung UV-Messzelle}
+In diesem Abschnitt wird die UV-Messzelle dimensioniert.
+Über die Speisespannung von 5V wird eine UV-Emitter mit Vorwiderstand bestromt. Der empfohlene Strom
+wird Gemäss dem Datenblatt des UV-Emitters von 10mA bis 20mA vorgeschlagen. Ausserdem darf der Strom nicht 
+30mA übersteigen. Daher resultiert: 
+
+\[
+    R_{max} = \frac{U_q - U_{LED}}{I_{LEDmin}} = \frac{5V - 2.9V}{0.01A} = 210ohm
+\]
+\[
+    R_{min} = \frac{U_q - U_{LED}}{I_{LEDmax}} = \frac{5V - 2.9V}{0.03A} = 70ohm
+\]
+Daraus resultiert ein Potentiometer Rp1 von 200ohm und ein R1.1 von 82ohm, welches ungefähr im zuvor festgelegten
+Strombereich liegt:
+\[
+    I_{max} = \frac{U_R}{R_{min}} = \frac{2.1}{82ohm} = 0.0256A = 25.6mA
+\]
+\[
+    I_{min} = \frac{U_R}{R_{max}} = \frac{2.1}{282ohm} = 0.00745A = 7.45mA
+\]
+Aufgrund dieser Widerstandsaufteilung kann der Strom ungefähr in dem empfohlenen Bereich frei eingestellt werden.
+
+
+Nun wird der Widerstand R1.3 Dimensioniert. Die Speisespannung von 3.3V wird direkt von einem Microcontoller übernommen
+und der Fototransistor wird als Konstantstromquelle betrachtet. Der daraus resultierende Strom wurde in einem Versuch gemessen
+und im AnhangXYZ dokumentiert. Daher resultiert der Widerstand:... !!!!!Werte nachfragen!!!!!!
+
+\subsection{Versuchsmessungen}
+!!!!!!Messungen aufzeigen und vergleichen!!!!!
+
+%===========================================================================================================%
+\end{document}
