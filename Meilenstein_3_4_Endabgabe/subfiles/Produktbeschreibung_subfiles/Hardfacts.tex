@@ -1,6 +1,5 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
-
 % ============================================================================== %
 %                            Subfile document                                    %
 % ============================================================================== %
@@ -11,6 +10,31 @@
 
 \subsection{Hardfacts}
 
-Text here
+Die folgenden technischen Daten beschreiben die wichtigsten Eigenschaften und Leistungsparameter des entwickelten Fahrzeugs:
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Eigenschaft}            & \textbf{Wert} \\ \hline
+        Maximale Geschwindigkeit        & 2.0 m/s       \\ \hline
+        Energieversorgung               & 4S LiPo-Akku (14.4V, 2200 mAh) \\ \hline
+        Betriebsdauer                   & ca. 20 Minuten (durchschnittlich) \\ \hline
+        Maximale Leistung               & 30 W          \\ \hline
+        Stromverbrauch im Leerlauf      & 5 W           \\ \hline
+        Maximale Traglast der Greifeinheit & 200 g       \\ \hline
+        Abmessungen                     & 30 cm x 30 cm x 50 cm \\ \hline
+        Gewicht                         & 1.8 kg        \\ \hline
+        Navigationsalgorithmus          & Heuristikbasierter DFS \\ \hline
+        Sensoren                        & Liniensensor, Abstandssensor, Kamera \\ \hline
+        Kommunikationsschnittstellen    & UART, I2C     \\ \hline
+        Steuerungseinheit               & Raspberry Pi 5 \\ \hline
+        Greifermechanik                 & Motorisierter Parallelgreifer \\ \hline
+        Entwicklungstool für Simulation & Svelte.js-basierter Simulator \\ \hline
+    \end{tabular}
+    \caption{Technische Daten des autonomen Fahrzeugs}
+    \label{tab:hardfacts}
+\end{table}
 
 \end{document}
