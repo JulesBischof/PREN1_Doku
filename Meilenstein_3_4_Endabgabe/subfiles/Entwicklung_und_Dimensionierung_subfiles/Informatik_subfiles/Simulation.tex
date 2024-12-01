@@ -8,12 +8,57 @@
 
 \subsubsection{Simulation}
 
+\paragraph{Konzeption}
+
+Der Simulator wurde so konzipiert, dass er eine flexible und intuitive Plattform zur Analyse und Optimierung von Navigationsalgorithmen bereitstellt. Die Architektur basiert auf vier Hauptkomponenten, die über gemeinsam genutzte Datenstrukturen und Stores miteinander kommunizieren. Das folgende Diagramm verdeutlicht den Aufbau des Simulators und die Interaktion zwischen den Komponenten:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Simulation/SimulatorKomponentenDiagramm.png}
+    \caption{Aufbau des Simulators und dessen Komponenten}~\label{fig:SimulatorKomponentenDiagramm}
+\end{figure}
+
+Die zentralen Komponenten sind:
+\begin{itemize}
+    \item \textbf{GraphViewer:} Visualisiert den Graphen und ermöglicht die Aktualisierung der Knoten und Kanten im \textit{GraphStructure}-Store. Nutzer:innen können über diese Komponente den aktuellen Zustand des Graphen einsehen und manuelle Änderungen vornehmen.
+    \item \textbf{DashboardViewer:} Bietet eine Benutzeroberfläche zur Konfiguration der Simulation und interagiert mit dem \textit{Configs}-Store, um Simulationsparameter zu lesen oder zu schreiben. Hier können Betriebsmodi ausgewählt und Simulationseinstellungen angepasst werden.
+    \item \textbf{GraphExplorer:} Die zentrale Komponente des Simulators, die den Graphen analysiert, Pfade berechnet und Logs im \textit{Logs}-Store speichert. Der \textit{GraphExplorer} übernimmt die Hauptlogik der Simulation und entscheidet über die Navigationsstrategien.
+    \item \textbf{LogViewer:} Ermöglicht die Ansicht und Analyse der im \textit{Logs}-Store gespeicherten Simulationslogs. Nutzer:innen können die Entscheidungen und den Fortschritt des Algorithmus nachvollziehen.
+\end{itemize}
+
+Die Kommunikation zwischen den Komponenten erfolgt über drei zentrale Stores:
+\begin{itemize}
+    \item \textbf{GraphStructure:} Speichert den Zustand des Graphen, inklusive der Knoten und Kanten, und wird von \textit{GraphViewer} und \textit{GraphExplorer} genutzt.
+    \item \textbf{Logs:} Enthält alle Simulationslogs, die von \textit{GraphExplorer} geschrieben und von \textit{LogViewer} gelesen werden können. Diese Logs dokumentieren die Schritte und Entscheidungen während der Simulation.
+    \item \textbf{Configs:} Speichert die Simulationsparameter, die von \textit{DashboardViewer} konfiguriert und von \textit{GraphExplorer} gelesen werden. Dazu gehören Einstellungen wie Betriebsmodi, Parameter für Algorithmen und benutzerdefinierte Anpassungen.
+\end{itemize}
+
+\paragraph{Allgemeine Funktionen}
+
 Der entwickelte Simulator dient der Visualisierung, Analyse und Optimierung von Algorithmen zur Navigation eines Roboters in einem unbekannten Graphennetzwerk. Er wurde mit dem Ziel konzipiert, eine flexible und intuitive Plattform für die Simulation unterschiedlicher Szenarien zu bieten. Die Funktionen sind so ausgelegt, dass sowohl die interaktive Bedienung als auch automatisierte Simulationen und visuelle Darstellungen unterstützt werden.
-Es wurden verschiedene Algorithmen im Simulator implementiert, wie Dijkstra, A* und D*Lite.
-Letztendlich hat sich das Informatikteam dafür entschieden, einen eigenen Algorithmus zu entwickeln.
-Im Laufe der Entwicklung wurde immer mehr klar, dass es durch das Wegnehmen von Strecken auf dem Graph
-zu einem Navigationsproblem kommen kann. Deswegen hat man sich dafür entschieden, nicht mit den Algorithmen
-Dijkstra und D*Lite weiterzufahren. Vollständigkeitshalber sind sie aber noch im Simulator enthalten.
+
+Es wurden verschiedene Algorithmen im Simulator implementiert, wie Dijkstra, A* und D*Lite. Letztendlich hat sich das Informatikteam dafür entschieden, einen eigenen Algorithmus zu entwickeln. Im Laufe der Entwicklung wurde immer mehr klar, dass es durch das Wegnehmen von Strecken auf dem Graph zu einem Navigationsproblem kommen kann. Deswegen hat man sich dafür entschieden, nicht mit den Algorithmen Dijkstra und D*Lite weiterzufahren. Vollständigkeitshalber sind sie aber noch im Simulator enthalten.
+
+\paragraph{Visualisierung und Steuerung}
+
+Die Steuerung und Visualisierung des Graphen erfolgt über ein benutzerfreundliches Dashboard. Es stehen drei wesentliche Optionen zur Verfügung~\ref{fig:DashboardGraph}:
+
+\begin{itemize}
+    \item \textbf{Randomized Graph}:  
+    Generiert einen neuen, zufällig aufgebauten Graphen, der als Grundlage für die Simulation dient.
+
+    \item \textbf{Reset Graph}:  
+    Setzt den Graphen in seinen Ursprungszustand zurück, entfernt alle Barrieren, Pylonen und andere Modifikationen.
+
+    \item \textbf{Reset State}:  
+    Stellt den Zustand aller Knoten und Kanten auf ihre Standardeinstellungen zurück. Unterschiedliche Stati wie \emph{probed} (gelb), \emph{visited} (grün), \emph{restricted} (rot) oder \emph{finished} (blau) werden visuell hervorgehoben und erlauben eine präzise Nachverfolgung des Algorithmus.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Simulation/Graph.png}
+    \caption{Section für Graph im Dashboard}~\label{fig:DashboardGraph}
+\end{figure}
 
 \paragraph{Manuelle Bearbeitung von Knoten und Kanten}
 
@@ -33,36 +78,13 @@ Der Simulator erlaubt eine intuitive manuelle Bearbeitung von Knoten und Kanten 
     Nach einem weiteren Klick kehrt die Kante wieder in den Ausgangszustand als normale Strecke zurück. Dieser Zyklus wird im UI visuell hervorgehoben, um den aktuellen Zustand klar darzustellen.
 \end{itemize}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{./fig_Simulation/Graph.png}
-    \caption{Section für Graph im Dashboard}~\label{fig:DashboardGraph}
-\end{figure}
-
-\paragraph{Visualisierung und Steuerung}
-
-Die Steuerung und Visualisierung des Graphen erfolgt über ein benutzerfreundliches Dashboard. Es stehen drei wesentliche Optionen zur Verfügung~\ref{fig:DashboardGraph}:
-
-\begin{itemize}
-    \item \textbf{Randomized Graph}:  
-    Generiert einen neuen, zufällig aufgebauten Graphen, der als Grundlage für die Simulation dient.
-
-    \item \textbf{Reset Graph}:  
-    Setzt den Graphen in seinen Ursprungszustand zurück, entfernt alle Barrieren, Pylonen und andere Modifikationen.
-
-    \item \textbf{Reset State}:  
-    Stellt den Zustand aller Knoten und Kanten auf ihre Standardeinstellungen zurück. Unterschiedliche Stati wie \emph{probed} (gelb), \emph{visited} (grün), \emph{restricted} (rot) oder \emph{finished} (blau) werden visuell hervorgehoben und erlauben eine präzise Nachverfolgung des Algorithmus.
-\end{itemize}
-
-Diese Funktionen bieten eine flexible Möglichkeit, den Graphen an spezifische Anforderungen anzupassen und verschiedene Hindernisszenarien zu simulieren.
-
 \paragraph{Funktionen und Modus-Optionen}
 
 Der Simulator bietet drei verschiedene Betriebsmodi. Diese werden durch Tabs voneinander graphisch getrennt~\ref{fig:DashboardConfig}:
 
 \begin{itemize}
     \item \textbf{Interactive run}:
-    Dieser Modus erlaubt die interaktive Nutzung des Simulators, wobei spezifische Funktionen und Parameter durch den Benutzer \{tbd!!!!!!\} angepasst werden können.
+    Dieser Modus erlaubt die interaktive Nutzung des Simulators, wobei spezifische Funktionen und Parameter durch den Benutzer angepasst werden können.
 
     \item \textbf{Parameterized run}:  
     In diesem Modus können mehrere Durchläufe automatisiert durchgeführt werden. Es ist möglich, Parameter wie die Fahrzeit auf verschiedenen Strecken (normale Strecken vs. Strecken mit Barrieren), die Anzahl der zu simulierenden Durchläufe (z. B. 100 Runs) und andere Variablen zu spezifizieren. Der Simulator generiert dabei zufällige Graphen und löst diese mittels eines heuristikbasierten Tiefensuchalgorithmus (DFS).
@@ -98,16 +120,8 @@ Der Simulator enthält ein integriertes Log-System, das die Entscheidungen des A
     \caption{Bereich für Anzeige, Export und Löschung der Logs}~\label{fig:DashboardLogs}
 \end{figure}
 
-Die Persistenz der Logs gewährleistet, dass auch nach dem Entfernen vom Bildschirm sämtliche Daten für den Export erhalten bleiben.
-
 \paragraph{Fazit}
 
 Der Simulator bietet eine vielseitige Plattform für die Simulation und Analyse von Navigationsalgorithmen. Durch die Kombination aus visueller Darstellung, flexiblen Betriebsmodi und präzisem Logging ermöglicht er ein umfassendes Verständnis der Funktionsweise und Leistungsfähigkeit der eingesetzten Algorithmen.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{./fig_Simulation/SimulatorKomponentenDiagramm.png}
-    \caption{Aufbau des Simulators und dessen Komponenten}~\label{fig:SimulatorKomponentenDiagramm}
-\end{figure}
 
 \end{document}
