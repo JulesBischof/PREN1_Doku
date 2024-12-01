@@ -1,5 +1,7 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
+
+
 % ============================================================================== %
 %                            Subfile document                                    %
 % ============================================================================== %
@@ -47,7 +49,7 @@ Sensorik.
 % ===================================
 \subsection*{Konzeption}
 
-\subsubsection{Erkennen von Hindernissen und Pylonen}
+\subsubsection*{Erkennen von Hindernissen und Pylonen}
 Geplant ist, mit einem Sensor über die Hindernisse hinweg zu schauen, um so
 Pylonen zu erkennen. Ein zweiter Sensor, welcher sich etwas tiefer befindet,
 soll Hindernisbarrieren erkennen können. So wird über die Höhendifferenz
@@ -115,12 +117,14 @@ dieses Projekt erhältlich sind. Abbildung~\ref{fig:SICK_Sensor} zeigt eine
 solche Lichtschranke.
 
 \subsubsection*{Kamera und Bilderkennung}
-
-!!!!!!!!!!!! % TEXT 
+Der Pfadfinder wird in jedem Fall eine Kamera verbaut haben, da mit dieser
+versucht werden soll, verschiedene Linienabgänge zu detektieren. Mit dieser Kamera
+ist es durchaus ebenfalls möglich, Hindernisse zu erkennen. Kameras sind allerdings
+genau zu prüfen, gerade im Bezug auf Störempfindlichkeit bei unterschiedlichen Lichtverhältnissen.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{./fig_Hinderniserkennung/SICK_Lichtschranke.png}
+    \includegraphics[width=0.25\linewidth]{./fig_Hinderniserkennung/SICK_Lichtschranke.png}
     \caption{Lichstchranke SICK}~\label{fig:SICK_Sensor}
 \end{figure}
 
@@ -134,7 +138,7 @@ Abbildung~\ref{fig_TFLuna} gezeigt.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{./fig_Hinderniserkennung/TFLuna_Benewake.png}
+    \includegraphics[width=0.25\linewidth]{./fig_Hinderniserkennung/TFLuna_Benewake.png}
     \caption{TFLuna LIDAR}~\label{fig:TFLuna}
 \end{figure}
 

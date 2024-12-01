@@ -12,10 +12,11 @@
 \subsubsection{Antriebe und Dimensionierung}
 
 Dieser Abschnitt beschäftigt sich mit der Auswahl eines passenden Antriebs für
-den Pfadfinder. Die Evaluation der Antriebe, siehe Anhang XXXXXXXXXX, hat
-ergeben, dass ein Schrittmotor der Firma DFRobot, siehe
-Abbildung~\ref{Schrittmotor_FIT0278}, eingesetzt wird. Dieser ist in der Lage,
-mit 1.7A den Pfadfinder auf bis zu $2\frac{m}{s}$ zu beschleunigen.
+den Pfadfinder. Die Evaluation der Antriebe, siehe
+Anhang~\ref{appendix:Antriebe}, hat ergeben, dass ein Schrittmotor der Firma
+DFRobot, siehe Abbildung~\ref{Schrittmotor_FIT0278}, eingesetzt wird. Dieser
+ist in der Lage, mit 1.7A den Pfadfinder auf bis zu $2\frac{m}{s}$ zu
+beschleunigen.
 
 \begin{figure}[H]
     \centering
@@ -65,7 +66,13 @@ UART-Schnittstelle. Der Greifer-Controller kann dem Antriebs-Controller
 ebenfalls via UART, Signale übermitteln, welche die Antriebe anhalten - das
 Fahrzeug drehen oder eben weiterfahren lassen.
 
-Abbildung \textbf{BILD!!!!!!!!!!!!} zeigt schematisch, welche Funktionsgruppen
-das entsprechende Board enthält.
+Abbildung~\ref{fig:Blockschaltbild_Motioncontroller}zeigt schematisch, welche
+Funktionsgruppen das entsprechende PCB enthält.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 1\linewidth]{fig_Antriebe_und_Dimensionierung/MotionController_Blockschaltbild.pdf}
+    \caption{Blockschaltbild Motion Controller}~\label{fig:Blockschaltbild_Motioncontroller}
+\end{figure}
 
 \end{document}

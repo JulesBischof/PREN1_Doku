@@ -25,26 +25,27 @@ laufend korrigiert dadurch, dass jeweils Freitags in der Diskussionsrunde der
 aktuelle Stand abgeholt, sowie ggf. Korrekturen an dieser Planung vorgenommen
 werden.
 
-Meetings innerhalb des Teams regelmässig einmal pro Woche jeweils am Freitag
-statt. In dieser Gesprächsrunde werden zuerst die abgeschlossenen ToDo's
+Meetings innerhalb des Teams finden regelmässig einmal pro Woche jeweils am
+Freitag statt. In dieser Gesprächsrunde werden zuerst die abgeschlossenen Tasks
 besprochen, bevor im Anschluss eventuelle Knackpunkte im Team besprochen werden
 können. So weiss jeder, woran der jeweils andere aktuell am arbeiten ist und es
 wird darüber hinaus eine Plattform geboten Ideen und Anmerkungen aus anderen
-Fachbereichen einfliessen zu lassen.
+Fachbereichen einfliessen zu lassen sowie Abhängigkeiten frühzeitig zu erkennen
+und Teilentwicklungen aufeinander anzupassen. 
 
 \subsubsection*{Planungstool}
-Das Projekt wird mit dem \textit{GitHub Projects} Tool geplant. Dieses Tool stellt im wesentlichen
-ein Kanban-Board dar, welches mit vielen individuellen Anpassmöglichkeiten eine feine
-Abstimmung auf dieses Projekt bietet.
+Das Projekt ist mit dem \textit{GitHub Projects} Tool geplant. Dieses Tool stellt im wesentlichen
+ein Kanban-Board dar, welches mit den vielen individuellen Anpassmöglichkeiten eine feine
+Abstimmung auf verschiedene Projekte bietet.
 
-So gibt es für jedes Teammitglied sowohl eine Übersicht über den
-Gesamt-Backlog, sowie eine Ansicht für den individuellen Backlog. Die Ansicht
-Roadmap bietet eine Darstellung aller Tasks auf einem Zeitstrahl. Grundsätzlich
-könnte zu jedem Issue gleich auch Dokumentation in Form von Kommentaren
-geschrieben werden. In dieser Zusammenarbeit aber wird allerdings in einem
-separaten Projektordner dokumentiert. Abbildung~\ref{fig:GitHubProjectsTool}
-zeigt die verschiedenen Menüs, sowie das eingerichtete Kanban-Board für das
-Projektteam.
+Es ist für jedes Teammitglied sowohl eine Übersicht über den Gesamt-Backlog,
+als auch eine Ansicht für den individuellen Backlog eingerichtet. Die Ansicht
+\textit{Roadmap} bietet eine Darstellung aller Tasks auf einem Zeitstrahl.
+Grundsätzlich könnte zu jedem Issue gleich auch Dokumentation in Form von
+Kommentaren geschrieben werden. In dieser Zusammenarbeit aber wird allerdings
+in einem separaten Projektordner dokumentiert.
+Abbildung~\ref{fig:GitHubProjectsTool} zeigt die verschiedenen Menüs, sowie das
+eingerichtete Kanban-Board für das Projektteam.
 
 \begin{figure}[h!]
     \centering
@@ -53,17 +54,19 @@ Projektteam.
 \end{figure}
 
 \subsubsection*{Datenmanagement}
-Es ist ein Projektordner eingerichtet, in welchem jedes Teammitglied seine Arbeit ausführen kann. Zugriff darauf
+Es ist ein Projektordner eingerichtet, in welchem jedes Teammitglied seine Arbeit ablegen kann. Zugriff darauf
 haben die Teammitglieder via \textit{OneDrive}.
 Dabei gibt es für die Disziplinen Elektronik sowie Mechanik jeweils eigene Ordner, in denen Konstruktionsdaten,
-CAD-Files oder etwas Bauteilauslegungen und PCB-Planungen abgelegt werden. Die Dokumentation
-selbst wird in einem eigens dafür eingerichteten \textit{git Repository} geführt versioniert.
+CAD-Files oder etwa Bauteilauslegungen und PCB-Planungen abgelegt werden. Die Dokumentation
+selbst wird in einem eigens dafür eingerichteten \textit{git Repository} geführt und versioniert.
 Dadurch wird ermöglicht, dass jedes Teammitglied zur gleichen Zeit an der in \LaTeX geschriebenen
 Dokumentation weiterarbeiten kann.
 
 Der Teamleiter erstellt zu jedem Meilenstein bereits frühzeitig eine Vorlage
 mit allen geforderten Unterdateien in Form einer Disposition. Jedes geforderte
 Kapitel wird dabei durch eine eigene Unterdatei repräsentiert. So kommt es nur
-sehr unwahrscheinlich zu Merge-Konflikten innerhalb des Repositorys.
+sehr unwahrscheinlich zu Merge-Konflikten innerhalb des Repositorys und es kann
+mit \textit{Trunk-based development} gearbeitet werden - was den Einstieg in
+\textit{git} für unerfahrene Mitglieder vereinfacht.
 
 \end{document}

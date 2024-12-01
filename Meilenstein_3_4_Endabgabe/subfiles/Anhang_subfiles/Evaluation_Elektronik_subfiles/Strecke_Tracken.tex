@@ -91,12 +91,14 @@ Per Software ist noch ein Treshhold-Wert eingestellt, mit welchem ganz leichtes
 Zittern des Sensorwertes ignoriert werden kann. Mit diesen Werten können
 Winkeländerungen von 360° in weniger als einer Sekunde problemlos erfasst
 werden, ohne dass der Winkel in der Summe davon driftet. Diese Technik hat sich
-also bewährt und wird auch so im Pfadfinder eingesetzt. Der Antriebscontroller
-wird ein Gyroskop auf dem PCB selbst verbaut haben, welcher einer neueren
-Generation als der bei diesen Versuchen eingesetzten Gyroskope entspricht
-(\textit{ICM42670}). Seine Art der Ansteuerung unterschiedet sich jedoch kaum
-von der des hier ausprobierten. Der Antriebscontroller wird genügend I2C
+also bewährt und wird auch so im Pfadfinder eingesetzt.
+
+Der \textit{Motion Board} PCB wird ein Gyroskop auf dem verbaut haben, welcher
+einer neueren Generation als der bei diesen Versuchen eingesetzten Gyroskope
+entspricht (\textit{ICM42670}). Dies mit dem Grund, dass dieses Gyroskop
+mittlerweile obsolet ist. Seine Art der Ansteuerung unterschiedet sich jedoch
+kaum von der des hier getesteten. Das \textit{Motion Board} wird genügend I2C
 Schnittstellen besitzen, um zu einem späteren Zeitpunkt wieder auf den hier
-geprüften Sensor zurück zu wechseln.
+getesteten Sensor zurück zu wechseln.
 
 \end{document}
