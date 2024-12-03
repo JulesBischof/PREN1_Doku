@@ -11,13 +11,12 @@
 
 \subsubsection{Sensorik Strecken Rückverfolgung}
 
-Der Algorithmus setzt vorraus, dass das Gerät immer und zu jeder Zeit seine
-Orientierung als absoluten Winkel ab dem Startpunkt weiss und die
-zurückgelegten Strecken messen kann. Dieser Abschnitt behandelt, wie der
-Pfadfinder eben diese Information sicherstellt.
-Abbildung~\ref{fig:Blockschaltbild_StreckenTracken} zeigt schematisch auf, wie
-diese Funktion umgesetzt wird. Die danach folgende Beschreibung führt dieses
-Schema nochmal aus.
+Der Algorithmus setzt voraus, dass das Gerät immer und zu jeder Zeit seine
+Orientierung als absoluten Winkel ab dem Startpunkt weiss und die zurückgelegte
+Strecke messen kann. Dieser Abschnitt behandelt, wie der Pfadfinder eben diese
+Information erfasst. Abbildung~\ref{fig:Blockschaltbild_StreckenTracken} zeigt
+schematisch auf, wie diese Funktion umgesetzt wird. Die danach folgende
+Beschreibung führt dieses Schema nochmal aus.
 
 \begin{figure}[h!]
     \centering
@@ -29,20 +28,21 @@ Schema nochmal aus.
 \paragraph{Winkelerfassung}
 Der Winkel des Pfadfinders wird, wie in Anhang~\ref{appendix:Strecke_Tracken}
 konzeptioniert, über ein Gyroskop ermittelt. Dieses erfasst die Änderungsrate
-des aktuellen Winkels zu jeder Zeit und Integriert sie jede $25\mu s$ numerisch
+des aktuellen Winkels zu jeder Zeit und integriert sie jede $25\mu s$ numerisch
 auf. Dadurch kann eine sehr genaue Angabe darüber getroffen werden, in welcher
 Orientierung sich das Gerät aktuell befindet.
 
 Mangels Echtzeitfähigkeit ist es nicht sicher, ob der Raspberry Pi in der Lage
-ist, das Gyroskop ausreichend genau auszulesen. Deshalb wird ein entsprechender
-Steckplatz sowohl auf dem Antriebs-Controller, als auch auf dem Raspberry-HAT
-vorgesehen, um dies im Nachfolgemodul PREN2 noch zu testen.
+ist, das Gyroskop ausreichend genau und häufig auszulesen. Deshalb wird ein
+entsprechender Steckplatz sowohl auf dem Antriebs-Controller, als auch auf dem
+Raspberry-HAT vorgesehen, um dies im Nachfolgemodul PREN2 noch zu testen.
 
 \paragraph{Zurückgelegte Strecke}
-Wie in der Konzeption erfwähnt, wird die zurückgelegte Strecke des Pfadfinders
+Wie in der Konzeption erwähnt, wird die zurückgelegte Strecke des Pfadfinders
 über Encoder ausgezählt. Die Auflösung beträgt
 
-(YANNIK LOCHSCHEIBE).
+% TODO Text erfassen Lochscheibe
+(YANNIK LOCHSCHEIBE MASSE).
 
 In einem zweiten Versuch soll im Folgemodul PREN2 getestet werden, ob es
 ausreichen könnte, die zurückgelegten Schritte des Schrittmotorentreibers für

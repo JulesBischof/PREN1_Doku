@@ -9,7 +9,7 @@
 
 % Template
 
-\subsubsection{Boardnetz}
+\subsubsection{Boardnetz}~\ref{sec:Boardnetz}
 
 Der folgende Abschnitt beschäftigt sich mit der Energieversorgung des
 Pfadfinders. Wie die Evaluation der Energieversorgung ergeben hat, siehe
@@ -22,7 +22,7 @@ trennen. Dadurch ist der Roboter bei Entwicklungs- und Einrichtungsaufgaben
 nicht zwingend auf die Energieversorgung via Batterie angewiesen, sondern kann
 auch über ein Netzteil betrieben werden.
 
-Die Batteriespannung und -strom werden über einen ADC überwacht und kann via
+Die Batteriespannung und -strom werden über einen ADC überwacht und können via
 $I^2C$ vom Raspberry Pi ausgelesen werden.
 
 Die Batterieschutzbeschaltung überwacht die Zellspannungen des LiPo-Akkus
@@ -45,9 +45,9 @@ Abbildung~\ref{PowerBoard_Ansicht} zeigt eine 3D-Ansicht dieses PCB's.
 Jeder PCB wird über 12V mit Spannung versorgt. Auf den entsprechenden PCB's
 werden die geregelten 12V zuerst über einen DC-DC Abwärtssteller auf $\approx$
 6V heruntergebracht und dann über einen LDO auf 5V bzw. 3V3 aktiv gefiltert.
-Dadurch wird verhindert, dass sich Spannungsspitzen oder Ripples durch zum
+Dadurch wird verhindert, dass sich Spannungsspitzen oder -ripples durch zum
 Beispiel die anlaufenden Motoren im gesamten System verteilen und andere
-Elektronik stört. Für die LDO's wird ein PSSR angestrebt, welcher bei
+Elektronik stört. Für die LDOs wird ein PSSR angestrebt, welcher bei
 entsprechenden Taktraten der Abwärtssteller eine angemessene Dämpfung von
 mindestens $20dB$ aufweist. Das Blockschaltbild in
 Abbildung~\ref{PowerBoard_Blockschaltbild} zeigt die Spannungsverteilung

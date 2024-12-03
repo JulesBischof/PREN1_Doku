@@ -11,20 +11,71 @@
 
 \subsubsection{Steuerungstopologie und Gesamtübersicht}
 
-% ===================================================================================
-\paragraph{Anforderungen}
-Anforderungen
+Anhang~\ref{appendix:Blockschaltbild_Elektrokonzept} zeigt die Gesamtübersicht
+der Steuerung zum Zeitpunkt von PREN1. Ziel ist es, im Sinne der
+Gewaltenteilung jede Steuerungseinheit für sich abgeschlossen zu betrachten. So
+kann sowohl die Zuständigkeit der beiden Elektronikentwickler gut aufgeteilt
+werden, als auch Schnittstellen zwischen Funktionseinheiten sehr eindeutig
+benannt werden.
 
-% ===================================================================================
-\paragraph{Konzeptionierung}
-Konzepterstellung
+\subsubsection*{Die verschiedenen Funktionsgruppen und ihre PCBs}
+Es werden total die 4 folgenden Funktionsgruppen unterschieden:
 
-% ===================================================================================
-\paragraph{Versuche}
-Versuche
+\begin{description}
+      \item[Raspberry HAT] Dieser PCB hat die Aufgabe, die nötige Peripherie für den
+            Raspberry Pi zur Verfügung zu stellen. Dies beinhaltet die Anbindung
+            verschiedener Taster an die entsprechenden GPIOs sowie eine
+            Spannungsversorgung. Der Raspberry Pi soll ausserdem über einen Summer Signale
+            wie das Erreichen des Zielpunktes signalisieren können. Weiter wird sein
+            UART-Kanal für die Kommunikation aufbereitet.
+      \item[Motion Controller] Dieser PCB bietet die Schnittstelle aller Steuereinheiten zu
+            den Antrieben. Via UART werden diesem PCB Steuerkommandos wie \textit{fahren
+                  mit Geschwindigkeit xxx}, \textit{Fahrzeug um xxx° drehen}, \textit{Hindernis
+                  erkannt: Anhalten und warten} und viele weitere mitgeteilt. Er selbst
+            beinhaltet Hardware zum Auszählen der Encoder sowie des Gyroskops und noch
+            einige digitale Ein-/Ausgänge und Reserve-Sensorschnittstellen.
+      \item[Grip Controler] Dieser PCB steuert, wie der Name erahnen lässt, alles rund um
+            das Greifen und um den Umgang mit Hindernissen. Er erkennt das Hindernis und
+            kann dem Motion Controller via UART Kommandos erteilen, wie das Anhalten oder
+            dass das Fahrzeug gedreht werden soll.
+      \item[Power Board] Das Power Board bietet die Spannungsaufbereitung für den
+            Pfadfinder. Hier werden aus den 14.4V Batteriespannung 12V Boardnetzspannung
+            eingeregelt. Weiter wird die Batterie überwacht und bei drohender Unterspannung
+            getrennt. Ausbalanciert wird eben diese Batterie über das externe Ladegerät.
+            Wird ein 14...18V Netzteil an diesem Board angeschlossen, wird die Batterie vom
+            Fahrzeug getrennt, was Einricht- und Entwicklungsarbeiten erlaubt, ohne dass
+            dazu eine Batterie benötigt wird.
+\end{description}
 
-% ===================================================================================
-\paragraph{Entscheidung und Fazit}
-Fazit und Entscheid
+Zum Stand von PREN1 wäre der Motion Controller grundsätzlich in der Lage, die
+Aufgabe des Greifers ebenfalls zu übernehmen. Wenn sich der noch nicht
+abgeschlossen getestete Greifmechanismus nicht eigenet und mehr Motoren oder
+Sensoren benötigt, gäbe es auf diesem nichtmehr genug Schnittstellen zur Umwelt
+zur Verfügung. Daher wird mit dem separaten Grip Controller geplant.
+
+\subsubsection*{Kommunikationsschnittstellen}
+Da laufende Motoren, Schaltregler und andere Leistungselektronik auf engem Raum mit
+Kommunikations- und anderer feinfühliger Elektronik verbaut werden muss wird die UART-Kommunikation
+über eine RS422 Schnittstelle differentiell übertragen. Die Kommandos und das Protokoll wird erst
+im Nachfolgemodul beim Inbetriebnehmen dieser PCBs definiert. Angedacht ist eine Kommunikation
+über eine Kommandolänge von Beispielsweise 32 oder 64-Bit, worin eine Adresse definiert ist, ein Kommando und
+darüber hinaus noch genügend Platz für zu übertragende Parameter. Mögliche Parameter können dabei
+eine Fahrzeuggeschwindigkeit, ein Drehwinkel oder etwa Errorcodes welche zurück zum Raspberry Pi übertragen werden sein.
+
+Die Adressenvergabe ist geplant, da der Raspberry Pi auf Basis dieses
+Blockschaltbilds grundsätzlich nicht in der Lage ist, auf direktem Wege mit dem
+Greifcontroller zu kommunizieren. Dies muss er grundsätzlich auch nicht - um
+allerdings trotzdem eben diesen Fall abzudecken sollen Adressen von $0 \dots 2$
+(2-Bit) vergeben werden. So kann eine einfache Punkt-zu-Punkt Übertragung
+ausreichend sein, um die drei Steuerungen miteinander kommunizieren zu lassen.
+
+\subsubsection*{Software}
+% ToDo
+!!! (ABBILDUNG ERSTELLEN GEPLANTE TASKS IN FREERTOS / EMBEDDED SOFTWARE) !!!
+
+\subsubsection*{Boardnetz}
+Auf dieses wird in der Sektion~\label{sec:Boardnetz} im Detail eingegangen. Kurz ausgedrückt
+besitzt jedes Board eine eigene Spannungswandlung von 12V auf 5V respektive 3.3V, welche vom
+Power Board zur Verfügung gestellt werden.
 
 \end{document}
