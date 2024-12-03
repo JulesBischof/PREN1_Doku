@@ -12,26 +12,26 @@
 \section{Konzepterstellung Strecken Rückverfolgung}~\label{appendix:Strecke_Tracken}
 
 Dieser Abschnitt befasst sich damit, wie der Pfadfinder seinen Weg, den er
-durch das Wegenetz genommen hat zurückverfolgen kann und so auf seine Position
+durch das Wegenetz genommen hat, zurückverfolgen kann und so auf seine Position
 Rückschliessen kann.
 
 % ===================================================================================
 \paragraph{Anforderungen}
-Der Algorithmus setzt vorraus, dass das Gerät immer und zu jeder Zeit seine
-Orientierung als absoluten Winkel ab dem Startpunkt weiss und die
-zurückgelegten Strecken messen kann.
+Der Algorithmus setzt voraus, dass das Gerät immer und zu jeder Zeit seine
+Orientierung als absoluten Winkel ab dem Startpunkt weiss und die zurückgelegte
+Strecken messen kann.
 
 % ===================================================================================
 \paragraph{Konzeption Wineklerfassung}
 Betreffend dem Winkel könnte angenommen werden, dass ein einfacher Kompass auf
-dem Gerät bereits ausreichen würde, um die Orientierung festellen zu können. Da
-sich allerdings Motoren in der direkten Umgebung der Elektronik befindet,
+dem Gerät bereits ausreichen würde, um die Orientierung feststellen zu können.
+Da sich allerdings Motoren in der direkten Umgebung der Elektronik befinden,
 welche ebenfalls starke Magnetfeldänderungen verursachen, bestehen zu grosse
 Bedenken, dass der Winkel so eine willkürliche Form annimmt.
 
 Anstelle dessen wird der Ansatz verfolgt, die momentane Änderungsrate des
 Winkels über ein Gyroskop zu erfassen und in einem ausreichend geringen
-Zeitintervall numerisch auf zu integrieren. Für die ersten Versuche dieses
+Zeitintervall numerisch zu integrieren. Für die ersten Versuche dieses
 Verfahrens wird ein einfaches Gyroskop des Typs \textit{MPU6050} eingesetzt,
 welches viele Einstellmöglichkeiten im Sinne von Samplingraten und eines
 integrierten Tiefpassfilters besitzt. Ausgelesen werden kann dieser über ein
@@ -41,7 +41,7 @@ eingesetzt wird.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{./fig_Strecken_Tracken/MPU6050.png}
+    \includegraphics[width=0.3\textwidth]{./fig_Strecken_Tracken/MPU6050.png}
     \caption{MPU6050 Gyroskop EVAL-Board}~\label{fig:MPU6050}
 \end{figure}
 
@@ -50,7 +50,7 @@ Zur Rückverfolgung der zurückgelegten Strecke bieten sich gleich mehrere
 Möglichkeiten. Der eingesetzte Schrittmotorentreiber wird nicht direkt über ein
 Step/Dir Interface angesteuert, bietet allerdings trotzdem die Möglichkeit,
 zurückgelegte Schritte via $SPI$ auszulesen. Da dies erst ausgiebig getestet
-werden kann, wenn der Roboter ein erstes mal zusammengebaut wurde, werden
+werden kann, wenn der Roboter ein erstes Mal zusammengebaut wurde, werden
 vorerst noch separate Encoder vorgesehen. Diese sind sehr einfach umgesetzt
 anhand einer Lichtschranke, welche eine ausreichend gelochte Lochscheibe
 auszählt.
@@ -60,9 +60,9 @@ Text Yannik Dimensionierung Lochscheibe
 ==================================================
 
 Entsprechende Signale auf dem Mikroprozessor erzeugen Interrupts, mit welchen
-die Anzahl der Pulse dann ausgezählt werden. Grundsätzlich wird, wie im Kapitel
-für Antriebe bereits erwähnt, der Antrieb nicht über Encoder geregelt sondern
-über den Liniensensor. Daher wäre es naheliegend, dass der Raspberry-Pi diese
+die Anzahl der Pulse ausgezählt werden. Grundsätzlich wird, wie im Kapitel für
+Antriebe bereits erwähnt, der Antrieb nicht über Encoder geregelt, sondern über
+den Liniensensor. Daher wäre es naheliegend, dass der Raspberry-Pi eben diese
 Encoder auszählt, da auch nur er auf diese Informationen zugreifen muss. Es ist
 allerdings nicht sicher, wie gut der Raspberry Pi mangels Echtzeitfähigkeit
 dafür geeignet ist, weshalb sich Encoder-Schnittstellen sowohl auf dem
@@ -70,7 +70,7 @@ Antriebscontroller als auch auf dem Raspberry-HAT befinden.
 
 % ===================================================================================
 \paragraph{Versuch Wineklerfassung}
-Bei versuchen wurde mit verschiedenen Prarametern variiert, um ein gutes
+Bei Versuchen wurde mit verschiedenen Parametern variiert, um ein gutes
 Ergebnis zu erreichen. Die folgenden Parameter liefern ein sehr
 zufriedenstellendes Ergebnis:
 
@@ -87,7 +87,7 @@ zufriedenstellendes Ergebnis:
     \label{tab:params_mpu6050}
 \end{table}
 
-Per Software ist noch ein Treshhold-Wert eingestellt, mit welchem ganz leichtes
+Per Software ist noch ein Threshold-Wert eingestellt, mit welchem ganz leichtes
 Zittern des Sensorwertes ignoriert werden kann. Mit diesen Werten können
 Winkeländerungen von 360° in weniger als einer Sekunde problemlos erfasst
 werden, ohne dass der Winkel in der Summe davon driftet. Diese Technik hat sich
@@ -95,10 +95,9 @@ also bewährt und wird auch so im Pfadfinder eingesetzt.
 
 Der \textit{Motion Board} PCB wird ein Gyroskop verbaut haben, welches einer
 neueren Generation als das bei diesen Versuchen eingesetzten Gyroskop
-entspricht (\textit{ICM42670}). Dies mit dem Begründung, dass dieses Gyroskop
-mittlerweile obsolet ist. Die Art der Ansteuerung unterschiedet sich jedoch
-kaum von der des hier getesteten. Das \textit{Motion Board} wird genügend I2C
-Schnittstellen besitzen, um zu einem späteren Zeitpunkt wieder auf den hier
-getesteten Sensor zurück zu wechseln.
-
+entspricht (\textit{ICM42670}). Dies mit der Begründung, dass dieses Gyroskop
+mittlerweile obsolet ist. Die Art der Ansteuerung unterscheidet sich jedoch
+kaum von der des vorgängig getesteten. Das \textit{Motion Board} wird genügend
+$I^2C$ Schnittstellen besitzen, um zu einem späteren Zeitpunkt wieder auf den
+hier getesteten Sensor zurückzuwechseln.
 \end{document}

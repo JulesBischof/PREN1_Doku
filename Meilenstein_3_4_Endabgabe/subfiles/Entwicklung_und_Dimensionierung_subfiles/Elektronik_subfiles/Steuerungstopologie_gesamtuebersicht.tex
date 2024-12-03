@@ -49,24 +49,25 @@ Es werden total die 4 folgenden Funktionsgruppen unterschieden:
 
 Zum Stand von PREN1 wäre der Motion Controller grundsätzlich in der Lage, die
 Aufgabe des Greifers ebenfalls zu übernehmen. Wenn sich der noch nicht
-abgeschlossen getestete Greifmechanismus nicht eigenet und mehr Motoren oder
-Sensoren benötigt, gäbe es auf diesem nichtmehr genug Schnittstellen zur Umwelt
-zur Verfügung. Daher wird mit dem separaten Grip Controller geplant.
+abgeschlossen getestete Greifmechanismus nicht eignet und mehr Motoren oder
+Sensoren benötigt, hätte es auf diesem nicht mehr genug Schnittstellen für
+Sensorik und Aktorik zur Verfügung. Daher wird mit dem separaten Grip
+Controller geplant.
 
 \subsubsection*{Kommunikationsschnittstellen}
 Da laufende Motoren, Schaltregler und andere Leistungselektronik auf engem Raum mit
-Kommunikations- und anderer feinfühliger Elektronik verbaut werden muss wird die UART-Kommunikation
-über eine RS422 Schnittstelle differentiell übertragen. Die Kommandos und das Protokoll wird erst
+Kommunikations- und anderer feinfühliger Elektronik verbaut werden müssen, wird die UART-Kommunikation
+über eine RS422-Schnittstelle differentiell übertragen. Die Kommandos und das Protokoll werden erst
 im Nachfolgemodul beim Inbetriebnehmen dieser PCBs definiert. Angedacht ist eine Kommunikation
-über eine Kommandolänge von Beispielsweise 32 oder 64-Bit, worin eine Adresse definiert ist, ein Kommando und
+über eine Kommandolänge von beispielsweise 32- oder 64-Bit, worin eine Adresse definiert ist, ein Kommando und
 darüber hinaus noch genügend Platz für zu übertragende Parameter. Mögliche Parameter können dabei
-eine Fahrzeuggeschwindigkeit, ein Drehwinkel oder etwa Errorcodes welche zurück zum Raspberry Pi übertragen werden sein.
+eine Fahrzeuggeschwindigkeit, ein Drehwinkel oder etwa Errorcodes, welche zurück zum Raspberry Pi übertragen werden, sein.
 
 Die Adressenvergabe ist geplant, da der Raspberry Pi auf Basis dieses
 Blockschaltbilds grundsätzlich nicht in der Lage ist, auf direktem Wege mit dem
-Greifcontroller zu kommunizieren. Dies muss er grundsätzlich auch nicht - um
-allerdings trotzdem eben diesen Fall abzudecken sollen Adressen von $0 \dots 2$
-(2-Bit) vergeben werden. So kann eine einfache Punkt-zu-Punkt Übertragung
+Greifcontroller zu kommunizieren. Dies muss er grundsätzlich auch nicht. Um
+allerdings trotzdem eben diesen Fall abzudecken, sollen Adressen von $0 \dots
+      2$ (2-Bit) vergeben werden. So kann eine einfache Punkt-zu-Punkt-Übertragung
 ausreichend sein, um die drei Steuerungen miteinander kommunizieren zu lassen.
 
 \subsubsection*{Software}

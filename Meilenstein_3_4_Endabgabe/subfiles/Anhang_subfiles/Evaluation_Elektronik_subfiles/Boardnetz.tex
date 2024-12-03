@@ -9,7 +9,7 @@
 % Template
 
 % ===================================
-\section{Konzepterstellung Energieversorgung}~\label{appendix:Boardnetz}
+\section{Konzepterstellung Energieversorgung}~\label{appendix:Bordnetz}
 
 In diesem Abschnitt wird sich mit der Energieversorgung des Pfadfinders
 auseinandergesetzt. In einem ersten Schritt werden Anforderungen
@@ -21,15 +21,17 @@ ein Konzept entschieden.
 
 \paragraph{Autonome Versorgung}
 Das Fahrzeug muss autonom fahren können. Deshalb ist eine kabellose Speisung
-des Gefährts unerlässlich. Die benötigte Spannung im Boardnetz hängt direkt mit
+des Gefährts unerlässlich. Die benötigte Spannung im Bordnetz hängt direkt mit
 den eingesetzten Motoren und ihren Nennspannungen zusammen.
 
-\paragraph{Boardnetz-Spannung}
+\paragraph{Bordnetz-Spannung}
 Bauteilrecherchen haben ergeben, dass 24V-Akkus im benötigten Leistungsbereich
-praktisch nicht mit geringem Gewicht erhältlich sind. Ein Benefit einer höheren
-Boardnetzspannung ist, dass auf Bauteile und Motoren aus dem Industriellen
-Umfeld zurückgegriffen hätte werden können. Da diese allerdings in jedem Fall
-ebenfalls zu schwer sind, wird eine Boardnetzspannung von 24V ausgeschlossen.
+praktisch nicht mit geringem Gewicht erhältlich sind. Ein Vorteil einer höheren
+Bordnetz-Spannung ist, dass auf Bauteile und Motoren aus dem Industriellen
+Umfeld zurückgegriffen werden kann. Da diese allerdings in jedem Fall ebenfalls
+zu schwer sind, wird eine Bordnetz-Spannung von 24V ausgeschlossen. 12V sind
+dafür ausreichend, um entsprechende Sensorik anzusteuern und gleichzeitig noch
+genügend Spielraum bei der Auswahl von Motoren zu haben.
 
 \paragraph{Energiebedarf}
 Tabelle~\ref{tab:Energiebedarf_Akku} zeigt eine überschlägige Rechnung zum
@@ -65,12 +67,12 @@ die Batterien.
 % ===================================
 \subsection*{Konzeption}
 
-Das Gewicht ist eine Grosse Einschränkung in der Entwicklung des Geräts.
+Das Gewicht ist eine grosse Einschränkung in der Entwicklung des Geräts.
 Aufgrund seiner hohen Energiedichte werden lediglich Lithium-Ionen sowie
 Lithium-Polymer betrachtet.
 
 % ====== ##############################################################################################################
-\subsubsection*{Konzept 1 - 12V LiIon Akku - Eigenentwicklung}
+\subsubsection*{Konzept 1 - 12V Li-Ion-Akku - Eigenentwicklung}
 
 Abbildung~\ref{fig:Konzept_12V_Eigenentw} zeigt ein Blockschaltbild dieser
 Variante. Im folgenden Unterabschnitt werden die einzelnen Unterbaugruppen kurz
@@ -78,12 +80,12 @@ kommentiert.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{./fig_Boardnetz/SpeisungsKonzept_LiIon_12V.pdf}
+    \includegraphics[width=1\textwidth]{./fig_Bordnetz/SpeisungsKonzept_LiIon_12V.pdf}
     \caption{Blockschaltbild des Akku-Konzepts 12V Variante}~\label{fig:Konzept_12V_Eigenentw}
 \end{figure}
 
 \paragraph{Akkuzelle}
-Es sind 4 Lithium-Ionen Zellen der Bauform 18650 in Reihe geschaltet, um die
+Es sind 4 Lithium-Ionen-Zellen der Bauform 18650 in Reihe geschaltet, um die
 gewünschte Spannung zu erreichen. Diese Bauform ist in der Industrie gängig
 vertreten und entsprechend einfach erhältlich. Die Nennspannung ergibt sich zu
 $4 \cdot 3.6V = 14.4V$.
@@ -105,7 +107,7 @@ vorgesehen, damit sich Ladegerät und Roboter dieselbe Schutzbeschaltung teilen
 können.
 
 Das Gewicht dieses Akkupakets beläuft sich auf $\approx 320 g$, wie
-Tabelle~\ref{tab:gewicht_12V_Eigenentw} zeigt. Hier könnte allergings noch am
+Tabelle~\ref{tab:gewicht_12V_Eigenentw} zeigt. Hier könnte allerdings noch am
 Gewicht des Gehäuses gespart werden.
 
 \begin{table}[h!]
@@ -124,11 +126,11 @@ Gewicht des Gehäuses gespart werden.
 \end{table}
 
 \paragraph{Kostenschätzung}
-Um dieses Konzept bezüglich seiner Kosten bewerten zu können, ist ebenfalls
-wieder eine Kostenabschätzung erstellt worden. Sie gleicht im Wesentlichen der
-Schätzung aus der 24V-Variante: Es ist lediglich die Anzahl Zellen verringert,
-sowie ein anderer Schutz-IC eingeplant worden. Die Kostenschätzungen sind
-Tabelle~\ref{tab:Kostenschaetzung_12V_Akku} und
+Um dieses Konzept bezüglich seiner Kosten bewerten zu können, ist eine
+Kostenabschätzung erstellt worden. Dazu sind beispielhaft ICs herausgesucht und
+mit pauschalen gerechnet. Die Summe enthält zu guter Letzt noch einen Aufschlag
+von 10\%, womit ein realistischer Preis gut angenähert werden kann. Die
+Kostenschätzungen sind Tabelle~\ref{tab:Kostenschaetzung_12V_Akku} und
 Tabelle~\ref{tab:Kostenschaetzung_12V_Ladegeraet} zu entnehmen.
 
 \begin{table}[h!]
@@ -196,7 +198,7 @@ Gewicht beurteilt.
 
 \paragraph{Akku Monitoring}
 Die Anforderungsliste des Pfadfinders sieht vor, den Ladezustand des Akkus über
-ein LCD-Display darzustellen. Um dies zu ermöglichen, werden die einzelnen
+ein LCD darzustellen. Um dies zu ermöglichen, werden die einzelnen
 Zellenanschlüsse nochmals separat herausgeführt, um sie auf dem Pfadfinder
 selbst mit einem ADC auswerten und entsprechend anzeigen zu können.
 
@@ -271,20 +273,20 @@ Tabelle~\ref{tab:Kostenschaetzung_24V_Ladegeraet_kaufteile} entnommen werden.
 \subsubsection*{Konzept 3 - 12V LiPo Akku - Kaufteil mit weniger Kapazität}
 
 Dieses Akkupaket besitzt eine geringere Kapazität. Für eine Betriebsdauer von
-$\approx 15 min $ würde ein Energiegehalt von $13.75Wh$ bereits ausreichen. Für
-einen 4S-Akku sind das in etwa $1000 mAh$.
+$\approx 20 min $ würde ein Energiegehalt von $19.20Wh$ bereits ausreichen. Für
+einen 4S-Akku sind das in etwa $1300 mAh$.
 
 \paragraph{Akkuzelle}
 
-Das Akkupack \textit{SWAY-FPV LiPo 4S 14.8V 1000mAh 60C/120C XT60} ist mit 115g
-und 25.55 CHF ein bezahlbares und vergleichsweise leichtes Modell mit
+Das Akkupack \textit{SWAY-FPV LiPo 4S 14.8V 1300mAh 95C/190C XT60} ist mit 167g
+und 23,75 CHF ein bezahlbares und vergleichsweise leichtes Modell mit
 ausreichender Akkukapazität.
 
 \paragraph{Kostenschätzung}
 
 Die Akkuzelle beläuft sich auf den in
 Tabelle~\ref{tab:Kostenschaetzung_12V_Akku_kaufteile_wenigerKap} berechneten
-Preis. Die Kosten für das Ladegerät kann
+Preis. Die Kosten für das Ladegerät können
 Tabelle~\ref{tab:Kostenschaetzung_24V_Ladegeraet_kaufteile} entnommen werden.
 
 \begin{table}[h!]
@@ -293,7 +295,7 @@ Tabelle~\ref{tab:Kostenschaetzung_24V_Ladegeraet_kaufteile} entnommen werden.
     \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{1.75cm}|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|}
         \hline
         \textbf{Beschreibung}            & \textbf{Hersteller} & \textbf{Hersteller Nr.} & \textbf{Distributor} & \textbf{n} & \textbf{CHF} & \textbf{$\sum$ CHF} \\ \hline
-        Batteriepaket                    & Swaytronic          & 7640182620677           & Swaytronic.ch        & 1          & 25.55        & 25.55               \\ \hline
+        Batteriepaket                    & Swaytronic          & 7640182620585           & Swaytronic.ch        & 1          & 23.75        & 25.55               \\ \hline
         MOSFET Leistungsschalter P-Kanal & Diodes Incorporated & DMP3036SFV-13           & DigiKey              & 2          & 0.55         & 1.1                 \\ \hline
         MOSFET Gate Treiber N-Kanal      & Nexperia USA Inc.   & 2N7002NXAKR             & DigiKey              & 2          & 0.09         & 0.18                \\ \hline
         Battery Protection IC            & Texas Instruments   & BQ296907DSGR            & Digikey              & 1          & 0.33         & 0.33                \\ \hline
@@ -302,7 +304,7 @@ Tabelle~\ref{tab:Kostenschaetzung_24V_Ladegeraet_kaufteile} entnommen werden.
         Gehäuse                          & ~                   & ~                       & 3D Druck, leicht     & ~          & ~            & 0                   \\ \hline
         ~                                & ~                   & ~                       & ~                    & ~          & ~            & ~                   \\ \hline
         Versandpauschale                 & ~                   & ~                       & ~                    & 1          & 10           & 10                  \\ \hline
-        SUMME Battery Pack + 10\%        & ~                   & ~                       & ~                    &            &              & 47.47               \\ \hline
+        SUMME Battery Pack + 10\%        & ~                   & ~                       & ~                    &            &              & 45.67               \\ \hline
     \end{tabularx}
     \caption{Kostenschätzung des Akku-Pakets 12V Variante mit Kaufteilen}~\label{tab:Kostenschaetzung_12V_Akku_kaufteile_wenigerKap}
 \end{table}
@@ -322,7 +324,7 @@ verschiedenen Konzepte, um sie direkt miteinander gegenüberstellen zu können.
         \textbf{Kriterium}         & \textbf{Konzept 1} & \textbf{Konzept 2} & \textbf{Konzept 3} \\ \hline
         Enthaltene Energie [Wh]    & 42.2               & 44.4               & 32.56              \\ \hline
         Betriebsdauer [min]        & 40                 & 45                 & 30                 \\ \hline
-        Boardnetzspannung [V]      & 12                 & 12                 & 12                 \\ \hline
+        Bordnetzspannung [V]       & 12                 & 12                 & 12                 \\ \hline
         Maximaler Entladestrom [A] & 8                  & 105                & 77                 \\ \hline
         Gewicht [g]                & 310                & 300                & 235                \\ \hline
         Kosten Akkupack [CHF]      & 40                 & 83                 & 66                 \\ \hline
@@ -356,7 +358,7 @@ Anforderungen an diese Schaltung aufgeführt.
           wird. Eine entsprechende Schutzbeschaltung muss also zwingend vorgesehen
           werden.
     \item[Quellenumschaltung] Die Schaltung muss automatisch, sobald ein Netzteil
-          angehängt wird, die Batterie vom Boardnetz trennen. Die verwendete
+          angehängt wird, die Batterie vom Bordnetz trennen. Die verwendete
           Spannungsquelle kann optisch über eine LED signalisiert werden.
     \item[Einschaltstrombegrenzung] Im gesamten Schaltkreis befinden sich Kapazitäten.
           Der Einschaltstrom muss daher begrenzt werden.
@@ -369,7 +371,7 @@ Anforderungen an diese Schaltung aufgeführt.
           Elektronik auf dem Gerät anschliessen zu können. Dabei soll ein in der
           Industrie üblicher, einfacher Steckverbinder eingesetzt werden.
     \item[Verpolungsschutz] Der Anschluss soll einen Verpolungsschutz sowohl beim
-          Netzteilanschluss als auch beim Batterieanschluss bieten. Verpolte Anschlüsse
+          Netzteilanschluss, als auch beim Batterieanschluss bieten. Verpolte Anschlüsse
           sind anzuzeigen, dies kann zum Beispiel optisch über eine LED erfolgen.
 \end{description}
 
@@ -382,7 +384,7 @@ eingesetzt. Dieser bitetet die Funktion, bei Detektierter Unterspannung einer
 Batteriezelle einen MOSFET abzuschalten, womit die Batterie vom Netz getrennt
 wird. Im Schema schaltet der IC \textit{U401} also die beiden MOSFETS
 \textit{Q203} und \textit{Q205}. Zweiterer ist lediglich dafür da, eine LED zu
-schalten falls eine Unterspannung detektiert wird. Der Ausgang des IC's kann
+schalten, falls eine Unterspannung detektiert wird. Der Ausgang des ICs kann
 nicht sonderlich viel Strom treiben, weshalb für diese LED ebenfalls ein MOSFET
 eingesetzt wird. Widerstandswerte und Kapazitäten wurden weitestgehend aus dem
 Datenblatt übernommen.
@@ -427,15 +429,15 @@ und daraus widerrum
 \]
 
 Es wird nachfolgend mit dem gleichen MOSFET gerechnet, wie er bereits bei der
-Quellenumschaltung eingesetzt wird. Der Maximale Strom durch den Widerstand
+Quellenumschaltung eingesetzt wird. Der maximale Strom durch den Widerstand
 $R_{204}$ wird mit $10mA$ angenommen, wodurch ein Widerstand von $1.2k \omega$
 resultiert. Der Inrush-Strom soll auf $7A$ begrenzt sein, bei einer
-Treshholdspannung von $2.5V$. Daraus ergibt sich $C_{210} = 470nF$.
+Treshhold-Spannung von $2.5V$. Daraus ergibt sich $C_{210} = 470nF$.
 
-Im Anschluss muss noch die Verlustuleistung des MOSFETS untersucht werden.
-Eigesetzt wird der \textit{BSZ180P03NS3EGATMA1} P-Kanal-FET von Infineon
-Technologies. Die Impulsdauer wird stak vereinfacht mit der Annahme, dass der
-Stromimpuls währrend der gesamten Prozessdauer $I_{inrush, max} = 7A$ bei $U =
+Im Anschluss muss noch die Verlustleistung des MOSFETS untersucht werden.
+Eingesetzt wird der \textit{BSZ180P03NS3EGATMA1} P-Kanal-FET von Infineon
+Technologies. Die Impulsdauer wird stark vereinfacht, mit der Annahme, dass der
+Stromimpuls während der gesamten Prozessdauer $I_{inrush, max} = 7A$ bei $U =
     12V$ beträgt.
 
 Durch den Zusammenhang
@@ -443,44 +445,36 @@ Durch den Zusammenhang
     I_{C_{Last}}  = \frac{dU}{dt} \cdot C_{Last}
 \]
 lässt sich der Ladevorgang auf $t \approx 2.6ms$ abschätzen. Ein Blick in das
-Datenblatt des Herstellers zeigt, dass sich der FET trotz dieser Worst-Case
+Datenblatt des Herstellers zeigt, dass sich der FET trotz dieser Worst Case
 Annahme noch vollkommen in einer SOA befindet und bedenkenlos eingesetzt werden
 kann.
 
 \paragraph{DC-DC Converter}
-Eingesetzt wird der Buck-Converter \textit{LM2677} der Firma
+Eingesetzt wird der Buck-Konverter \textit{LM2677} der Firma
 \textit{Texas-Industries}. Es ist ein sehr günstiger Abwärtssteller, welcher
 $60W$ Leistung bringen kann. Zur Dimensionierung der Kapazitäten, der
-Induktivität und der Diode wurde sich auf die Dimensionierungsempfehlung des
+Induktivität und der Diode wurde sich auf die Dimensionierungs-Empfehlung des
 Datenblatts berufen.
 
 \paragraph{ADC - Battery-Monitoring}
 Aus der Anforderungsliste ergab sich der Wunsch nach der Möglichkeit, die
 Batterie überwachen zu können. Dazu wird ein via $I^2C$ ansprechbarer ADC
-verbaut, welcher den Strommesswiderstand, den NTC sowie die gesamtspannung des
-Batterieschutz-IC's überwachen kann. Um den Single-Ended $I^2C$ signalen einen
+verbaut, welcher den Strommesswiderstand, den NTC sowie die Gesamtspannung des
+Batterieschutz-ICs überwachen können. Um den single-ended $I^2C$ Signalen einen
 eindeutigen Rückweg bieten zu können, um Störungen zu vermeiden, muss das GND
 des Navigationscomputers ebenfalls mit auf das Powerboard geführt werden.
 Dadurch entsteht allerdings die Gefahr, dass Störungen, verursacht durch z.B.
-den Buck-Converter, über eben diese Leitung auf den Navigationscomputer
-gelangen könnten. Ausserdem würden so die Gleichtaktdrosseln einseitig
-überbrückt werden. Um dieses Problem zu umgehen wird ein $I^2C$ Isolator der
-Firma \textit{Texas Industries} eingesetzt. Das setzt vorraus, dass sich auf
-dem Powerboard ebenfalls eine 3V3-Spannungsquelle befindet. Diese wird mit
-einem LDO zur Verfügung gestellt. Dadurch, dass nur sehr geringe Ströme zu
-erwarten sind, ist nicht mit hoher Verlustleistung über diesen zu rechnen.
+den Buck-Konverter, über eben diese Leitung an der Filterung vorbei auf den
+Navigationscomputer gelangen können. Um dieses Problem zu umgehen, wird ein
+$I^2C$ Isolator der Firma \textit{Texas Industries} eingesetzt. Das setzt
+voraus, dass sich auf dem Powerboard ebenfalls eine 3V3-Spannungsquelle
+befindet. Diese wird mit einem LDO zur Verfügung gestellt. Es ist mit nur sehr
+geringen Ströme zu zu rechnen, daher ist nicht mit hoher Verlustleistung über
+den LDO zu rechnen.
 
 \paragraph{Steckverbinder}
 Jede Funktion bringt einen eigenen Steckverbinder mit, um Verwechslungen und
 falsches Einsecken zu vermeiden.
-
-% ===================================
-\subsection*{Versuche}
-
-% ===================================
-\subsection*{Fazit und Ausblick}
-
-% ===================================
 
 \end{document}
 

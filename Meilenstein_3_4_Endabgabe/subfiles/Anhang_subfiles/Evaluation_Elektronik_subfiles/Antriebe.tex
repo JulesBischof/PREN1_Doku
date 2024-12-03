@@ -10,9 +10,9 @@
 \section{Konzepterstellung Antriebe}~\label{appendix:Antriebe}
 
 Dieser Abschnitt befasst sich mit den Antrieben des Pfadfinders. Dabei werden
-sowohl verschiedene Motorenkonzepte diskutiert, als auch potentiell
+sowohl verschiedene Motorenkonzepte diskutiert, als auch potenziell
 Einsatzfähige Motoren herausgesucht. Im Abschluss wird noch Konzeptionell
-zusammengefasst wie diese Antriebe anzusteuern sind.
+zusammengefasst, wie diese Antriebe anzusteuern sind.
 
 % ===================================================
 \subsection*{Anforderungen}
@@ -28,21 +28,21 @@ zusammengefasst wie diese Antriebe anzusteuern sind.
           Gewicht nicht grösser als total $500 g$ sein sollte.
 
     \item[Kosten] Das Budget dieses Projekts ist sehr beschränkt. Antriebe können hierbei
-          einen wesentlichen Kostenpunkt darstellen, weshalb dem Antrieb inkl.
+          einen wesentlichen Kostenpunkt darstellen, weshalb dem Antrieb inklusive der
           Ansteuerung und Räder ein Budget von $100 CHF$ zugewiesen wurde.
 
     \item[Nennspannung] Die benötigte Nennspannung des Boardnetzes richtet sich
-          mehrheitlich nach der benötigten Spannung der Motoren. Wie im Kapitel
-          (((AKKU))) bereits erwähnt wurde, würde eine Spannung von 24V ein nicht
-          umsetzbares Gewicht darstellen. Daher beträgt die Maximalspannung für Motoren
-          hier 12V Nennspannung.
+          mehrheitlich nach der benötigten Spannung der Motoren. Wie im
+          Kapitel~\ref{appendix:Boardnetz} bereits erwähnt wurde, würde eine Spannung von
+          24V ein nicht umsetzbares Gewicht darstellen. Daher beträgt die Maximalspannung
+          für Motoren hier 12V Nennspannung.
 
     \item[Technologie] Die Ansteuerung der Motoren ist mit geeigneten Treibern in den
           meisten Fällen relativ einfach umzusetzen. Aufgrund bestehender Erfahrungswerte
           sollen vorzüglich Schrittmotoren eingesetzt werden.
 
     \item[Schnittstelle] Die Schnittstelle zur Ansteuerung der Motoren soll einem einfach
-          umzusetzenden Standart entsprechen. Das betrifft die Ansteuerung über bekannte
+          umzusetzenden Standard entsprechen. Das betrifft die Ansteuerung über bekannte
           Bus-Protokolle wie $I^2C$, $SPI$, $UART$ oder aber auch PWM- oder Step/Dir
           Interfaces.
 
@@ -62,22 +62,22 @@ Text Yanik zu Dimensionierung
 \subsection*{Konzeption}
 
 Aus den Leistungsanforderungen an die Motoren heraus lässt sich auf dem Markt
-schauen, welche Motoren potentiell zur Verfügung stehen könnten. Diese lassen
-sich wiederrum in den Kriterien Kosten, Gewicht, Leistung und
-Entwicklungsaufwand gegeneinander vergleichen.
+schauen, welche Motoren potenziell zur Verfügung stehen. Diese lassen sich
+wiederum in den Kriterien Kosten, Gewicht, Leistung und Entwicklungsaufwand
+gegeneinander vergleichen.
 
 \subsubsection*{Konzept 1 - Bipolarer Schrittmotor} % =========
 
-Die Wahl für einen Bipolaren Schrittmotor fällt, da er bei gleichem Gewicht
+Die Wahl für einen bipolaren Schrittmotor fällt, da er bei gleichem Gewicht
 eine grössere Ausnutzung der Spulen bringt - woraus eine höhere Leistung bei
-gleichem Gewicht im Vergleich zu einem Unipolaren Schrittmotoren resultiert.
+gleichem Gewicht im Vergleich zu einem unipolaren Schrittmotoren resultiert.
 
 Ein Vergleich verschiedener Schrittmotoren hat gezeigt, dass Schrittmotoren,
 welche sich in einem Nennstrombereich von $1.2A$ bis $2A$ in einem Bereich
 befinden, welche den Leistungsanforderungen bereits ohne Zwischengetriebe
 genügen können.
 
-Typische, günstige, Vertreter aus dieser Reihe sind die in
+Typische, günstige Vertreter aus dieser Reihe sind die in
 Tabelle~\ref{tab:Schrittmotoren_different} aufgeführten.
 
 \begin{table}[h]
@@ -97,14 +97,14 @@ Dieser Vergleich zeigt, dass sich eigentlich nur der Motor \textit{FIT0278} von
 \textit{DFRobot} in einem akzeptablen Gewichts-Leisungs-Verhältnis befindet.
 Preisgünstig sind alle aufgeführten Motoren.
 
-Angesteuert werden sollen die Motoren über gekaufte Treiber. Zwar ist eine
-Eigenentwicklung eines Motorentreibers mit nicht all zu viel Aufwand
-umzusetzen, jedoch sind fertige Treiber-Endstufen sehr günstig zu haben und
-einfach anzusteuern. Ein Teammitglied kann auf Erfahrung aus seinem beruflichen
-Umfeld zurückgreifen bei der Ansteuerung des Schrittmotorentreibers
-\textit{TMC5240} von \textit{ADI-Trinamic}. Diese Treiber stehen darüber hinaus
-für dieses Projekt in zweifacher Ausführung zur Verfügung. Der Vergleich dieses
-Treibers mit einem einfach anzusteuernden Treibers zeigt die
+Die Motoren sollen über eingekaufte Treiber angesteuert werden. Zwar ist eine
+Eigenentwicklung eines Motorentreibers mit nicht allzu viel Aufwand umzusetzen,
+jedoch sind fertige Treiber-Endstufen sehr günstig zu haben und einfach
+anzusteuern. Ein Team-Mitglied kann auf Erfahrung aus seinem beruflichen Umfeld
+zurückgreifen bei der Ansteuerung des Schrittmotorentreibers \textit{TMC5240}
+von \textit{ADI-Trinamic}. Diese Treiber stehen darüber hinaus für dieses
+Projekt in zweifacher Ausführung zur Verfügung. Der Vergleich dieses Treibers
+mit einem einfach anzusteuernden Treibers zeigt die
 Tabelle~\ref{tab:Schrittmotorentreiber_different}.
 
 \begin{table}[h]
@@ -121,7 +121,7 @@ Tabelle~\ref{tab:Schrittmotorentreiber_different}.
 
 \subsubsection*{Konzept 2 - Radnabenmotor} % =========
 
-Es gibt fertig zu kaufende Radnaben auf dem Markt, welche zum teil bereits
+Es gibt fertig zu kaufende Radnaben auf dem Markt, welche zum Teil bereits
 sowohl Endstufen als auch eine Ansteuerung beinhalten.
 
 Als Beispiel zu nennen wäre da der folgende:
@@ -150,10 +150,9 @@ das Gewicht des Antriebs weiter in die Höhe. BLDC Motoren kommen darüber hinau
 häufig mit einem höheren Preis daher.
 
 Die nachfolgende Tabelle zeigt eine Aufstellung verschiedener Motoren, welche
-in frage kommen könnten.
+in Frage kommen könnten.
 
-YANIK FRAGEN DER DFROBOT KÖNNTE NOCH SPANNEND
-SEIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+% YANIK FRAGEN DER DFROBOT KÖNNTE NOCH SPANNEND SEIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 \begin{table}[h]
     \centering
@@ -167,9 +166,9 @@ SEIN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 \end{table}
 
 Der Motor von DFRobot wird zwar mit seiner Geschwindigkeit von maximal $159
-    \frac{1}{min}$ die gewünschte Drehzahl nicht erreichen, das geringe Gewicht bei
-entsprechender Leistung sowie sein bereits integrierten Treiber macht diesen
-Antrieb allerdings Wert, im Detail beurteilt zu werden.
+    \frac{1}{min}$ die gewünschte Drehzahl zwar nicht erreichen, das geringe
+Gewicht bei entsprechender Leistung sowie sein bereits integrierten Treiber
+macht diesen Antrieb allerdings trotzdem Wert, im Detail beurteilt zu werden.
 
 Generell lässt sich sagen, die Suche nach Bauteilen hat ergeben, dass
 BLDC-Motoren eine höhere Nennspannung benötigen, als mit dem Dimensionierten
@@ -177,10 +176,10 @@ Akku-Pack zur Verfügung gestellt werden kann. Natürlich arbeiten Motorentreibe
 als Stromquellen, allerdings sind Motoren im entsprechend benötigten
 Leistungsbereich schnell zu teuer und schwer.
 
-Generell lassen sich BLDC-Motoren, ähnlich wie die Schrittmotoren über einen
-selbstentwickelten Treiber ansteuern, allerdings sind fertige Motorensteuerung
-auch unschlagbar günstig und über ein PWM-Interface sehr einfach anzusteuern.
-Als Vertreter dieser Produktgruppe ist der folgende zu nennen.
+Generell lassen sich BLDC-Motoren, ähnlich wie die Schrittmotoren, über einen
+selbst entwickelten Treiber ansteuern, allerdings sind fertige Motorensteuerung
+ebenfalls unschlagbar günstig und über ein PWM-Interface sehr einfach
+anzusteuern. Als Vertreter dieser Produktgruppe ist der folgende zu nennen.
 
 \begin{table}[h]
     \centering
@@ -198,8 +197,8 @@ In der Gruppe ist der Entscheid darauf gefallen, den Schrittmotor von DFRobot,
 gezeigt in Abbildung~\ref{fig:DFROBOT_FIT0278}, in Kombination mit den
 \textit{Trinamic}-Schrittmotorentreibern, gezeigt in
 Abbildung~\ref{fig:TMC5240_EVAL}, genauer zu analysieren und zu verfolgen. Als
-\textit{Plan-B}, auch für den Fall dass das gewünschte Gewicht nicht
-eingehalten werden kann, soll der Radnamenmotor, ebenfalls von DFRobot,
+\textit{Plan-B}, auch für den Fall, dass das gewünschte Gewicht nicht
+eingehalten werden kann, soll der Radnabenmotor, ebenfalls von DFRobot,
 evaluiert werden. Damit können zwar nicht zwingend die gewünschten
 Geschwindigkeits- und Beschleunigungswerte erreicht werden, dafür ist seine
 Ansteuerung sehr einfach, sie haben ihre Treiber bereits integriert und dazu
@@ -217,9 +216,9 @@ sind sie auch leicht.
     \caption{DFROBOT FIT0278 Schrittmotor}~\label{fig:DFROBOT_FIT0278}
 \end{figure}
 
-Geregelt werden soll dieser Motor von einem Echtzeitfähigen Microprozessor,
-welcher ebenfalls über die Sensordaten des Liniensensors verfügt. Geregelt
-werden soll der Antrieb auf das Feedback eben dieses Sensors. Dies ist auf
+Geregelt werden soll dieser Motor von einem echtzeitfähigen Mikroprozessor,
+welcher ebenfalls über die Sensordaten des Liniensensors verfügt. Der Antrieb
+soll auf das Feedback eben dieses Sensors geregelt werden. Dies ist auf
 Abbildung~\ref{fig:RTC_Trinamic_Konzept} nochmals verdeutlicht.
 
 \begin{figure}[h!]
@@ -230,23 +229,14 @@ Abbildung~\ref{fig:RTC_Trinamic_Konzept} nochmals verdeutlicht.
 
 Zusätzlich wird noch mindestens ein Encoder vorgesehen, welcher mit einer
 einfachen Lochscheibe und einer Gabellichtschranke umgesetzt wird. Dieser hat
-allerdings keine Anwendung auf die Fahrzeugregelung. Mit ihm soll die
+allerdings keine Anwendung auf die Fahrzeugregelung. Mit ihm soll lediglich die
 zurückgelegte Strecke erfasst werden.
 
 Die gewählten Treiber liessen sich direkt über den High-Level-Controller
-ansteuern. Die Antriebsregelung wurde aber bewusst auf einen Microprozessor
-verschoben, um der Gedankenansatz der Gewaltentrennung gerecht zu werden. So
-gibt es einen Echtzeitfähigen Prozessor, welcher sich ausschliesslich mit der
+ansteuern. Die Antriebsregelung wurde aber bewusst auf einen Mikroprozessor
+verschoben, um dem Ansatz der Gewaltentrennung gerecht zu werden. So gibt es
+einen Echtzeitfähigen Prozessor, welcher sich ausschliesslich mit der
 Positionsregelung befasst, während der High-Level-Controller lediglich
 Entscheidungen trifft, in welche Richtung gefahren werden muss.
-
-% ===================================================
-\subsection*{Entwicklung und Dimensionierung}
-
-% ===================================================
-\subsection*{Versuche}
-
-% ===================================================
-\subsection*{Fazit und Ausblick}
 
 \end{document}

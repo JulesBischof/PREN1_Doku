@@ -10,28 +10,29 @@
 
 \subsection{Hardfacts}
 
-Die folgenden technischen Daten beschreiben die wichtigsten Eigenschaften und Leistungsparameter des entwickelten Fahrzeugs:
+Die folgenden technischen Daten beschreiben die wichtigsten Eigenschaften und
+Leistungsparameter des entwickelten Fahrzeugs:
 
 \begin{table}[h!]
     \centering
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|l|l|}
         \hline
-        \textbf{Eigenschaft}            & \textbf{Wert} \\ \hline
-        Maximale Geschwindigkeit        & 2.0 m/s       \\ \hline
-        Energieversorgung               & 4S LiPo-Akku (14.4V, 2200 mAh) \\ \hline
-        Betriebsdauer                   & ca. 20 Minuten (durchschnittlich) \\ \hline
-        Maximale Leistung               & 30 W          \\ \hline
-        Stromverbrauch im Leerlauf      & 5 W           \\ \hline
-        Maximale Traglast der Greifeinheit & 200 g       \\ \hline
-        Abmessungen                     & 30 cm x 30 cm x 50 cm \\ \hline
-        Gewicht                         & 1.8 kg        \\ \hline
-        Navigationsalgorithmus          & Heuristikbasierter DFS \\ \hline
-        Sensoren                        & Liniensensor, Abstandssensor, Kamera \\ \hline
-        Kommunikationsschnittstellen    & UART, I2C     \\ \hline
-        Steuerungseinheit               & Raspberry Pi 5 \\ \hline
-        Greifermechanik                 & Motorisierter Parallelgreifer \\ \hline
-        Entwicklungstool für Simulation & Svelte.js-basierter Simulator \\ \hline
+        \textbf{Eigenschaft}               & \textbf{Wert}                                                             \\ \hline
+        Maximale Geschwindigkeit           & 2.0 m/s                                                                   \\ \hline
+        Energieversorgung                  & 4S LiPo-Akku (14.4V, 1300 mAh)                                            \\ \hline
+        Betriebsdauer                      & ca. 20 Minuten (durchschnittlich)                                         \\ \hline
+        Maximale Leistung                  & 30 W                                                                      \\ \hline % ist das Antriebsleistung oder Elektrische Spitzenleistung? 
+        Stromverbrauch im Leerlauf         & 5 W                                                                       \\ \hline % wo ist diese Angabe her? 
+        Maximale Traglast der Greifeinheit & 300 g                                                                     \\ \hline % korrigiert auf 300g
+        Abmessungen                        & 30 cm x 30 cm x 50 cm                                                     \\ \hline
+        Gewicht                            & 1.8 kg                                                                    \\ \hline
+        Navigationsalgorithmus             & Heuristikbasierter DFS                                                    \\ \hline
+        Sensoren                           & Liniensensor, Abstandssensoren, Kamera, Lichtschranken, Encoder, Gyroskop \\ \hline
+        Kommunikationsschnittstellen       & UART, I2C                                                                 \\ \hline
+        Steuerungseinheit                  & Raspberry Pi 4                                                            \\ \hline % korrigiert auf Raspberry Pi 4
+        Greifermechanik                    & Motorisierter Parallelgreifer                                             \\ \hline
+        Entwicklungstool für Simulation    & Svelte.js-basierter Simulator                                             \\ \hline
     \end{tabular}
     \caption{Technische Daten des autonomen Fahrzeugs}
     \label{tab:hardfacts}

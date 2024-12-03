@@ -14,13 +14,20 @@
 Der folgende Abschnitt beschäftigt sich mit der Energieversorgung des
 Pfadfinders. Wie die Evaluation der Energieversorgung ergeben hat, siehe
 Anhang~\ref{appendix:Boardnetz}, wird der Roboter über einen 4S-LiPo mit
-Energie versorgt. Die Ausgangsspannung von 14.4V wird auf dem selbst
-entwickelten DC-PowerBoard mittels eines Abwärtsstellers auf 12V geregelt.
-Dieses Board bietet ausserdem die Möglichkeit, über ein Netzteil in einem
-Bereich von 12 bis 18 V versorgt zu werden und dabei den Akku selbsttätig zu
-trennen. Dadurch ist der Roboter bei Entwicklungs- und Einrichtungsaufgaben
-nicht zwingend auf die Energieversorgung via Batterie angewiesen, sondern kann
-auch über ein Netzteil betrieben werden.
+Energie versorgt. Der Evaluierte Akku beinhaltet $\approx 19Wh$ Energie und
+bietet damit genug Energie, um den Pfadfinder im Worst-Case bei voller Leistung
+für ca. 20min zu betreiben. Die Boardnetzspannung ist auf 12V gesetzt, um auf
+Sensorik und Aktorik, so zum Beispiel Lichtschranken, aus dem Industriellen
+Umfeld zurückgreifen zu können. Ausserdem kann so eine grössere Bandbreite an
+Motoren abgedeckt werden, falls sich die eingeplanten als nicht geeignet
+erweisen würden. 
+
+Die Ausgangsspannung von 14.4V wird auf dem selbst entwickelten DC-PowerBoard
+mittels eines Abwärtsstellers auf 12V geregelt. Dieses Board bietet ausserdem
+die Möglichkeit, über ein Netzteil in einem Bereich von 12 bis 18 V versorgt zu
+werden und dabei den Akku selbsttätig zu trennen. Dadurch ist der Roboter bei
+Entwicklungs- und Einrichtungsaufgaben nicht zwingend auf die Energieversorgung
+via Batterie angewiesen, sondern kann auch über ein Netzteil betrieben werden.
 
 Die Batteriespannung und -strom werden über einen ADC überwacht und können via
 $I^2C$ vom Raspberry Pi ausgelesen werden.
