@@ -44,8 +44,8 @@ Fototransistor als konstante Stromquelle interpretiert werden kann, wird der Spa
 über ihn ausgewertet. Ein hoher Strom durch den Phototransistor bewirkt einen hohen 
 Spannungsverlust an einem davor geschaltenem Widerstand. Somit sollte die Spannung über dem
 Fototransistor gegen Ground gezogen werden. Ist der Strom jedoch klein,
-so fällt gemäss dem Ohmschen Gesetz wenig Spannung über dem Vorwiderstand ab was eine erhöhte
-Spannung über dem Fototransistor zur folge hat. Diese Spannungen werden dann mittels einem
+so fällt gemäss dem Ohmschen Gesetz wenig Spannung über dem Vorwiderstand ab was ein erhöhter
+Spannungsabfall über dem Fototransistor zur folge hat. Diese Spannungen werden dann mittels einem
 Analog-Digital-Wandler (ADC) ausgwertet.
 
 % ======================================================================================
@@ -61,12 +61,19 @@ vermutet. Gemäss der Dokumentation ist in der tat eine fluoreszierende Wirkung 
 ersichtlich und daraus folgt ein Spannungsunterschied über dem Fototransistor von Klebeband 
 zu Wettkampfuntergrund um den Faktor 10. Aufgrund diesen deutlichen Ergebnissen wird auf ein 
 UV-Emitter mit einem Fototransistor im sichtbaren Lichtspektrum zurückgegriffen.
+In Abbildung~\ref{fig:Auswertung_Liniensensor} ist die Auswertung bildlich festgehalten.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig_Strecke_Tracken/Auswertung_Liniensensor.pdf}
+    \caption{Konzept der Auswertung mittels ADC}~\label{fig:Auswertung_Liniensesor}
+\end{figure}
 
 % ===================================================================================
 \subsubsection{Geometrische Überlegungen}
 Abbildung~\ref{fig:Konzept_graphml} zeigt die konzeptionelle Überlegungen einer Messzelle des
-Liniensensor. Gemäss dem Datenblatt hat der UV-Emitter einen Abstrahlwinkel von 15° und der
-Fototransisor einen Einfallswinkel von 60°. Diese Winkel und der festgelegte Abstand von 
+Liniensensor. Gemäss dem Datenblatt hat der UV-Emitter (Sender) einen Abstrahlwinkel von 15° und der
+Fototransisor (Empfänger) einen Einfallswinkel von 60°. Diese Winkel und der festgelegte Abstand von 
 Empfänger zu Sender definieren den Abstand der jeweiligen Messzellen untereinander sowie den
 Abstand einer Messzelle zum Boden. Für eine möglichst störungsfreie Detektion muss auf dem Boden 
 eine möglichst grosse Fläche des Empfänger-Kreises durch den Sender-Kreis ausgefüllt werden.\\
@@ -124,8 +131,8 @@ Aufgrund 15 anstatt 30 Abstrahlwinkel stimmt der abstand zweier Messzellen nicht
 !!!!!!!!Daten aus Test benötigt!!!!!!!\\
 Damit der Empfänger möglichst wenig auf Umwelteinflüsse reagiert, wird nun ein 
 Gehäuse dimensioniert, welches den Sensor abschirmen soll. Die nachfolgende 
-Abbildung~\ref{fig:fig_Strecke_Tracken/Gehaeuse_Vermasst.pdf} zeigt eine Skizze, welche den Aufbau des Gehäuses repräsentiert.
-Die isometrische Ansicht des Gehäuse ist in Abbildung~\ref{fig:fig_Strecke_Tracken/Gehaeuse_Isometrisch.pdf}
+Abbildung~\ref{fig:Gehaeuse_Vermasst} zeigt eine Skizze, welche den Aufbau des Gehäuses repräsentiert.
+Die isometrische Ansicht des Gehäuse ist in Abbildung~\ref{fig:Gehaeuse_Isometrisch}
 
 
 
@@ -149,11 +156,11 @@ Die isometrische Ansicht des Gehäuse ist in Abbildung~\ref{fig:fig_Strecke_Trac
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{fig_Strecke_Tracken/Schema_Sensorzelle.pdf}
-    \caption{Schema einer Sensorzelle}~\label{fig:Sensorzelle}
+    \includegraphics[width=0.5\textwidth]{fig_Strecke_Tracken/Schema_Messzelle_Liniensensor.pdf}
+    \caption{Schema einer Messzelle}~\label{fig:Messzelle}
 \end{figure}
 
-Abbildung~\ref{fig:Sensorzelle} zeigt das Schema einer einzelnen Sensorzelle. Die Speisung von 5V für 
+Abbildung~\ref{fig:Messzelle} zeigt das Schema einer einzelnen Messzelle. Die Speisung von 5V für 
 den UV-Emitter ist notwendig, weil gemäss Datenblatt eine Spannung von 2.9V bis 3.5V abfällt. Daher reicht
 eine Speisung von 3.3V nicht aus. Ausserdem wurde als Sicherheitsmassnahme beim Messabgang über dem 
 Fototransistor ein Platz für ein Widerstand eingebaut, damit bei allfälligen Stromspitzen der Strom 
@@ -193,10 +200,17 @@ ist die Draufsicht und in Abbildung~\ref{fig:Liniensensor_Bottom} die Untersicht
 % ===================================================================================
 
 \paragraph{Versuche}
-Versuche
+Es wurde überprüft, welches Lichtspektrum am besten geeignet sind und die verschiedenen Ströme
+durch den Fototransistor wurden getestet. Ausserdem wurde im UV-Spektrum die Spannungen über dem Fototransistor
+gemessen. Mittels einem 
+Arduino wurden für einen Test alle Eingänge ausgewertet und der Liniensensor validiert. 
+Alle Messungen sind im Anhang dokumentiert.
 
 % ===================================================================================
 \paragraph{Entscheidung und Fazit}
-Fazit und Entscheid
+Aufgrund der grossen Spannungsdifferenz zwischen Klebeband und Fliese/ Fuge, wurde eine mögliche
+fluoreszierende Wirkung des Klebebandes im UV-Spektrum bestätigt. Durch die Messungen wurde das 
+Konzept des Liniensensors überprüft und validiert. Dieses Prinzip kann im Projekt angewendet
+werden.
 
 \end{document}
