@@ -1,11 +1,14 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
 
+
 % ============================================================================== %
 %                            Subfile document                                    %
 % ============================================================================== %
 
 \begin{document}
+
+
 
 % Template
 \begin{landscape}
@@ -17,12 +20,17 @@ Deswegen ist eine sorgfältige Budgetplanung für das gesamte Projekt bereits in
 essenziell. Im foldendem Kapitel wird auf die Budgetplanung für das gesamte Projekt eingegangen,
 sowie auch die bereits getätigten Ausgaben für Versuche in Produktentwicklung 1 festgehalten.
 
-\subsubsection{BudgetPlanung}
+\subsubsection{Budgetplanung}
+Die Tabelle~\ref{tab:Budgetplanung} stellt die Budgetplanung für das ganze Projekt dar. Die Preise 
+entsprechen aus Angaben von Onlineshops. Eigenkonstruktionen werden mit einem realistischen 
+Schätzwert angegeben.
 
+!!Stand jetzt ist noch nicht alles klar definiert und Abweichungen/ Ergänzungen werden laufend eingetragen.!!
 
-\begin{table}[h]                                    % h = here
+\begin{table}[h]                              
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|}                        % c=centered, l=left, r=right
+    \makebox[\textwidth][3]{ % Verschiebt nach links innerhalb der Textbreite   
+    \begin{tabular}{|c|c|c|c|c|c|c|}                        
         \hline
         \textbf{Endprodukt} & \textbf{Komponente}        & \textbf{Hersteller}    & \textbf{Herstellernummer}          & \textbf{Anzahl}     & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}     \\ \hline
         Antrieb             & Schrittmotoren             & DFRobot                & FIT0278                            & 2                   & 12                         & 24                              \\ \hline
@@ -56,28 +64,38 @@ sowie auch die bereits getätigten Ausgaben für Versuche in Produktentwicklung 
                             &                            &                        &                                    &                     &                            &                                 \\ \hline
                             &                            &                        &                                    &                     &                            &                                 \\ \hline
                             &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            \end{tabular}
+     \textbf{Total}         &                            &                        &                                    &                     &                            & \textbf{XYZ}                                \\ \hline
+    
+    \end{tabular}
+    }
+
     \caption{Budgetplanung}
     \label{tab:Budgetplanung}
 \end{table}
 
+\subsubsection{Ausgaben Produktentwicklung 1}
+Die Tabelle~\ref{tab:Ausgaben_PREN1} gibt alle getätigten Ausgaben in dem Modul Produktentwicklung 1 an.
+
+!!Tabelle wird noch ergänzt!!
 
 
-
-\begin{table}[h]                                    % h = here
+\begin{table}[h] 
+                     
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|}                        % c=centered, l=left, r=right
+    \makebox[\textwidth][1]{ % Verschiebt nach links innerhalb der Textbreite         
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}                       
         \hline
-        \textbf{Endprodukt} & \textbf{Komponente}        & \textbf{Hersteller}    & \textbf{Herstellernummer}          & \textbf{Anzahl}     & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}   \\ \hline
-        &                            &                        &                                    &                     &                            &                                 \\ \hline
-        &                            &                        &                                    &                     &                            &                                 \\ \hline
-        &                            &                        &                                    &                     &                            &                                 \\ \hline
-        &                            &                        &                                    &                     &                            &                                 \\ \hline
-        &                            &                        &                                    &                     &                            &                                 \\ \hline
-        \end{tabular}
-\caption{Ausgaben PREN1}
-\label{tab:Ausgabnen_PREN1}
+        \textbf{Endprodukt} & \textbf{Komponente}        & \textbf{Hersteller}    & \textbf{Herstellernummer}    & \textbf{Bestelldatum}     & \textbf{Anzahl}                    & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}   \\ \hline
+                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
+                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
+                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
+                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
+                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
+    
+    \end{tabular}
+    }
+    \caption{Ausgaben PREN1}
+    \label{tab:Ausgaben_PREN1}
 \end{table}
 
 \end{landscape}
