@@ -1,0 +1,127 @@
+\documentclass[main.tex]{subfiles} % Subfile-Class
+
+
+% ============================================================================== %
+%                            Subfile document                                    %
+% ============================================================================== %
+
+\begin{document}
+
+% ============================================================================== %
+\section{Konzepterstellung Greifereinheit}~\label{appendix:Greifereinheit}
+
+In diesem Abschntt wird die Entwicklung des Greifarmkonzepts behandelt.
+Zunächst erfolgt werden die benötigten Anforderungen erfasst. 
+Anschliessend werden dann die verschiedenen Konzepte kommentiert.
+Schliesslich wird eine Entscheidung auf Grundlage der Testergebnisse getroffen und dokumentiert.
+
+% ============================================================================== %
+\subsection*{Anforderungen}
+
+\paragraph{Greifkraft}
+Die Greifkraft muss ausreichend dimensioniert sein, um das Hindernis sicher greifen zu können.
+Dabei ist die Haftreibung und die Anpresskraft zu berücksichtigen.
+\[
+    F_{erforderlich} = \frac{m \cdot g}{\mu_{\text{hr}}}
+\]
+
+\[
+    M_{erforderlich} = F_{erforderlich} \cdot Hebel \cdot Sicherheit
+\]
+Das erforderliche Drehmoment beträgt $0.234 Nm$.
+
+\paragraph{Höhenverstellung}
+Die Höhenverstellung muss an das Gewicht des zu hebenden Hindernisses und Elektronik ausgelegt sein.
+\[
+    M_{erforderlich} = (m_{Hindernis} + m_{Elektronik} + m{Greifer}) \cdot Hebel \cdot Sicherheit
+\]
+Das erforderliche Drehmoment beträgt $0.216 Nm$.
+
+\paragraph{Genauigkeit}
+Der Greifer muss den gesamten Bewegungsablauf mit hoher Wiederholgenauigkeit ausführen.
+Dadurch wird sichergestellt, dass das Hindernis innerhalb des vorgegebenen Toleranzbereichs
+positioniert wird.
+
+\paragraph{Gewicht}
+Das Gewicht der Greifereinheit ist so gering wie möglich zu halten, um das Gesamtgewicht des Fahrzeugs zu
+reduzieren. Eine Gewichtsreduktion ist ebenfalls bei der bewegten Massen des Greifers wichtig, da sie
+direkte Auswirkungen auf die Motorauswahl, die Geschwindigkeit und die Energieeffizient hat.
+
+\newpage
+
+% ============================================================================== %
+\subsection*{Konzeption}
+
+\subsubsection*{Konzept 2 - Greifer und Höhenverstellung - ein Motor}
+
+Bild \newline
+
+In diesem Konzept wird ein einzelner Motor sowohl für die Greiffunktion als auch für die Höhenverstellung eingesetzt. 
+Die Höhenverstellung erfolgt über die Motorenausgangswelle, die fest mit einem Zahnrad verbunden ist. 
+Dieses Zahnrad treibt eine Zahnstange an, die sich vertikal nach oben oder unten bewegt.
+
+Der Greifer besteht aus zwei Backen: die vordere Backe ist fest montiert, während die hintere Backe beweglich 
+auf einer Gleitführung sitzt. Die Backen sind mit einem Gummiband vorgespannt, sodass sie im Ruhezustand 
+geschlossen bleiben. An den Seiten der hinteren Backe befinden sich Mitnehmer, die mit einer linearen Nocke 
+auf beiden Seiten zusammenarbeiten. Diese Nocken sind für die horizontale Bewegung der hinteren Backe verantwortlich.
+
+Wenn die Zahnstange vertikal verschoben wird, bewegt sich die hintere Backe entsprechend entlang der linearen Nocke und 
+ermöglicht so die Öffnung und Schliessung des Greifers. \newline
+
+
+Bild lineare Nocke (evtl.Bewegungsablauf erklären und noch Klappe) \newline
+Hier ist ein Bewegungsablauf... Klappe für verschiedenen Weg...
+
+
+\subsubsection*{Konzept 1 - Greifer und Höhenverstellung - zwei Motoren}
+
+Bild \newline
+
+In diesem Konzept werden jeweils separate Motoren für die Greiffunktion und die Höhenverstellung eingesetzt. 
+Der Greifer wird als Parallelgreifer umgesetzt. Ein Motor, der mit einem Zahnrad gekoppelt ist, treibt zwei 
+Zahnstangen an, wodurch sich die beiden Greiferbacken horizontal bewegen.
+
+Die Höhenverstellung erfolgt über die Ausgangswelle eines weiteren Motors, die fest mit einem Zahnrad verbunden ist.
+Dieses Zahnrad treibt eine Zahnstange an, die eine vertikale Bewegung nach oben oder unten ermöglicht.
+
+
+\subsubsection*{Konzept 3 - Gabelstapler - ein Motor}
+
+Bild \newline
+
+In diesem Konzept wird das Prinzip eines Gabelstaplers nachgebildet. Die Gabeln werden in die dafür vorgesehene 
+Öffnung des Hindernisses eingeführt. Anschließend wird das Hindernis mithilfe eines Motors vertikal angehoben, 
+wobei die Hebebewegung durch ein Zahnstangen-Zahnrad-System realisiert wird.
+
+\end{document}
+
+\newpage
+
+\subsubsection*{Fazit und Entscheidung der Konzeptphase}
+
+\subsection*{Entwicklung und Dimensionierung}
+
+\paragraph{Konzept 1}
+Probleme
+Lösungen
+Weitere Probleme etc.
+
+\paragraph{Konzept 2}
+Probleme
+Lösungen
+Weitere Probleme etc.
+
+\subsection*{Versuche}
+
+\paragraph{Konzept 1}
+Versuch 1, lineare Nocke zu wenig steil etc.
+Versuch 2, Linearführung gleitet zu wenig
+Versuch 3, mit Motor
+
+\paragraph{Konzept 2}
+Versuch 1, mit kleinem Servo -> zu schwach
+Versuch 2, \dots
+
+\subsection{Fazit und Ausblick}
+
+
