@@ -1,0 +1,39 @@
+\documentclass[main.tex]{subfiles} % Subfile-Class
+
+
+% ============================================================================== %
+%                            Subfile document                                    %
+% ============================================================================== %
+
+\begin{document}
+
+\subsection{Gewichtsbudget}
+
+Gemäss der Aufgabenstellung ist das Gewicht des Fahrzeuges auf 2kg limitiert.
+Deswegen ist eine sorgfältige Planung des Gewichts bereits in der Planungsphase wichtig.
+In der folgenden Tabelle werden die Gewichte verschiedener Komponenten festgehalten.
+
+\begin{table}[h!]
+    \centering
+    \scriptsize % Schriftgröße verkleinern
+    \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
+        \hline
+        \textbf{Beschreibung}            & \textbf{Hersteller} & \textbf{Hersteller Nr.} & \textbf{Anzahl} & \textbf{Gewicht [g]/stk} & \textbf{Gewicht total[g]}\\ \hline
+        Schrittmotoren                   & DFRobot             & FIT0278                 & 2               & 287                     & 574                      \\ \hline
+        Schrittmotorentreiber            & DFRobot             & DRI0043                 & 2               & 38                      & 76                       \\ \hline
+        Servomotor                       & ~                   & ~                       & 1               & 80                      & 80                       \\ \hline
+        Akkupack                         & Swaytronic          & ~                       & 1               & 130                     & 130                      \\ \hline
+        LCD                              & ~                   & ~                       & 0               & 70                      & 0                        \\ \hline
+        zusätzliche PCBs                 & JLCPCB              & ~                       & 5               & 60                      & 300                      \\ \hline
+        Sensorpauschale                  & diverse             & ~                       & 9               & 10                      & 90                       \\ \hline
+        Microcontroller                  & Raspberry Pico      & ~                       & 2               & 4                       & 8                        \\ \hline
+        Controller                       & Raspberry Pi 5      & ~                       & 1               & 46                      & 46                       \\ \hline
+        Räder                            & Pauschale           & ~                       & 2               & 40                      & 80                       \\ \hline
+        Chassis                          & Pauschale           & ~                       & 1               & 200                     & 200                      \\ \hline
+        Greifeinheit                     & ~                   & ~                       & 1               & 100                     & 100                      \\ \hline
+        Verkabelungspauschale            & ~                   & ~                       & 1               & 100                     & 100                      \\ \hline
+        Schraubenpauschale               & ~                   & ~                       & 1               & 50                      & 50                       \\ \hline
+    \end{tabularx}
+    \caption{Gewichtsbudget}~\label{tab:Gewichtsbudget}
+\end{table}
+\end{document}
