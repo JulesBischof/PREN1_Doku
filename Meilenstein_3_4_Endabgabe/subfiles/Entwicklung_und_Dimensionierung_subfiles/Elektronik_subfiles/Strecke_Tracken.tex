@@ -18,7 +18,7 @@ Information erfasst. Abbildung~\ref{fig:Blockschaltbild_StreckenTracken} zeigt
 schematisch auf, wie diese Funktion umgesetzt wird. Die danach folgende
 Beschreibung führt dieses Schema nochmal aus.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{./fig_Strecke_Tracken/Topologie_MPU6050.pdf}
     \caption{Blockschaltbild Sensorik Streckenrückverfolgung}~\label{fig:Blockschaltbild_StreckenTracken}
@@ -38,11 +38,24 @@ entsprechender Steckplatz sowohl auf dem Antriebs-Controller, als auch auf dem
 Raspberry-HAT vorgesehen, um dies im Nachfolgemodul PREN2 noch zu testen.
 
 \paragraph{Zurückgelegte Strecke}
-Wie in der Konzeption erwähnt, wird die zurückgelegte Strecke des Pfadfinders
-über Encoder ausgezählt. Die Auflösung beträgt
+Wie in der Konzeption beschrieben, wird die zurückgelegte Strecke des 
+Pfadfinders mithilfe eines Encoders erfasst. Die verwendete Lochscheibe 
+besitzt 36 Löcher, was einer Auflösung von 10 Grad pro Schritt entspricht. 
+Die Dimensionen der Löcher wurden basierend auf den Herstellerangaben aus 
+dem entsprechenden Datenblatt festgelegt. Laut Hersteller beträgt die 
+minimale Erfassungsgröße 1.8 x 0.8 mm, weshalb Löcher mit den Abmessungen 
+1.8 x 1.6 mm gewählt wurden 
+(siehe Abbildung~\ref{fig:Lochscheibe_Vermasst}).
 
-% TODO Text erfassen Lochscheibe
-(YANNIK LOCHSCHEIBE MASSE).
+Falls sich während der Tests in PREN 2 herausstellt, dass die Auflösung nicht 
+ausreicht, könnte der Durchmesser der Lochscheibe vergrößert werden, um bei 
+gleichbleibender Lochgröße mehr Löcher pro Umdrehung unterzubringen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./fig_Strecke_Tracken/Encoderscheibe_Vermasst.pdf}
+    \caption{Masse der Lochscheibe}~\label{fig:Lochscheibe_Vermasst}
+\end{figure}
 
 In einem zweiten Versuch soll im Folgemodul PREN2 getestet werden, ob es
 ausreichen könnte, die zurückgelegten Schritte des Schrittmotorentreibers für
