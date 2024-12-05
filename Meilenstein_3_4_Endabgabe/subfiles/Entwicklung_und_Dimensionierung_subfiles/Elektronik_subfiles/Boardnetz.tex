@@ -9,14 +9,14 @@
 
 % Template
 
-\subsubsection{Boardnetz}~\ref{sec:Boardnetz}
+\subsubsection{Bordnetz}~\label{sec:Bordnetz}
 
 Der folgende Abschnitt beschäftigt sich mit der Energieversorgung des
 Pfadfinders. Wie die Evaluation der Energieversorgung ergeben hat, siehe
-Anhang~\ref{appendix:Boardnetz}, wird der Roboter über einen 4S-LiPo mit
+Anhang~\ref{appendix:Bordnetz}, wird der Roboter über einen 4S-LiPo mit
 Energie versorgt. Der Evaluierte Akku beinhaltet $\approx 19Wh$ Energie und
 bietet damit genug Energie, um den Pfadfinder im Worst-Case bei voller Leistung
-für ca. 20min zu betreiben. Die Boardnetzspannung ist auf 12V gesetzt, um auf
+für ca. 20min zu betreiben. Die Bordnetzspannung ist auf 12V gesetzt, um auf
 Sensorik und Aktorik, so zum Beispiel Lichtschranken, aus dem Industriellen
 Umfeld zurückgreifen zu können. Ausserdem kann so eine grössere Bandbreite an
 Motoren abgedeckt werden, falls sich die eingeplanten als nicht geeignet
@@ -44,11 +44,11 @@ Abbildung~\ref{PowerBoard_Ansicht} zeigt eine 3D-Ansicht dieses PCB's.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.75\linewidth]{fig_Boardnetz/PowerDistributionBoard.jpg}
+    \includegraphics[width = 0.75\linewidth]{fig_Bordnetz/PowerDistributionBoard.jpg}
     \caption{Ansicht PowerBoard}~\label{PowerBoard_Ansicht}
 \end{figure}
 
-\paragraph{Boardnetz - Spannungsverteilung}
+\paragraph{Bordnetz - Spannungsverteilung}
 Jeder PCB wird über 12V mit Spannung versorgt. Auf den entsprechenden PCB's
 werden die geregelten 12V zuerst über einen DC-DC Abwärtssteller auf $\approx$
 6V heruntergebracht und dann über einen LDO auf 5V bzw. 3V3 aktiv gefiltert.
@@ -62,7 +62,7 @@ konzeptionell.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 1\linewidth]{fig_Boardnetz/PowerBoard-Blockschaltbild.pdf}
+    \includegraphics[width = 1\linewidth]{fig_Bordnetz/PowerBoard-Blockschaltbild.pdf}
     \caption{PowerBoard Blockschaltbild}~\label{PowerBoard_Blockschaltbild}
 \end{figure}
 
