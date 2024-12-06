@@ -1,43 +1,73 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
-% ============================================================================== %
-%                            Subfile document                                    %
-% ============================================================================== %
-
 \begin{document}
 
 \subsubsection{Tests}
 
-Die Qualität und Funktionalität des Simulators wurden umfassend geprüft, wobei ein besonderer Schwerpunkt auf der zentralen Komponente, dem \textit{GraphExplorer}, lag. Diese Komponente ist entscheidend für die Navigation und Entscheidungsfindung im Graphen und wurde mittels detaillierter Unit-Tests und Usertests validiert.
+Die Qualität und Funktionalität des Simulators wurden umfassend
+geprüft, wobei ein besonderer Schwerpunkt auf der zentralen
+Komponente, dem \textit{GraphExplorer}, lag. Diese Komponente ist
+entscheidend für die Navigation und Entscheidungsfindung im Graphen
+und wurde mittels detaillierter Unit-Tests und Usertests validiert.
 
 \paragraph{Unittests}
 
-Die Unit-Tests für den \textit{GraphExplorer} deckten die wichtigsten Kernfunktionen ab, um sicherzustellen, dass die Algorithmen korrekt implementiert sind und konsistent arbeiten. Dabei wurde das Framework \textit{Vitest} verwendet, welches aufgrund seiner schnellen Performance und nahtlosen Integration mit Svelte ideal für die Testumgebung geeignet ist.
+Die Unit-Tests für den \textit{GraphExplorer} deckten die wichtigsten
+Kernfunktionen ab, um sicherzustellen, dass die Algorithmen korrekt
+implementiert sind und konsistent arbeiten. Dabei wurde das Framework
+\textit{Vitest} verwendet, welches aufgrund seiner schnellen
+Performance und nahtlosen Integration mit Svelte ideal für die
+Testumgebung geeignet ist.
 
 Die wichtigsten getesteten Funktionen umfassen:
 \begin{itemize}
-    \item \textbf{Berechnung von Vektoren und Ausrichtung:} Validierung der korrekten Berechnung des Zielvektors zwischen Knoten und der Ermittlung der Ausrichtung von Vektoren, um sicherzustellen, dass die Navigation priorisiert wird.
-    \item \textbf{Klassifikation von Knoten:} Tests zur korrekten Einteilung von Knoten in die Sektionen \textit{links, rechts, Mitte}.
-    \item \textbf{Ermittlung möglicher Kanten:} Prüfung, ob die möglichen Verbindungen eines Knotens korrekt ermittelt und priorisiert werden.
-    \item \textbf{Markierung besuchter Knoten und Kanten:} Überprüfung, ob Knoten und Kanten korrekt als besucht markiert werden, um redundante Wege zu vermeiden.
-    \item \textbf{Intersektionserkennung:} Validierung der Berechnung von Schnittpunkten zwischen Kanten, um die Konsistenz des Graphen zu gewährleisten.
-    \item \textbf{Verarbeitung eingeschränkter Knoten:} Sicherstellung, dass Knoten mit Einschränkungen (z. B. \textit{restricted}) korrekt behandelt werden.
+  \item \textbf{Berechnung von Vektoren und Ausrichtung:} Validierung
+    der korrekten Berechnung des Zielvektors zwischen Knoten und der
+    Ermittlung der Ausrichtung von Vektoren, um sicherzustellen, dass
+    die Navigation priorisiert wird.
+  \item \textbf{Klassifikation von Knoten:} Tests zur korrekten
+    Einteilung von Knoten in die Sektionen \textit{links, rechts, Mitte}.
+  \item \textbf{Ermittlung möglicher Kanten:} Prüfung, ob die
+    möglichen Verbindungen eines Knotens korrekt ermittelt und
+    priorisiert werden.
+  \item \textbf{Markierung besuchter Knoten und Kanten:} Überprüfung,
+    ob Knoten und Kanten korrekt als besucht markiert werden, um
+    redundante Wege zu vermeiden.
+  \item \textbf{Intersektionserkennung:} Validierung der Berechnung
+    von Schnittpunkten zwischen Kanten, um die Konsistenz des Graphen
+    zu gewährleisten.
+  \item \textbf{Verarbeitung eingeschränkter Knoten:} Sicherstellung,
+    dass Knoten mit Einschränkungen (z. B. \textit{restricted})
+    korrekt behandelt werden.
 \end{itemize}
 
-Die Tests wurden unter Verwendung von Mock-Daten durchgeführt, die feste Knoten und Kanten (\textit{fixedNodes}, \textit{fixedEdges}) im Graphen repräsentierten. Das Verhalten des Systems wurde mit den erwarteten Ergebnissen verglichen, um die Genauigkeit der Algorithmen sicherzustellen.
+Die Tests wurden unter Verwendung von Mock-Daten durchgeführt, die
+feste Knoten und Kanten (\textit{fixedNodes}, \textit{fixedEdges}) im
+Graphen repräsentierten. Das Verhalten des Systems wurde mit den
+erwarteten Ergebnissen verglichen, um die Genauigkeit der Algorithmen
+sicherzustellen.
 
 \paragraph{Usertests}
 
-Zusätzlich zu den automatisierten Tests wurde der Simulator durch umfangreiche Usertests evaluiert. Hierfür wurden spezifische, „schwierige“ Graphen erstellt, die besondere Herausforderungen wie Sackgassen, blockierte Knoten oder entfernte Strecken beinhalteten. 
+Zusätzlich zu den automatisierten Tests wurde der Simulator durch
+umfangreiche Usertests evaluiert. Hierfür wurden spezifische,
+„schwierige“ Graphen erstellt, die besondere Herausforderungen wie
+Sackgassen, blockierte Knoten oder entfernte Strecken beinhalteten.
 
-Das Verhalten des Simulators wurde mit den theoretisch erwarteten Ergebnissen verglichen, um sicherzustellen, dass der Algorithmus auch in komplexen Szenarien zuverlässig arbeitet. Dabei lag der Fokus auf:
+Das Verhalten des Simulators wurde mit den theoretisch erwarteten
+Ergebnissen verglichen, um sicherzustellen, dass der Algorithmus auch
+in komplexen Szenarien zuverlässig arbeitet. Dabei lag der Fokus auf:
 \begin{itemize}
-    \item der korrekten Navigation durch den Graphen,
-    \item und der Einhaltung der Prioritäten bei der Pfadwahl.
+  \item der korrekten Navigation durch den Graphen,
+  \item und der Einhaltung der Prioritäten bei der Pfadwahl.
 \end{itemize}
 
 \paragraph{Fazit}
 
-Die Kombination aus automatisierten Unit-Tests und praxisnahen Usertests gewährleistete, dass der Simulator sowohl auf funktionaler Ebene als auch in der Anwendung robust ist. Die Tests trugen wesentlich dazu bei, die Zuverlässigkeit des Systems zu validieren und potenzielle Fehler frühzeitig zu identifizieren.
+Die Kombination aus automatisierten Unit-Tests und praxisnahen
+Usertests gewährleistete, dass der Simulator sowohl auf funktionaler
+Ebene als auch in der Anwendung robust ist. Die Tests trugen
+wesentlich dazu bei, die Zuverlässigkeit des Systems zu validieren
+und potenzielle Fehler frühzeitig zu identifizieren.
 
 \end{document}
