@@ -10,28 +10,14 @@
 % Template
 
 \section{Liniensensor}
-Anbei folgen diverse Unterkapitel, welche zur Berechnungen für die Erstellung eines Liniensensors benötigt wurden.
-
-\subsection{Auswertung des Liniensensors}
-In diesem Kapitel wird auf die Auswertung des Liniensensors eingegangen. In Abbildung~\ref{fig:Auswertung_Liniensensor} ist die
-Auswertung des Liniensensors zu sehen. Hierbei wird Spannung über dem Phototransistor gemessen und mit einem ADC in einen digitalen
-Wert umgewandelt. Je mehr Licht einer Emitter-Diode auf den Phototransistor reflektiert wird, desto höher ist der Strom durch ihn. Zu jedem
-Zeitpunkt kann der Phototransistor als eine Stromquelle betrachtet werden. Daher ist es möglich die Spannung über ihn zu messen. Wenn der Strom
-gross ist, fällt die meiste Spannung über dem Vorwiderstand ab und die Spannung über den Phototransistor nähert sich 0V an. Wenn der Phototransistor
-allerdings weniger Strom "fordert", dann entsteht ein Spannungsteiler mit dem Widerstand R und dem Phototransistor. Daher ist dann die Spannung über ihn nicht in
-der Nähe von 0V. Damit der Widerstand R optimal dimensioniert werden kann, muss der Strom I durch den Phototransistor in der praxis gemessen
-werden. Im folgendem Kapitel wird  eruiert, mit welchem Lichtspektrum die grössere Stromdifferenz zwischen Klebeband und Fliese/ Fuge gemessen werden kann.
+\label{anhang:Liniensensor}
+Anbei folgen diverse Unterkapitel, welche Berechnungen sowie Messungen für die Erstellung eines Liniensensors beinhalten.
 
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./fig_Liniensensor/Auswertung_Liniensensor}
-    \caption{Auswertung der Spannung über dem Phototransistor auf dem Klebeband und auf der Fliese/ Fuge.}~\label{fig:Auswertung_Liniensensor}
-\end{figure}
+\subsection{Analyse optimales Lichtspektrum}
+\label{anhang:Liniensensor_Lichtspektrum}
 
-\subsection{Analyse optimales Lichtspektrum für den Liniensensor}
-
-Im folgendem Abschnitt wird untersucht ob sich das infrarot Spektrum oder das ultraviolette Spektrum besser für
+Im folgenden Abschnitt wird untersucht, ob sich das Infrarot-Spektrum oder das Ultraviolett-Spektrum besser für
 die Unterscheidung des Klebebands zum Wettkampfuntergrund eignet. Zuerst müssen aber alle Komponenten der Messzellen, 
 welche mit unterschiedlichen Wellenlängen emittierenden Dioden und Fototransistoren ausgestattet sind, berechnet werden.
 In Abbildung~\ref{fig:Schema_Messzelle_Liniensensor} ist die erste Messzelle von acht abgebildet. Für jede Messzelle
@@ -45,54 +31,49 @@ gelten aber dieselben Werte.
 
 
 \subsubsection{Dimensionierung IR-Messzelle}
-In diesem Abschnitt wird eine IR-Messzelle dimensionert. Gemäss Datenblatt kann über dem IR-Emitter von 1.3 bis 2V
-abfallen. Die Speisespannung beträgt 3.3V. Der maximaler Strom beträgt 100mA. Der Strom wird gewählt, dass er ungefähr im 
-Bereich von 10mA bis 60mA fällt. Dies wurde so gewählt, das nicht zu viel Leistung verbraucht wird, aber der Emitter trotzdem 
+In diesem Abschnitt wird eine IR-Messzelle dimensionert. Gemäss Datenblatt kann über dem IR-Emitter von 1.3 V bis 2 V
+abfallen. Die Speisespannung beträgt 3.3 V. Der maximale Strom beträgt 100 mA. Der Strom wird gewählt, dass er ungefähr im 
+Bereich von 10 mA bis 60 mA fällt. Dies wurde so gewählt, das nicht zu viel Leistung verbraucht wird, aber der Emitter trotzdem 
 mit genügen Strom versorgt wird. Daraus resultiert die folgende Widersandsberechnung:
 \[
-    R_{max} = \frac{U_q - U_{LED}}{I_{LEDmin}} = \frac{3.3V - 1.3V}{0.01A} = 200ohm
+    R_{max} = \frac{U_q - U_{LED}}{I_{LEDmin}} = \frac{3.3 V - 1.3 V}{0.01A} = 200 \Omega
 \]
 \[
-    R_{min} = \frac{U_q - U_{LED}}{I_{LEDmax}} = \frac{3.3V - 1.3V}{0.03A} = 33.33ohm
+    R_{min} = \frac{U_q - U_{LED}}{I_{LEDmax}} = \frac{3.3 V - 1.3 V}{0.03A} = 33.33 \Omega
 \]
-Daraus resultiert ein Potentiometer Rp1 von 200ohm und ein R1.1 von 33ohm.
-
-Der Widerstand R1.3 wird beim Versuch durch ein Amperemeter ersetzt, damit der Strom durch den Phototransistor gemessen 
-werden kann.
+Daraus resultiert ein Potentiometer $R_{p1}$ von 200 $\Omega$ und ein $R_{1.1}$ von 33 $\Omega$.
+Der Widerstand $R_{1.3}$ kann erst später dimensioniert werden, weil der Strom durch ihn unklar ist.
 
 %===========================================================================================================%
 
 \subsubsection{Dimensionierung UV-Messzelle}
 In diesem Abschnitt wird die UV-Messzelle dimensioniert.
-Über die Speisespannung von 5V wird eine UV-Emitter mit Vorwiderstand bestromt. Der empfohlene Strom
-wird Gemäss dem Datenblatt des UV-Emitters von 10mA bis 20mA vorgeschlagen. Ausserdem darf der Strom nicht 
+Über die Speisespannung von 5 V wird ein UV-Emitter mit Vorwiderstand bestromt. Der empfohlene Strom
+wird Gemäss dem Datenblatt des UV-Emitters von 10 mA bis 20 mA vorgeschlagen. Ausserdem darf der Strom nicht 
 30mA übersteigen. Daher resultiert: 
 
 \[
-    R_{max} = \frac{U_q - U_{LED}}{I_{LEDmin}} = \frac{5V - 2.9V}{0.01A} = 210ohm
+    R_{max} = \frac{U_q - U_{LED}}{I_{LEDmin}} = \frac{5 V - 2.9 V}{0.01A} = 210 \Omega
 \]
 \[
-    R_{min} = \frac{U_q - U_{LED}}{I_{LEDmax}} = \frac{5V - 2.9V}{0.03A} = 70ohm
+    R_{min} = \frac{U_q - U_{LED}}{I_{LEDmax}} = \frac{5 V - 2.9 V}{0.03A} = 70 \Omega
 \]
-Daraus resultiert ein Potentiometer Rp1 von 200ohm und ein R1.1 von 82ohm, welches ungefähr im zuvor festgelegten
+Daraus resultiert ein Potentiometer $R_{p1}$ von 200 $\Omega$ und ein $R_{1.1}$ von 82 $\Omega$, welches ungefähr im zuvor festgelegten
 Strombereich liegt:
 \[
-    I_{max} = \frac{U_R}{R_{min}} = \frac{2.1}{82ohm} = 0.0256A = 25.6mA
+    I_{max} = \frac{U_R}{R_{min}} = \frac{2.1}{82 \Omega} = 0.0256 A = 25.6 mA
 \]
 \[
-    I_{min} = \frac{U_R}{R_{max}} = \frac{2.1}{282ohm} = 0.00745A = 7.45mA
+    I_{min} = \frac{U_R}{R_{max}} = \frac{2.1}{282 \Omega} = 0.00745 A = 7.45 mA
 \]
 Aufgrund dieser Widerstandsaufteilung kann der Strom ungefähr in dem empfohlenen Bereich frei eingestellt werden.
-
-
-Der Widerstand R1.3 wird beim Versuch durch ein Amperemeter ersetzt, damit der Strom durch den Phototransistor gemessen 
-werden kann.
+Der Widerstand $R_{1.3}$ kann erst später dimensioniert werden, weil der Strom durch ihn unklar ist.
 
 \subsubsection{Versuchsmessungen}
 Bei den beiden oben dimensionierten Varianten wird je eine Messzelle auf ein PCB gelötet und dann der Strom durch den
-Phototransisor gemessen. Die gemessenen Werte sind in der folgenden Tabelle~\ref{tab:Strommessungen} festgehalten. Dabei resultierte der 
-Abstand von XYZ!!!!!!!!!!!!!!!!! von Messfläche zum Liniensensor. Das Potentiometer wird maximal eingestellt, sprich
-auf 200 Ohm eingestellt.
+Fototransistor gemessen. Die gemessenen Werte sind in der folgenden Tabelle~\ref{tab:Strommessungen_einzeln} festgehalten. Dabei resultierte der 
+Abstand von ungefähr 2.7mm von Messfläche zum Liniensensor. Das Potentiometer wird in die Mitte eingestellt, sprich
+auf 100 $\Omega$.
 
 \begin{table}[h]                                    
     \centering
@@ -103,40 +84,93 @@ auf 200 Ohm eingestellt.
         Ultraviolett          & 0.2024                                & 0.0691                       & 0.0494                     \\ \hline
 
         \end{tabular}
-\caption{Strom durch die beiden Phototransistor in verschiedenen Lichtspektren}
-\label{tab:Strommessungen}
+\caption{Strom durch die beiden Fototransistor in verschiedenen Lichtspektren}
+\label{tab:Strommessungen_einzeln}
 \end{table}
 
 
-Aus der Tabelle ist zu sehen, dass im UV-Lichtspektrum zwar der Strom geringer ist, aber der Strom deutlich höher ist auf dem Klebeband im 
-Vergleich zu den anderen Messpunkten. Daher kann die Vermutung bestätigt werden, dass das Klebeband eine fluoreszierende Wirkung hat. Aufgrund
-dieser Messresultate wird auf das UV-Spektrum zurückgegriffen.
+Aus der Tabelle ist zu sehen, dass im UV-Spektrum der Strom über dem Klebeband geringerer ist als beim IR-Spektrum. Jedoch ist der Differenzfaktor beim UV-Spektrum zu den 
+verschiedenen Messuntergründen etwa doppelt so hoch im Vergleich zum IR-Spektrum. Aufgrund dieser Messresultate wird auf das UV-Spektrum zurückgegriffen.
 
 
-\subsection{Dimensionierung des Widerstandes R1.3}
-Weil nun der Strom durch den Phototransistor bekannt ist, kann nun in diesem Abschnitt der Widerstandswert von R1.3 berechnet werden. Weil der Strom
-durch den Phototransistor auf dem Klebeband nie ganz genau identisch sein wird, wird ein Schwellwert angenommen. Es wird nun ein Strom $I_{\text{Ph}}$ von $120 \, \mu A$
-angenommen. Dieser Wert bietet noch genügend Differenz zum Fliesen-/Fugenstrom. Daher kann der Widerstand $R_{1.3}$ berechnet werden.
-
-\[
-    R_{1.3} = \frac{U_q}{I_{\text{Ph}}} = \frac{3.3 \, \text{V}}{120 \, \mu \text{A}} = 27.5 \, \text{k}\Omega
-\]
-
-
-Daraus resultiert ein Widerstand R1.3 von 27000 Ohm. Dass mit der Wahl dieses Widerstandes die Spannungsdifferenz zwischen Klebeband und Fliese/ Fuge
-genügend gross ist, wird mit den folgenden Messungen in der Tabelle~\ref{tab:Spannungsmessungen} bewiesen:
+\subsection{Dimensionierung des Widerstandes $R_{1.3}$}
+In dem oberen Abschnitt wurde der Strom durch einen Fototransistor gemessen. Wie schon oben erwähnt, wird aufgrund der besseren Messwerte auf das UV-Spektrum
+zurückgegriffen. Jedoch wurde für den Versuch nur eine Messzelle gemessen. Mit nun acht Messzellen beeinflussen sich die Messzellen trotz möglichst präziser 
+Abschirmung immer noch gegenseitig. Das heisst, mehr Licht entspricht einer höheren ansteuerung der Basis des Fototransistors und somit einen höheren Strom. 
+Deswegen muss dieser nun neu gemessen werden. Bei allen acht Messzellen werden die verschiedenen Ströme auf allen Messuntergründen gemessen. In der Tabelle~\ref{tab:Strommessungen_alle} sind die maximal
+gemessenen Ströme auf der Fliese und der Fuge ersichtlich. Mit den Potentiometern werden die Ströme durch die Emitter so eingestellt, dass sie auf dem Klebeband durch den Fototransistor immer 
+etwa gleich hoch ausfallen (480 mA). Dies mit der Begründung, dass ein möglichst einheitlicher Strom durch den Fototransistor fliesst, wenn er sich auf dem Klebeband befindet.
 
 \begin{table}[h]                                    
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|}                        
         \hline
-             \textbf{Spannung Klebeband [V]}        & \textbf{Spannung Fuge [V]}    & \textbf{Spannung Fliese [V]}\\ \hline
-             0.242                                   & 3.113                          & 2.46                       \\ \hline
+        \textbf{Messuntergrund} & \textbf{Strom in [mA]}        \\ \hline
+        Klebeband               & 0.48                          \\ \hline
+        Fliese                  & 0.34                          \\ \hline
+        Fuge                    & 0.23                          \\ \hline
 
         \end{tabular}
-\caption{Spannung über Phototransistor bei Klebeband, Fuge und Fliese im UV-Spektrum}
-\label{tab:Spannungsmessungen}
+\caption{Strom durch den Fototransistor auf den verschiedenen Messuntergründen}
+\label{tab:Strommessungen_alle}
 \end{table}
+
+Weil nun die Ströme durch den Fototransistor bekannt sind, kann nun der passende Widerstandswert für $R_{1.3}$ berechnet werden. Weil der Strom
+durch den Fototransistor auf dem Klebeband nie ganz genau identisch sein wird, wird ein Schwellwert angenommen. Es wird nun ein Strom $I_{\text{F}}$ von $400 \, \mu A$
+angenommen. Dieser Wert bietet noch genügend Differenz zum Fliesen-/Fugenstrom. Daher kann der Widerstand $R_{1.3}$ berechnet werden.
+
+\[
+    R_{1.3} = \frac{U_q}{I_{\text{Ph}}} = \frac{3.3 \, \text{V}}{400 \, \mu \text{A}} = 8.25 \, \text{k}\Omega
+\]
+
+
+Daraus resultiert ein Widerstand $R_{1.3}$ von 8200 Ohm. Dass bedeutet, sobald der Strom grösser als $400 \, \mu A$ ist, geht die Spannung über dem
+Fototransistor annähernd zu Ground. Unter dem Schwellwert wird ein Spannungsoffset registriert. Um diese Berechnung zu verifizieren, wird der Liniensensor mit
+einem Arduino geprüft. Die Auswertung des Arduinos ist in der Tabelle~\ref{tab:Spannungsauswertung_Arduino} dargestellt.
+\begin{table}[h]                                    
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|}                        
+        \hline
+        \textbf{Kennzahl aus Software} & \textbf{Spannung in [V]}        \\ \hline
+        0                      & 0V                                     \\ \hline
+        205                    & 1V                                     \\ \hline
+        1023                   & 5V                                     \\ \hline
+
+        \end{tabular}
+\caption{Spannungsauswertung des Arduinos über dem Fototransistor}
+\label{tab:Spannungsauswertung_Arduino}
+\end{table}\\
+
+Es kann also ein Spannungsbereich von 0 V bis 5 V über dem Fototransistor ausgewertet werden. Anbei sind nun einige Versuchsmessungen dokumentiert.\\\\
+
+
+Bei der Abbildung~\ref{fig:Auswertung_Klebeband_zu_Fuge} ist der Vergleich Fliese (oben) zu Klebeband (unten) ersichtlich. Die Werte auf dem Boden schwanken zwar, 
+sind aber nie unter 350, also sprich 1.707 V. Die Werte auf dem Klebeband werden jedoch immer sauber gegen Ground gezogen.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Liniensensor/Auswertung_Klebeband_zu_Fuge}
+    \caption{Vergleich der Kennzahlen von Fliese (oben) und Klebeband (unten) des Arduinos}~\label{fig:Auswertung_Klebeband_zu_Fuge}
+\end{figure}
+
+Die Abbildung~\ref{fig:Auswertung_Strecke} zeigt, wie eine mögliche Strecke getrackt werden kann. Dabei wird vorallem A3 gegen Ground gezogen.
+Ausserdem kann man sehen, dass A2 und A4 auch das Klebeband tracken. Jedoch nicht so deutlich. Dies liegt daran, dass diese beiden Messzellen nicht
+direkt auf das Klebeband ausgerichtet sind.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Liniensensor/Auswertung_Strecke}
+    \caption{Vergleich der Kennzahl Klebeband (vorallem A3) und der Fliese}~\label{fig:Auswertung_Strecke}
+\end{figure}
+
+In Abbildung~\ref{fig:Auswertung_mit_Fuge} wird die Auswertung aufgezeigt, bei der die Fuge auch miteinbezogen wurde. Diese ist bei dem Pin A2 leicht
+sichtbar. Fällt aber fast nicht auf. Im Vergleich zu A6, bei dem das Klebeband angezeigt wird. Die restlichen Pins stellen die Fliese dar.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Liniensensor/Auswertung_mit_Fuge}
+    \caption{Vergleich der Kennzahl Fuge (A6) und dem Klebeband (A6) umrandet von der Fliese}~\label{fig:Auswertung_mit_Fuge}
+\end{figure}
 
 %===========================================================================================================%
 \end{document}
