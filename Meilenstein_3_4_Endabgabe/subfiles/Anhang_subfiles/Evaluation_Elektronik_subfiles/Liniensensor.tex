@@ -13,24 +13,95 @@
 \label{anhang:Liniensensor}
 Anbei folgen diverse Unterkapitel, welche Berechnungen sowie Messungen für die Erstellung eines Liniensensors beinhalten.
 
+% ===================================================================================
+\subsubsection*{Geometrische Überlegungen}
+Abbildung~\ref{fig:Konzept_graphml} zeigt die konzeptionellen Überlegungen einer Messzelle des
+Liniensensors. Gemäss dem Datenblatt hat der UV-Emitter (Sender) einen Abstrahlwinkel von 15° und der
+Fototransistor (Empfänger) einen Einfallswinkel von 60°. Für eine möglichst störungsfreie Detektion muss auf dem Boden 
+eine möglichst grosse Fläche des Empfänger-Kreises durch den Sender-Kreis ausgefüllt werden. Der passende
+Abstand zwischen Liniensensor und Boden muss in der praxis mit Versuchsmessungen eruiert werden.\\
+Diese einzelnen Messzellen sollen untereinander und von der Umwelt abgekapselt werden. Dies
+mit der Begründung, dass die Fototransistoren, gegebenenfalls empfindlich auf
+Umwelteinflüsse reagieren könnten. Daher wird ein Gehäuse für die Abschirmung von Umwelteinflüssen
+konzipiert.
 
-\subsection{Analyse optimales Lichtspektrum}
-\label{anhang:Liniensensor_Lichtspektrum}
-
-Im folgenden Abschnitt wird untersucht, ob sich das Infrarot-Spektrum oder das Ultraviolett-Spektrum besser für
-die Unterscheidung des Klebebands zum Wettkampfuntergrund eignet. Zuerst müssen aber alle Komponenten der Messzellen, 
-welche mit unterschiedlichen Wellenlängen emittierenden Dioden und Fototransistoren ausgestattet sind, berechnet werden.
-In Abbildung~\ref{fig:Schema_Messzelle_Liniensensor} ist die erste Messzelle von acht abgebildet. Für jede Messzelle
-gelten aber dieselben Werte.
-
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{./fig_Liniensensor/Schema_Messzelle_Liniensensor}
-    \caption{Erste Messzelle des Liniensensors, die restlichen sieben Messzellen sind identisch.}~\label{fig:Schema_Messzelle_Liniensensor}
+    \includegraphics[width=0.75\textwidth]{./fig_Liniensensor/Konzept.pdf}
+    \caption{Konzept des Liniensensors}~\label{fig:Konzept_graphml}
 \end{figure}
 
+% ===================================================================================
 
-\subsubsection{Dimensionierung IR-Messzelle}
+\subsubsection*{Dimensionierung Gehäuse}
+Damit der Empfänger möglichst wenig auf Umwelteinflüsse reagiert, wird nun ein 
+Gehäuse dimensioniert, welches den Sensor abschirmen soll. Die nachfolgende 
+Abbildung~\ref{fig:Gehaeuse_Vermasst} zeigt eine Skizze, welche den Aufbau des Gehäuses repräsentiert.
+In dieser Skizze wird jeder Emitter und Fototransistor von allen anderen abgeschottet. Die vier Löcher
+passen genau auf das PCB des Liniensensors. Die Höhe des Gehäuses, stellt den Abstand zwischen Liniensensor
+und dem Boden dar. Die grösste Stromdifferenz wurde in einer Höhe von 2.5 cm gemessen. Daher wird die Höhe
+des Gehäuses auf 2.5 cm festgelegt.
+Die isometrische Ansicht des Gehäuse ist in Abbildung~\ref{fig:Gehaeuse_Isometrisch} !!!!!Anpassen!!!!!!
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Liniensensor/Gehaeuse_Vermasst.pdf}
+    \caption{Vermassung des Gehäuses in Siemens NX}~\label{fig:Gehaeuse_Vermasst}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Liniensensor/Gehaeuse_Isometrisch.pdf}
+    \caption{Isometrische Ansicht des Gehäuses in Siemens NX}~\label{fig:Gehaeuse_Isometrisch}
+\end{figure}
+
+% ===================================================================================
+
+\subsubsection*{Schema einer Messzelle}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./fig_Liniensensor/Schema_Messzelle_Liniensensor.pdf}
+    \caption{Schema einer Messzelle}~\label{fig:Messzelle}
+\end{figure}
+
+Abbildung~\ref{fig:Messzelle} zeigt das Schema einer einzelnen Messzelle. Die Speisung hat eine Höhe von 5 V oder 3.3 V. 
+Ausserdem ist als Sicherheitsmassnahme beim Messabgang über dem 
+Fototransistor einen Platz für einen Widerstand eingebaut, damit bei allfälligen Stromspitzen der Strom 
+limitiert werden könnte. Weil dies aber mit der verwendeten Auswertung nicht notwendig ist, wird ein
+0 $\Omega$ Widerstand eingebaut. Die Potentiometer werden eingebaut, dass allfällige Bauteiltoleranzen
+eliminiert werden können. In den folgenden Abschnitten wird dargestellt, wie die Werte der Komponenten $R_{1.1}$, $R_{p1}$ und $R_{1.3}$ 
+dimensioniert werden.
+
+
+% ======================================================================================
+\subsubsection*{Wahl des Lichtspektrums}
+Damit der Unterschied zwischen dem Wettkampfuntergrund und dem Klebeband möglichst 
+drastisch hervorgehoben werden kann, ist zuerst eine Evaluierung des optimalen
+Lichtspektrums nötig. Es werden nun Versuche dokumentiert, welche die Spannungen 
+über dem Fototransistor im Infrarot-Spektrum (IR) und im Ultraviolett-Spektrum (UV) 
+dokumentiert. Dabei wird für ersteres ein Emitter und ein Fototransistor im IR-Spektrum (beide 940 nm Peak-Wellenlänge)
+verwendet. Beim Versuch im UV-Spektrum wird ein UV-Emitter (395nm Peak-Wellenglänge) mit einem Fototransistor (630nm Peak-Wellenlänge) 
+im sichtbaren Spektrum verwendet. Dabei wird eine fluoreszierende Wirkung des Klebebandes 
+vermutet.
+
+
+
+%Im folgenden Abschnitt wird untersucht, ob sich das Infrarot-Spektrum oder das Ultraviolett-Spektrum besser für
+%die Unterscheidung des Klebebands zum Wettkampfuntergrund eignet. Zuerst müssen aber alle Komponenten der Messzellen, 
+%welche mit unterschiedlichen Wellenlängen emittierenden Dioden und Fototransistoren ausgestattet sind, berechnet werden.
+%In Abbildung~\ref{fig:Schema_Messzelle_Liniensensor} ist die erste Messzelle von acht abgebildet. Für jede Messzelle
+%gelten aber dieselben Werte.
+
+%\begin{figure}[h!]
+ %   \centering
+  %  \includegraphics[width=0.5\textwidth]{./fig_Liniensensor/Schema_Messzelle_Liniensensor}
+   % \caption{Erste Messzelle des Liniensensors, die restlichen sieben Messzellen sind identisch.}~\label{fig:Schema_Messzelle_Liniensensor}
+%\end{figure}
+
+
+
+\subsubsection*{Dimensionierung IR-Messzelle}
 In diesem Abschnitt wird eine IR-Messzelle dimensionert. Gemäss Datenblatt kann über dem IR-Emitter von 1.3 V bis 2 V
 abfallen. Die Speisespannung beträgt 3.3 V. Der maximale Strom beträgt 100 mA. Der Strom wird gewählt, dass er ungefähr im 
 Bereich von 10 mA bis 60 mA fällt. Dies wurde so gewählt, das nicht zu viel Leistung verbraucht wird, aber der Emitter trotzdem 
@@ -46,7 +117,7 @@ Der Widerstand $R_{1.3}$ kann erst später dimensioniert werden, weil der Strom 
 
 %===========================================================================================================%
 
-\subsubsection{Dimensionierung UV-Messzelle}
+\subsubsection*{Dimensionierung UV-Messzelle}
 In diesem Abschnitt wird die UV-Messzelle dimensioniert.
 Über die Speisespannung von 5 V wird ein UV-Emitter mit Vorwiderstand bestromt. Der empfohlene Strom
 wird Gemäss dem Datenblatt des UV-Emitters von 10 mA bis 20 mA vorgeschlagen. Ausserdem darf der Strom nicht 
@@ -69,7 +140,7 @@ Strombereich liegt:
 Aufgrund dieser Widerstandsaufteilung kann der Strom ungefähr in dem empfohlenen Bereich frei eingestellt werden.
 Der Widerstand $R_{1.3}$ kann erst später dimensioniert werden, weil der Strom durch ihn unklar ist.
 
-\subsubsection{Versuchsmessungen}
+\subsubsection*{Versuchsmessungen}
 Bei den beiden oben dimensionierten Varianten wird je eine Messzelle auf ein PCB gelötet und dann der Strom durch den
 Fototransistor gemessen. Die gemessenen Werte sind in der folgenden Tabelle~\ref{tab:Strommessungen_einzeln} festgehalten. Dabei resultierte der 
 Abstand von ungefähr 2.7mm von Messfläche zum Liniensensor. Das Potentiometer wird in die Mitte eingestellt, sprich
@@ -93,7 +164,7 @@ Aus der Tabelle ist zu sehen, dass im UV-Spektrum der Strom über dem Klebeband 
 verschiedenen Messuntergründen etwa doppelt so hoch im Vergleich zum IR-Spektrum. Aufgrund dieser Messresultate wird auf das UV-Spektrum zurückgegriffen.
 
 
-\subsection{Dimensionierung des Widerstandes $R_{1.3}$}
+\subsection*{Dimensionierung des Widerstandes $R_{1.3}$}
 In dem oberen Abschnitt wurde der Strom durch einen Fototransistor gemessen. Wie schon oben erwähnt, wird aufgrund der besseren Messwerte auf das UV-Spektrum
 zurückgegriffen. Jedoch wurde für den Versuch nur eine Messzelle gemessen. Mit nun acht Messzellen beeinflussen sich die Messzellen trotz möglichst präziser 
 Abschirmung immer noch gegenseitig. Das heisst, mehr Licht entspricht einer höheren ansteuerung der Basis des Fototransistors und somit einen höheren Strom. 
@@ -124,8 +195,11 @@ angenommen. Dieser Wert bietet noch genügend Differenz zum Fliesen-/Fugenstrom.
 \]
 
 
-Daraus resultiert ein Widerstand $R_{1.3}$ von 8200 Ohm. Dass bedeutet, sobald der Strom grösser als $400 \, \mu A$ ist, geht die Spannung über dem
-Fototransistor annähernd zu Ground. Unter dem Schwellwert wird ein Spannungsoffset registriert. Um diese Berechnung zu verifizieren, wird der Liniensensor mit
+Daraus resultiert ein Widerstand $R_{1.3}$ von 8200 Ohm. Das bedeutet, sobald der Strom grösser als $400 \, \mu A$ ist, geht die Spannung über dem
+Fototransistor annähernd zu Ground. Unter dem Schwellwert wird ein Spannungsoffset registriert.
+
+\subsection*{Messwerte des Liniensensors}
+Um diese Berechnungen zu verifizieren, wird der Liniensensor mit
 einem Arduino geprüft. Die Auswertung des Arduinos ist in der Tabelle~\ref{tab:Spannungsauswertung_Arduino} dargestellt.
 \begin{table}[h]                                    
     \centering
