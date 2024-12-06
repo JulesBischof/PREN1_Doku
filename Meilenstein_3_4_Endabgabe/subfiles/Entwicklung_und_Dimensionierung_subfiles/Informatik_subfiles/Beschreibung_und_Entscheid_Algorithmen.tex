@@ -1,65 +1,126 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
 
-% ============================================================================== %
-%                            Subfile document                                    %
-% ============================================================================== %
-
 \begin{document}
 
 \subsubsection{Beschreibung \& Entscheid Algorithmen}
 
-Zu Beginn der Entwicklung des Simulators wurden verschiedene Algorithmen evaluiert, wobei der Fokus zunächst auf \enquote{Shortest Path}-Algorithmen lag. Hierfür wurden die Algorithmen \textbf{Dijkstra}, \textbf{A*} und \textbf{D*Lite} implementiert und vollständig in den Simulator integriert. Diese Algorithmen eignen sich grundsätzlich hervorragend für die Berechnung kürzester Wege in statischen Graphen.
+Zu Beginn der Entwicklung des Simulators wurden verschiedene
+Algorithmen evaluiert, wobei der Fokus zunächst auf \enquote{Shortest
+Path}-Algorithmen lag. Hierfür wurden die Algorithmen
+\textbf{Dijkstra}, \textbf{A*} und \textbf{D*Lite} implementiert und
+vollständig in den Simulator integriert. Diese Algorithmen eignen
+sich grundsätzlich hervorragend für die Berechnung kürzester Wege in
+statischen Graphen.
 
 \paragraph{Schwierigkeiten bei der Anwendung von Shortest Path-Algorithmen}
 
-Im Laufe der Entwicklung zeigte sich jedoch, dass die Anwendung von klassischen Shortest Path-Algorithmen in unserem Szenario besondere Herausforderungen mit sich bringt. Obwohl der Graph und seine Einschränkungen (z. B. blockierte Knoten oder entfernte Strecken) einmal zu Beginn definiert werden, ist die tatsächliche Navigation im Graphen problematisch. Der Roboter fährt los, ohne die vollständige Umgebung zu kennen, und kann auf unvorhergesehene Situationen treffen, wie zum Beispiel:
+Im Laufe der Entwicklung zeigte sich jedoch, dass die Anwendung von
+klassischen Shortest Path-Algorithmen in unserem Szenario besondere
+Herausforderungen mit sich bringt. Obwohl der Graph und seine
+Einschränkungen (z. B. blockierte Knoten oder entfernte Strecken)
+einmal zu Beginn definiert werden, ist die tatsächliche Navigation im
+Graphen problematisch. Der Roboter fährt los, ohne die vollständige
+Umgebung zu kennen, und kann auf unvorhergesehene Situationen
+treffen, wie zum Beispiel:
 
 \begin{itemize}
-    \item \textbf{Sackgassen und Umwege}:  
-    Der Roboter kann in Sackgassen gelangen, aus denen er wieder herausfinden muss. Dabei sind klassische Algorithmen wie Dijkstra und A* nicht flexibel genug, da sie voraussetzen, dass eine vollständige Karte und alle möglichen Wege bekannt sind.
+  \item \textbf{Sackgassen und Umwege}:
+    Der Roboter kann in Sackgassen gelangen, aus denen er wieder
+    herausfinden muss. Dabei sind klassische Algorithmen wie Dijkstra
+    und A* nicht flexibel genug, da sie voraussetzen, dass eine
+    vollständige Karte und alle möglichen Wege bekannt sind.
 
-    \item \textbf{Blockierte Knoten hinter freien Knoten}:  
-    Ein blockierter Knoten (z. B. mit einem Pylon) kann sich direkt hinter einem freien Knoten befinden. Ohne Kenntnis dieser Blockade im Vorfeld kann der Algorithmus falsche Entscheidungen treffen.
+  \item \textbf{Blockierte Knoten hinter freien Knoten}:
+    Ein blockierter Knoten (z. B. mit einem Pylon) kann sich direkt
+    hinter einem freien Knoten befinden. Ohne Kenntnis dieser
+    Blockade im Vorfeld kann der Algorithmus falsche Entscheidungen treffen.
 
-    \item \textbf{Unsicherheit bei entfernten Strecken}:  
-    Wenn eine Strecke im Graph entfernt wurde, ist es schwierig, genau zu wissen, welche Alternativwege existieren. Algorithmen wie Dijkstra und A* erfordern, dass der genaue Standort des Roboters und alle möglichen Verbindungen zu jedem Zeitpunkt bekannt sind.
+  \item \textbf{Unsicherheit bei entfernten Strecken}:
+    Wenn eine Strecke im Graph entfernt wurde, ist es schwierig,
+    genau zu wissen, welche Alternativwege existieren. Algorithmen
+    wie Dijkstra und A* erfordern, dass der genaue Standort des
+    Roboters und alle möglichen Verbindungen zu jedem Zeitpunkt bekannt sind.
 \end{itemize}
 
-Diese Probleme machten es für die Gruppe schwierig, klassische Shortest Path-Algorithmen auf unsere Problemstellung anzuwenden.
+Diese Probleme machten es für die Gruppe schwierig, klassische
+Shortest Path-Algorithmen auf unsere Problemstellung anzuwenden.
 
 \paragraph{Entscheidung für einen neuen Algorithmus}
 
-Da das Projekt bestimmten Rahmenbedingungen unterliegt, die weitgehend bekannt sind, und da die genannten Einschränkungen berücksichtigt werden müssen, entschied sich die Gruppe, einen \textbf{massgeschneiderten und pragmatischen Algorithmus} zu entwickeln. Dieser Ansatz ermöglicht es, die spezifischen Herausforderungen des Problems effizient zu adressieren und gleichzeitig die vorhandenen Ressourcen optimal zu nutzen.
+Da das Projekt bestimmten Rahmenbedingungen unterliegt, die
+weitgehend bekannt sind, und da die genannten Einschränkungen
+berücksichtigt werden müssen, entschied sich die Gruppe, einen
+\textbf{massgeschneiderten und pragmatischen Algorithmus} zu
+entwickeln. Dieser Ansatz ermöglicht es, die spezifischen
+Herausforderungen des Problems effizient zu adressieren und
+gleichzeitig die vorhandenen Ressourcen optimal zu nutzen.
 
-Obwohl der \textbf{D*Lite}-Algorithmus aufgrund seiner Fähigkeit, dynamische Graphen zu verarbeiten, länger in Betracht gezogen wurde, stellte sich heraus, dass auch dieser Algorithmus nicht vollständig auf die spezifischen Anforderungen unserer Problemstellung abgestimmt ist. Daher wurde ein neuer Algorithmus entwickelt, der speziell auf die Herausforderungen des Simulators zugeschnitten ist.
+Obwohl der \textbf{D*Lite}-Algorithmus aufgrund seiner Fähigkeit,
+dynamische Graphen zu verarbeiten, länger in Betracht gezogen wurde,
+stellte sich heraus, dass auch dieser Algorithmus nicht vollständig
+auf die spezifischen Anforderungen unserer Problemstellung abgestimmt
+ist. Daher wurde ein neuer Algorithmus entwickelt, der speziell auf
+die Herausforderungen des Simulators zugeschnitten ist.
 
 \paragraph{High-Level-Analyse des Algorithmus}
 
-Der entwickelte Algorithmus basiert auf einer Kombination aus \textbf{Depth First Search (DFS)} und einer \textbf{heuristikbasierten Optimierung}. Dieser Ansatz erlaubt es dem Roboter, in einem vorab definierten, aber nur teilweise bekannten Graphen effizient zu navigieren, auch wenn Sackgassen oder andere Hindernisse auftauchen.
+Der entwickelte Algorithmus basiert auf einer Kombination aus
+\textbf{Depth First Search (DFS)} und einer
+\textbf{heuristikbasierten Optimierung}. Dieser Ansatz erlaubt es dem
+Roboter, in einem vorab definierten, aber nur teilweise bekannten
+Graphen effizient zu navigieren, auch wenn Sackgassen oder andere
+Hindernisse auftauchen.
 
 \subparagraph{Funktionsweise}
 \begin{enumerate}
-    \item \textbf{Initialisierung}:  
-    Der Algorithmus startet am definierten Startknoten und initialisiert wichtige Datenstrukturen wie den Knoten- und Kantenstatus sowie die besuchten Knoten und Kanten. Der \texttt{vectorToGoal} wird berechnet, um eine Richtung zum Ziel zu definieren. Dieser Vektor ist entscheidend für die Heuristiken.
+  \item \textbf{Initialisierung}:
+    Der Algorithmus startet am definierten Startknoten und
+    initialisiert wichtige Datenstrukturen wie den Knoten- und
+    Kantenstatus sowie die besuchten Knoten und Kanten. Der
+    \texttt{vectorToGoal} wird berechnet, um eine Richtung zum Ziel
+    zu definieren. Dieser Vektor ist entscheidend für die Heuristiken.
 
-    \item \textbf{Iterative Knotenexploration}:  
-    Mit einem \textit{Stack} wird die Navigation durchgeführt, wobei Knoten nacheinander besucht und von möglichen Kanten aus weitergeführt werden. Gesperrte oder bereits besuchte Knoten und Kanten werden übersprungen.
+  \item \textbf{Iterative Knotenexploration}:
+    Mit einem \textit{Stack} wird die Navigation durchgeführt, wobei
+    Knoten nacheinander besucht und von möglichen Kanten aus
+    weitergeführt werden. Gesperrte oder bereits besuchte Knoten und
+    Kanten werden übersprungen.
 
-    \item \textbf{Traversal der Kanten}:  
-    Jede Kante wird vor dem Überqueren markiert. Falls eine Kante zu einem Pylon führt, wird sie als unpassierbar markiert.
+  \item \textbf{Traversal der Kanten}:
+    Jede Kante wird vor dem Überqueren markiert. Falls eine Kante zu
+    einem Pylon führt, wird sie als unpassierbar markiert.
 
-    \item \textbf{Heuristik-basierte Navigation}:
-    Der Graph wird in drei verschiedene \textit{Sektionen} (Bereich des Graphen) geteilt: Links (Zielknoten A), Mitte (Zielknoten B) und Rechts (Zielknoten C).
-    Der Algorithmus geht aus einer Kombination aus \textit{Richtung} (zum Zielvektor) und \textit{Sektion} in die Tiefe.
-    Basierend auf diesen Heuristiken werden den Kanten Gewichte zugewiesen und anhand dieser Gewichte, die beste Kante ausgewählt.
-    Der Algorithmus priorisiert Kanten, die direkt auf das Ziel hinweisen, und bestraft Bewegungen in entgegengesetzte Richtungen. Zusätzlich versucht der Algorithmus wege in der korrekten \textit{Section} zu nehmen. Wenn beispielsweise A der Zielknoten ist, versucht der Algorithmus möglichst Kanten zu wählen, welche in die vermutete Richtung von Knoten A zeigen und zusätzlich möglichst links zu halten. 
+  \item \textbf{Heuristik-basierte Navigation}:
+    Der Graph wird in drei verschiedene \textit{Sektionen} (Bereich
+    des Graphen) geteilt: Links (Zielknoten A), Mitte (Zielknoten B)
+    und Rechts (Zielknoten C).
+    Der Algorithmus geht aus einer Kombination aus \textit{Richtung}
+    (zum Zielvektor) und \textit{Sektion} in die Tiefe.
+    Basierend auf diesen Heuristiken werden den Kanten Gewichte
+    zugewiesen und anhand dieser Gewichte, die beste Kante ausgewählt.
+    Der Algorithmus priorisiert Kanten, die direkt auf das Ziel
+    hinweisen, und bestraft Bewegungen in entgegengesetzte
+    Richtungen. Zusätzlich versucht der Algorithmus wege in der
+    korrekten \textit{Section} zu nehmen. Wenn beispielsweise A der
+    Zielknoten ist, versucht der Algorithmus möglichst Kanten zu
+    wählen, welche in die vermutete Richtung von Knoten A zeigen und
+    zusätzlich möglichst links zu halten.
 
-    \item \textbf{Zielerreichung und Backtracking}:  
-    Sobald das Ziel erreicht ist, wird der Prozess abgebrochen. Falls ein Knoten keine weiteren möglichen Kanten bietet, erfolgt ein Backtracking, um alternative Wege zu erkunden.
+  \item \textbf{Zielerreichung und Backtracking}:
+    Sobald das Ziel erreicht ist, wird der Prozess abgebrochen. Falls
+    ein Knoten keine weiteren möglichen Kanten bietet, erfolgt ein
+    Backtracking, um alternative Wege zu erkunden.
 \end{enumerate}
 
 \paragraph{Fazit}
 
-Der entwickelte Algorithmus kombiniert die Flexibilität eines DFS mit intelligenter Heuristik, um vorab definierte, aber nur teilweise bekannte Graphen effizient zu navigieren. Dieser pragmatische Ansatz erlaubt es dem Roboter, dynamisch auf Hindernisse wie Sackgassen oder blockierte Knoten zu reagieren und sich schrittweise dem Ziel zu nähern. Durch die spezifische Anpassung des Algorithmus an die Anforderungen des Projekts und dem \textit{Proof of Concept} im Simulator erscheint diese Lösung robust und effektiv.
+Der entwickelte Algorithmus kombiniert die Flexibilität eines DFS mit
+intelligenter Heuristik, um vorab definierte, aber nur teilweise
+bekannte Graphen effizient zu navigieren. Dieser pragmatische Ansatz
+erlaubt es dem Roboter, dynamisch auf Hindernisse wie Sackgassen oder
+blockierte Knoten zu reagieren und sich schrittweise dem Ziel zu
+nähern. Durch die spezifische Anpassung des Algorithmus an die
+Anforderungen des Projekts und dem \textit{Proof of Concept} im
+Simulator erscheint diese Lösung robust und effektiv.
 
 \end{document}
