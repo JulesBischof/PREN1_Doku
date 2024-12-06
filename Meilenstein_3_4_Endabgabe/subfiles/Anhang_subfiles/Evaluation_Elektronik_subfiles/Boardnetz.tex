@@ -199,8 +199,8 @@ Gewicht beurteilt.
 \paragraph{Akku Monitoring}
 Die Anforderungsliste des Pfadfinders sieht vor, den Ladezustand des Akkus über
 ein LCD darzustellen. Um dies zu ermöglichen, werden die einzelnen
-Zellenanschlüsse nochmals separat herausgeführt, um sie auf dem Pfadfinder
-selbst mit einem ADC auswerten und entsprechend anzeigen zu können.
+Zellenanschlüsse nochmals separat herausgeführt, um sie auf dem Roboter selbst
+mit einem ADC auswerten und entsprechend anzeigen zu können.
 
 % ====== ##############################################################################################################
 \subsubsection*{Konzept 2 - 12V LiPo Akku - Kaufteil}
@@ -226,7 +226,7 @@ praktisch den gleichen Energieinhalt wie die Eigenentwicklung mit $43.2Wh$.
 Herausgesucht wurde der Akku \textit{SWAY-EL LiPo 4S 14.8V 3000mAh 35C/70C EC3
 } von \textit{Swaytronic}, abgebildet in
 Abbildung~\ref{fig:Swaytronic_4S_Akkupack}. Die Schutzbeschaltung wird auch
-hier auf dem Pfadfinder umgesetzt werden müssen, da die Akkus eine solche nicht
+hier auf dem Roboter umgesetzt werden müssen, da die Akkus eine solche nicht
 integriert haben. Zugriff auf die Zellspannungen erhält man über den separat
 herausgeführten Steckverbinder, welcher eben genau diese Anschlüsse
 bereitstellt.
@@ -338,8 +338,8 @@ In einer gemeinsamen Sitzung ist der Entscheid auf das Konzept 3 gefallen.
 Hauptargumente sind der etwas reduzierte Entwicklungsaufwand, der günstige
 Preis für eine angemessene Kapazität sowie ein geringes Gewicht. Bei eben
 dieser Besprechung hat sich ebenfalls der Wunsch an eine Möglichkeit ergeben,
-den Pfadfinder auch über ein externes Netzteil speisen zu können. Dadurch
-entschärft sich ebenfalls die geringere Akkukapazität, da das Gerät bei
+den Roboter auch über ein externes Netzteil speisen zu können. Dadurch
+entschärft sich ebenfalls die geringere Akkukapazität, da das Roboter bei
 Einrichttätigkeiten oder Versuchen nicht zwingend vom Akkubetrieb abhängig sein
 wird. Es kann in solchen Fällen dann auch stationär an einem Arbeitsplatz über
 ein Netzkabel betrieben werden.
@@ -368,7 +368,7 @@ Anforderungen an diese Schaltung aufgeführt.
           Geräts abgeschaltet werden können. Der Betriebszustand kann optisch über eine
           LED dargestellt werden.
     \item[Anzahl der Ausgänge] Die Schaltung muss genügend Ausgänge bieten, um jegliche
-          Elektronik auf dem Gerät anschliessen zu können. Dabei soll ein in der
+          Elektronik auf dem Roboter anschliessen zu können. Dabei soll ein in der
           Industrie üblicher, einfacher Steckverbinder eingesetzt werden.
     \item[Verpolungsschutz] Der Anschluss soll einen Verpolungsschutz sowohl beim
           Netzteilanschluss, als auch beim Batterieanschluss bieten. Verpolte Anschlüsse

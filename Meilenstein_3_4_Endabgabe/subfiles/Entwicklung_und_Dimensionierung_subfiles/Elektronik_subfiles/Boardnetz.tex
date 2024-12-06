@@ -13,14 +13,14 @@
 
 Der folgende Abschnitt beschäftigt sich mit der Energieversorgung des
 Pfadfinders. Wie die Evaluation der Energieversorgung ergeben hat, siehe
-Anhang~\ref{appendix:Bordnetz}, wird der Roboter über einen 4S-LiPo mit
-Energie versorgt. Der Evaluierte Akku beinhaltet $\approx 19Wh$ Energie und
-bietet damit genug Energie, um den Pfadfinder im Worst-Case bei voller Leistung
-für ca. 20min zu betreiben. Die Bordnetzspannung ist auf 12V gesetzt, um auf
-Sensorik und Aktorik, so zum Beispiel Lichtschranken, aus dem Industriellen
-Umfeld zurückgreifen zu können. Ausserdem kann so eine grössere Bandbreite an
-Motoren abgedeckt werden, falls sich die eingeplanten als nicht geeignet
-erweisen würden. 
+Anhang~\ref{appendix:Bordnetz}, wird der Roboter über einen 4S-LiPo mit Energie
+versorgt. Der Evaluierte Akku beinhaltet $\approx 19Wh$ Energie und bietet
+damit genug Energie, um den Roboter im Worst-Case bei voller Leistung für ca.
+20min zu betreiben. Die Bordnetzspannung ist auf 12V gesetzt, um auf Sensorik
+und Aktorik, so zum Beispiel Lichtschranken, aus dem Industriellen Umfeld
+zurückgreifen zu können. Ausserdem kann so eine grössere Bandbreite an Motoren
+abgedeckt werden, falls sich die eingeplanten als nicht geeignet erweisen
+würden.
 
 Die Ausgangsspannung von 14.4V wird auf dem selbst entwickelten DC-PowerBoard
 mittels eines Abwärtsstellers auf 12V geregelt. Dieses Board bietet ausserdem
@@ -33,9 +33,9 @@ Die Batteriespannung und -strom werden über einen ADC überwacht und können vi
 $I^2C$ vom Raspberry Pi ausgelesen werden.
 
 Die Batterieschutzbeschaltung überwacht die Zellspannungen des LiPo-Akkus
-jeweils getrennt und trennt die Batterie vom Gerät, falls eine der Zellen in
+jeweils getrennt und trennt die Batterie vom Roboter, falls eine der Zellen in
 den Unterspannungsbereich gerät. Dieser Zustand wird über eine rot leuchtende
-LED signalisiert. Die Zell-Balancierung ist nicht auf dem Pfadfinder selbst
+LED signalisiert. Die Zell-Balancierung ist nicht auf dem Roboter selbst
 umgesetzt. Für diesen Zweck ist ein Ladegerät aus dem Modellbaubereich gekauft,
 welches die Zellen aktiv ausbalancieren kann.
 

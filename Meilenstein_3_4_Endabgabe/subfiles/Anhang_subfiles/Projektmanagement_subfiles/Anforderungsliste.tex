@@ -13,7 +13,7 @@
 
 \section{Anforderungsliste Version 2}~\label{appendix:Greifereinheit}
 
-Die nachfolgende Tabelle zeigt die Anforderungsliste des Pfadfinder-Fahrzeugs.
+Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
 
 \textbf{Legende} \\ F = Festanforderung \\ M = Mindestanforderung \\ W = Wunschanforderung
 
@@ -47,40 +47,40 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Pfadfinder-Fahrzeugs.
   \hline
 \end{tabular}
 
-\subsection{Gerät}
+\subsection*{Roboter}
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
-               & \textbf{F}            &                                                                       & \textbf{Daten}                                                                                                                                                                                                                                                                                                                             \\
-  \textbf{Nr.} & \textbf{M}            & \textbf{Bezeichnung}                                                  & \textbf{Werte}                                                                                                                                                                                                                                                                                                                             \\
-               & \textbf{W}            &                                                                       & \textbf{Erläuterungen}                                                                                                                                                                                                                                                                                                                     \\
+               & \textbf{F} &                       & \textbf{Daten}                                                                                                                                                                                                                                                                                                                             \\
+  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}  & \textbf{Werte}                                                                                                                                                                                                                                                                                                                             \\
+               & \textbf{W} &                       & \textbf{Erläuterungen}                                                                                                                                                                                                                                                                                                                     \\
   \hline
-  2.1          & F                     & Autonomität                                                           & Das Fahrzeug muss den vorgegebenen Parcours von Start bis Ziel ohne Zugriff von aussen absolvieren können.                                                                                                                                                                                                                                  \\
+  2.1          & F          & Autonomität           & Das Fahrzeug muss den vorgegebenen Parcours von Start bis Ziel ohne Zugriff von aussen absolvieren können.                                                                                                                                                                                                                                 \\
   \hline
-  2.2          & F                     & Hardwarekomponenten                                                   & Alle zum Betrieb benötigten Hardware-Komponenten wie z.B. Sensoren, Aktoren, Steuergeräte, Kamera, etc. müssen sich im oder auf dem Fahrzeug befinden.                                                                                                                                                                                     \\                                                                                                                                                                                                                                                                                                                                           \\
+  2.2          & F          & Hardwarekomponenten   & Alle zum Betrieb benötigten Hardware-Komponenten wie z.B. Sensoren, Aktoren, Steuergeräte, Kamera, etc. müssen sich im oder auf dem Fahrzeug befinden.                                                                                                                                                                                     \\                                                                                                                                                                                                                                                                                                                                           \\
   \hline
-  2.3          & F                     & Softwarekomponenten                                                   & Alle Berechnungen und Software muss auf dem Roboter betrieben werden.                                                                                                                                                                                                                                                                                                                                              \\
+  2.3          & F          & Softwarekomponenten   & Alle Berechnungen und Software muss auf dem Roboter betrieben werden.                                                                                                                                                                                                                                                                      \\
   \hline
-  2.4          & M                     & Betriebsbereitschaft                                                  & Das Fahrzeug muss innerhalb von maximal einer Minute im Startbereich manuell platziert und aufgebaut werden, sowie betriebsbereit sein.                                                                                                                                                                                                    \\
+  2.4          & M          & Betriebsbereitschaft  & Das Fahrzeug muss innerhalb von maximal einer Minute im Startbereich manuell platziert und aufgebaut werden, sowie betriebsbereit sein.                                                                                                                                                                                                    \\
   \hline
-  2.5          & W                     & Gesperrte Wegpunkte                                                   & Die gesperrten Wegpunkte sollten vom Fahrzeug erkannt werden.                                                                                                                                                                                                                                                                              \\
+  2.5          & W          & Gesperrte Wegpunkte   & Die gesperrten Wegpunkte sollten vom Fahrzeug erkannt werden.                                                                                                                                                                                                                                                                              \\
   \hline
-  2.6          & W                     & Hindernis auf Strecke                                                 & Mögliche Hindernisse sollten vom Fahrzeug erkannt werden.                                                                                                                                                                                                                                                                                  \\
+  2.6          & W          & Hindernis auf Strecke & Mögliche Hindernisse sollten vom Fahrzeug erkannt werden.                                                                                                                                                                                                                                                                                  \\
   \hline
-  2.7          & F                     & Hindernisbewältigung                                                  & Befährt das Fahrzeug eine Strecke mit einem Hindernis, so muss dieses erkannt und aktiv von der Strecke aufgenommen werden. Sobald das Fahrzeug die besagte Stelle passiert hat, muss das Hindernis wieder an die Ursprungsposition zurückgestellt werden. Die Toleranzzone beim Zurückstellen des Hindernisses beträgt 20 mm (umlaufend). \\
+  2.7          & F          & Hindernisbewältigung  & Befährt das Fahrzeug eine Strecke mit einem Hindernis, so muss dieses erkannt und aktiv von der Strecke aufgenommen werden. Sobald das Fahrzeug die besagte Stelle passiert hat, muss das Hindernis wieder an die Ursprungsposition zurückgestellt werden. Die Toleranzzone beim Zurückstellen des Hindernisses beträgt 20 mm (umlaufend). \\
   \hline
-  2.8          & F                     & Auswahl Zielposition                                                  & Die Zielposition (1, 2 oder 3) muss am Fahrzeug mittels einem Wahlschalter ausgewählt werden können.                                                                                                                                                                                                                                       \\
+  2.8          & F          & Auswahl Zielposition  & Die Zielposition (1, 2 oder 3) muss am Fahrzeug mittels einem Wahlschalter ausgewählt werden können.                                                                                                                                                                                                                                       \\
   \hline
-  2.9          & F                     & Startbefehl                                                           & Der Startbefehl wird mittels einem Schalter oder Taster am Fahrzeug erteilt. Gleichzeitig wird die Sicht auf die Strecke freigegeben und die Zeitmessung gestartet.                                                                                                                                                                        \\
+  2.9          & F          & Startbefehl           & Der Startbefehl wird mittels einem Schalter oder Taster am Fahrzeug erteilt. Gleichzeitig wird die Sicht auf die Strecke freigegeben und die Zeitmessung gestartet.                                                                                                                                                                        \\
   \hline
-  2.10         & F                     & Leitlinien                                                            & Das Fahrzeug muss sich während des gesamten Parcours auf den vorgegebenen Leitlinien bewegen.                                                                                                                                                                                                                                              \\
+  2.10         & F          & Leitlinien            & Das Fahrzeug muss sich während des gesamten Parcours auf den vorgegebenen Leitlinien bewegen.                                                                                                                                                                                                                                              \\
   \hline
-  2.11         & F                     & Not-Aus                                                               & Das Fahrzeug muss über einen leicht zugänglichen Not-Aus-Knopf oder -Schalter verfügen, der alle mechanisch-dynamischen Prozesse sofort unterbricht.                                                                                                                                                                                       \\
+  2.11         & F          & Not-Aus               & Das Fahrzeug muss über einen leicht zugänglichen Not-Aus-Knopf oder -Schalter verfügen, der alle mechanisch-dynamischen Prozesse sofort unterbricht.                                                                                                                                                                                       \\
   \hline
-  2.12         & F                     & Gewicht                                                               & Das Fahrzeug darf das Maximalgewicht von 2 kg nicht überschreiten.                                                                                                                                                                                                                                                                         \\
+  2.12         & F          & Gewicht               & Das Fahrzeug darf das Maximalgewicht von 2 kg nicht überschreiten.                                                                                                                                                                                                                                                                         \\
   \hline
-  2.13         & W                     & Schutzklasse                                                          & Mindestens IP-10 sollte gewährleistet sein.                                                                                                                                                                                                                                                                                                \\
+  2.13         & W          & Schutzklasse          & Mindestens IP-10 sollte gewährleistet sein.                                                                                                                                                                                                                                                                                                \\
   \hline
-  \multicolumn{4}{|p{\dimexpr1.5cm+3cm+6cm+1.5cm}|}{Die letzte Zeile dieser Tabelle soll über die volle Seitenbreite gehen und flexibel gefüllt werden.}                                                                                                                                                                                                                                                                                                    \\
+  \multicolumn{4}{|p{\dimexpr1.5cm+3cm+6cm+1.5cm}|}{Die letzte Zeile dieser Tabelle soll über die volle Seitenbreite gehen und flexibel gefüllt werden.}                                                                                                                                                                                                                                         \\
   \hline
 \end{tabular}
 
@@ -104,10 +104,10 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Pfadfinder-Fahrzeugs.
   \hline
   2.19         & W          & Controlling-Schnittstelle & Die Elektronik des Fahrzeugs soll über Schnittstelle verfügen, über welche die Aktoren aktiv angesteuert werden können.                                                                                                     \\
   \hline
-  2.20         & W          & Zeitmessung               & Das Gerät bietet die Möglichkeit die verstrichene Zeit seit Start anzugeben. Diese Zeitmessung wird optisch oder über eine Programmschnittstelle an das Team weitergegeben.                                                 \\
+  2.20         & W          & Zeitmessung               & Das Roboter bietet die Möglichkeit die verstrichene Zeit seit Start anzugeben. Diese Zeitmessung wird optisch oder über eine Programmschnittstelle an das Team weitergegeben.                                               \\
 \end{tabular}
 
-\subsection{Parcours}
+\subsection*{Parcours}
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
                & \textbf{F} &                               & \textbf{Daten}                                                                                                                                                                                                       \\
@@ -142,7 +142,7 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Pfadfinder-Fahrzeugs.
   \hline
 \end{tabular}
 
-\subsection{Simulation}
+\subsection*{Simulation}
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
                & \textbf{F} &                           & \textbf{Daten}                                                                                                                                                                                     \\
@@ -175,7 +175,7 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Pfadfinder-Fahrzeugs.
   \hline
 \end{tabular}
 
-\subsection{Herstellungsressourcen}
+\subsection*{Herstellungsressourcen}
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
                & \textbf{F} &                                  & \textbf{Daten}                                                                                                                                                                                                                                                                                                                                                                                \\

@@ -2,15 +2,14 @@
 
 \begin{document}
 
-\subsubsection{Einbindung in Gerät}
+\subsubsection{Einbindung in Roboter}
 Benötigte Schnittstellen, Sensorik \& Co. Ausserdem: Wo stehen noch Risiken?
 Thema Messtoleranzen \& Co. ?\\
 
-Der beschriebene Algorithmus zur Navigation und Exploration eines
-unbekannten Graphen benötigt spezifische Schnittstellen und Sensoren,
-um seine Funktionalität sicherzustellen. Diese Elemente bilden die
-Grundlage für die präzise Erfassung der Umgebung und die
-Entscheidungsfindung des Roboters.
+Der beschriebene Algorithmus zur Navigation und Exploration eines unbekannten
+Graphen benötigt spezifische Schnittstellen und Sensoren, um seine
+Funktionalität sicherzustellen. Diese Elemente bilden die Grundlage für die
+präzise Erfassung der Umgebung und die Entscheidungsfindung des Roboters.
 
 \paragraph{Benötigte Schnittstellen und Sensorik}
 Um den Algorithmus korrekt auszuführen, werden folgende Sensoren und
@@ -18,83 +17,81 @@ Schnittstellen benötigt:
 
 \begin{itemize}
   \item \textbf{Gyroskop}:
-    Das Gyroskop liefert Feedback zur Ausrichtung des Roboters und
-    ermöglicht es, die Bewegungsrichtung präzise zu bestimmen. Dies
-    ist essenziell, um die interne Karte zu zeichnen und die
-    Orientierung innerhalb des Graphen zu bewahren.
+        Das Gyroskop liefert Feedback zur Ausrichtung des Roboters und
+        ermöglicht es, die Bewegungsrichtung präzise zu bestimmen. Dies
+        ist essenziell, um die interne Karte zu zeichnen und die
+        Orientierung innerhalb des Graphen zu bewahren.
 
   \item \textbf{Motor-Feedback}:
-    Die Informationen aus den Motoren, wie die zurückgelegte Distanz,
-    sind entscheidend, um die Länge der Kanten im Graphen zu kennen.
-    Dadurch kann der Algorithmus die relative Position von Knoten und
-    Kanten in der internen Karte bestimmen.
+        Die Informationen aus den Motoren, wie die zurückgelegte Distanz,
+        sind entscheidend, um die Länge der Kanten im Graphen zu kennen.
+        Dadurch kann der Algorithmus die relative Position von Knoten und
+        Kanten in der internen Karte bestimmen.
 
   \item \textbf{Lidar}:
-    Der Lidar-Scanner dient der frühzeitigen Erkennung von
-    Hindernissen wie Pylonen. Diese Informationen werden verwendet,
-    um Kanten im Graphen als unpassierbar zu markieren, bevor der
-    Roboter diese streift. Dies erhöht die Effizienz und Sicherheit
-    bei der Navigation.
+        Der Lidar-Scanner dient der frühzeitigen Erkennung von
+        Hindernissen wie Pylonen. Diese Informationen werden verwendet,
+        um Kanten im Graphen als unpassierbar zu markieren, bevor der
+        Roboter diese streift. Dies erhöht die Effizienz und Sicherheit
+        bei der Navigation.
 
 \end{itemize}
 
 Durch die Kombination dieser Sensoren kann der Roboter eine dynamisch
-aktualisierte Karte erstellen, die sowohl besuchte als auch
-unbesuchte Knoten und Kanten enthält.
+aktualisierte Karte erstellen, die sowohl besuchte als auch unbesuchte Knoten
+und Kanten enthält.
 
 \paragraph{Umgang mit Schranken}
-Der Algorithmus behandelt Strecken mit Schranken vorerst bewusst wie
-reguläre Strecken, ohne sie bei der Pfadauswahl stärker zu gewichten.
-Dies reduziert die Komplexität bei der Routenplanung. Je nach
-Geschwindigkeit, mit der Hindernisse umplatziert werden können,
-könnte dieser Ansatz jedoch reevaluiert werden, um Schranken in
-Zukunft in die Gewichtung einzubeziehen.
+Der Algorithmus behandelt Strecken mit Schranken vorerst bewusst wie reguläre
+Strecken, ohne sie bei der Pfadauswahl stärker zu gewichten. Dies reduziert die
+Komplexität bei der Routenplanung. Je nach Geschwindigkeit, mit der Hindernisse
+umplatziert werden können, könnte dieser Ansatz jedoch reevaluiert werden, um
+Schranken in Zukunft in die Gewichtung einzubeziehen.
 
 \paragraph{Risiken und Messtoleranzen}
-Trotz der robusten Integration von Sensoren gibt es spezifische
-Risiken und Herausforderungen, die berücksichtigt werden müssen:
+Trotz der robusten Integration von Sensoren gibt es spezifische Risiken und
+Herausforderungen, die berücksichtigt werden müssen:
 
 \begin{itemize}
   \item \textbf{Messtoleranzen}:
-    Abweichungen bei den Sensorwerten können zu Fehlern in der
-    internen Karte führen. Beispielsweise können:
-    \begin{itemize}
-      \item \textbf{Schlupf an den Rädern} die zurückgelegte Distanz
-        falsch messen (Motor-Feedback).
-      \item \textbf{Drift im Gyroskop} zu Abweichungen in der
-        Orientierung führen.
-    \end{itemize}
-    \textbf{Lösung}: Im Algorithmus nicht mit exakten Werten, sondern
-    Wertebereichen rechnen. Dies erlaubt Fehler in den Messungen.
+        Abweichungen bei den Sensorwerten können zu Fehlern in der
+        internen Karte führen. Beispielsweise können:
+        \begin{itemize}
+          \item \textbf{Schlupf an den Rädern} die zurückgelegte Distanz
+                falsch messen (Motor-Feedback).
+          \item \textbf{Drift im Gyroskop} zu Abweichungen in der
+                Orientierung führen.
+        \end{itemize}
+        \textbf{Lösung}: Im Algorithmus nicht mit exakten Werten, sondern
+        Wertebereichen rechnen. Dies erlaubt Fehler in den Messungen.
 
   \item \textbf{Fehlinterpretation von Pylonen}:
-    Temporäre Hindernisse, wie ein Bein eines Zuschauers, könnten vom
-    Lidar fälschlicherweise als Pylonen erkannt werden. Dies würde
-    dazu führen, dass Strecken oder Knoten unnötig als gesperrt
-    markiert werden.\\
-    \textbf{Lösung}: Zuschauer bitten Abstand zu nehmen und eine
-    Verifizierung, bei der Hindernisse mehrfach von verschiedenen
-    Seiten erkannt werden müssen, bevor sie dauerhaft in die Karte
-    aufgenommen werden.
+        Temporäre Hindernisse, wie ein Bein eines Zuschauers, könnten vom
+        Lidar fälschlicherweise als Pylonen erkannt werden. Dies würde
+        dazu führen, dass Strecken oder Knoten unnötig als gesperrt
+        markiert werden.\\
+        \textbf{Lösung}: Zuschauer bitten Abstand zu nehmen und eine
+        Verifizierung, bei der Hindernisse mehrfach von verschiedenen
+        Seiten erkannt werden müssen, bevor sie dauerhaft in die Karte
+        aufgenommen werden.
 
   \item \textbf{Sonderfall: Gesperrter Knoten hinter einem freien Knoten}:
-    Wenn sich ein gesperrter Knoten direkt hinter einem freien Knoten
-    befindet (innerhalb von 2 Metern), könnte der Algorithmus
-    fälschlicherweise auch den freien Knoten als gesperrt markieren.\\
-    \textbf{Lösung}: Der Roboter kann den Knoten mit vermutetem Pylon
-    aus einem anderen Winkel reevaluieren, um eine fehlerhafte
-    Markierung zu vermeiden. Dies minimiert das Risiko und erhöht die
-    Genauigkeit der internen Karte.
+        Wenn sich ein gesperrter Knoten direkt hinter einem freien Knoten
+        befindet (innerhalb von 2 Metern), könnte der Algorithmus
+        fälschlicherweise auch den freien Knoten als gesperrt markieren.\\
+        \textbf{Lösung}: Der Roboter kann den Knoten mit vermutetem Pylon
+        aus einem anderen Winkel reevaluieren, um eine fehlerhafte
+        Markierung zu vermeiden. Dies minimiert das Risiko und erhöht die
+        Genauigkeit der internen Karte.
 
 \end{itemize}
 
 \paragraph{Fazit}
-Die Kombination der Sensoren Gyroskop, Motor-Feedback und Lidar
-bildet die Grundlage für die präzise Navigation des Roboters. Trotz
-einiger Risiken, wie Messtoleranzen und Fehlinterpretationen, bietet
-der Algorithmus durch Reevaluation und rechnen mit Wertebereichen
-eine robuste Lösung, um ungenaue Messungen abzufangen. Diese
-Massnahmen reduzieren die genannten Risiken und erlauben eine
-zuverlässigere Navigation.
+Die Kombination der Sensoren Gyroskop, Motor-Feedback und Lidar bildet die
+Grundlage für die präzise Navigation des Roboters. Trotz einiger Risiken, wie
+Messtoleranzen und Fehlinterpretationen, bietet der Algorithmus durch
+Reevaluation und rechnen mit Wertebereichen eine robuste Lösung, um ungenaue
+Messungen abzufangen. Diese Massnahmen reduzieren die genannten Risiken und
+erlauben eine zuverlässigere Navigation.
 
 \end{document}

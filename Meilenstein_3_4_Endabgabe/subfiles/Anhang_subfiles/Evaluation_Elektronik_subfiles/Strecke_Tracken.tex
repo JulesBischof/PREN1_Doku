@@ -11,23 +11,23 @@
 
 \section{Konzepterstellung Strecken Rückverfolgung}~\label{appendix:Strecke_Tracken}
 
-Dieser Abschnitt befasst sich damit, wie der Pfadfinder seinen Weg, den er
-durch das Wegenetz genommen hat, zurückverfolgen kann und so auf seine Position
+Dieser Abschnitt befasst sich damit, wie der Roboter seinen Weg, den er durch
+das Wegenetz genommen hat, zurückverfolgen kann und so auf seine Position
 Rückschliessen kann.
 
 % ===================================================================================
 \paragraph{Anforderungen}
-Der Algorithmus setzt voraus, dass das Gerät immer und zu jeder Zeit seine
+Der Algorithmus setzt voraus, dass das Roboter immer und zu jeder Zeit seine
 Orientierung als absoluten Winkel ab dem Startpunkt weiss und die zurückgelegte
 Strecken messen kann.
 
 % ===================================================================================
 \paragraph{Konzeption Wineklerfassung}
 Betreffend dem Winkel könnte angenommen werden, dass ein einfacher Kompass auf
-dem Gerät bereits ausreichen würde, um die Orientierung feststellen zu können.
-Da sich allerdings Motoren in der direkten Umgebung der Elektronik befinden,
-welche ebenfalls starke Magnetfeldänderungen verursachen, bestehen zu grosse
-Bedenken, dass der Winkel so eine willkürliche Form annimmt.
+dem Roboter bereits ausreichen würde, um die Orientierung feststellen zu
+können. Da sich allerdings Motoren in der direkten Umgebung der Elektronik
+befinden, welche ebenfalls starke Magnetfeldänderungen verursachen, bestehen zu
+grosse Bedenken, dass der Winkel so eine willkürliche Form annimmt.
 
 Anstelle dessen wird der Ansatz verfolgt, die momentane Änderungsrate des
 Winkels über ein Gyroskop zu erfassen und in einem ausreichend geringen
@@ -91,7 +91,7 @@ Per Software ist noch ein Threshold-Wert eingestellt, mit welchem ganz leichtes
 Zittern des Sensorwertes ignoriert werden kann. Mit diesen Werten können
 Winkeländerungen von 360° in weniger als einer Sekunde problemlos erfasst
 werden, ohne dass der Winkel in der Summe davon driftet. Diese Technik hat sich
-also bewährt und wird auch so im Pfadfinder eingesetzt.
+also bewährt und wird auch so im Roboter eingesetzt.
 
 Der \textit{Motion Board} PCB wird ein Gyroskop verbaut haben, welches einer
 neueren Generation als das bei diesen Versuchen eingesetzten Gyroskop
