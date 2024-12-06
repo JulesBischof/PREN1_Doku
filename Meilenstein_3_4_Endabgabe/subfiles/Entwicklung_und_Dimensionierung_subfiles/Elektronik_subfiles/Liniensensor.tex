@@ -17,11 +17,11 @@ dokumentiert. Ziel ist es, einen einfach auszuwertenden Sensor zu entwickeln,
 der das vorgegebene Klebeband (\textit{Tesa Gewebeband 4651}) problemlos vom Wettkampf-Untergrund unterscheiden kann.\\
 Ein eigener Liniensensor wird entwickelt, weil das Verlassen der Strecke als ein hohes Risiko empfunden wird. Daher ermöglicht
 das eigene Designen eines Liniensensors eine hohe flexibilität. Dies mit der Begründung, dass für ein massgeschneidertes Produkt 
-die optimalen Komponenten selber erlesen werden können und weil man mit dem selbst gebauten Produkt bestens vertraut ist.
+alle Komponenten selber erlesen werden können.
 
 
 % ===================================================================================
-\paragraph{Anforderungen}
+\subsubsection*{Anforderungen}
 
 Das Klebeband muss auf einem rötlich
 gefliesten Untergrund detektiert werden. Eine besondere Herausforderung
@@ -36,9 +36,8 @@ Abbildung~\ref{fig:Untergrund_Wettkampf} gezeigt.
 \end{figure}
 
 % ===================================================================================
-\paragraph{Konzeptionierung}
 
-\subsubsection{Aufbau und Auswertung}
+\subsubsection*{Aufbau und Auswertung}
 Der Liniensensor wird aus acht einzelnen Messzellen aufgebaut. Es werden acht Messzellen
 gewählt, damit eine möglichst breite Fläche durch den Sensor abgedeckt werden kann, aber
 dennoch nicht zu viele Pins für die Auswertung benötigt werden. Dabei sollten stets genau
@@ -51,8 +50,8 @@ Spannungsverlust an einem davor geschaltenen Widerstand. Somit sollte die Spannu
 Fototransistor gegen Ground gezogen werden. Ist der Strom jedoch klein,
 so fällt gemäss dem Ohmschen Gesetz wenig Spannung über dem Vorwiderstand ab was einen erhöhten
 Spannungsabfall über dem Fototransistor zur Folge hat. Diese Spannungen werden dann mittels
-Analog-Digital-Wandlern (ADC) ausgewertet. In Abbildung~\ref{fig:Auswertung_Liniensensor1} ist 
-die Auswertung bildlich festgehalten.
+Analog-Digital-Wandlern (ADCs) ausgewertet. In Abbildung~\ref{fig:Auswertung_Liniensensor1} ist 
+die Auswertung schematisch festgehalten.
 
 \begin{figure}[H]
     \centering
@@ -60,94 +59,16 @@ die Auswertung bildlich festgehalten.
     \caption{Konzept der Auswertung mittels ADC}~\label{fig:Auswertung_Liniensensor1}
 \end{figure}
 
-% ======================================================================================
-\subsubsection*{Wahl des Lichtspektrums}
-Damit der Unterschied zwischen dem Wettkampfuntergrund und dem Klebeband möglichst 
-drastisch hervorgehoben werden kann, ist zuerst eine Evaluierung des optimalen
-Lichtspektrums nötig. Im Anhang~\ref{anhang:Liniensensor_Lichtspektrum} sind Versuche dokumentiert, welche die Spannungen 
-über dem Fototransistor im Infrarot-Spektrum (IR) und im Ultraviolett-Spektrum (UV) 
-dokumentiert. Dabei wird für ersteres ein Emitter und ein Fototransistor im IR-Spektrum (beide 940 nm Peak-Wellenlänge)
-verwendet. Beim Versuch im UV-Spektrum wird ein UV-Emitter (395nm Peak-Wellenglänge) mit einem Fototransistor (630nm Peak-Wellenlänge) 
-im sichtbaren Spektrum verwendet. Dabei wird eine fluoreszierende Wirkung des Klebebandes 
-vermutet. Gemäss der Dokumentation im Anhang ist in der Tat eine fluoreszierende Wirkung des Klebebandes 
-ersichtlich. Aufgrund der deutlicheren Ergebnissen im UV-Spektrum als im IR-Spektrum wird auf einen 
-UV-Emitter mit einem Fototransistor im sichtbaren Lichtspektrum zurückgegriffen.
-
-
-% ===================================================================================
-\subsubsection*{Geometrische Überlegungen}
-Abbildung~\ref{fig:Konzept_graphml} zeigt die konzeptionellen Überlegungen einer Messzelle des
-Liniensensors. Gemäss dem Datenblatt hat der UV-Emitter (Sender) einen Abstrahlwinkel von 15° und der
-Fototransistor (Empfänger) einen Einfallswinkel von 60°. Für eine möglichst störungsfreie Detektion muss auf dem Boden 
-eine möglichst grosse Fläche des Empfänger-Kreises durch den Sender-Kreis ausgefüllt werden.\\
-Diese einzelnen Messzellen sollen untereinander und von der Umwelt abgekapselt werden. Dies
-mit der Begründung, dass die Fototransistoren, gegebenenfalls empfindlich auf
-Umwelteinflüsse reagieren könnten. Daher wird ein Gehäuse für die Abschirmung von Umwelteinflüssen
-notwendig.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{fig_Strecke_Tracken/Konzept.pdf}
-    \caption{Konzept des Liniensensors}~\label{fig:Konzept_graphml}
-\end{figure}
-
-
-% ===================================================================================
-
-\subsubsection*{Dimensionierung Gehäuse}
-Damit der Empfänger möglichst wenig auf Umwelteinflüsse reagiert, wird nun ein 
-Gehäuse dimensioniert, welches den Sensor abschirmen soll. Die nachfolgende 
-Abbildung~\ref{fig:Gehaeuse_Vermasst} zeigt eine Skizze, welche den Aufbau des Gehäuses repräsentiert.
-In dieser Skizze wird jeder Emitter und Fototransistor von allen anderen abgeschottet. Die vier Löcher
-passen genau auf das PCB des Liniensensors. Die Höhe des Gehäuses, stellt den Abstand zwischen Liniensensor
-und dem Boden dar. Der grösste Stromdifferenz wurde in einer Höhe von 2.5 cm gemessen. Daher wurde die Höhe
-des Gehäuses auf 2.5 cm festgelegt.
-Die isometrische Ansicht des Gehäuse ist in Abbildung~\ref{fig:Gehaeuse_Isometrisch} !!!!!Anpassen!!!!!!
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{fig_Strecke_Tracken/Gehaeuse_Vermasst.pdf}
-    \caption{Vermassung des Gehäuses in Siemens NX}~\label{fig:Gehaeuse_Vermasst}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{fig_Strecke_Tracken/Gehaeuse_Isometrisch.pdf}
-    \caption{Isometrische Ansicht des Gehäuses in Siemens NX}~\label{fig:Gehaeuse_Isometrisch}
-\end{figure}
-
-
-
-% ===================================================================================
-
-\subsubsection*{Elektrotechnische Dimensionierung}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{fig_Strecke_Tracken/Schema_Messzelle_Liniensensor.pdf}
-    \caption{Schema einer Messzelle}~\label{fig:Messzelle}
-\end{figure}
-
-Abbildung~\ref{fig:Messzelle} zeigt das Schema einer einzelnen Messzelle. Die Speisung von 5 V für 
-den UV-Emitter ist notwendig, weil gemäss Datenblatt eine Spannung von 2.9 V bis 3.5 V abfällt. Daher reicht
-eine Speisung von 3.3 V nicht aus. Ausserdem wurde als Sicherheitsmassnahme beim Messabgang über dem 
-Fototransistor einen Platz für einen Widerstand eingebaut, damit bei allfälligen Stromspitzen der Strom 
-limitiert werden könnte. Weil dies aber mit der verwendeten Auswertung nicht notwendig ist, wird ein
-0 $\Omega$ Widerstand eingebaut. Die Potentiometer werden eingebaut, dass allfällige Bauteiltoleranzen
-eliminiert werden können. Im Anhang~\ref{anhang:Liniensensor} wird dargestellt, wie die Werte der Komponenten $R_{1.1}$, $R_{p1}$ und $R_{1.3}$ 
-dimensioniert werden.\\\\
-
-
 
 % ===================================================================================
 
 
-\subsubsection*{Liniensensor als PCB}
+
+
+\subsubsection{Liniensensor als PCB}
 
 Damit der Liniensensor möglichst praxisnah getestet 
-werden kann, wird dieser als PCB mit dem CAD-Tool Kicad erstellt. Dabei werden die 
+werden kann, wird dieser als PCB mit Kicad erstellt. Dabei werden die 
 oben formulierten Anforderungen und Dimensionierungen eingehalten. In Abbildung~\ref{fig:Liniensensor_Top} 
 ist die Draufsicht und in Abbildung~\ref{fig:Liniensensor_Bottom} die Untersicht dargestellt.
 
@@ -169,16 +90,14 @@ ist die Draufsicht und in Abbildung~\ref{fig:Liniensensor_Bottom} die Untersicht
 % ===================================================================================
 
 \paragraph{Versuche}
-Es wurde überprüft, welches Lichtspektrum am besten geeignet ist und die verschiedenen Ströme
-durch den Fototransistor wurden getestet. Ausserdem wurde im UV-Spektrum die Spannungen über dem Fototransistor
-gemessen. Mittels eines 
-Arduino wurden für einen Test alle Eingänge ausgewertet und der Liniensensor validiert. 
+Im Anhang ist ein Versuch dokumentiert, welcher ein geeignetes Lichtspektrum für den Liniensensor liefert. Ausserdem wurden
+die Ströme auf den unterschiedlichen Untergründen (Klebeband, Fliese und Fuge) gemessen. Mittels eines 
+Arduino wurden alle Eingänge ausgewertet und der Liniensensor validiert. 
 Alle Messungen sind im Anhang~\ref{anhang:Liniensensor} dokumentiert.
 
 % ===================================================================================
 \paragraph{Entscheidung und Fazit}
-Aufgrund der grossen Spannungsdifferenz zwischen Klebeband und Fliese/ Fuge, wurde eine mögliche
-fluoreszierende Wirkung des Klebebandes im UV-Spektrum bestätigt. Durch die Messungen wurde das 
+Durch die Messungen wurde das 
 Konzept des Liniensensors überprüft und validiert. Das folgende Bild bestätigt, dass das Klebeband
 von der Fliese deutlich unterschieden werden kann. Die Abbildung~\ref{fig:Auswertung_Strecke_Beispiel} zeigt
 die Spannungsauswertung mittels ADCs. Diese Auswertung wurde mit einem Arduino gemacht. Die hohen 
@@ -195,7 +114,7 @@ teilweise auch über dem Klebeband. Der Wert ist allerdings grösser, weil nur e
 liegt.\\
 Anfangs wurde der Unterschied von Klebeband zu Fugen als eine Schwierigkeit betrachtet. Der Lininensensor ist fähig, 
 Fugen von Klebeband zu unterscheiden. Dies ist im Anhang~\ref{anhang:Liniensensor} genauer dokumentiert.\\
-Aufgrund der eindeutigen, im Anhang geschilderten  Messwerten, wird dieser Liniensensor verwendet.
+Aufgrund der eindeutigen Messwerten, wird dieser Liniensensor verwendet.
 
 
 \end{document}
