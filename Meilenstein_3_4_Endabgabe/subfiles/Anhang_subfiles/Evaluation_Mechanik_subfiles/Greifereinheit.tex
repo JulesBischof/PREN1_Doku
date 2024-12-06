@@ -11,8 +11,8 @@
 \section{Konzepterstellung Greifereinheit}~\label{appendix:Greifereinheit}
 
 In diesem Abschntt wird die Entwicklung des Greifarmkonzepts behandelt.
-Zunächst erfolgt werden die benötigten Anforderungen erfasst. 
-Anschliessend werden dann die verschiedenen Konzepte kommentiert.
+Zunächst werden die benötigten Anforderungen erfasst. 
+Danach werden die verschiedenen Konzepte kommentiert.
 Schliesslich wird eine Entscheidung auf Grundlage der Testergebnisse getroffen und dokumentiert.
 
 % ============================================================================== %
@@ -20,7 +20,7 @@ Schliesslich wird eine Entscheidung auf Grundlage der Testergebnisse getroffen u
 
 \paragraph{Greifkraft}
 Die Greifkraft muss ausreichend dimensioniert sein, um das Hindernis sicher greifen zu können.
-Dabei ist die Haftreibung und die Anpresskraft zu berücksichtigen.
+Dabei sind die Haftreibung und die Anpresskraft zu berücksichtigen.
 \[
     F_{erforderlich} = \frac{m \cdot g}{\mu_{\text{hr}}}
 \]
@@ -31,7 +31,7 @@ Dabei ist die Haftreibung und die Anpresskraft zu berücksichtigen.
 Das erforderliche Drehmoment beträgt $0.235 Nm$.
 
 \paragraph{Höhenverstellung}
-Die Höhenverstellung muss an das Gewicht des zu hebenden Hindernisses und Elektronik ausgelegt sein.
+Die Höhenverstellung muss an das Gewicht des zu hebenden Hindernisses, des Greifers und der Elektronik ausgelegt sein.
 \[
     M_{erforderlich} = (m_{Hindernis} + m_{Elektronik} + m{Greifer}) \cdot Hebel \cdot Sicherheit
 \]
@@ -39,11 +39,11 @@ Das erforderliche Drehmoment beträgt $0.2 Nm$.
 
 \paragraph{Genauigkeit}
 Der Greifer muss den gesamten Bewegungsablauf mit hoher Wiederholgenauigkeit ausführen.
-Dadurch wird sichergestellt, dass das Hindernis innerhalb des vorgegebenen Toleranzbereichs
-positioniert wird.
+Dadurch wird sichergestellt, dass das Hindernis innerhalb des Toleranzbereichs
+zurückplatziert wird.
 
 \paragraph{Gewicht}
-Das Gewicht der Greifereinheit ist so gering wie möglich zu halten, um das Gesamtgewicht des Fahrzeugs zu
+Das Gewicht der Greifereinheit ist gering zu halten, um das Gesamtgewicht des Fahrzeugs zu
 reduzieren. Eine Gewichtsreduktion ist ebenfalls bei der bewegten Massen des Greifers wichtig, da sie
 direkte Auswirkungen auf die Motorauswahl, die Geschwindigkeit und die Energieeffizient hat.
 
@@ -57,16 +57,14 @@ direkte Auswirkungen auf die Motorauswahl, die Geschwindigkeit und die Energieef
 Bild \newline
 
 In diesem Konzept wird ein einzelner Motor sowohl für die Greiffunktion als auch für die Höhenverstellung eingesetzt. 
-Die Höhenverstellung erfolgt über die Motorenausgangswelle, die fest mit einem Zahnrad verbunden ist. 
-Dieses Zahnrad treibt eine Zahnstange an, die sich vertikal nach oben oder unten bewegt.
+Die Höhenverstellung erfolgt mit einem Zahnrad, welches von einen Motor angetrieben wird und einer Zahnstange, die
+sich vertikal nach oben oder unten bewegt.
 
 Der Greifer besteht aus zwei Backen: die vordere Backe ist fest montiert, während die hintere Backe beweglich 
 auf einer Gleitführung sitzt. Die Backen sind mit einem Gummiband vorgespannt, sodass sie im Ruhezustand 
-geschlossen bleiben. An den Seiten der hinteren Backe befinden sich Mitnehmer, die mit einer linearen Nocke 
-auf beiden Seiten zusammenarbeiten. Diese Nocken sind für die horizontale Bewegung der hinteren Backe verantwortlich.
-
-Wenn die Zahnstange vertikal verschoben wird, bewegt sich die hintere Backe entsprechend entlang der linearen Nocke und 
-ermöglicht so die Öffnung und Schliessung des Greifers. \newline
+geschlossen bleiben. An den Seiten der hinteren Backe befinden sich Mitnehmer, die an einer linearen Nocke 
+auf beiden Seiten geführt wird. Diese Nocken bewegt die hintere Backe an die gewünschte Position.
+Dies ermöglicht die Öffnung und Schliessung des Greifers \newline
 
 
 Bild lineare Nocke (evtl.Bewegungsablauf erklären und noch Klappe) \newline
@@ -77,7 +75,7 @@ Hier ist ein Bewegungsablauf... Klappe für verschiedenen Weg...
 
 Bild \newline
 
-In diesem Konzept werden jeweils separate Motoren für die Greiffunktion und die Höhenverstellung eingesetzt. 
+In diesem Konzept werden jeweils separate Motoren für die Greiffunktion und für die Höhenverstellung eingesetzt. 
 Der Greifer wird als Parallelgreifer umgesetzt. Ein Motor, der mit einem Zahnrad gekoppelt ist, treibt zwei 
 Zahnstangen an, wodurch sich die beiden Greiferbacken horizontal bewegen.
 
