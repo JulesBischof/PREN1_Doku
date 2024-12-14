@@ -1,4 +1,9 @@
 \documentclass[main.tex]{subfiles} % Subfile-Class
+\usepackage{colortbl}
+\usepackage[table]{xcolor} % Für erweiterte Farbauswahl
+\definecolor{lightgray}{gray}{0.9}
+
+
 
 
 
@@ -11,92 +16,131 @@
 
 
 % Template
-\begin{landscape}
+
 \section{Budgetplanung}
 
-Gemäss der Aufgabenstellung ist das Budget über das gesamte Projekt auf 500CHF limitiert.
-In dem Modul Produktentwicklung 1 dürfen maximal 200CHF des gesamten Budgets ausgegeben werden.
-Deswegen ist eine sorgfältige Budgetplanung für das gesamte Projekt bereits in der Planungsphase
-essenziell. Im foldendem Kapitel wird auf die Budgetplanung für das gesamte Projekt eingegangen,
-sowie auch die bereits getätigten Ausgaben für Versuche in Produktentwicklung 1 festgehalten.
+Gemäss der Aufgabenstellung ist das finanzielle Budget für das gesamte Projekt auf 500CHF beschränkt.
+Das Modul Produktentwicklung 1 darf maximal 200CHF beanspruchen. Die restlichen 300CHF können im 
+Folgemodul beantragt werden.
+Aus diesem Grund ist eine sorgfältige Budgetplanung für das Gesamprojekt bereits in der Planungsphase
+unerlässlich. Im foldenden Kapitel wird auf die Budgetplanung für das Gesamtprojekt
+sowie auf bereits getätigte Ausgaben in Produktentwicklung 1 eingegangen.
 
-\subsubsection*{Budget}
-Die Tabelle~\ref{tab:Budgetplanung} stellt die Budgetplanung für das ganze Projekt dar. Die Preise 
-entsprechen aus Angaben von Onlineshops. Eigenkonstruktionen werden mit einem realistischen 
-Schätzwert angegeben.
+\subsubsection*{Budgetplanung}
+Die Tabelle~\ref{tab:Budgetplanung} stellt die Budgetplanung für das gesamte Projekt dar. Diese ist in 
+Kategorien wie Antrieb, Greifeinheit, Chassis und Energieversorgung unterteilt, um eine 
+bessere Übersicht zu gewährleisten. Die geschätzten Kosten basieren auf aktuellen Marktpreisen und 
+beinhalten auch Kleinteile sowie PCBs. Eigenkonstruktionen sind mit einem realistischen 
+Schätzwert angegeben. Zu beachten ist, dass sich die Preise ständig ändern. Die Tabelle dient daher
+als Richtwert.\\
 
 !!Stand jetzt ist noch nicht alles klar definiert und Abweichungen/ Ergänzungen werden laufend eingetragen.!!
 
-\begin{table}[h]                              
-    \centering
-    \makebox[\textwidth][3]{ % Verschiebt nach links innerhalb der Textbreite   
-    \begin{tabular}{|c|c|c|c|c|c|c|}                        
-        \hline
-        \textbf{Endprodukt} & \textbf{Komponente}        & \textbf{Hersteller}    & \textbf{Herstellernummer}          & \textbf{Anzahl}     & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}     \\ \hline
-        Antrieb             & Schrittmotoren             & DFRobot                & FIT0278                            & 2                   & 12                         & 24                              \\ \hline
-                            & Schrittmotorentreiber      & ADI-Trinamic           & TMC5240 Eval Board                 & 2                   & 31.5                       & 63                              \\ \hline
-                            & Encoder-Lichtschranke      &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-        Greifeinheit        & Lichtschranke              & SICK                   & WL100-P3430                        & 1                   & 15.25                      & 15.25                           \\ \hline
-                            & Servo                      & Terasic                & FXX-3037-TOP                       & 1                   & 11.79                      & 11.79                           \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-        Chassis             & LIDAR                      & DFRobot                &                                    & 2                   & 24.87                      & 49.74                           \\ \hline
-                            & Taster/Schalter            &                        &                                    & 3                   & 5                          & 15                              \\ \hline
-                            & Liniensensor               & Eigenkonstruktion      &                                    & 1                   & 40                         & 40                              \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-        Controller          & Raspberry Pi 5             &                        &                                    & 1                   & 57                         & 57                              \\ \hline
-                            & Raspberry Pi Kamera 12MP   &                        &                                    & 1                   & 25.35                      & 25.35                           \\ \hline
-                            & Raspberry Pico             &                        &                                    & 2                   & 4                          & 8                               \\ \hline
-                            & PCB                        & PCBWay                 &                                    & 3                   & 7                          & 21                              \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-        Energieversorgung   & Akkupack                   & Swaytronic             & 7,64018E+12                        & 1                   & 41.7                       & 41.7                            \\ \hline
-                            & Ladegerät                  & Voltcraft              & 1597950-UP                         & 1                   & 39.95                      & 39.95                           \\ \hline
-                            & PCB                        & PCBWay                 &                                    & 1                   & 7                          & 7                               \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-                            &                            &                        &                                    &                     &                            &                                 \\ \hline
-     \textbf{Total}         &                            &                        &                                    &                     &                            & \textbf{XYZ}                                \\ \hline
-    
-    \end{tabular}
-    }
+\newpage
 
+\begin{table}[h]
+    \centering
+    \scriptsize % Schriftgröße verkleinern
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{1cm}|p{1.5cm}|p{1cm}|}
+        \hline
+        \textbf{Komponente}                    & \textbf{Hersteller}    & \textbf{Hersteller Nr.}          & \textbf{Anzahl}     & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}     \\ \hline
+        \rowcolor{lightgray} Antrieb           &                        &                                 &                     &                            &                                 \\ \hline
+        Schrittmotoren                         & DFRobot                & FIT0278                         & 2                   & 12                         & 24                              \\ \hline
+        Schrittmotorentreiber                  & ADI-Trinamic           & TMC5240 Eval Board              & 2                   & 31.5                       & 63                              \\ \hline
+        \rowcolor{lightgray} Greifeinheit      &                        &                                 &                     &                            &                                 \\ \hline
+        Lichtschranke                          & SICK                   & WL100-P3430                     & 1                   & 15.25                      & 15.25                           \\ \hline
+        Servo                                  & Terasic                & FXX-3037-TOP                    & 1                   & 11.79                      & 11.79                           \\ \hline
+        PCB                                    & ?                      &                                 & 5                   & 7                          & 7?                              \\ \hline
+        Lichtschranke Endanschlag              & ?                      & ?                               & 2                   & ?                          & ?                              \\ \hline
+        \rowcolor{lightgray} Chassis           &                        &                                 &                     &                            &                                 \\ \hline
+        LIDAR                                  & DFRobot                & TF Luna I2C                     &                     & 24.87                      & 24.87                           \\ \hline
+        Liniensensor                           & Eigenkonstruktion      &                                 & 1                   & 40                         & 40                              \\ \hline
+        Ultraschallsensor                      & OSEPP Electronics      & HC-SR04                         & 1                   & 5.78                       & 5.78                            \\ \hline
+        PCB                                    & ?                      &                                 & 5                   & 7                          & 7?                              \\ \hline
+        Räder                                  & ?                      & ?                               & 2                   & ?                          & ?                              \\ \hline
+        LCD-Display                            & ?                      & ?                               & 1                   & ?                          & ?                              \\ \hline
+        \rowcolor{lightgray} Controller        &                        &                                 &                     &                            &                                 \\ \hline
+        Raspberry Pi 4                         & ?                      & ?                               & 1                   & 17.5?                      & 17.5?                           \\ \hline
+        Raspberry Pi Kamera 12MP               & ?                      & ?                               & 1                   & 25.35                      & 25.35                           \\ \hline
+        Raspberry Pico                         & ?                      & SC0915                          & 2                   & 3.63                       & 3.53                            \\ \hline
+        PCB                                    & ?                      &                                 & 5                   & 7                          & 7?                              \\ \hline
+        \rowcolor{lightgray} Energieversorgung &                        &                                 &                     &                            &                                 \\ \hline
+        Akkupack                               & Swaytronic             & 7,64018E+12 ??                  & 1                   & 41.7                       & 41.7                            \\ \hline
+        Ladegerät                              & Voltcraft              & 1597950-UP                      & 1                   & 39.95                      & 39.95                           \\ \hline
+        PCB                                    & ?                      &                                 & 1                   & 7?                         & 7?                              \\ \hline
+        \rowcolor{lightgray} Elektronik        &                        &                                 &                     &                            &                                 \\ \hline
+        Kleinteile Elektronik                  & Werkstatt?             & ?                               & -                   & -                          & 60                              \\ \hline
+        \textbf{Total}                         &                        &                                 &                     &                            & \textbf{XYZ}                   \\ \hline
+    \end{tabular}
     \caption{Budgetplanung}
     \label{tab:Budgetplanung}
 \end{table}
 
+Diese Kalkulation zeigt, dass die Gesamtkosten unter den 500 CHF bleiben. Es sind noch **XYZ CHF** übrig, 
+    die für unvorhergesehene Ausgaben oder zusätzliche Anschaffungen genutzt werden können.
+
+
+
+
+
+
 \subsubsection{Ausgaben Produktentwicklung 1}
-Die Tabelle~\ref{tab:Ausgaben_PREN1} gibt alle getätigten Ausgaben in dem Modul Produktentwicklung 1 an.
+Im Rahmen des Moduls Produktentwicklung 1 wurden die in Tabelle~\ref{tab:Ausgaben_PREN1} aufgeführten 
+Ausgaben getätigt. 
+
 
 !!Tabelle wird noch ergänzt!!
 
 
-\begin{table}[h] 
-                     
+\begin{table}[h]
     \centering
-    \makebox[\textwidth][1]{ % Verschiebt nach links innerhalb der Textbreite         
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}                       
+    \makebox[\textwidth][c]{ % Erzwingt horizontale Zentrierung
+    \scriptsize % Schriftgröße verkleinern
+    \begin{tabular}{|p{3cm}|p{2.5cm}|p{2.5cm}|p{3cm}|p{1cm}|p{1.5cm}|p{1cm}|}
         \hline
-        \textbf{Endprodukt} & \textbf{Komponente}        & \textbf{Hersteller}    & \textbf{Herstellernummer}    & \textbf{Bestelldatum}     & \textbf{Anzahl}                    & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}   \\ \hline
-                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
-                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
-                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
-                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
-                            &                            &                        &                              &                           &                                    &                            &                                 \\ \hline
-    
+        \textbf{Komponente}         & \textbf{Lieferant}       & \textbf{Hersteller}    & \textbf{Hersteller Nr.}          & \textbf{Anzahl}     & \textbf{Kosten [CHF/stk]}  & \textbf{Kosten total [CHF]}     \\ \hline
+        \rowcolor{lightgray} Antrieb           &                        &                               &                                 &                     &                            &                                 \\ \hline
+        Schrittmotoren                         & Mouser                 & DFRobot                       & FIT0278                         & 2                   & 12                         & 24                              \\ \hline
+        Schrittmotorentreiber                  & Selber?                 & ADI-Trinamic                 & TMC5240 Eval Board              & 2                   & 31.5                       & 63                              \\ \hline
+        \rowcolor{lightgray} Greifeinheit      &                        &                               &                                 &                     &                            &                                 \\ \hline
+        Lichtschranke                          & ?                      & SICK                          & WL100-P3430                     & 1                   & 15.25                      & 15.25                           \\ \hline
+        Servo                                  & ?                      & Terasic                       & FXX-3037-TOP                    & 1                   & 11.79                      & 11.79                           \\ \hline
+        %PCB                                   & ?                      &                               &                                 & 5                   & 7                          & 7?                              \\ \hline
+        \rowcolor{lightgray} Chassis           &                        &                               &                                 &                     &                            &                                 \\ \hline
+        LIDAR                                  & ?                      & DFRobot                       & TF Luna I2C                     &                     & 24.87                      & 24.87                           \\ \hline
+        %Ultraschallsensor                      & OSEPP Electronics      &                              & HC-SR04                         & 1                   & 5.78                       & 5.78                            \\ \hline
+        %PCB                                    & ?                      &                              &                                 & 5                   & 7                          & 7?                              \\ \hline
+        %\rowcolor{lightgray} Controller        &                        &                              &                                 &                     &                            &                                 \\ \hline
+        %Raspberry Pi 4                         & ?                      &                              & ?                               & 1                   & 17.5?                      & 17.5?                           \\ \hline
+        %Raspberry Pi Kamera 12MP               & ?                      &                              & ?                               & 1                   & 25.35                      & 25.35                           \\ \hline
+        %Raspberry Pico                         & ?                      &                              & SC0915                          & 2                   & 3.63                       & 3.53                            \\ \hline
+        %PCB                                    & ?                      &                              &                                 & 5                   & 7                          & 7?                              \\ \hline
+        %\rowcolor{lightgray} Energieversorgung &                        &                              &                                 &                     &                            &                                 \\ \hline
+        %Akkupack                               & Swaytronic             &                              & 7,64018E+12 ??                  & 1                   & 41.7                       & 41.7                            \\ \hline
+        %Ladegerät                              & Voltcraft              &                              & 1597950-UP                      & 1                   & 39.95                      & 39.95                           \\ \hline
+        %PCB                                    & ?                      &                              &                                 & 1                   & 7?                         & 7?                              \\ \hline
+        \rowcolor{lightgray} Liniensensor      &                        &                               &                                 &                     &                            &                                 \\ \hline
+        Trimmerpotentiometer 200Ohm SMD        & Mouser                 & Vishay                        & TS3YJ201MR15                    & 10                  & 1.85                       & 18.5                           \\ \hline
+        UV-Emitter 395nm                       & Digikey                & Bivar Inc.                    & UV3TZ-395-15                    & 10                  & 1.573                      & 15.73                           \\ \hline
+        UV-Fototransistor 630nm                & Digikey                & Everlight Electronics Co Ltd  & ALS-PT204-6C/L177               & 10                  & 0.496                      & 4.96                           \\ \hline
+        IR-Emitter 940nm                       & Digikey                & würth Elektronik              & 15400394F3590                   & 2                   & 0.351                      & 0.702                           \\ \hline
+        IR-Fototransistor 940nm                & Digikey                & würth Elektronik              & 1540031NC6090                   & 2                   & 0.329                      & 0.658                           \\ \hline
+        PCB-Liniensensor                       & PCB-Way                & PCBWay                        & -                               & 5                   & 7                          & 7                           \\ \hline
+
+        \textbf{Total}                         &                        &                               &                                 &                     &                            & \textbf{XYZ}                   \\ \hline
     \end{tabular}
     }
     \caption{Ausgaben PREN1}
     \label{tab:Ausgaben_PREN1}
 \end{table}
 
-\end{landscape}
+
+!!anpassen wenn komplett!!!
+!!!!Die Tabelle~\ref{tab:Ausgaben_PREN1} umfasst die Anschaffung von Schrittmotoren, Schrittmotorentreibern, einer 
+Lichtschranke und einem Servo. etc!!!!!!. Die Entwicklung des Liniensensors fällt finanziell höher aus als erwartet.
+Mit diesen Komponenten konnten Prototypen entwickelt und grundlegende 
+Funktionen getestet werden. Die Gesamtausgaben belaufen sich auf !!!!XYZ CHF!!!! und liegen damit innerhalb des 
+für dieses Modul vorgesehenen Budgets von 200 CHF.
+
+
 \end{document}
