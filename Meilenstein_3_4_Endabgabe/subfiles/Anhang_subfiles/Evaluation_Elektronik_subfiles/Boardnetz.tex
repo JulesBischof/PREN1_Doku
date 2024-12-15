@@ -224,12 +224,10 @@ Um diese Akkupakete mit den Eigenentwicklungen vergleichen zu können, wird in
 einem ähnlichen Kapazitätsbereich von $3000mAh$ geschaut. Diese Akkupacks haben
 praktisch den gleichen Energieinhalt wie die Eigenentwicklung mit $43.2Wh$.
 Herausgesucht wurde der Akku \textit{SWAY-EL LiPo 4S 14.8V 3000mAh 35C/70C EC3
-} von \textit{Swaytronic}, abgebildet in
-Abbildung~\ref{fig:Swaytronic_4S_Akkupack}. Die Schutzbeschaltung wird auch
-hier auf dem Roboter umgesetzt werden müssen, da die Akkus eine solche nicht
-integriert haben. Zugriff auf die Zellspannungen erhält man über den separat
-herausgeführten Steckverbinder, welcher eben genau diese Anschlüsse
-bereitstellt.
+} von \textit{Swaytronic}. Die Schutzbeschaltung wird auch hier auf dem Roboter
+umgesetzt werden müssen, da die Akkus eine solche nicht integriert haben.
+Zugriff auf die Zellspannungen erhält man über den separat herausgeführten
+Steckverbinder, welcher eben genau diese Anschlüsse bereitstellt.
 
 \paragraph{Kostenschätzung}
 
@@ -380,65 +378,86 @@ Anforderungen an diese Schaltung aufgeführt.
 
 \paragraph{Batterieschutz}
 Als Batterieschutz-IC wird der \textit{BQ7790400PWR} der Firma Texas-Industries
-eingesetzt. Dieser bitetet die Funktion, bei Detektierter Unterspannung einer
-Batteriezelle einen MOSFET abzuschalten, womit die Batterie vom Netz getrennt
-wird. Im Schema schaltet der IC \textit{U401} also die beiden MOSFETS
-\textit{Q203} und \textit{Q205}. Zweiterer ist lediglich dafür da, eine LED zu
-schalten, falls eine Unterspannung detektiert wird. Der Ausgang des ICs kann
-nicht sonderlich viel Strom treiben, weshalb für diese LED ebenfalls ein MOSFET
-eingesetzt wird. Widerstandswerte und Kapazitäten wurden weitestgehend aus dem
-Datenblatt übernommen.
+eingesetzt. Dieser bietet die Funktion, bei detektierter Unterspannung einer
+Batteriezelle die Batterie über einen MOSFET, darsgestellt in
+Abbildung~\ref{fig:Batterieschutz_Schema} vom Bordnetz zu trennen. Im Schema
+schaltet der IC \textit{U401} also die beiden MOSFETS \textit{Q203} und
+\textit{Q205}. Zweiterer ist lediglich dafür da, eine LED zu schalten, falls
+eine Unterspannung detektiert wird. Der Ausgang des ICs kann nicht sonderlich
+viel Strom treiben, weshalb für diese LED ebenfalls ein MOSFET eingesetzt wird.
+Widerstandswerte und Kapazitäten wurden weitestgehend aus dem Datenblatt
+übernommen.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Boardnetz/Batterieschutz_MOSFET.png}
+    \caption{MOSFETS für Batterietrennung}~\label{fig:Batterieschutz_Schema}
+\end{figure}
 
 \paragraph{Quellenumschaltung}
 Beide Spannungsversorgungen, das Akku-Paket und ein externes Netzteil, werden
 über Dioden geführt (\textit{D201} \& \textit{D202}), was verhindert, dass
-Strom aus dem Netzteil in die Batterie gelangen kann. Der MOSFET \textit{Q201}
+Strom aus dem Netzteil in die Batterie gelangen kann. Diese Schaltung wird in
+Abbildung~\ref{fig:Quellenumschaltung_Schema} gezeigt. Der MOSFET \textit{Q201}
 hat die Aufgabe, die Batterie vom Netz zu trennen, sobald ein Netzteil
 angeschlossen ist.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{./fig_Boardnetz/Schema_Quellenumschaltung.png}
+    \caption{Quellenumschaltung}~\label{fig:Quellenumschaltung_Schema}
+\end{figure}
+
 \paragraph{Einschaltstrombegrenzung}
 Innerhalb des Roboters befinden sich viele Kapazitäten, alleine schon aufgrund
-der beiden Motorentreiber. Die gesamtkapazität wird dabei auf $C_l = 1 \mu F$
-angenommen. Ziel ist es, den Spannungsanstieg im System zu begrenzen, da
-dadurch direkt der Strom folgt, welcher in die Kapazitäten fliesst. Das ist
-ersichtlich am Zusammenhang
-\[
-    I_{C_{Last}}  = \frac{dU}{dt} \cdot C_{Last}
-\]
+der beiden Motorentreiber. Die Gesamtkapazität wird dabei auf $C_l = 1 \mu F$
+angenommen. Um den Stromstoss beim Einschalten des Geräts zu begrenzen, muss
+der Spannungsanstieg im System begrenzt sein. Daraus ergibt sich durch den
+Zusammenhang $I_{C_{Last}} = \frac{dU}{dt} \cdot C_{Last}$ direkt der
+Stromstoss durch das System.
 
-Der Spannungsanstieg beim Einschalten des MOSFETS \textit{Q204} bezweckt eine
-Spannungsänderung über dem Kondensator \textit{C210}. Durch den Zusammenhang
+Die Schaltung, welche im Anschluss diskutiert wird, ist in
+Abbildung~\ref{fig:InrushLimiter_Schema} gezeigt.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./fig_Boardnetz/InrushLimiter_Schaltung.png}
+    \caption{Inrush Limiter Schaltung}~\label{fig:InrushLimiter_Schema}
+\end{figure}
+
+Der Spannungsanstieg beim Einschalten des MOSFETS \textit{Q204} bezweckt einen
+Strom durch Kondensator \textit{C210}. Durch den Zusammenhang
 \[
     I_{C_{210}}  = \frac{dU}{dt} \cdot C_{210}
 \]
-ergibt sich, dass sich über dem Widerstand $R_{204}$ eine Spannung einstellt,
-welche proportional zum Spannungsanstieg des Systems ist.
+folgt, dass sich über dem Widerstand $R_{204}$ eine Spannung einstellt, welche
+proportional zum Spannungsanstieg des Systems ist.
 \[
     U_{R_{204}} = I_{C_{210}} \cdot R_{204}
 \]
 
 Es ist richtig anzunehmen, dass sich die Spannung über dem Widerstand auf die
-Spannung $U_{th}$ des MOSFETS einstellt, da er sich bei diesem Wert 'selbst
-abstellt'. Aus den beiden Formeln folgt:
+Spannung $U_{th}$ des MOSFETS einstellt, da er sich bei diesem Wert beginnt,
+'selbst abzustellen'. Aus den beiden Formeln folgt:
 \[
     \frac{dU}{dt} = \frac{U_{th}}{C_{210} \cdot R_{204}}
 \]
-und daraus widerrum
+und daraus wiederrum
 \[
     I_{inrush} = \frac{U_{th}}{C_{210} \cdot R_{204}} \cdot C_{Last}
 \]
 
 Es wird nachfolgend mit dem gleichen MOSFET gerechnet, wie er bereits bei der
-Quellenumschaltung eingesetzt wird. Der maximale Strom durch den Widerstand
-$R_{204}$ wird mit $10mA$ angenommen, wodurch ein Widerstand von $1.2k \omega$
-resultiert. Der Inrush-Strom soll auf $7A$ begrenzt sein, bei einer
-Treshhold-Spannung von $2.5V$. Daraus ergibt sich $C_{210} = 470nF$.
+Quellenumschaltung eingesetzt wird. Der maximal erlaubte Strom durch den
+Widerstand $R_{204}$ wird mit $10mA$ angenommen, wodurch ein Widerstand von
+$1.2k \omega$ resultiert. Der Inrush-Strom soll auf $7A$ begrenzt sein bei
+einer Treshhold-Spannung von $2.5V$. Daraus ergibt sich $C_{210} = 470nF$.
 
 Im Anschluss muss noch die Verlustleistung des MOSFETS untersucht werden.
 Eingesetzt wird der \textit{BSZ180P03NS3EGATMA1} P-Kanal-FET von Infineon
-Technologies. Die Impulsdauer wird stark vereinfacht, mit der Annahme, dass der
-Stromimpuls während der gesamten Prozessdauer $I_{inrush, max} = 7A$ bei $U =
-    12V$ beträgt.
+Technologies. Der Impuls wird stark vereinfacht mit der Annahme betrachtet,
+dass der Stromimpuls während der gesamten Prozessdauer $I_{inrush, max} = 7A$
+bei $U = 12V$ beträgt.
 
 Durch den Zusammenhang
 \[
@@ -452,25 +471,39 @@ kann.
 \paragraph{DC-DC Converter}
 Eingesetzt wird der Buck-Konverter \textit{LM2677} der Firma
 \textit{Texas-Industries}. Es ist ein sehr günstiger Abwärtssteller, welcher
-$60W$ Leistung bringen kann. Zur Dimensionierung der Kapazitäten, der
-Induktivität und der Diode wurde sich auf die Dimensionierungs-Empfehlung des
-Datenblatts berufen.
+$60W$ Leistung liefern kann. Zur Dimensionierung der Kapazitäten, der
+Induktivität und der Diode wurde sich auf die Dimensionierungsempfehlung des
+Datenblatts berufen. Der entsprechende Ausschnitt des Schemas ist in
+Abbildung~\ref{fig:DC_Converter_Schema} gezeigt.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{./fig_Boardnetz/DC_Converter_Schema.png}
+    \caption{DC/DC Konverter 12V, 60W}~\label{fig:DC_Converter_Schema}
+\end{figure}
 
 \paragraph{ADC - Battery-Monitoring}
 Aus der Anforderungsliste ergab sich der Wunsch nach der Möglichkeit, die
 Batterie überwachen zu können. Dazu wird ein via $I^2C$ ansprechbarer ADC
 verbaut, welcher den Strommesswiderstand, den NTC sowie die Gesamtspannung des
-Batterieschutz-ICs überwachen können. Um den single-ended $I^2C$ Signalen einen
-eindeutigen Rückweg bieten zu können, um Störungen zu vermeiden, muss das GND
-des Navigationscomputers ebenfalls mit auf das Powerboard geführt werden.
-Dadurch entsteht allerdings die Gefahr, dass Störungen, verursacht durch z.B.
-den Buck-Konverter, über eben diese Leitung an der Filterung vorbei auf den
-Navigationscomputer gelangen können. Um dieses Problem zu umgehen, wird ein
+Batterieschutz-ICs überwachen kann. Die entsprechende Schaltung ist in
+Abbildung~\ref{fig:adc_batterycontrol} dargestellt. Um den single-ended $I^2C$
+Signalen einen eindeutigen Rückweg bieten zu können, um Störungen zu vermeiden,
+muss das GND des Navigationscomputers ebenfalls mit auf das Powerboard geführt
+werden. Dadurch entsteht allerdings die Gefahr, dass sich ungewollte
+GND-Schleifen im gesamten System bilden. Um dieses Problem zu umgehen, wird ein
 $I^2C$ Isolator der Firma \textit{Texas Industries} eingesetzt. Das setzt
 voraus, dass sich auf dem Powerboard ebenfalls eine 3V3-Spannungsquelle
 befindet. Diese wird mit einem LDO zur Verfügung gestellt. Es ist mit nur sehr
 geringen Ströme zu zu rechnen, daher ist nicht mit hoher Verlustleistung über
-den LDO zu rechnen.
+den LDO zu rechnen und dieser kann die 12V direkt in die benötigten 3V3
+umwandeln.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{./fig_Boardnetz/ADC_Spannungspegel.png}
+    \caption{ADC zur Batterieüberwachung}~\label{fig:adc_batterycontrol}
+\end{figure}
 
 \paragraph{Steckverbinder}
 Jede Funktion bringt einen eigenen Steckverbinder mit, um Verwechslungen und

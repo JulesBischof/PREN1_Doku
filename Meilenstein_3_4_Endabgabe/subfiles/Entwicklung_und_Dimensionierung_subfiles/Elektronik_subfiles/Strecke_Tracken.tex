@@ -11,12 +11,12 @@
 
 \subsubsection{Sensorik Strecken Rückverfolgung}
 
-Der Algorithmus setzt voraus, dass das Roboter immer und zu jeder Zeit seine
-Orientierung als absoluten Winkel ab dem Startpunkt weiss und die zurückgelegte
-Strecke messen kann. Dieser Abschnitt behandelt, wie der Roboter eben diese
-Information erfasst. Abbildung~\ref{fig:Blockschaltbild_StreckenTracken} zeigt
-schematisch auf, wie diese Funktion umgesetzt wird. Die danach folgende
-Beschreibung führt dieses Schema nochmal aus.
+Der Algorithmus setzt voraus, dass der Roboter zu jedem Zeitpunkt seine
+Orientierung als absoluten Winkel vom Startpunkt kennt und die zurückgelegte
+Strecke messen kann. In diesem Abschnitt wird beschrieben, wie der Roboter
+diese Informationen erhält. Abbildung~\ref{fig:Blockschaltbild_StreckenTracken}
+zeigt schematisch, wie diese Funktion implementiert ist. In der folgenden
+Beschreibung wird dieses Schema noch einmal erläutert.
 
 \begin{figure}[H]
     \centering
@@ -24,31 +24,29 @@ Beschreibung führt dieses Schema nochmal aus.
     \caption{Blockschaltbild Sensorik Streckenrückverfolgung}~\label{fig:Blockschaltbild_StreckenTracken}
 \end{figure}
 
-% ===================================================================================
 \paragraph{Winkelerfassung}
-Der Winkel des Pfadfinders wird, wie in Anhang~\ref{appendix:Strecke_Tracken}
-konzeptioniert, über ein Gyroskop ermittelt. Dieses erfasst die Änderungsrate
-des aktuellen Winkels zu jeder Zeit und integriert sie jede $25\mu s$ numerisch
-auf. Dadurch kann eine sehr genaue Angabe darüber getroffen werden, in welcher
-Orientierung sich das Roboter aktuell befindet.
+Der Winkel des Fahrzeugs wird, wie in Anhang~\ref{appendix:Strecke_Tracken}
+beschrieben, mit einem Gyroskop gemessen. Dieses erfasst zu jedem Zeitpunkt die
+Änderungsrate des aktuellen Winkels und integriert diese alle $25\mu s$
+numerisch. Dies ermöglicht eine sehr genaue Aussage über die aktuelle
+Orientierung des Roboters.
 
-Mangels Echtzeitfähigkeit ist es nicht sicher, ob der Raspberry Pi in der Lage
-ist, das Gyroskop ausreichend genau und häufig auszulesen. Deshalb wird ein
-entsprechender Steckplatz sowohl auf dem Antriebs-Controller, als auch auf dem
-Raspberry-HAT vorgesehen, um dies im Nachfolgemodul PREN2 noch zu testen.
+Mangels Echtzeitfähigkeit ist nicht sicher, ob der Raspberry Pi in der Lage
+ist, das Gyroskop ausreichend genau und häufig auszulesen. Daher ist sowohl auf
+dem Antriebscontroller als auch auf dem Raspberry-HAT ein entsprechender
+Steckplatz vorgesehen, um dies im Nachfolgemodul PREN2 zu testen.
 
-\paragraph{Zurückgelegte Strecke}
-Wie in der Konzeption beschrieben, wird die zurückgelegte Strecke des
-Pfadfinders mithilfe eines Encoders erfasst. Die verwendete Lochscheibe besitzt
-36 Löcher, was einer Auflösung von 10 Grad pro Schritt entspricht. Die
-Dimensionen der Löcher wurden basierend auf den Herstellerangaben aus dem
-entsprechenden Datenblatt festgelegt. Laut Hersteller beträgt die minimale
-Erfassungsgrösse 1.8 x 0.8 mm, weshalb Löcher mit den Abmessungen 1.8 x 1.6 mm
-gewählt wurden (siehe Abbildung~\ref{fig:Lochscheibe_Vermasst}).
+\paragraph{Fahrstrecke} Wie in der Konzeption beschrieben, wird die zurückgelegte Wegstrecke des
+Roboters mit Hilfe eines Encoders erfasst. Die verwendete Lochscheibe hat 36
+Löcher, was einer Auflösung von 10 Grad pro Schritt entspricht. Die Abmessungen
+der Löcher wurden anhand der Herstellerangaben aus dem entsprechenden
+Datenblatt festgelegt. Laut Hersteller beträgt die minimale Erfassungsgrösse
+1,8 x 0,8 mm, weshalb Löcher mit den Abmessungen 1,8 x 1,6 mm gewählt wurden
+(siehe Abbildung~\ref{fig:Lochscheibe_Vermasst}).
 
-Falls sich während der Tests in PREN 2 herausstellt, dass die Auflösung nicht
+Sollte sich während der Tests in PREN 2 herausstellen, dass die Auflösung nicht
 ausreicht, könnte der Durchmesser der Lochscheibe vergrössert werden, um bei
-gleichbleibender Lochgrösse mehr Löcher pro Umdrehung unterzubringen.
+gleicher Lochgrösse mehr Löcher pro Umdrehung unterzubringen.
 
 \begin{figure}[H]
     \centering
@@ -57,8 +55,8 @@ gleichbleibender Lochgrösse mehr Löcher pro Umdrehung unterzubringen.
 \end{figure}
 
 In einem zweiten Versuch soll im Folgemodul PREN2 getestet werden, ob es
-ausreichen könnte, die zurückgelegten Schritte des Schrittmotorentreibers für
-diese Referenz zu verwenden. Dieser Versuch kann allerdings erst ausreichend
-aussagekräftig durchgeführt werden, wenn ein erster Roboter gebaut ist.
+ausreicht, für diese Referenz die vom Schrittmotortreiber zurückgelegten
+Schritte zu verwenden. Dieser Versuch kann jedoch erst nach dem Bau eines
+ersten Roboters mit ausreichender Aussagekraft durchgeführt werden.
 
 \end{document}

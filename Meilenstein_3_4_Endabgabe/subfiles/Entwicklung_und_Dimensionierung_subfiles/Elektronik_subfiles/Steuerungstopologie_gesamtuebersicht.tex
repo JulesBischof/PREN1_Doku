@@ -11,12 +11,20 @@
 
 \subsubsection{Steuerungstopologie und Gesamtübersicht}
 
+Abbildung~\ref{fig:Gesamtuebersicht_vereinfacht} zeigt das Elektrokonzept in
+einem kleinen Detaillierungsgrad. Ziel ist es, im Sinne der Gewaltenteilung
+jede Steuerungseinheit für sich abgeschlossen zu betrachten. So kann sowohl die
+Zuständigkeit der beiden Elektronikentwickler gut aufgeteilt werden, als auch
+Schnittstellen zwischen Funktionseinheiten sehr eindeutig benannt werden.
+
+\begin{figure}[H]
+      \centering
+      \includegraphics[width = 1\linewidth]{fig_Steuerungstopologie_Gesamtuebersicht/Blockschaltbild_Elektro_vereinfacht.pdf}
+      \caption{Vereinfachte Gesamtübersicht Elektronikkonzept}~\label{fig:Gesamtuebersicht_vereinfacht}
+\end{figure}
+
 Anhang~\ref{appendix:Blockschaltbild_Elektrokonzept} zeigt die Gesamtübersicht
-der Steuerung zum Zeitpunkt von PREN1. Ziel ist es, im Sinne der
-Gewaltenteilung jede Steuerungseinheit für sich abgeschlossen zu betrachten. So
-kann sowohl die Zuständigkeit der beiden Elektronikentwickler gut aufgeteilt
-werden, als auch Schnittstellen zwischen Funktionseinheiten sehr eindeutig
-benannt werden.
+der Steuerung zum Zeitpunkt von PREN1 nochmals in einer höheren Detaillierung.
 
 \subsubsection*{Die verschiedenen Funktionsgruppen und ihre PCBs}
 Es werden total die 4 folgenden Funktionsgruppen unterschieden:
@@ -55,26 +63,38 @@ Sensorik und Aktorik zur Verfügung. Daher wird mit dem separaten Grip
 Controller geplant.
 
 \subsubsection*{Kommunikationsschnittstellen}
-Da laufende Motoren, Schaltregler und andere Leistungselektronik auf engem Raum mit
-Kommunikations- und anderer feinfühliger Elektronik verbaut werden müssen, wird die UART-Kommunikation
-über eine RS422-Schnittstelle differentiell übertragen. Die Kommandos und das Protokoll werden erst
-im Nachfolgemodul beim Inbetriebnehmen dieser PCBs definiert. Angedacht ist eine Kommunikation
-über eine Kommandolänge von beispielsweise 32- oder 64-Bit, worin eine Adresse definiert ist, ein Kommando und
-darüber hinaus noch genügend Platz für zu übertragende Parameter. Mögliche Parameter können dabei
-eine Fahrzeuggeschwindigkeit, ein Drehwinkel oder etwa Errorcodes, welche zurück zum Raspberry Pi übertragen werden, sein.
+Da Motoren, Schaltregler und andere Leistungselektronik auf engstem Raum mit
+Kommunikations- und anderer empfindlicher Elektronik untergebracht werden müssen,
+wird die UART-Kommunikation differentiell über eine RS422-Schnittstelle übertragen.
+Die Kommandos und das Protokoll werden erst im Nachfolgemodul bei der Inbetriebnahme
+dieser Leiterplatten endgültig definiert. Angedacht ist eine Kommunikation über
+eine Kommandolänge von z.B. 64 Bit, in der eine Adresse, ein Kommando und zusätzlich
+noch genügend Platz für zu übertragende Parameter definiert sind.  Abbildung~\ref{fig:Kommunikationsprotokoll}
+zeigt den Aufbau einer solchen Nachricht.  Mögliche Parameter können eine Fahrzeuggeschwindigkeit,
+ein Drehwinkel oder auch Fehlercodes sein, die an den Raspberry Pi zurückgesendet werden.
 
-Die Adressenvergabe ist geplant, da der Raspberry Pi auf Basis dieses
-Blockschaltbilds grundsätzlich nicht in der Lage ist, auf direktem Wege mit dem
-Greifcontroller zu kommunizieren. Dies muss er grundsätzlich auch nicht. Um
-allerdings trotzdem eben diesen Fall abzudecken, sollen Adressen von $0 \dots
-      2$ (2-Bit) vergeben werden. So kann eine einfache Punkt-zu-Punkt-Übertragung
-ausreichend sein, um die drei Steuerungen miteinander kommunizieren zu lassen.
+\begin{figure}[H]
+      \centering
+      \includegraphics[width = 0.75\linewidth]{fig_Steuerungstopologie_Gesamtuebersicht/Kommunikationsprotokoll.pdf}
+      \caption{Aufbau einer Nachricht}~\label{fig:Kommunikationsprotokoll}
+\end{figure}
 
-\subsubsection*{Software}
-% ToDo
-!!! (ABBILDUNG ERSTELLEN GEPLANTE TASKS IN FREERTOS / EMBEDDED SOFTWARE) !!!
+Die Adressvergabe, dargestellt in Abbildung~\ref{fig:Adressvergabe}, ist
+vorgesehen, da der Raspberry Pi aufgrund der Kommunikationstopologie,
+dargestellt im Blockschaltbild~\ref{fig:Gesamtuebersicht_vereinfacht},
+grundsätzlich nicht in der Lage ist, direkt mit dem Greifcontroller zu
+kommunizieren. Dies ist prinzipiell auch nicht notwendig. Um aber genau diesen
+Fall abzudecken, sollten Adressen von $0 \dots 2$ (2-Bit) vergeben werden. So
+kann eine einfache Punkt-zu-Punkt-Übertragung ausreichen, um die drei
+Steuerungen miteinander kommunizieren zu lassen.
 
-\subsubsection*{Boardnetz}
+\begin{figure}[H]
+      \centering
+      \includegraphics[width = 0.75\linewidth]{fig_Steuerungstopologie_Gesamtuebersicht/Adressvergabe.pdf}
+      \caption{Vergebene Adressen der Prints}~\label{fig:Adressvergabe}
+\end{figure}
+
+\subsubsection*{Bordnetz}
 Auf dieses wird in der Sektion~\label{sec:Boardnetz} im Detail eingegangen. Kurz ausgedrückt
 besitzt jedes Board eine eigene Spannungswandlung von 12V auf 5V respektive 3.3V, welche vom
 Power Board zur Verfügung gestellt werden.

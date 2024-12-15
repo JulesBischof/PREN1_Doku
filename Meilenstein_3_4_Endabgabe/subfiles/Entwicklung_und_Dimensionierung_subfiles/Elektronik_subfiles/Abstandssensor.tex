@@ -12,31 +12,28 @@
 \subsubsection{Abstandssensoren}
 
 Wie die Konzeption der Abstandssensoren (siehe
-Anhang~\ref{appendix:Hindernisserkennung}) ergeben hat, wird die Detektion der
-Umwelt beim ersten Prototyp redundant ausgeführt, welche im Nachfolgemodul dann
-noch genauer ausgearbeitet werden.
+Anhang~\ref{appendix:Hinderniserkennung}) gezeigt hat, wird die Umfelderkennung
+im ersten Prototypen redundant ausgeführt und im Folgemodul weiter verfeinert.
 
-Das in PREN1 ausgearbeitete Konzept sieht vor, anhand eines LIDAR über die
-Hindernisse hinweg den Abstand zu potenziellen Pylonen zu detektieren. Sind
-diese näher als 2 m - ist die betrachtete Strecke wahrscheinlich nicht
-befahrbar. Ein zweiter Distanzsensor, welcher über Ultraschall arbeiten wird,
-detektiert Hindernisse, welche sich näher als $0.5 m$ befinden. Dadurch kann
-das Fahrzeug frühzeitig abgebremst werden. Wird die beim Greifer positionierte
-Lichtschranke ausgelöst, kann mit Sicherheit davon ausgegangen werden, dass das
-Fahrzeug nun beginnen kann und soll, das Hindernis zu greifen und
-umzupositionieren.
+Das in PREN1 erarbeitete Konzept sieht vor, den Abstand zu potentiellen Pylonen
+mittels LIDAR über die Hindernisse hinweg zu erfassen. Sind diese näher als 2 m
+- ist die betrachtete Strecke wahrscheinlich nicht befahrbar. Ein zweiter
+Abstandssensor, der mit Ultraschall arbeitet, erkennt Hindernisse, die näher
+als 0,5 m sind. Dadurch kann das Fahrzeug rechtzeitig abgebremst werden. Wird
+die am Greifer positionierte Lichtschranke ausgelöst, kann mit Sicherheit davon
+ausgegangen werden, dass das Fahrzeug nun beginnen kann und soll, das Hindernis
+zu greifen und umzupositionieren.
 
-Diese Funktion könnte allerdings auch vom Ultraschallsensor übernommen werden,
-dies wird im Folgemodul weiter untersucht. Ebenfalls befindet sich auf dem
-Fahrzeug eine Kamera, welche die vorliegenden Streckenpunkte analysieren kann.
-Mit eben dieser Kamera könnten ebenfalls Hindernisse detektiert werden, was
-allerdings auch erst im Folgemodul, wenn ein erster Prototyp aufgebaut wurde,
-weiter untersucht wird.
+Die Funktion der Lichtschranke könnte auch vom Ultraschallsensor übernommen
+werden, was im Folgemodul weiter untersucht wird. Ebenso befindet sich auf dem
+Fahrzeug eine Kamera, die die vorhandenen Wegpunkte analysieren kann. Mit
+dieser Kamera könnten auch Hindernisse erkannt werden, dies wird aber ebenfalls
+erst im Folgemodul weiter untersucht, wenn ein erster Prototyp aufgebaut ist.
 
-\paragraph{Fazit} Das in Abbildung~\ref{fig:Konzept_Hinderniserkennung} gezeigte Konzept stellt
+\paragraph{Fazit} 
+Das in Abbildung~\ref{fig:Konzept_Hinderniserkennung} gezeigte Konzept stellt
 den aktuellen Stand der Entwicklung dar und ist so für den ersten Aufbau
 eingeplant.
-
 
 \begin{figure}[H]
     \centering
