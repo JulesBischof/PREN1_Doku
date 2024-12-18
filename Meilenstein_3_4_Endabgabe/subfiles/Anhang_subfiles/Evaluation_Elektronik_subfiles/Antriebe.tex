@@ -46,13 +46,139 @@ Die Anforderungen an die Batterie schließen aufgrund der 12V Bordnetzspannung
 bereits industrietaugliche 24V Motoren aus. Diese sind zwar sehr robust, aber
 in den meisten Fällen auch sehr schwer.
 
-\subsubsection*{Leistungsanforderungen an Motoren}
+\newpage
 
-==============================================================================
-Text Yanik zu Dimensionierung
-==============================================================================
+\subsubsection*{Leistungsanforderungen an Motoren}
+Um die Leistungsanforderungen der Motoren zu bestimmen, wurde das Beschleunigungsmoment 
+berechnet, da während der Beschleunigung die grösste Last auf die Motoren wirkt. 
+
+Abbildung~\ref{fig:Formel_Beschleunigungsmoment} zeigt die zur Berechnung verwendete 
+Formel, die aus einer Maschinenbau-Formelsammlung entnommen wurde.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{./fig_Antriebe/Formel_Beschleunigungsmoment.pdf}
+    \caption{Berechnungsformel aus Maschinenbau Formelsammlung}~\label{fig:Formel_Beschleunigungsmoment}
+\end{figure}
+
+Die Berechnungen wurden für alle evaluierten Motoren durchgeführt und dienten der 
+Überprüfung, ob ein bestimmter Motor das erforderliche Drehmoment für die Anwendung 
+liefern kann. Als Beispiel ist auf der folgenden Seite die Berechnung für den 
+FIT0278-Schrittmotor von DFRobot aufgeführt.
+
+\newpage
+
+\textbf{Annahmen:}
+
+\vspace{0.2cm}
+
+Beschleunigung:
+\[
+a = 10 \, \si{\frac{\meter}{\second\squared}}
+\]
+
+\vspace{0.2cm}
+
+Beschleunigungsdauer:
+\[
+t_{\text{Beschleunigung}} = 0.2 \, \si{\second}
+\]
+
+\vspace{0.2cm}
+
+Wirkungsgrad des Antriebs:
+\[
+\eta_{\text{Antrieb}} = 0.8
+\]
+
+\vspace{0.2cm}
+
+Max. Motorendrehzahl (keine Herstellerangabe im Datenblatt):
+\[
+n_{\text{Motor}} = 400 \, \si{\per\minute} 
+\]
+
+\vspace{0.5cm}
+
+\textbf{Gegeben:}
+
+\vspace{0.2cm}
+
+Fahrzeuggewicht:
+\[
+m_{\text{Fahrzeug}} = 2 \, \si{\kilogram}
+\]
+
+\vspace{0.2cm}
+
+Raddurchmesser:
+\[
+d_{\text{Rad}} = 0.08 \, \si{\meter}
+\]
+
+\vspace{0.2cm}
+
+Masse pro Rad:
+\[
+m_{\text{Rad}} = 0.04 \, \si{\kilogram}
+\]
+
+\vspace{0.2cm}
+
+Trägheitsmoment Motor:
+\[
+I_{\text{Motor}} = 3.5 \cdot 10^{-6} \, \si{\kilogram \cdot \meter\squared}
+\]
+
+\vspace{0.2cm}
+
+Erdbeschleunigung:
+\[
+g = 9.81 \, \si{\frac{\meter}{\second\squared}}
+\]
+
+\vspace{0.2cm}
+
+Max. Drehmoment:
+\[
+M_{\text{Motor, max}} = 0.343 \, \si{\newton \cdot \meter}
+\]
+
+\vspace{0.5cm}
+
+\textbf{Berechnungen:}
+
+\vspace{0.2cm}
+
+Massenträgheitsmoment (zwei Räder):
+\[
+I_{\text{Rad}} = 2 \cdot \frac{1}{2} \cdot m_{\text{Rad}} \cdot \left( \frac{d_{\text{Rad}}}{2} \right)^2 = (6.4 \cdot 10^{-5}) \, \si{\kilogram \cdot \meter\squared}
+\]
+
+\vspace{0.2cm}
+
+Maximale Geschwindigkeit:
+\[
+v_{\text{max}} = n_{\text{Motor}} \cdot d_{\text{Rad}} \cdot \pi = 1.676 \, \si{\frac{\meter}{\second}}
+\]
+
+\vspace{0.2cm}
+
+Beschleunigungsmoment (worst case):
+\[
+M_{\text{max}} = \left( I_{\text{Motor}} + I_{\text{Rad}} + \frac{m_{\text{Fahrzeug}} \cdot d_{\text{Rad}}^2}{\eta_{\text{Antrieb}} \cdot 4} \right) \cdot \frac{\pi \cdot n_{\text{Motor}}}{t_{\text{Beschleunigung}}} = 0.426 \, \si{\newton \cdot \meter}
+\]
+
+\vspace{0.2cm}
+
+Drehmoment pro Motor:
+\[
+M_{\text{Motor}} = \frac{M_{\text{max}}}{2} = 0.213 \, \si{\newton\cdot \meter}
+\]
 
 % ===================================================
+\newpage
+
 \subsection*{Konzeption}
 
 Ausgehend von den Leistungsanforderungen an die Motoren kann am Markt
@@ -75,10 +201,10 @@ inTabelle~\ref{tab:Schrittmotoren_different} aufgeführten.
     \centering
     \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
         \hline
-        Hersteller           & Herst.Nr     & Distributor  & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
-        Olimex LTD           & SM-42HB34F08AB & DigiKey.ch & 1.  33          & 12             & 9.36      & 0.400      \\ \hline
-        DFRobot              & FIT0278        & DigiKey.ch & 1.  7           & 3.4          & 12          & 0.269      \\ \hline
-        SparkFun Electronics & ROB-10846      & DigiKey.ch & 1.  7           & 3              & 16.77     & 0.356      \\ \hline
+        Hersteller           & Herst.Nr       & Distributor  & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
+        Olimex LTD           & SM-42HB34F08AB & DigiKey.ch   & 1.  33          & 12             & 9.36        & 0.400        \\ \hline
+        DFRobot              & FIT0278        & DigiKey.ch   & 1.  7           & 3.4            & 12          & 0.269        \\ \hline
+        SparkFun Electronics & ROB-10846      & DigiKey.ch   & 1.  7           & 3              & 16.77       & 0.356        \\ \hline
     \end{tabular}
     \caption{Verschiedene Schrittmotoren}
     \label{tab:Schrittmotoren_different}
