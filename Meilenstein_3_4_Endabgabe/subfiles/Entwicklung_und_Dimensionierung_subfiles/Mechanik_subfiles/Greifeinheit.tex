@@ -18,14 +18,16 @@ im Anhang~\ref{appendix:Greifereinheit} weiterentwickelt. Im folgenden Abschnitt
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{Greifereinheit_Uebersicht.png}
-    \caption{Greifereinheit}~\label{fig:Greifereinheit}
+    \caption{Übersicht der Greifereinheit im NX Siemens}~\label{fig:Greifereinheit}
 \end{figure}
 
 Der Greifer verfügt über zwei Backen, die parallel zueinander verschoben werden, um das Hindernis sicher zu greifen. 
 Dieser Vorgang wird von einem Servomotor gesteuert. Konkret bewegt der Hebel vom Servomotor eine der beiden Backen horizontal. 
 Diese Backe ist mit einer Zahnstange ausgestattet, die ein innenliegendes Zahnrad antreibt. Das Zahnrad überträgt die 
 Bewegung auf die gegenüberliegende Backe, sodass sich beide Backen synchron, aber in entgegengesetzter Richtung bewegen.
-In der Abbildung~\ref{fig:Zahnrad und Zahnstange} ist dies dargestellt.
+In der Abbildung~\ref{fig:Zahnrad und Zahnstange} ist dies dargestellt. Die Höhenverstellung ist ebenfalls mit einem Servomotor gelöst.
+Dieser bewegt die den Greifer entlang einer Gleitführung von IGUS nach oben und unten. Die benötigten Drehmomente für den Servomotor
+befinden sich im Anhang~\ref{appendix:Greifereinheit}.
 
 \begin{figure}[H]
     \centering
@@ -34,7 +36,7 @@ In der Abbildung~\ref{fig:Zahnrad und Zahnstange} ist dies dargestellt.
 \end{figure}
 
 
-In Abbildung~\ref{fig:Hinderniss heben Ablauf} ist der Ablauf des Greifvorgangs schematisch dargestellt. Die einzelnen Schritte werden durch gelbe Pfeile visualisiert:
+In Abbildung~\ref{fig:Greiferablauf} ist der Ablauf des Greifvorgangs schematisch dargestellt. Die einzelnen Schritte werden durch gelbe Pfeile visualisiert:
 
 \paragraph{Positionierung der Greifeinheit} 
 Von 1 zu 2 dreht der linke Servomotor die Greifeinheit entlang einer Gleitführung nach unten, wenn ein Hindernis erkannt wurde.
@@ -50,8 +52,8 @@ Dies ermöglicht es, das Hindernis sicher zu transportieren.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Hinderniss_heben_Ablauf.png}
-    \caption{Hinderniss heben Ablauf}~\label{fig:Hinderniss heben Ablauf}
+    \includegraphics[width=1\textwidth]{Greiferablauf.png}
+    \caption{Greiferablauf - Anheben des Hindernis}~\label{fig:Greiferablauf}
 \end{figure}
 
 
@@ -60,20 +62,17 @@ Dies ermöglicht es, das Hindernis sicher zu transportieren.
 In diesem Abschnitt werden die verschiedenen Sensoren an der Greifereinheit beschrieben
 
 \paragraph{Ultraschallsensor und Lidar}
-Der Ultraschallsensor ist auf der Höhe XX positioniert um einen Hindernis zu erkennen 
-und der Lidar ist auf der Höhe XX platziert um einen Pylon zu erkennen.
-Die Details für diese Höhe wird im Kap. XX erklärt.
-
+Der Ultraschallsensor ist auf der Höhe XX positioniert um einen Hindernis zu erkennen.
+Der Lidar ist auf der Höhe XX, sodass die Streuung des Lidars nicht den Hindernis erfasst.
+Die Funktionsweise dieser beiden Sensoren werden im Kapitel XX erklärt.
 
 \paragraph{Lichtschranke Hindernis}
-Diese Lichtschranke ist für die genauere Positionsbestimmung des Hindernis vorhanden.
-Diese wurde auf der Höhe XX positioniert. Möglicherweise wird dieser nicht benötigt, falls der Ultraschallsensor 
-genug zuverlässig funktioniert.
+Die Lichtschranke an der Front ist für die genaue Positionserkennung des Hindernis vorgesehen.
+Falls aus Testergebissen im PREN 2 sich ergibt, das der Ultraschallsensor genug genau ist, wird diese Lichtschranke weggelassen.
 
 \paragraph{Raspberry Pi Kamera}
 Die Raspberry Pi Kamera ist auf der Höhe XX montiert, sodass sie einen Radius von mindestens 150 mm abdeckt.
-So kann sichergestellt werden, dass die maximalen 120 mm Knotenpunkte und die jeweiligen Abgänge detektiert werden können
-
+So kann sichergestellt werden, dass die maximalen 120 mm Durchmessers des Knotenpunkte und die jeweiligen Abgänge detektiert werden können.
 
 \paragraph{Lichtschranke Endposition für Höhenverstellung}
 Diese Lichtschranke ist für eine Rückmeldung für die oberen Endschlag des Höhenverstellung des Greifers vorgesehen.
