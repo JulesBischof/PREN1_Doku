@@ -12,23 +12,23 @@
 
 \subsubsection{Liniensensor}
 
-Im folgenden Abschnitt wird die Entwicklung und Evaluierung eines Liniensensors
-dokumentiert. Ziel ist es, einen einfach auszuwertenden Sensor zu entwickeln,
-der das vorgegebene Klebeband (\textit{Tesa Gewebeband 4651}) problemlos von
-der Wettkampfbahn unterscheiden kann.
-
-Ein eigener Liniensensor wird entwickelt, da das Verlassen der Strecke als
-hohes Risiko empfunden wird. Die Eigenentwicklung eines Liniensensors
-ermöglicht daher eine hohe Flexibilität. Denn für ein massgeschneidertes
-Produkt können alle Komponenten selbst ausgewählt werden können.
+In der vorliegenden Abhandlung wird die Entwicklung und Evaluierung eines 
+Liniensensors dargelegt. Das Ziel besteht in der Konzeption eines Sensors, 
+der eine unkomplizierte Auswertung ermöglicht und dazu geeignet ist, das 
+vorgegebene Klebeband (\textit{Tesa Gewebeband 4651}) zuverlässig von der Wettkampfbahn 
+zu differenzieren. Die Entwicklung eines eigenständigen Liniensensors wird 
+vorangetrieben durch das Bewusstsein, dass das Verlassen der Strecke ein 
+signifikantes Risiko birgt. Die Eigenentwicklung eines Liniensensors ermöglicht 
+eine hohe Flexibilität, da alle Komponenten selbst ausgewählt werden können.
 
 % ===================================================================================
 \subsubsection*{Anforderungen}
 
-Das Klebeband soll auf einem rötlich gefliesten Untergrund detektiert werden.
-Eine besondere Herausforderung stellen die gleichfarbigen Längs- und Querfugen
-der Fliesen dar. Dieser Untergrund ist in der Abbildung
-dargestellt~\ref{fig:Untergrund_Wettkampf}.
+Das Klebeband soll auf einem rötlich gefliesten Untergrund 
+detektiert werden. Eine besondere Herausforderung stellen 
+dabei die gleichfarbigen Längs- und Querfugen der Fliesen dar. 
+Dieser Untergrund ist in Abbildung~\ref{fig:Untergrund_Wettkampf} 
+dargestellt.
 
 \begin{figure}[H]
     \centering
@@ -39,23 +39,25 @@ dargestellt~\ref{fig:Untergrund_Wettkampf}.
 % ===================================================================================
 
 \subsubsection*{Aufbau und Auswertung}
-Der Liniensensor besteht aus acht einzelnen Messzellen. Die Anzahl der Messzellen wurde so
-gewählt, dass ein möglichst grosser Bereich vom Sensor abgedeckt wird, aber nicht zu viele
-Pins für die Auswertung benötigt werden. Es sollten immer genau zwei Messzellen direkt über
-dem Klebeband ausgerichtet sein. Jede einzelne Messzelle besitzt eine Leuchtdiode und einen
-zugehörigen Fototransistor. Je mehr Licht auf den Fototransistor fällt, desto höher ist der
-Strom, der durch ihn fliesst. Da der Fototransistor als Konstantstromquelle interpretiert
-werden kann, wird der Spannungspegel zwischen Widerstand und Transistor ausgewertet.
+Der Liniensensor besteht aus acht einzelnen Messzellen. Diese Anzahl wurde so 
+gewählt, dass ein möglichst grosser Bereich vom Sensor abgedeckt wird, ohne 
+dass zu viele Pins für die Auswertung benötigt werden. Es ist sicherzustellen, 
+dass stets genau zwei Messzellen direkt über dem Klebeband ausgerichtet sind. 
+Jede Messzelle besteht aus einer Leuchtdiode und einem zugehörigen 
+Fototransistor. Je mehr Licht auf den Fototransistor fällt, desto höher ist 
+der Strom, der durch ihn fliesst. Da der Fototransistor als Konstantstromquelle 
+interpretiert werden kann, wird der Spannungspegel zwischen Widerstand und 
+Transistor ausgewertet.
 
-Ein hoher Strom durch den Fototransistor führt dazu, dass der Transistor
-versucht, mehr Strom zu liefern, als ihm der Widerstand 'erlaubt'. Er gerät
-dadurch in Sättigung und das Potential wird sehr stark gegen GND gezogen. Ist
-die Reflexion und damit der Strom dagegen gering, lässt der Fototransistor
-weniger Strom durch, als der Widerstand eigentlich erlauben würde, und der
-Spannungspegel bewegt sich stark in Richtung 3,3V. Diese Spannungen werden dann
-mit Hilfe von Analog-Digital-Wandlern (ADCs) ausgewertet. In
-Abbildung~\ref{fig:Auswertung_Liniensensor1} ist die Auswertung schematisch
-dargestellt.
+Ein hoher Strom durch den Fototransistor bewirkt, dass der Transistor versucht, 
+mehr Strom zu liefern, als ihm der Widerstand erlaubt. Dies führt dazu, dass er 
+in Sättigung gerät und das Potential stark gegen GND gezogen wird. Ist die 
+Reflexion des Lichts und damit der Strom hingegen gering, lässt der 
+Fototransistor weniger Strom durch, als der Widerstand zulassen würde. In 
+diesem Fall bewegt sich der Spannungspegel in Richtung 3,3V. Die Spannungen 
+werden anschliessend mit Analog-Digital-Wandlern (ADCs) ausgewertet. 
+Abbildung~\ref{fig:Auswertung_Liniensensor1} zeigt die schematische Darstellung 
+der Auswertung.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{fig_Strecke_Tracken/Auswertung_Liniensensor.pdf}
@@ -66,11 +68,11 @@ dargestellt.
 
 \subsubsection{Liniensensor als PCB}
 
-Damit der Liniensensor möglichst praxisnah getestet werden kann, wird dieser
-als PCB mit KiCad erstellt. Dabei werden die oben formulierten Anforderungen
-und Dimensionierungen eingehalten. In Abbildung~\ref{fig:Liniensensor_Top} ist
-die Draufsicht und in Abbildung~\ref{fig:Liniensensor_Bottom} die Untersicht
-dargestellt.
+Damit der Liniensensor möglichst praxisnah getestet werden kann, wird er als 
+PCB mithilfe von KiCad entworfen. Dabei werden die oben genannten Anforderungen 
+und Dimensionierungen eingehalten. In Abbildung~\ref{fig:Liniensensor_Top} 
+ist die Draufsicht, und in Abbildung~\ref{fig:Liniensensor_Bottom} die 
+Untersicht des PCBs dargestellt.
 
 \begin{figure}[H]
     \centering
@@ -86,21 +88,23 @@ dargestellt.
 
 % ===================================================================================
 
-\paragraph{Versuche}
-Im Anhang ist ein Versuch dokumentiert, welcher ein geeignetes Lichtspektrum
-für den Liniensensor liefert. Ausserdem wurden die Ströme auf den
-unterschiedlichen Untergründen (Klebeband, Fliese und Fuge) gemessen. Mittels
-eines Arduino sind alle Eingänge ausgewertet und der Liniensensor validiert.
-Alle Messungen sind im Anhang~\ref{anhang:Liniensensor} dokumentiert.
+\paragraph{Versuche}  
+Im Anhang ist ein Versuch dokumentiert, der ein geeignetes Lichtspektrum für 
+den Liniensensor identifiziert. Zusätzlich wurden die Ströme auf den 
+unterschiedlichen Untergründen (Klebeband, Fliese und Fuge) gemessen. Mithilfe 
+eines Arduino wurden alle Eingänge ausgewertet und der Liniensensor validiert. 
+Die vollständigen Messungen sind im Anhang~\ref{anhang:Liniensensor} 
+detailliert dargestellt.
 
 % ===================================================================================
-\paragraph{Entscheidung und Fazit}
-Durch die Messungen wurde das Konzept des Liniensensors überprüft und
-validiert. Das folgende Bild bestätigt, dass das Klebeband von der Fliese
-deutlich unterschieden werden kann. Die
-Abbildung~\ref{fig:Auswertung_Strecke_Beispiel} zeigt die Spannungsauswertung
-mittels ADCs. Diese Auswertung wurde mit einem Arduino durchgeführt. Die hohen
-Werte stellen die Fliese dar und die tiefen Werte das Klebeband.
+\paragraph{Entscheidung und Fazit}  
+Durch die Messungen konnte das Konzept des Liniensensors erfolgreich überprüft 
+und validiert werden. Das folgende Bild bestätigt, dass das Klebeband deutlich 
+von der Fliese unterschieden werden kann. In 
+Abbildung~\ref{fig:Auswertung_Strecke_Beispiel} ist die Spannungsauswertung 
+mittels ADCs dargestellt. Diese Auswertung wurde mithilfe eines Arduino 
+durchgeführt. Die hohen Spannungswerte repräsentieren die Fliese, während die 
+tiefen Werte das Klebeband anzeigen.
 
 \begin{figure}[H]
     \centering
@@ -108,15 +112,16 @@ Werte stellen die Fliese dar und die tiefen Werte das Klebeband.
     \caption{Die tiefen Werte stellen das Klebeband dar und die hohen die Fliesen}~\label{fig:Auswertung_Strecke_Beispiel}
 \end{figure}
 
-In der Abbildung~\ref{fig:Auswertung_Strecke_Beispiel} ist zu sehen, dass sich
-die Zelle A3 direkt über dem Klebeband befindet. Auch die Pins A2 und A4 liegen
-teilweise über dem Klebeband. Der Wert ist jedoch grösser, da nur ein Teil des
-Klebebandes direkt darunter liegt.
+In Abbildung~\ref{fig:Auswertung_Strecke_Beispiel} ist erkennbar, dass sich die 
+Zelle A3 direkt über dem Klebeband befindet. Auch die Pins A2 und A4 liegen 
+teilweise über dem Klebeband. Der gemessene Wert ist jedoch höher, da nur ein 
+Teil des Klebebandes direkt darunter positioniert ist.
 
-In der Risikobewertung wurde die Unterscheidung zwischen Klebeband und Fugen
-als Risiko beurteilt. Der entwickelte Liniensensor ist in der Lage, Fugen von
-Klebebändern zu unterscheiden. Dies ist im Anhang~\ref{anhang:Liniensensor}
-genauer dokumentiert. Aufgrund der eindeutigen Messwerte wird dieser
-Liniensensor verwendet.
+In der Risikobewertung wurde die Unterscheidung zwischen Klebeband und Fugen 
+als potenzielles Risiko identifiziert. Der entwickelte Liniensensor ist jedoch 
+in der Lage, Fugen zuverlässig von Klebebändern zu unterscheiden. Diese 
+Eigenschaft ist im Anhang~\ref{anhang:Liniensensor} ausführlich dokumentiert. 
+Aufgrund der klaren und reproduzierbaren Messwerte wird dieser Liniensensor 
+eingesetzt.
 
 \end{document}
