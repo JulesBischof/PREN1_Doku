@@ -14,36 +14,48 @@ statischen Graphen.
 
 \paragraph{Schwierigkeiten bei der Anwendung von Shortest Path-Algorithmen}
 
-Im Laufe der Entwicklung zeigte sich jedoch, dass die Anwendung von
-klassischen Shortest Path-Algorithmen in unserem Szenario besondere
-Herausforderungen mit sich bringt. Obwohl der Graph und seine
-Einschränkungen (z. B. blockierte Knoten oder entfernte Strecken)
-einmal zu Beginn definiert werden, ist die tatsächliche Navigation im
-Graphen problematisch. Der Roboter fährt los, ohne die vollständige
-Umgebung zu kennen, und kann auf unvorhergesehene Situationen
-treffen, wie zum Beispiel:
+Im Laufe der Entwicklung zeigte sich, dass die Anwendung von klassischen 
+Shortest Path-Algorithmen wie Dijkstra und A* in unserem Szenario besondere 
+Herausforderungen mit sich bringt. Obwohl der Graph und seine Einschränkungen 
+(z. B. blockierte Knoten oder entfernte Strecken) einmal zu Beginn definiert 
+werden, ist die tatsächliche Navigation problematisch, da der Roboter den 
+Graphen erst schrittweise entdecken muss. Die fehlende Kenntnis über Teile 
+des Graphen führt zu spezifischen Herausforderungen:
 
 \begin{itemize}
-  \item \textbf{Sackgassen und Umwege}:
-    Der Roboter kann in Sackgassen gelangen, aus denen er wieder
-    herausfinden muss. Dabei sind klassische Algorithmen wie Dijkstra
-    und A* nicht flexibel genug, da sie voraussetzen, dass eine
-    vollständige Karte und alle möglichen Wege bekannt sind.
+  \item \textbf{Sackgassen und Umwege}: \
+  Der Roboter kann in Sackgassen gelangen, aus denen er sich befreien muss. 
+  Dijkstra und A* setzen voraus, dass der gesamte Graph bekannt ist, was 
+  bei einem schrittweisen Entdecken nicht der Fall ist. Darüber hinaus können 
+  diese Algorithmen keine Gewichte dynamisch anpassen oder neue Kanten und 
+  Knoten während der Navigation integrieren. Sie sind daher ungeeignet für 
+  Szenarien, in denen Informationen über den Graphen schrittweise gesammelt 
+  und verarbeitet werden müssen.
 
-  \item \textbf{Blockierte Knoten hinter freien Knoten}:
-    Ein blockierter Knoten (z. B. mit einem Pylon) kann sich direkt
-    hinter einem freien Knoten befinden. Ohne Kenntnis dieser
-    Blockade im Vorfeld kann der Algorithmus falsche Entscheidungen treffen.
+  \item \textbf{Blockierte Knoten hinter freien Knoten}: \
+  Blockierte Knoten (z. B. durch Pylonen) können sich direkt hinter freien 
+  Knoten befinden. Ohne Kenntnis dieser Blockade im Vorfeld könnten klassische 
+  Algorithmen falsche Entscheidungen treffen, da sie nicht auf unbekannte 
+  Hindernisse reagieren können.
 
-  \item \textbf{Unsicherheit bei entfernten Strecken}:
-    Wenn eine Strecke im Graph entfernt wurde, ist es schwierig,
-    genau zu wissen, welche Alternativwege existieren. Algorithmen
-    wie Dijkstra und A* erfordern, dass der genaue Standort des
-    Roboters und alle möglichen Verbindungen zu jedem Zeitpunkt bekannt sind.
+  \item \textbf{Unvollständige Anfangskenntnis des Graphen}: \
+  Algorithmen wie Dijkstra und A* benötigen eine vollständige Kenntnis aller 
+  Knoten und Kanten sowie deren Gewichte. In unserem Szenario wird der Graph 
+  jedoch erst nach und nach durch den Roboter erkundet, was die Anwendung 
+  dieser Algorithmen ausschliesst.
 \end{itemize}
 
-Diese Probleme machten es für die Gruppe schwierig, klassische
-Shortest Path-Algorithmen auf unsere Problemstellung anzuwenden.
+\textbf{Beurteilung der Algorithmen}:  
+Dijkstra und A* sind für vollständig bekannte Graphen optimiert und daher  
+nicht auf Szenarien ausgelegt, bei denen ein Graph schrittweise entdeckt wird.  
+D*-Lite wäre theoretisch besser geeignet, da dynamische Anpassungen möglich sind.  
+Allerdings setzt D*-Lite voraus, dass Kanten mit dynamischen Gewichten bewertet  
+werden können und dass Hindernisse oder Schranken sofort erkannt und in die  
+Berechnung einbezogen werden. Da unsere Sensoren die Entfernung zu Knoten nicht  
+erfassen und Schranken initial ignoriert werden, können keine aussagekräftigen  
+Gewichte gesetzt oder dynamisch angepasst werden. Aufgrund dieser Einschränkungen  
+und der spezifischen Anforderungen unseres Projekts haben wir uns für die  
+Entwicklung eines massgeschneiderten Algorithmus entschieden.
 
 \paragraph{Entscheidung für einen neuen Algorithmus}
 
@@ -115,7 +127,7 @@ Hindernisse auftauchen.
 \paragraph{Fazit}
 
 Der entwickelte Algorithmus kombiniert die Flexibilität eines DFS mit
-intelligenter Heuristik, um vorab definierte, aber nur teilweise
+Heuristiken, um vorab definierte, aber nur teilweise
 bekannte Graphen effizient zu navigieren. Dieser pragmatische Ansatz
 erlaubt es dem Roboter, dynamisch auf Hindernisse wie Sackgassen oder
 blockierte Knoten zu reagieren und sich schrittweise dem Ziel zu
