@@ -11,8 +11,8 @@
 
 Dieser Abschnitt befasst sich mit den Antrieben des Pfadfinders. Dabei werden
 sowohl verschiedene Antriebskonzepte diskutiert als auch potentiell einsetzbare
-Antriebe ausgewählt. Abschließend wird konzeptionell zusammengefasst, wie diese
-Antriebe angesteuert werden sollen.
+Antriebe ausgewählt. Abschliessend wird konzeptionell zusammengefasst, wie
+diese Antriebe angesteuert werden sollen.
 % ===================================================
 \subsection*{Anforderungen}
 
@@ -42,18 +42,18 @@ Antriebe angesteuert werden sollen.
 
 \end{description}
 
-Die Anforderungen an die Batterie schließen aufgrund der 12V Bordnetzspannung
+Die Anforderungen an die Batterie schliessen aufgrund der 12V Bordnetzspannung
 bereits industrietaugliche 24V Motoren aus. Diese sind zwar sehr robust, aber
 in den meisten Fällen auch sehr schwer.
 
 \newpage
 
 \subsubsection*{Leistungsanforderungen an Motoren}
-Um die Leistungsanforderungen der Motoren zu bestimmen, wurde das Beschleunigungsmoment 
-berechnet, da während der Beschleunigung die grösste Last auf die Motoren wirkt. 
+Um die Leistungsanforderungen der Motoren zu bestimmen, wurde das Beschleunigungsmoment
+berechnet, da während der Beschleunigung die grösste Last auf die Motoren wirkt.
 
-Abbildung~\ref{fig:Formel_Beschleunigungsmoment} zeigt die zur Berechnung verwendete 
-Formel, die aus einer Maschinenbau-Formelsammlung entnommen wurde.
+Abbildung~\ref{fig:Formel_Beschleunigungsmoment} zeigt die zur Berechnung
+verwendete Formel, die aus einer Maschinenbau-Formelsammlung entnommen wurde.
 
 \begin{figure}[H]
     \centering
@@ -61,10 +61,10 @@ Formel, die aus einer Maschinenbau-Formelsammlung entnommen wurde.
     \caption{Berechnungsformel aus Maschinenbau Formelsammlung}~\label{fig:Formel_Beschleunigungsmoment}
 \end{figure}
 
-Die Berechnungen wurden für alle evaluierten Motoren durchgeführt und dienten der 
-Überprüfung, ob ein bestimmter Motor das erforderliche Drehmoment für die Anwendung 
-liefern kann. Als Beispiel ist auf der folgenden Seite die Berechnung für den 
-FIT0278-Schrittmotor von DFRobot aufgeführt.
+Die Berechnungen wurden für alle evaluierten Motoren durchgeführt und dienten
+der Überprüfung, ob ein bestimmter Motor das erforderliche Drehmoment für die
+Anwendung liefern kann. Als Beispiel ist auf der folgenden Seite die Berechnung
+für den FIT0278-Schrittmotor von DFRobot aufgeführt.
 
 \newpage
 
@@ -74,28 +74,28 @@ FIT0278-Schrittmotor von DFRobot aufgeführt.
 
 Beschleunigung:
 \[
-a = 10 \, \si{\frac{\meter}{\second\squared}}
+    a = 10 \, \si{\frac{\meter}{\second\squared}}
 \]
 
 \vspace{0.2cm}
 
 Beschleunigungsdauer:
 \[
-t_{\text{Beschleunigung}} = 0.2 \, \si{\second}
+    t_{\text{Beschleunigung}} = 0.2 \, \si{\second}
 \]
 
 \vspace{0.2cm}
 
 Wirkungsgrad des Antriebs:
 \[
-\eta_{\text{Antrieb}} = 0.8
+    \eta_{\text{Antrieb}} = 0.8
 \]
 
 \vspace{0.2cm}
 
 Max. Motorendrehzahl (keine Herstellerangabe im Datenblatt):
 \[
-n_{\text{Motor}} = 400 \, \si{\per\minute} 
+    n_{\text{Motor}} = 400 \, \si{\per\minute}
 \]
 
 \vspace{0.5cm}
@@ -106,42 +106,42 @@ n_{\text{Motor}} = 400 \, \si{\per\minute}
 
 Fahrzeuggewicht:
 \[
-m_{\text{Fahrzeug}} = 2 \, \si{\kilogram}
+    m_{\text{Fahrzeug}} = 2 \, \si{\kilogram}
 \]
 
 \vspace{0.2cm}
 
 Raddurchmesser:
 \[
-d_{\text{Rad}} = 0.08 \, \si{\meter}
+    d_{\text{Rad}} = 0.08 \, \si{\meter}
 \]
 
 \vspace{0.2cm}
 
 Masse pro Rad:
 \[
-m_{\text{Rad}} = 0.04 \, \si{\kilogram}
+    m_{\text{Rad}} = 0.04 \, \si{\kilogram}
 \]
 
 \vspace{0.2cm}
 
 Trägheitsmoment Motor:
 \[
-I_{\text{Motor}} = 3.5 \cdot 10^{-6} \, \si{\kilogram \cdot \meter\squared}
+    I_{\text{Motor}} = 3.5 \cdot 10^{-6} \, \si{\kilogram \cdot \meter\squared}
 \]
 
 \vspace{0.2cm}
 
 Erdbeschleunigung:
 \[
-g = 9.81 \, \si{\frac{\meter}{\second\squared}}
+    g = 9.81 \, \si{\frac{\meter}{\second\squared}}
 \]
 
 \vspace{0.2cm}
 
 Max. Drehmoment:
 \[
-M_{\text{Motor, max}} = 0.343 \, \si{\newton \cdot \meter}
+    M_{\text{Motor, max}} = 0.343 \, \si{\newton \cdot \meter}
 \]
 
 \vspace{0.5cm}
@@ -152,28 +152,28 @@ M_{\text{Motor, max}} = 0.343 \, \si{\newton \cdot \meter}
 
 Massenträgheitsmoment (zwei Räder):
 \[
-I_{\text{Rad}} = 2 \cdot \frac{1}{2} \cdot m_{\text{Rad}} \cdot \left( \frac{d_{\text{Rad}}}{2} \right)^2 = (6.4 \cdot 10^{-5}) \, \si{\kilogram \cdot \meter\squared}
+    I_{\text{Rad}} = 2 \cdot \frac{1}{2} \cdot m_{\text{Rad}} \cdot \left( \frac{d_{\text{Rad}}}{2} \right)^2 = (6.4 \cdot 10^{-5}) \, \si{\kilogram \cdot \meter\squared}
 \]
 
 \vspace{0.2cm}
 
 Maximale Geschwindigkeit:
 \[
-v_{\text{max}} = n_{\text{Motor}} \cdot d_{\text{Rad}} \cdot \pi = 1.676 \, \si{\frac{\meter}{\second}}
+    v_{\text{max}} = n_{\text{Motor}} \cdot d_{\text{Rad}} \cdot \pi = 1.676 \, \si{\frac{\meter}{\second}}
 \]
 
 \vspace{0.2cm}
 
 Beschleunigungsmoment (worst case):
 \[
-M_{\text{max}} = \left( I_{\text{Motor}} + I_{\text{Rad}} + \frac{m_{\text{Fahrzeug}} \cdot d_{\text{Rad}}^2}{\eta_{\text{Antrieb}} \cdot 4} \right) \cdot \frac{\pi \cdot n_{\text{Motor}}}{t_{\text{Beschleunigung}}} = 0.426 \, \si{\newton \cdot \meter}
+    M_{\text{max}} = \left( I_{\text{Motor}} + I_{\text{Rad}} + \frac{m_{\text{Fahrzeug}} \cdot d_{\text{Rad}}^2}{\eta_{\text{Antrieb}} \cdot 4} \right) \cdot \frac{\pi \cdot n_{\text{Motor}}}{t_{\text{Beschleunigung}}} = 0.426 \, \si{\newton \cdot \meter}
 \]
 
 \vspace{0.2cm}
 
 Drehmoment pro Motor:
 \[
-M_{\text{Motor}} = \frac{M_{\text{max}}}{2} = 0.213 \, \si{\newton\cdot \meter}
+    M_{\text{Motor}} = \frac{M_{\text{max}}}{2} = 0.213 \, \si{\newton\cdot \meter}
 \]
 
 % ===================================================
@@ -201,10 +201,10 @@ inTabelle~\ref{tab:Schrittmotoren_different} aufgeführten.
     \centering
     \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
         \hline
-        Hersteller           & Herst.Nr       & Distributor  & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
-        Olimex LTD           & SM-42HB34F08AB & DigiKey.ch   & 1.  33          & 12             & 9.36        & 0.400        \\ \hline
-        DFRobot              & FIT0278        & DigiKey.ch   & 1.  7           & 3.4            & 12          & 0.269        \\ \hline
-        SparkFun Electronics & ROB-10846      & DigiKey.ch   & 1.  7           & 3              & 16.77       & 0.356        \\ \hline
+        Hersteller           & Herst.Nr       & Distributor & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
+        Olimex LTD           & SM-42HB34F08AB & DigiKey.ch  & 1.  33          & 12             & 9.36        & 0.400        \\ \hline
+        DFRobot              & FIT0278        & DigiKey.ch  & 1.  7           & 3.4            & 12          & 0.269        \\ \hline
+        SparkFun Electronics & ROB-10846      & DigiKey.ch  & 1.  7           & 3              & 16.77       & 0.356        \\ \hline
     \end{tabular}
     \caption{Verschiedene Schrittmotoren}
     \label{tab:Schrittmotoren_different}
@@ -226,9 +226,9 @@ die Tabelle~\ref{tab:Schrittmotorentreiber_different}.
     \centering
     \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
         \hline
-        Hersteller & Herst.Nr   & Distributor   & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
-        ADI        & TMC5240-EVAL & Komax AG      & 2               & 36             & 63          & 0.036      \\ \hline
-        ACT Motor  & ACT DM430    & reichelt.ch & 3               & 32             & 17.42     & 0.180      \\ \hline
+        Hersteller & Herst.Nr     & Distributor & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
+        ADI        & TMC5240-EVAL & Komax AG    & 2               & 36             & 63          & 0.036        \\ \hline
+        ACT Motor  & ACT DM430    & reichelt.ch & 3               & 32             & 17.42       & 0.180        \\ \hline
     \end{tabular}
     \caption{Verschiedene Schrittmotorentreiber}
     \label{tab:Schrittmotorentreiber_different}
@@ -243,23 +243,23 @@ Endstufen als auch eine Steuerung enthalten:
     \centering
     \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
         \hline
-        Hersteller & Herst.Nr & Distributor  & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
-        DFRobot    & FIT1001& DigiKey.ch & 0.5& 14.4& 25.71& 0.216\\ \hline
+        Hersteller & Herst.Nr & Distributor & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
+        DFRobot    & FIT1001  & DigiKey.ch  & 0.5             & 14.4           & 25.71       & 0.216        \\ \hline
     \end{tabular}
     \caption{Radnabenmotor DFRobot}
 \end{table}
 
 Der gezeigte Motor ist einfach über den UART-Bus anzusteuern, kostengünstig,
-leicht und hat einen integrierten Encoder. Ein großer Nachteil ist jedoch, dass
-mit diesem Motor das ehrgeizige Ziel einer Beschleunigung von $2 \frac{m}{s^2}$
-voraussichtlich nicht erreicht werden kann.
+leicht und hat einen integrierten Encoder. Ein grosser Nachteil ist jedoch,
+dass mit diesem Motor das ehrgeizige Ziel einer Beschleunigung von $2
+    \frac{m}{s^2}$ voraussichtlich nicht erreicht werden kann.
 
 \subsection*{Konzept 3 - BLDC-Motor} % =========
 
-BLDC-Motoren haben den großen Vorteil, dass sie eine hohe Leistung bei geringem
-Gewicht erreichen können. Allerdings ist ihr Drehmoment eher gering, weshalb
-ein Zwischengetriebe notwendig ist. Dieses Zwischengetriebe erhöht das Gewicht
-des Antriebs zusätzlich. Außerdem sind BLDC-Motoren oft teurer. In der
+BLDC-Motoren haben den grossen Vorteil, dass sie eine hohe Leistung bei
+geringem Gewicht erreichen können. Allerdings ist ihr Drehmoment eher gering,
+weshalb ein Zwischengetriebe notwendig ist. Dieses Zwischengetriebe erhöht das
+Gewicht des Antriebs zusätzlich. Ausserdem sind BLDC-Motoren oft teurer. In der
 folgenden Tabelle sind verschiedene Motoren aufgelistet, die in Frage kommen.
 % YANIK FRAGEN DER DFROBOT KÖNNTE NOCH SPANNEND SEIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -267,9 +267,9 @@ folgenden Tabelle sind verschiedene Motoren aufgelistet, die in Frage kommen.
     \centering
     \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
         \hline
-        Hersteller      & Herst.Nr    & Distributor  & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
-        DFRobot         & FIT0441       & DigiKey.ch & 0.7           & 12             & 17.11     & 0.070      \\ \hline
-        Lin Engineering & BL17E19-01-RO & DigiKey.ch &                 & 24             & 79.18     & 0.320      \\ \hline
+        Hersteller      & Herst.Nr      & Distributor & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
+        DFRobot         & FIT0441       & DigiKey.ch  & 0.7             & 12             & 17.11       & 0.070        \\ \hline
+        Lin Engineering & BL17E19-01-RO & DigiKey.ch  &                 & 24             & 79.18       & 0.320        \\ \hline
     \end{tabular}
     \caption{Radnabenmotor DFRobot}
 \end{table}
@@ -292,8 +292,8 @@ genannt.
     \centering
     \begin{tabular}{|p{2cm}|p{3cm}|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1.5cm}|}
         \hline
-        Hersteller & Herst.Nr   & Distributor & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
-        ACT Motor  & BLDC-8015A-5 & reichelt.ch & 15              & 50             & 39.1      & 0.432      \\ \hline
+        Hersteller & Herst.Nr     & Distributor & $I_{nenn} $ [A] & $U_{nenn}$ [V] & Preis [CHF] & Gewicht [kg] \\ \hline
+        ACT Motor  & BLDC-8015A-5 & reichelt.ch & 15              & 50             & 39.1        & 0.432        \\ \hline
     \end{tabular}
     \caption{BLDC-Treiber}
 \end{table}
@@ -339,7 +339,7 @@ zurückgelegten Wegstrecke. Die ausgewählten Antriebe könnten direkt über den
 High-Level-Controller angesteuert werden. Die Antriebsregelung wurde jedoch
 bewusst auf einen Mikroprozessor verlagert, um dem Ansatz der Gewaltentrennung
 gerecht zu werden. So gibt es einen echtzeitfähigen Prozessor, der sich
-ausschließlich um die Lageregelung kümmert, während der High-Level-Controller
+ausschliesslich um die Lageregelung kümmert, während der High-Level-Controller
 lediglich die Richtungsentscheidungen trifft.
 
 \subsection*{Motion Controller} % =========
@@ -366,7 +366,7 @@ Anhang. Im Folgenden wird auf einige Baugruppen näher eingegangen.
     \item[HC-SR04 Schnittstelle] Das PCB muss einen Ultraschallsensor auswerten können.
     \item[Debugfunktionen] Einzelne Signale können zusätzlich auf LEDs gelegt werden, um
           sie für Debugzwecke sichtbar zu machen.
-    \item[Baugröße] Die Platine darf maximal 100mm x 100mm groß sein, da dadurch massiv
+    \item[Baugrösse] Die Platine darf maximal 100mm x 100mm gross sein, da dadurch massiv
           Kosten gespart werden können.
 \end{description}
 
@@ -442,9 +442,9 @@ kann so zum Personenschutz beitragen.
 
 \paragraph{Digitale Ausgänge}
 Abbildung~\ref{fig:Schema_DOut} zeigt die 4 digitalen Ausgänge des Motion
-Controllers. Über die beiden Ausgänge DOUT\_1 und DOUT\_2 können größere Ströme
-mit jeweils 5V5 bzw. 12V geschaltet werden. Der gezeigte High-Side Switch
-erlaubt Ströme bis zu 3A. Die beiden rechten Ausgänge sind für logische
+Controllers. Über die beiden Ausgänge DOUT\_1 und DOUT\_2 können grössere
+Ströme mit jeweils 5V5 bzw. 12V geschaltet werden. Der gezeigte High-Side
+Switch erlaubt Ströme bis zu 3A. Die beiden rechten Ausgänge sind für logische
 Ausgangspegel vorgesehen. Über sie kann z.B. auch ein PWM-Signal ausgegeben
 werden. Die Pull-Down-Widerstände ermöglichen einen schnellen Übergang nach
 GND, wenn logische Rechtecksignale schnell geschaltet werden müssen.

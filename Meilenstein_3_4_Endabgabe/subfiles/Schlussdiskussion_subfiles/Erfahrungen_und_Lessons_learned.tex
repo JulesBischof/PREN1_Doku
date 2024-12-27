@@ -8,29 +8,43 @@
 Text here
 
 \subsubsection{Elektronik}
-Text here
+Die Entwicklung eines Systems, das für viele mögliche Lösungen offen sein soll,
+erweist sich als schwierig, wenn nicht klar ist, welchen Umfang das System
+später haben soll. Damit ist gemeint, in welcher Anzahl und Form
+Sensorschnittstellen und Kommunikationsschnittstellen benötigt werden. Was
+anfangs stark unterschätzt wurde, ist der Energiebedarf, den ein Computer wie
+der Raspberry Pi mit sich bringt. So ist der Raspberry Pi 5 mit einer
+Leistungsaufnahme von 25W ein enormer Stromverbraucher in unserem System, was
+angesichts der Grösse dieses Computers überrascht hat. Des Weiteren sind die
+grossen Preisunterschiede bei der Vergabe von Fertigungsaufträgen auch an
+asiatische Leiterplattenhersteller gross. Werden die exakten Baumasse von $100
+    \cdot 100$ mm sowie die vorgegebenen Via-Grössen nicht eingehalten, werden die
+Preise für diese Leiterplatten sehr plötzlich ebenfalls teurer.
+
+Die Entwicklung des Liniensensors hat viel Zeit in Anspruch genommen und zu
+einigen spannenden Aha-Effekten geführt, als die Ströme für verschiedene
+Lichtspektren verglichen wurden. Es hat auch geholfen, sich nicht strikt auf
+einen Lösungsansatz zu versteifen, sondern lösungsoffen für mehrere Optionen zu
+sein. Gleichzeitig war die Abstimmung und Diskussion mit den anderen Teams
+spannend, da alle gemeinsam vor dem gleichen Problem standen und eigene
+Lösungsansätze für dieses verfolgt haben.
 
 \subsubsection{Informatik}
 Das Entwicklen von Software auf constrainter Hardware beansprucht die
-Evaluation von
-Faktoren, welche bei klassischen Programmieraufgaben nicht in
-Betracht gezogen werden müssen.
-Die Erfahrung und damit zu überwindenden Herausforderungen sind
-wertvoll und ermöglichen eine differenzierte
+Evaluation von Faktoren, welche bei klassischen Programmieraufgaben nicht in
+Betracht gezogen werden müssen. Die Erfahrung und damit zu überwindenden
+Herausforderungen sind wertvoll und ermöglichen eine differenzierte
 Auseinandersitzung mit einem sonst kaum besprochenen Themengebiet in Rotkreuz.
-Im Folgekurs PREN2 wird sich dieser Umstand sicherlich noch
-massgebend auf die eventuelle Realisierung auswirken.
-Die kollaborative Entwicklung des Simulators ging reibungslos von
-statten, was auch dem Zustand geschuldet ist, dass wir
-uns bereits früh gegenseitig auf unsere Stärken und Schwächen
-geachtet und entsprechend geplant haben.
-Aufgrund von diesen Planungen haben wir uns aber auch Mehraufwand in
-PREN2 eingefahren. Der für den Simulator geschriebene
-Code kann voraussichtlich nicht für das physische Fahrzeug
-wiederverwendet werden. Daraus resultiert ein bemerkbarer
-Aufwand beim Implementieren des Pfadfindungsalgorithmus, da der
-geschriebene JavaScript Code für den Simulator manuell in
-eine Sprache transpiliert werden muss, welche auf unseren Low -und
+Im Folgekurs PREN2 wird sich dieser Umstand sicherlich noch massgebend auf die
+eventuelle Realisierung auswirken. Die kollaborative Entwicklung des Simulators
+ging reibungslos von statten, was auch dem Zustand geschuldet ist, dass wir uns
+bereits früh gegenseitig auf unsere Stärken und Schwächen geachtet und
+entsprechend geplant haben. Aufgrund von diesen Planungen haben wir uns aber
+auch Mehraufwand in PREN2 eingefahren. Der für den Simulator geschriebene Code
+kann voraussichtlich nicht für das physische Fahrzeug wiederverwendet werden.
+Daraus resultiert ein bemerkbarer Aufwand beim Implementieren des
+Pfadfindungsalgorithmus, da der geschriebene JavaScript Code für den Simulator
+manuell in eine Sprache transpiliert werden muss, welche auf unseren Low -und
 Highlevel Controllern effizient lauffähig ist.
 
 \end{document}
