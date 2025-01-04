@@ -30,18 +30,18 @@ nach oben und unten. Die benötigten Drehmomente für den Servomotor befinden si
 
 \newpage
 
-In Abbildung~\ref{fig:Greiferablauf} ist der Ablauf des Greifvorgangs schematisch dargestellt. Die einzelnen Schritte werden durch gelbe Pfeile visualisiert:
+Die Abbildung~\ref{fig:Greiferablauf} zeigt den Ablauf des Greifvorgangs in mehreren Bildern. Die Bewegung des Motors werden mit einem gelben Pfeil dargestellt:
 
 \paragraph{Positionierung der Greifeinheit} 
-Von 1 zu 2 dreht der linke Servomotor die Greifeinheit entlang einer Gleitführung nach unten, nachdem ein Hindernis erkannt wurde.
+Von Position 1 zu 2 dreht der linke Servomotor die Greifeinheit entlang einer Gleitführung nach unten, nachdem ein Hindernis erkannt wurde.
 
 \paragraph{Greifen des Hindernisses} 
 
-Von 2 zu 3 bewegt der rechte Servomotor die Backen horizontal, wodurch sich beide Backen parallel schliessen und das Hindernis greifen.
+Von Position 2 zu 3 bewegt der rechte Servomotor die Backen horizontal, wodurch sich beide Backen parallel schliessen und das Hindernis greifen.
 
 \paragraph{Anheben des Hindernisses} 
 
-Von 3 zu 4 dreht der linke Servomotor die Greifeinheit leicht nach oben, sodass das Hindernis vom Boden angehoben wird. 
+Von Position 3 zu 4 dreht der linke Servomotor die Greifeinheit leicht nach oben, sodass das Hindernis vom Boden angehoben wird. 
 Dadurch wird ein sicherer Transport des Hindernisses gewährleistet.
 
 \begin{figure}[H]
@@ -59,33 +59,27 @@ In diesem Abschnitt werden die verschiedenen Sensoren an der Greifereinheit besc
 
 \paragraph{Raspberry Pi Kamera - Knotenpunkt}
 Die Raspberry Pi Kamera ist auf Höhe 130 mm in einem Winkel von 30° montiert.
-In dieser Position kann sie Objekte mit einem Durchmesser von mindestens 260 mm erkennen.
-Dadurch wid sichergestellt, dass die maximalen 120 mm Durchmesser der Knotenpunkte mit den zugehörigen
+In dieser Position kann sie Objekte mit einem Durchmesser von circa 260 mm auf dem Boden erkennen.
+Dadurch wird sichergestellt, dass die 120 mm grossen Knotenpunkte sowie die zugehörigen
 Knotenabgänge erfasst werden.
 
 
 \paragraph{Ultraschallsensor und Lichtschranke - Hinderniss}
-Der Ultraschallesnor ist in Höhe 25 mm montiert. Er erkennt Hindernisse frühzeitig,
-um Kollisionen zu vermeiden. Er sorgt zusätzlich dafür, dass das Fahrzeug an der richtigen 
-Position stoppt, um das Hindernis zu greifen. Falls die Positionserkennung für das Greifen 
+Der Ultraschallesnor ist auf Höhe 25 mm montiert. Er erkennt Hindernisse frühzeitig,
+um Kollisionen mit dem Roboter zu vermeiden. Er sorgt zusätzlich dafür, dass der Roboter an der richtigen 
+Position stoppt, um das Hindernis anzuheben. Falls die Positionserkennung für das Greifen 
 des Hindernisses im PREN 2 ungenau ist, wird eine weitere Lichtschranke eingesetzt.
 Die genaue Funktionsweise wird im Kapitel~\ref{appendix:Abstandssensoren_Kapitel} ausführlicher erklärt.
 
 \paragraph{Lidar - Pylon}
 Der Lidar ist in einer Höhe von 150 mm montiert, wodurch er bis zu einer Entfernung
-von 2 Metern einen Pylon erkennen kann, ohne das Hindernis zu erfassen.
-Die genaue Funktionsweise wird im Kapitel~\ref{appendix:Abstandssensoren_Kapitel} ausführlicher erklärt.
+von 2 Metern einen Pylon erkennen kann. Diese Höhe wird benötigt, sodass die Streuung des Lidars auf 2 Metern keinen
+Hindernis erfasst. Die genaue Funktionsweise wird im Kapitel~\ref{appendix:Abstandssensoren_Kapitel} ausführlicher erklärt.
 
 \paragraph{Lichtschranke - Höhenverstellung des Greifers}
 
 Die Lichtschranke sind an den Enpositionen der Höhenverstellung montiert.
 Sie stellen sicher, dass die Greifer die richtige Höhe erreicht und verhindern
 ein Überdrehen des Servomotors, um Beschädigungen an den Komponenten zu vermeiden.
-
-
-
-
-
-
 
 \end{document}
