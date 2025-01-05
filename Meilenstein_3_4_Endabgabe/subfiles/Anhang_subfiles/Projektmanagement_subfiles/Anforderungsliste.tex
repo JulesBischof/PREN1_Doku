@@ -41,7 +41,7 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
   \hline
   1.8          & W          & Nachhaltigkeit       & Erfüllt Anforderungen nach SDG 12. Insbesondere die Unterziele 12.4 und 12.5.                                                                                                                                                \\
   \hline
-  1.9          & W          & Materialien Mechanik & Mechanikkonstruktionen vorzüglich Materialien.                                                                                                                                                                               \\
+  1.9          & W          & Materialien Mechanik & Mechanikkonstruktionen vorzüglich aus wiederverwendbaren Materialien                                                                                                                                                         \\
   \hline
   1.10         & W          & Lieferwege           & Wenn möglich Materialien und Kaufteile aus Europäischen Lagern beziehen.                                                                                                                                                     \\
   \hline
@@ -62,9 +62,9 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
   \hline
   2.4          & M          & Betriebsbereitschaft  & Das Fahrzeug muss innerhalb von maximal einer Minute im Startbereich manuell platziert und aufgebaut werden, sowie betriebsbereit sein.                                                                                                                                                                                                    \\
   \hline
-  2.5          & W          & Gesperrte Wegpunkte   & Die gesperrten Wegpunkte sollten vom Fahrzeug erkannt werden.                                                                                                                                                                                                                                                                              \\
+  2.5          & W          & Gesperrte Wegpunkte   & Die gesperrten Wegpunkte sollten aus der Distanz vom Fahrzeug erkannt werden können.                                                                                                                                                                                                                                                       \\
   \hline
-  2.6          & W          & Hindernis auf Strecke & Mögliche Hindernisse sollten vom Fahrzeug erkannt werden.                                                                                                                                                                                                                                                                                  \\
+  2.6          & W          & Hindernis auf Strecke & Mögliche Hindernisse sollten vom Fahrzeug aus der Distanz erkannt werden können.                                                                                                                                                                                                                                                           \\
   \hline
   2.7          & F          & Hindernisbewältigung  & Befährt das Fahrzeug eine Strecke mit einem Hindernis, so muss dieses erkannt und aktiv von der Strecke aufgenommen werden. Sobald das Fahrzeug die besagte Stelle passiert hat, muss das Hindernis wieder an die Ursprungsposition zurückgestellt werden. Die Toleranzzone beim Zurückstellen des Hindernisses beträgt 20 mm (umlaufend). \\
   \hline
@@ -162,17 +162,15 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
   \hline
   4.6          & W          & Pfadfindungsalgorithmen   & In der Simulation sollen verschiedene Pfadfindungs-algorithmen (z.B. Dijkstra, A*-Algorithmus, etc.) implementiert werden für eine direkte Gegenüberstellung in Zuverlässigkeit und Schnelligkeit. \\
   \hline
-  4.7          & W          & Zeitauswertung            & In der Simulation soll eine approximierte Zeitauswertung, basierend auf heuristischen Abschätzungen, möglich sein.                                                                                 \\
+  4.7          & W          & Zeitauswertung            & In der Simulation soll eine approximierte Zeitauswertung, basierend auf heuristischen Abschätzungen und vorgegebene Fahrzeugparameter, möglich sein.                                               \\
   \hline
   4.8          & W          & Visualisierung des Pfades & Der vorgeplante Pfad soll währrend der Simulation angezeigt werden, um das Verhalten des Fahrzeugs besser nachvollziehen zu können.                                                                \\
   \hline
-  4.9          & W          & Hindernistypen            & Verschiedene Arten von Hindernissen (beweglich und stationär) sollen simuliert werden können.                                                                                                      \\
+  4.9          & W          & Fahrzeugparameter         & Fahrzeugparameter (Geschwindigkeit, Wendekreis, Sensorreichweite, etc.) sollen editierbar sein.                                                                                                    \\
   \hline
-  4.10         & W          & Fahrzeugparameter         & Fahrzeugparameter (Geschwindigkeit, Wendekreis, Sensorreichweite, etc.) sollen editierbar sein.                                                                                                    \\
+  4.10         & W          & Datenexport               & Die Daten, welche während der Simulation generiert werden, sollen exportierbar sein.                                                                                                               \\
   \hline
-  4.11         & W          & Datenexport               & Die Daten, welche während der Simulation generiert werden, sollen exportierbar sein.                                                                                                               \\
-  \hline
-  4.12         & W          & Error-Handling            & Der Simulator muss robust auf Fehler reagieren und darf keinesfalls abstürzen. Zudem sollen Fehlerzustände abgefangen und klar dokumentiert werden.                                                \\
+  4.11         & W          & Error-Handling            & Der Simulator muss robust auf Fehler reagieren und darf keinesfalls abstürzen. Zudem sollen Fehlerzustände abgefangen und klar dokumentiert werden.                                                \\
   \hline
 \end{tabular}
 
@@ -183,7 +181,7 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
   \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}             & \textbf{Werte}                                                                                                                                                                                                                                                                                                                                                                                \\
                & \textbf{W} &                                  & \textbf{Erläuterungen}                                                                                                                                                                                                                                                                                                                                                                        \\
   \hline
-  5.1          & W          & Materialbeschaffung              & Materialien und Komponenten sollen vorzugsweise von folgenden Lieferanten bestellt werden: \newline - Conrad Electronic \newline - Distrelec \newline - Mädler \newline - Farnell                                                                                                                                                                                                             \\
+  5.1          & W          & Materialbeschaffung              & Materialien und Komponenten sollen vorzugsweise von folgenden Lieferanten bestellt werden: \newline - Conrad Electronic \newline - Distrelec \newline - Mädler \newline - Farnell \newline - Mouser \newline - DigiKey \newline - Reichelt                                                                                                                                                    \\
   \hline
   5.2          & F          & Budget                           & Für die Realisierung des Projekts stehen dem Team insgesamt 500 CHF zur Verfügung. Davon dürfen maximal 200 CHF in PREN 1 ausgegeben werden.                                                                                                                                                                                                                                                  \\
   \hline
@@ -197,26 +195,26 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
 
 \newpage
 
-\section{Erfüllungsgrad Anforderungsliste}
+\section{Erfüllt ? Anforderungsliste}
 
 \subsection*{Allgemeine Anforderungen}
 
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
-               & \textbf{F} &                                  &                                                                                                                                                                                                                                                                                                                                                                                 \\
-  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}             & \textbf{Erfüllungsgrad}                                                                                                                                                                                                                                                                                                                                                                                \\
-               & \textbf{W} &                                  &                                                                                                                                                                                                                                                                                                                                                                         \\
+               & \textbf{F} &                      &                    \\
+  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung} & \textbf{Erfüllt ?} \\
+               & \textbf{W} &                      &                    \\
   \hline
-  1.1          & W              & Wettbewerb                   & 100\%                   \\
-  1.2          & F              & Wettbewerbsort               & 100\%                   \\
-  1.3          & F              & Projektabgabe                & 100\%                   \\
-  1.4          & F              & Eigenkonstruktion            & 85\%                    \\
-  1.5          & F              & Software                     & 90\%                    \\
-  1.6          & F              & Eingriffe                    & 100\%                   \\
-  1.7          & F              & Sicherheit                   & 95\%                    \\
-  1.8          & W              & Nachhaltigkeit               & 80\%                    \\
-  1.9          & W              & Materialien Mechanik          & 75\%                    \\
-  1.10         & W              & Lieferwege                   & 70\%                    \\
+  1.1          & W          & Wettbewerb           & offen              \\
+  1.2          & F          & Wettbewerbsort       & ja                 \\
+  1.3          & F          & Projektabgabe        & ja                 \\
+  1.4          & F          & Eigenkonstruktion    & ja                 \\
+  1.5          & F          & Software             & ja                 \\
+  1.6          & F          & Eingriffe            & ja                 \\
+  1.7          & F          & Sicherheit           & offen              \\
+  1.8          & W          & Nachhaltigkeit       & ja                 \\
+  1.9          & W          & Materialien Mechanik & ja                 \\
+  1.10         & W          & Lieferwege           & offen              \\
   \hline
 \end{tabular}
 
@@ -224,30 +222,30 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
 
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
-               & \textbf{F} &                                  &                                                                                                                                                                                                                                                                                                                                                                                 \\
-  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}             & \textbf{Erfüllungsgrad}                                                                                                                                                                                                                                                                                                                                                                                \\
-               & \textbf{W} &                                  &                                                                                                                                                                                                                                                                                                                                                                         \\
+               & \textbf{F} &                           &                    \\
+  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}      & \textbf{Erfüllt ?} \\
+               & \textbf{W} &                           &                    \\
   \hline
-  2.1          & F              & Autonomität                  & 95\%                    \\
-  2.2          & F              & Hardwarekomponenten          & 90\%                    \\
-  2.3          & F              & Softwarekomponenten          & 85\%                    \\
-  2.4          & M              & Betriebsbereitschaft         & 100\%                   \\
-  2.5          & W              & Gesperrte Wegpunkte          & 70\%                    \\
-  2.6          & W              & Hindernis auf Strecke        & 80\%                    \\
-  2.7          & F              & Hindernisbewältigung         & 75\%                    \\
-  2.8          & F              & Auswahl Zielposition         & 100\%                   \\
-  2.9          & F              & Startbefehl                  & 100\%                   \\
-  2.10         & F              & Leitlinien                   & 100\%                   \\
-  2.11         & F              & Not-Aus                      & 95\%                    \\
-  2.12         & F              & Gewicht                      & 90\%                    \\
-  2.13         & W              & Schutzklasse                 & 80\%                    \\
-  2.14         & F              & Dimensionen                  & 100\%                   \\
-  2.15         & F              & Zielposition                 & 95\%                    \\
-  2.16         & W              & Energieversorgung            & 85\%                    \\
-  2.17         & W              & Akkulaufzeit                 & 90\%                    \\
-  2.18         & W              & Debug-Schnittstelle          & 75\%                    \\
-  2.19         & W              & Controlling-Schnittstelle    & 70\%                    \\
-  2.20         & W              & Zeitmessung                  & 95\%                    \\
+  2.1          & F          & Autonomität               & ja                 \\
+  2.2          & F          & Hardwarekomponenten       & ja                 \\
+  2.3          & F          & Softwarekomponenten       & ja                 \\
+  2.4          & M          & Betriebsbereitschaft      & ja                 \\
+  2.5          & W          & Gesperrte Wegpunkte       & offen              \\
+  2.6          & W          & Hindernis auf Strecke     & offen              \\
+  2.7          & F          & Hindernisbewältigung      & ja                 \\
+  2.8          & F          & Auswahl Zielposition      & ja                 \\
+  2.9          & F          & Startbefehl               & ja                 \\
+  2.10         & F          & Leitlinien                & ja                 \\
+  2.11         & F          & Not-Aus                   & ja                 \\
+  2.12         & F          & Gewicht                   & offen              \\
+  2.13         & W          & Schutzklasse              & offen              \\
+  2.14         & F          & Dimensionen               & ja                 \\
+  2.15         & F          & Zielposition              & ja                 \\
+  2.16         & W          & Energieversorgung         & ja                 \\
+  2.17         & W          & Akkulaufzeit              & offen              \\
+  2.18         & W          & Debug-Schnittstelle       & offen              \\
+  2.19         & W          & Controlling-Schnittstelle & ja                 \\
+  2.20         & W          & Zeitmessung               & nein               \\
   \hline
 \end{tabular}
 
@@ -255,23 +253,23 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
 
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
-               & \textbf{F} &                                  &                                                                                                                                                                                                                                                                                                                                                                                 \\
-  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}             & \textbf{Erfüllungsgrad}                                                                                                                                                                                                                                                                                                                                                                                \\
-               & \textbf{W} &                                  &                                                                                                                                                                                                                                                                                                                                                                         \\
+               & \textbf{F} &                               &                    \\
+  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}          & \textbf{Erfüllt ?} \\
+               & \textbf{W} &                               &                    \\
   \hline
-  3.1          & F              & Wege-Netzwerk                & 90\%                    \\
-  3.2          & F              & Zielpunkte                   & 85\%                    \\
-  3.3          & F              & Wegpunkte                    & 95\%                    \\
-  3.4          & F              & Untergrund                   & 100\%                   \\
-  3.5          & F              & Leitlinien                   & 100\%                   \\
-  3.6          & F              & Abmessungen                  & 95\%                    \\
-  3.7          & F              & Gesperrte Wegpunkte          & 75\%                    \\
-  3.8          & F              & Hindernis auf Strecke        & 80\%                    \\
-  3.9          & F              & Nicht vorhandene Teilstrecken & 85\%                   \\
-  3.10         & F              & Streckenbedingungen          & 70\%                    \\
-  3.11         & F              & Startbereich                 & 100\%                   \\
-  3.12         & F              & Start                        & 100\%                   \\
-  3.13         & M              & Parcours-Laufzeit            & 90\%                    \\
+  3.1          & F          & Wege-Netzwerk                 & ja                 \\
+  3.2          & F          & Zielpunkte                    & ja                 \\
+  3.3          & F          & Wegpunkte                     & ja                 \\
+  3.4          & F          & Untergrund                    & ja                 \\
+  3.5          & F          & Leitlinien                    & ja                 \\
+  3.6          & F          & Abmessungen                   & ja                 \\
+  3.7          & F          & Gesperrte Wegpunkte           & ja                 \\
+  3.8          & F          & Hindernis auf Strecke         & ja                 \\
+  3.9          & F          & Nicht vorhandene Teilstrecken & ja                 \\
+  3.10         & F          & Streckenbedingungen           & ja                 \\
+  3.11         & F          & Startbereich                  & ja                 \\
+  3.12         & F          & Start                         & ja                 \\
+  3.13         & M          & Parcours-Laufzeit             & offen              \\
   \hline
 \end{tabular}
 
@@ -279,22 +277,21 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
 
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
-               & \textbf{F} &                                  &                                                                                                                                                                                                                                                                                                                                                                                 \\
-  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}             & \textbf{Erfüllungsgrad}                                                                                                                                                                                                                                                                                                                                                                                \\
-               & \textbf{W} &                                  &                                                                                                                                                                                                                                                                                                                                                                         \\
+               & \textbf{F} &                           &                    \\
+  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}      & \textbf{Erfüllt ?} \\
+               & \textbf{W} &                           &                    \\
   \hline
-  4.1          & F              & Betriebssystem               & 100\%                    \\
-  4.2          & W              & Betriebssystem               & 100\%                    \\
-  4.3          & W              & Benutzeroberfläche           & 100\%                    \\
-  4.4          & M              & Darstellung (2D)             & 100\%                   \\
-  4.5          & W              & Darstellung (3D)             & 0\%                    \\
-  4.6          & W              & Pfadfindungsalgorithmen (löschen? nicht mehr aktuell)      & 85\%                    \\
-  4.7          & W              & Zeitauswertung (Anpassung nur für parameterized run)               & 90\%                    \\
-  4.8          & W              & Visualisierung des Pfades    & 100\%                    \\
-  4.9          & W              & Hindernistypen (löschen)               & 80\%                    \\
-  4.10          & W              & Fahrzeugparameter (löschen)            & 85\%                    \\
-  4.11         & W              & Datenexport                  & 100\%                    \\
-  4.12         & W              & Error-Handling               & 95\%                    \\
+  4.1          & F          & Betriebssystem            & ja                 \\
+  4.2          & W          & Betriebssystem            & ja                 \\
+  4.3          & W          & Benutzeroberfläche        & ja                 \\
+  4.4          & M          & Darstellung (2D)          & ja                 \\
+  4.5          & W          & Darstellung (3D)          & nein               \\
+  4.6          & W          & Pfadfindungsalgorithmen   & ja                 \\
+  4.7          & W          & Zeitauswertung            & ja                 \\
+  4.8          & W          & Visualisierung des Pfades & ja                 \\
+  4.9          & W          & Fahrzeugparameter         & teilweise          \\
+  4.10         & W          & Datenexport               & ja                 \\
+  4.11         & W          & Error-Handling            & ja                 \\
   \hline
 \end{tabular}
 
@@ -302,18 +299,17 @@ Die nachfolgende Tabelle zeigt die Anforderungsliste des Roboter-Fahrzeugs.
 
 \begin{tabular}{|l|p{0.5cm}|p{4cm}|p{10cm}|}
   \hline
-               & \textbf{F} &                                  &                                                                                                                                                                                                                                                                                                                                                                                 \\
-  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}             & \textbf{Erfüllungsgrad}                                                                                                                                                                                                                                                                                                                                                                                \\
-               & \textbf{W} &                                  &                                                                                                                                                                                                                                                                                                                                                                         \\
+               & \textbf{F} &                                 &                    \\
+  \textbf{Nr.} & \textbf{M} & \textbf{Bezeichnung}            & \textbf{Erfüllt ?} \\
+               & \textbf{W} &                                 &                    \\
   \hline
-  5.1          & W              & Materialbeschaffung          & 90\%                    \\
-  5.2          & F              & Budget                       & 100\%                   \\
-  5.3          & F              & Normteile ab HSLU Lagerbestand & 100\%                 \\
-  5.4          & F              & Persönlicher 3D-Drucker      & 85\%                    \\
-  5.5          & F              & Herstellungsressourcen der HSLU & 95\%                  \\
+  5.1          & W          & Materialbeschaffung             & ja                 \\
+  5.2          & F          & Budget                          & ja                 \\
+  5.3          & F          & Normteile ab HSLU Lagerbestand  & ja                 \\
+  5.4          & F          & Persönlicher 3D-Drucker         & ja                 \\
+  5.5          & F          & Herstellungsressourcen der HSLU & ja                 \\
   \hline
 \end{tabular}
-
 
 \newpage
 
