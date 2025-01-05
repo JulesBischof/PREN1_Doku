@@ -14,6 +14,7 @@ Daher ist eine sorgfältige Gewichtsanalyse bereits in der Planungsphase von ent
 In Tabelle~\ref{tab:Gewichtsbudget} sind die Gewichte der verschiedenen Komponenten aufgeführt. 
 Für Zukaufteile wurden die Gewichte den Herstellerdaten entnommen, während bei Eigenkonstruktionen 
 die Gewichtswerte anhand von Abschätzungen im CAD unter Berücksichtigung des verwendeten Materials berechnet wurden.
+Die Gewichtsanalyse zeigt, dass das Fahrzeug knapp unter der Gewichtslimite ist, leider ist diese zu knapp bemessen.
 
 \begin{table}[h!]
     \centering
@@ -35,15 +36,20 @@ die Gewichtswerte anhand von Abschätzungen im CAD unter Berücksichtigung des v
         \rowcolor{lightgray} Mechanik    &                     &                         &                 &                          &                          \\ \hline
         Räder                            & Pauschale           & ~                       & 2               & 40                       & 80                       \\ \hline
         Chassis                          & Pauschale           & ~                       & 1               & 200                      & 200                      \\ \hline
-        Greifeinheit                     & ~                   & ~                       & 1               & 100                      & 100                      \\ \hline
+        Greifeinheit                     & ~                   & ~                       & 1               & 100                      & 175                      \\ \hline
         Verkabelungspauschale            & ~                   & ~                       & 1               & 100                      & 100                      \\ \hline
         Schraubenpauschale               & ~                   & ~                       & 1               & 50                       & 50                       \\ \hline
-        \textbf{Summe}                   &                     &                         &                 &                          & \textbf{1891}            \\ \hline
+        \textbf{Summe}                   &                     &                         &                 &                          & \textbf{1996}            \\ \hline
     \end{tabularx}
     \caption{Gewichtsbudget}~\label{tab:Gewichtsbudget}
 \end{table}
 
-Die Gewichtsanalyse ergibt dass XX Kilogramm gewicht noch vorhanden ist.
+Während der Entwicklung wurde deutlich, dass die Greifereinheit und das Chassis schwerer sind als ursprünglich im Gewichtsbudget angenommen. 
+In der nächsten Iteration wird das Chassis vollständig im 3D-Druckverfahren gefertigt, voraussichtlich mit einem Wabenmuster,
+um durch gezielte Aussparungen Gewicht zu reduzieren. Die PCBs werden in einem kompakten Turm mithilfe von Disanzbuchsen 
+übereinandergestapelt, wodurch mehrere Stützen und 3D-Druck Platten eingespart werden. Jedoch werden diese Gewichtsoptimierungen
+erst im PREN2 umgesetzt.
+
 
 
 \end{document}

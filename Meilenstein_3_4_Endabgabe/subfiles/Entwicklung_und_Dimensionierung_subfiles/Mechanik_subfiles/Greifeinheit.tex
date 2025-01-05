@@ -17,71 +17,69 @@ im Anhang~\ref{appendix:Greifereinheit} weiterentwickelt. Im folgenden Abschnitt
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{Greifereinheit_Uebersicht.png}
+    \includegraphics[width=1\textwidth]{Greifereinheit_Uebersicht.png}
     \caption{Übersicht der Greifereinheit im NX Siemens}~\label{fig:Greifereinheit}
 \end{figure}
 
 Der Greifer verfügt über zwei Backen, die parallel zueinander verschoben werden, um das Hindernis sicher zu greifen. 
 Dieser Vorgang wird von einem Servomotor gesteuert. Konkret bewegt der Hebel vom Servomotor eine der beiden Backen horizontal. 
 Diese Backe ist mit einer Zahnstange ausgestattet, die ein innenliegendes Zahnrad antreibt. Das Zahnrad überträgt die 
-Bewegung auf die gegenüberliegende Backe, sodass sich beide Backen synchron, aber in entgegengesetzter Richtung bewegen.
-In der Abbildung~\ref{fig:Zahnrad und Zahnstange} ist dies dargestellt. Die Höhenverstellung ist ebenfalls mit einem Servomotor gelöst.
-Dieser bewegt die den Greifer entlang einer Gleitführung von IGUS nach oben und unten. Die benötigten Drehmomente für den Servomotor
-befinden sich im Anhang~\ref{appendix:Greifereinheit}.
+Bewegung auf die gegenüberliegende Backe, sodass sich beide Backen synchron, aber in entgegengesetzter Richtung bewegen. 
+Die Höhenverstellung ist ebenfalls mit einem Servomotor gelöst.Dieser bewegt den Greifer entlang einer Gleitführung von IGUS 
+nach oben und unten. Die benötigten Drehmomente für den Servomotor befinden sich im Anhang~\ref{appendix:Greifereinheit}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Zahnrad_und_Zahnstange.png}
-    \caption{Zahnrad und Zahnstange}~\label{fig:Zahnrad und Zahnstange}
-\end{figure}
+\newpage
 
-
-In Abbildung~\ref{fig:Greiferablauf} ist der Ablauf des Greifvorgangs schematisch dargestellt. Die einzelnen Schritte werden durch gelbe Pfeile visualisiert:
+Die Abbildung~\ref{fig:Greiferablauf} zeigt den Ablauf des Greifvorgangs in mehreren Bildern. Die Bewegung des Motors werden mit einem gelben Pfeil dargestellt:
 
 \paragraph{Positionierung der Greifeinheit} 
-Von 1 zu 2 dreht der linke Servomotor die Greifeinheit entlang einer Gleitführung nach unten, wenn ein Hindernis erkannt wurde.
+Von Position 1 zu 2 dreht der linke Servomotor die Greifeinheit entlang einer Gleitführung nach unten, nachdem ein Hindernis erkannt wurde.
 
 \paragraph{Greifen des Hindernisses} 
 
-Von 2 zu 3 bewegt der rechte Servomotor die Backen horizontal, wodurch sich beide Backen parallel schliessen und das Hindernis fixieren.
+Von Position 2 zu 3 bewegt der rechte Servomotor die Backen horizontal, wodurch sich beide Backen parallel schliessen und das Hindernis greifen.
 
 \paragraph{Anheben des Hindernisses} 
 
-Von 3 zu 4 dreht der linke Servomotr die Greifeinheit leicht nach oben, wodurch das Hindernis vom Boden abgehoben wird. 
-Dies ermöglicht es, das Hindernis sicher zu transportieren.
+Von Position 3 zu 4 dreht der linke Servomotor die Greifeinheit leicht nach oben, sodass das Hindernis vom Boden angehoben wird. 
+Dadurch wird ein sicherer Transport des Hindernisses gewährleistet.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{Greiferablauf.png}
+    \includegraphics[width=0.85\textwidth]{Greiferablauf.png}
     \caption{Greiferablauf - Anheben des Hindernis}~\label{fig:Greiferablauf}
 \end{figure}
 
 
-\subsubsection*{Sensorenplatzierung}
+\newpage
 
-In diesem Abschnitt werden die verschiedenen Sensoren an der Greifereinheit beschrieben
+\subsubsection*{Sensorikplatzierung}
 
-\paragraph{Ultraschallsensor und Lidar}
-Der Ultraschallsensor ist auf der Höhe XX positioniert um einen Hindernis zu erkennen.
-Der Lidar ist auf der Höhe XX, sodass die Streuung des Lidars nicht den Hindernis erfasst.
-Die Funktionsweise dieser beiden Sensoren werden im Kapitel XX erklärt.
+In diesem Abschnitt werden die verschiedenen Sensoren an der Greifereinheit beschrieben.
 
-\paragraph{Lichtschranke Hindernis}
-Die Lichtschranke an der Front ist für die genaue Positionserkennung des Hindernis vorgesehen.
-Falls aus Testergebissen im PREN 2 sich ergibt, das der Ultraschallsensor genug genau ist, wird diese Lichtschranke weggelassen.
-
-\paragraph{Raspberry Pi Kamera}
-Die Raspberry Pi Kamera ist auf der Höhe XX montiert, sodass sie einen Radius von mindestens 150 mm abdeckt.
-So kann sichergestellt werden, dass die maximalen 120 mm Durchmessers des Knotenpunkte und die jeweiligen Abgänge detektiert werden können.
-
-\paragraph{Lichtschranke Endposition für Höhenverstellung}
-Diese Lichtschranke ist für eine Rückmeldung für die oberen Endschlag des Höhenverstellung des Greifers vorgesehen.
-Jedoch kann diese wie bei der unteren Endposition durch eine physische Blockade realisiert werden. Dies wird im PREN 2 getestet.
+\paragraph{Raspberry Pi Kamera - Knotenpunkt}
+Die Raspberry Pi Kamera ist auf Höhe 130 mm in einem Winkel von 30° montiert.
+In dieser Position kann sie Objekte mit einem Durchmesser von circa 260 mm auf dem Boden erkennen.
+Dadurch wird sichergestellt, dass die 120 mm grossen Knotenpunkte sowie die zugehörigen
+Knotenabgänge erfasst werden.
 
 
+\paragraph{Ultraschallsensor und Lichtschranke - Hinderniss}
+Der Ultraschallesnor ist auf Höhe 25 mm montiert. Er erkennt Hindernisse frühzeitig,
+um Kollisionen mit dem Roboter zu vermeiden. Er sorgt zusätzlich dafür, dass der Roboter an der richtigen 
+Position stoppt, um das Hindernis anzuheben. Falls die Positionserkennung für das Greifen 
+des Hindernisses im PREN 2 ungenau ist, wird eine weitere Lichtschranke eingesetzt.
+Die genaue Funktionsweise wird im Kapitel~\ref{appendix:Abstandssensoren_Kapitel} ausführlicher erklärt.
 
+\paragraph{Lidar - Pylon}
+Der Lidar ist in einer Höhe von 150 mm montiert, wodurch er bis zu einer Entfernung
+von 2 Metern einen Pylon erkennen kann. Diese Höhe wird benötigt, sodass die Streuung des Lidars auf 2 Metern keinen
+Hindernis erfasst. Die genaue Funktionsweise wird im Kapitel~\ref{appendix:Abstandssensoren_Kapitel} ausführlicher erklärt.
 
+\paragraph{Lichtschranke - Höhenverstellung des Greifers}
 
-
+Die Lichtschranke sind an den Enpositionen der Höhenverstellung montiert.
+Sie stellen sicher, dass die Greifer die richtige Höhe erreicht und verhindern
+ein Überdrehen des Servomotors, um Beschädigungen an den Komponenten zu vermeiden.
 
 \end{document}
