@@ -22,7 +22,7 @@ für das gesamte Projekt
 auf 500 CHF beschränkt. Das Modul Produktentwicklung 1 darf dabei maximal 200 CHF
 beanspruchen. Die restlichen 300 CHF können im Folgemodul beantragt werden. 
 Die Komponenten, welche aus dem privaten Umfeld stammen, 
-müssen gemäss der Vorgabe, zum halben Preis verrechnet werden. Aufgrund der limitierten 
+müssen gemäss der Vorgabe zum halben Preis verrechnet werden. Aufgrund der limitierten 
 finanziellen Mitteln ist eine sorgfältige Budgetplanung für das Gesamtprojekt bereits in
 der Planungsphase unerlässlich. Im folgenden Kapitel 
 wird auf die Budgetplanung für das Gesamtprojekt sowie auf bereits getätigte Ausgaben in
@@ -32,57 +32,58 @@ Produktentwicklung 1 eingegangen.
 Die Tabelle~\ref{tab:Budgetplanung} veranschaulicht die Budgetplanung für das 
 gesamte Projekt. Die Tabelle ist in Kategorien wie Antrieb, Greifeinheit, 
 Chassis und Energieversorgung unterteilt, um eine bessere Übersicht zu gewährleisten. 
-Die geschätzten Kosten basieren auf aktuellen Marktpreisen und enhalten auch 
-Kleinteile sowie Leiterplatten. Eigenkonstruktionen sind mit einem realistischen 
+Die geschätzten Kosten basieren auf aktuellen Marktpreisen und enthalten auch 
+Kleinteile sowie Leiterplatten. Gewisse Komponenten sind schon im Besitz von den
+Entwicklern. Gemäss der Vorgabe werden diese Komponenten direkt mit dem halben
+Marktpreis in der Tabelle angegeben. Eigenkonstruktionen sind mit einem realistischen 
 Schätzwert angegeben. Zu beachten ist, dass sich die Preise ständig ändern. Die 
 Tabelle dient daher als Richtwert.\\
 
-!!!!!offene Punkte klären!!!!!!
 
 \newpage
 
 \begin{table}[h]
     \centering
     \scriptsize % Schriftgrösse verkleinern
-    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{1cm}|p{1.5cm}|p{1cm}|}
+    \begin{tabular}{|p{3cm}|p{2.5cm}|p{3cm}|p{1cm}|p{1cm}|p{1.5cm}|p{1cm}|}
         \hline
-        \textbf{Komponente}                    & \textbf{Hersteller} & \textbf{Hersteller Nr.} & \textbf{Anzahl} & \textbf{Kosten [CHF/stk]} & \textbf{Kosten total [CHF]} \\ \hline
-        \rowcolor{lightgray} Antrieb           &                     &                         &                 &                           &                             \\ \hline
-        Schrittmotoren                         & DFRobot             & FIT0278                 & 2               & 12.65                     & 25.3                          \\ \hline
-        Schrittmotorentreiber                  & ADI-Trinamic        & TMC5240 Eval Board      & 2               & 31.5                      & 63                          \\ \hline
-        \rowcolor{lightgray} Greifeinheit      &                     &                         &                 &                           &                             \\ \hline
-        Lichtschranke                          & SICK                & WL100-P3430             & 1               & 15.25                     & 15.25                       \\ \hline
-        Servo                                  & DFRobot             & SER0063                 & 2               & 13.67                     & 27.34                       \\ \hline
-        PCB                                    & Eigenkonstruktion   & -                       & 5               & 7                         & 7                           \\ \hline
-        Lichtschranke oder Endschalter         & ?                   & ?                       & 2               & ?                         & ?                           \\ \hline
-        \rowcolor{lightgray} Chassis           &                     &                         &                 &                           &                             \\ \hline
-        LIDAR                                  & Benewake            & TF Luna I2C             & 1               & 22.6                      & 22.6                        \\ \hline
-        Liniensensor                           & Eigenkonstruktion   & -                       & 1               & 40                        & 40                          \\ \hline
-        Ultraschallsensor                      & OSEPP Electronics   & HC-SR04                 & 1               & 5.78                      & 5.78                        \\ \hline
-        PCB                                    & Eigenkonstruktion   & -                       & 5               & 7                         & 7                           \\ \hline
-        Antriebsräder ?????                    & DFRobot             & FIT0500                 & 2               & 1.37                      & 2.74                           \\ \hline
-        Laufkugeln                             & ?                   & ?                       & 1               & 4                         & 4                           \\ \hline
-        LCD-Display                            & ?                   & ?                       & 1               & ?                         & ?                           \\ \hline
-        \rowcolor{lightgray} Controller        &                     &                         &                 &                           &                             \\ \hline
-        Raspberry Pi 4                         & Eigenbesitz         & -                       & 1               & 17.5? (eher 25.-)         & 17.5?                       \\ \hline
-        Raspberry Pi Kamera 12MP               & RASPBERRY PI        & RASPBERRY PI CAMERA 3   & 1               & 25.35                     & 25.35                       \\ \hline
-        Raspberry Pico                         & Eigenbesitz         & -                       & 2               & 4                         & 8                           \\ \hline
-        PCB                                    & Eigenkonstruktion   & -                       & 5               & 7                         & 7                           \\ \hline
-        \rowcolor{lightgray} Energieversorgung &                     &                         &                 &                           &                             \\ \hline
-        Akkupack                               & Swaytronic          & 7,64018E+12 ??          & 1               & 41.7                      & 41.7                        \\ \hline
-        Ladegerät                              & Voltcraft           & 1597950-UP              & 1               & 39.95                     & 39.95                       \\ \hline
-        PCB                                    & Eigenkonstruktion   & -                       & 1               & 7                         & 7                           \\ \hline
-        \rowcolor{lightgray} Elektronik        &                     &                         &                 &                           &                             \\ \hline
-        Kleinteile Elektronik                  & Werkstatt           & -                       & -               & -                         & 40                          \\ \hline
-        \textbf{Total}                         &                     &                         &                 &                           & \textbf{!!!!389.19}                \\ \hline
+        \textbf{Komponente}                    & \textbf{Hersteller}   & \textbf{Hersteller Nr.} & \textbf{Besitz} & \textbf{Anzahl}& \textbf{Kosten [CHF/stk]} & \textbf{Kosten total [CHF]} \\ \hline
+        \rowcolor{lightgray} Antrieb           &                       &                         &                 &                &                           &                             \\ \hline
+        Schrittmotoren                         & DFRobot               & FIT0278                 & Nein            & 2              & 12.65                     & 25.3                          \\ \hline
+        Schrittmotorentreiber                  & ADI-Trinamic          & TMC5240 Eval Board      & Ja              & 2              & 31.5                      & 63                          \\ \hline
+        \rowcolor{lightgray} Greifeinheit      &                       &                         &                 &                &                           &                             \\ \hline
+        Lichtschranke Hinderniss               & SICK                  & WL100-P3430             & Ja              & 1              & 15.25                     & 15.25                       \\ \hline
+        Servo                                  & DFRobot               & SER0063                 & Nein            & 2              & 13.67                     & 27.34                       \\ \hline
+        PCB                                    & PCBWay                & -                       & Nein            & 5              & 4                         & 4                           \\ \hline        
+        \rowcolor{lightgray} Chassis           &                       &                         &                 &                &                           &                             \\ \hline
+        LIDAR                                  & Benewake              & TF Luna I2C             & Nein            & 1              & 22.6                      & 22.6                        \\ \hline
+        Liniensensor                           & Eigenkonstruktion     & -                       & Nein            & 1              & 40                        & 40                          \\ \hline
+        Ultraschallsensor                      & OSEPP Electronics     & HC-SR04                 & Ja              & 1              & 1.55                      & 1.55                        \\ \hline
+        PCB                                    & PCBWay                & -                       & Nein            & 5              & 7                         & 7                           \\ \hline
+        Antriebsräder                          & DFRobot               & FIT0500                 & Nein            & 2              & 1.37                      & 2.74                        \\ \hline
+        Laufkugeln                             & Polulu                & Polulu Item: 954        & Nein            & 1              & 4.5                       & 4.5                         \\ \hline
+        Lichtschranken Encoder                 & Panasonic             & PM-F45-P                & Ja              & 2              & 5.75                      & 11.5                        \\ \hline
+        \rowcolor{lightgray} Controller        &                       &                         &                 &                &                           &                             \\ \hline
+        Raspberry Pi 4 2GB RAM                 & Raspberry Pi          & SC0193(9)               & Ja              & 1              & 26                        & 26                          \\ \hline
+        Raspberry Pi Kamera 12MP               & Raspberry Pi          & RASPBERRY PI CAMERA 3   & Nein            & 1              & 25.35                     & 25.35                       \\ \hline
+        Raspberry Pico                         & Raspberry Pi          & SC0915                  & Ja              & 2              & 1.8                       & 3.6                         \\ \hline
+        PCB                                    & PCBWay                & -                       & Nein            & 5              & 7                         & 7                           \\ \hline
+        \rowcolor{lightgray} Energieversorgung &                       &                         &                 &                &                           &                             \\ \hline
+        Akkupack                               & Swaytronic            & 7640182625221           & Nein            & 1              & 41.7                      & 41.7                        \\ \hline
+        Ladegerät                              & Voltcraft             & 1597950-UP              & Nein            & 1              & 39.95                     & 39.95                       \\ \hline
+        PCB                                    & PCBWay                & -                       & Nein            & 1              & 7                         & 7                           \\ \hline
+        \rowcolor{lightgray} Elektronik        &                       &                         &                 &                &                           &                             \\ \hline
+        Kleinteile Elektronik                  & Elektro-Werkstatt HSLU& -                       & Nein            & -              & -                         & 40                          \\ \hline
+        Sonstige Produktionskosten             & -                     & -                       & Nein            & -              & -                         & 20                          \\ \hline
+        \textbf{Total}                         &                       &                         &                 &                &                           & \textbf{435.38}             \\ \hline
     \end{tabular}
     \caption{Budgetplanung}
     \label{tab:Budgetplanung}
 \end{table}
 
-Aus der vorliegenden Tabelle geht hervor, dass die Gesamtkosten !!!!!389,19 CHF betragen.
+Aus der vorliegenden Tabelle geht hervor, dass die Gesamtkosten 415,38 CHF betragen.
 Dies liegt unter dem ursprünglich veranschlagten Budget von 500 CHF. 
-Das resultierende Restbudget beträgt !!!!!110,81 CHF, welches für unvorhergesehene Ausgaben oder zusätzliche
+Das resultierende Restbudget beträgt 64,62 CHF, welches für unvorhergesehene Ausgaben oder zusätzliche
 Anschaffungen genutzt werden kann.
 
 \subsubsection{Ausgaben Produktentwicklung 1}
@@ -93,7 +94,7 @@ Budget für Produktentwicklung 1 auf 200 CHF begrenzt ist. Die Komponenten, welc
 Eigenbesitz markiert sind, stammen direkt aus dem privaten Umfeld der Entwickler.
 Bei diesen Komponenten ist bereits der halbe Marktpreis in der Tabelle eingetragen.
 
-!!Tabelle wird noch ergänzt!!
+
 \newpage
 
 \begin{table}[h]
@@ -102,49 +103,48 @@ Bei diesen Komponenten ist bereits der halbe Marktpreis in der Tabelle eingetrag
         \scriptsize % Schriftgrösse verkleinern
         \begin{tabular}{|p{3cm}|p{2.5cm}|p{2.5cm}|p{3cm}|p{1cm}|p{1.5cm}|p{1cm}|}
             \hline
-            \textbf{Komponente}               & \textbf{Lieferant} & \textbf{Hersteller}          & \textbf{Hersteller Nr.} & \textbf{Anzahl} & \textbf{Kosten [CHF/stk]} & \textbf{Kosten total [CHF]} \\ \hline
-            \rowcolor{lightgray} Antrieb      &                    &                              &                         &                 &                           &                             \\ \hline
-            Schrittmotoren                    & Digikey            & DFRobot                      & FIT0278                 & 2               & 12.65                     & 25.3                        \\ \hline
-            Schrittmotorentreiber             & Selber?            & ADI-Trinamic                 & TMC5240 Eval Board      & 2               & 31.5                      & 63                          \\ \hline
-            \rowcolor{lightgray} Greifeinheit &                    &                              &                         &                 &                           &                             \\ \hline
-            Lichtschranke                     & Eigenbesitz        & SICK                         & WL100-P3430             & 1               & 15.25                     & 15.25                       \\ \hline
-            Servo                             & Mouser             & DFRobot                      & SER0063                 & 2               & 13.67                     & 27.34                       \\ \hline
-            \rowcolor{lightgray} Chassis      &                    &                              &                         &                 &                           &                             \\ \hline
-            LIDAR                             & Mouser             & Benewake                     & TF Luna I2C             & 1               & 22.6                      & 22.6                        \\ \hline
-            Ultraschallsensor                 & Eigenbesitz        & OSEPP Electronics            & HC-SR04                 & 1               & 3                         & 3                           \\ \hline
-            Antriebsräder                     &Mouser              & DFRobot                      & FIT0500                 & 2               & 1.37                      & 2.74                        \\ \hline
-            %\rowcolor{lightgray} Controller        &                        &                              &                                 &                     &                            &                                 \\ \hline
-            %Raspberry Pi 4                         & ?                      &                              & ?                               & 1                   & 17.5?                      & 17.5?                           \\ \hline
-            %Raspberry Pi Kamera 12MP               & ?                      &                              & ?                               & 1                   & 25.35                      & 25.35                           \\ \hline
-            %Raspberry Pico                         & ?                      &                              & SC0915                          & 2                   & 3.63                       & 3.53                            \\ \hline
-            %PCB                                    & ?                      &                              &                                 & 5                   & 7                          & 7?                              \\ \hline
-            %\rowcolor{lightgray} Energieversorgung &                        &                              &                                 &                     &                            &                                 \\ \hline
-            %Akkupack                               & Swaytronic             &                              & 7,64018E+12 ??                  & 1                   & 41.7                       & 41.7                            \\ \hline
-            %Ladegerät                              & Voltcraft              &                              & 1597950-UP                      & 1                   & 39.95                      & 39.95                           \\ \hline
-            %PCB                                    & ?                      &                              &                                 & 1                   & 7?                         & 7?                              \\ \hline
-            \rowcolor{lightgray} Liniensensor &                    &                              &                         &                 &                           &                             \\ \hline
-            Trimmerpotentiometer 200Ohm SMD   & Mouser             & Vishay                       & TS3YJ201MR15            & 10              & 1.85                      & 18.5                        \\ \hline
-            UV-Emitter 395nm                  & Digikey            & Bivar Inc.                   & UV3TZ-395-15            & 10              & 1.573                     & 15.73                       \\ \hline
-            UV-Fototransistor 630nm           & Digikey            & Everlight Electronics Co Ltd & ALS-PT204-6C/L177       & 10              & 0.496                     & 4.96                        \\ \hline
-            IR-Emitter 940nm                  & Digikey            & würth Elektronik             & 15400394F3590           & 2               & 0.351                     & 0.702                       \\ \hline
-            IR-Fototransistor 940nm           & Digikey            & würth Elektronik             & 1540031NC6090           & 2               & 0.329                     & 0.658                       \\ \hline
-            PCB-Liniensensor                  & PCB-Way            & PCBWay                       & -                       & 5               & 7                         & 7                           \\ \hline
-            \rowcolor{lightgray} Produktion   &                    &                              &                         &                 &                           &                             \\ \hline
-            3D-Druck PLA                      & Pauschale          &                              &                         & 0.2 Kg          & 23 CHF/Kg                 & 4.6                         \\ \hline
-            3D-Druck PETG                     & Pauschale          &                              &                         & 0.2 Kg          & 23 CHF/Kg                 & 4.6                         \\ \hline
+            \textbf{Komponente}                     & \textbf{Lieferant} & \textbf{Hersteller}          & \textbf{Hersteller Nr.} & \textbf{Anzahl} & \textbf{Kosten [CHF/stk]} & \textbf{Kosten total [CHF]} \\ \hline
+            \rowcolor{lightgray} Antrieb            &                    &                              &                         &                 &                           &                             \\ \hline
+            Schrittmotoren                          & Digikey            & DFRobot                      & FIT0278                 & 2               & 12.65                     & 25.3                        \\ \hline
+            %Schrittmotorentreiber                  & Eigenbesitz        & ADI-Trinamic                 & TMC5240 Eval Board      & 2               & 31.5                      & 63                          \\ \hline
+            \rowcolor{lightgray} Greifeinheit       &                    &                              &                         &                 &                           &                             \\ \hline
+            Lichtschranke                           & Eigenbesitz        & SICK                         & WL100-P3430             & 1               & 15.25                     & 15.25                       \\ \hline
+            Servo                                   & Mouser             & DFRobot                      & SER0063                 & 2               & 13.67                     & 27.34                       \\ \hline
+            \rowcolor{lightgray} Chassis            &                    &                              &                         &                 &                           &                             \\ \hline
+            LIDAR                                   & Mouser             & Benewake                     & TF Luna I2C             & 1               & 22.6                      & 22.6                        \\ \hline
+            Ultraschallsensor                       & Eigenbesitz        & OSEPP Electronics            & HC-SR04                 & 1               & 1.55                      & 1.55                           \\ \hline
+            Antriebsräder                           & Mouser             & DFRobot                      & FIT0500                 & 2               & 1.37                      & 2.74                        \\ \hline
+            %\rowcolor{lightgray} Controller        &                    &                              &                         &                 &                           &                                 \\ \hline
+            %Raspberry Pi 4                         & ?                  &                              & ?                       & 1               & 17.5?                     & 17.5?                           \\ \hline
+            %Raspberry Pi Kamera 12MP               & ?                  &                              & ?                       & 1               & 25.35                     & 25.35                           \\ \hline
+            %Raspberry Pico                         & ?                  &                              & SC0915                  & 2               & 3.63                      & 3.53                            \\ \hline
+            %PCB                                    & ?                  &                              &                         & 5               & 7                         & 7?                              \\ \hline
+            %\rowcolor{lightgray} Energieversorgung &                    &                              &                         &                 &                           &                                 \\ \hline
+            %Akkupack                               & Swaytronic         &                              & 7,64018E+12 ??          & 1               & 41.7                      & 41.7                            \\ \hline
+            %Ladegerät                              & Voltcraft          &                              & 1597950-UP              & 1               & 39.95                     & 39.95                           \\ \hline
+            %PCB                                    & ?                  &                              &                         & 1               & 7?                        & 7?                              \\ \hline
+            \rowcolor{lightgray} Liniensensor       &                    &                              &                         &                 &                           &                             \\ \hline
+            Trimmerpotentiometer 200Ohm SMD         & Mouser             & Vishay                       & TS3YJ201MR15            & 10              & 1.85                      & 18.5                        \\ \hline
+            UV-Emitter 395nm                        & Digikey            & Bivar Inc.                   & UV3TZ-395-15            & 10              & 1.573                     & 15.73                       \\ \hline
+            UV-Fototransistor 630nm                 & Digikey            & Everlight Electronics Co Ltd & ALS-PT204-6C/L177       & 10              & 0.496                     & 4.96                        \\ \hline
+            IR-Emitter 940nm                        & Digikey            & würth Elektronik             & 15400394F3590           & 2               & 0.351                     & 0.702                       \\ \hline
+            IR-Fototransistor 940nm                 & Digikey            & würth Elektronik             & 1540031NC6090           & 2               & 0.329                     & 0.658                       \\ \hline
+            PCB-Liniensensor                        & PCB-Way            & PCBWay                       & -                       & 5               & 7                         & 7                           \\ \hline
+            \rowcolor{lightgray} Produktion         &                    &                              &                         &                 &                           &                             \\ \hline
+            3D-Druck PLA                            & Pauschale          & -                            & -                       & 0.2 Kg          & 23 CHF/Kg                 & 4.6                         \\ \hline
+            3D-Druck PETG                           & Pauschale          & -                            & -                       & 0.2 Kg          & 23 CHF/Kg                 & 4.6                         \\ \hline
 
-            \textbf{Total}                    &                    &                              &                         &                 &                           & \textbf{XYZ}                \\ \hline
+            \textbf{Total}                          &                    &                              &                         &                 &                           & \textbf{151.53}                \\ \hline
         \end{tabular}
     }
     \caption{Ausgaben PREN1}
     \label{tab:Ausgaben_PREN1}
 \end{table}
 
-!!anpassen wenn komplett!!!\\
-Die Gesamtausgaben aus der Tabelle~\ref{tab:Ausgaben_PREN1} belaufen sich auf XYZ CHF und liegen
-damit innerhalb des vorgesehene Budgets von 200 CHF.Mit diesen Komponenten 
+Die Gesamtausgaben aus der Tabelle~\ref{tab:Ausgaben_PREN1} belaufen sich auf 151,53 CHF und liegen
+damit innerhalb des vorgesehenen Budgets von 200 CHF. Mit diesen Komponenten 
 konnten erste Prototypen entwickelt und grundlegende Funktionen getestet werden. Die Entwicklung 
 des Liniensensors fällt finanziell höher aus als erwartet. Dies ist darauf zurückzuführen, dass der
-Preis der UV-Emitter bei der Kalkulation unterschätzt wurde.
+Preis der UV-Emitter und der Trimmerpotentiometer bei der Budgetkalkulation unterschätzt wurden.
 
 \end{document}
