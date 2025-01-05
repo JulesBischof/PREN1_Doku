@@ -10,7 +10,7 @@
 % ============================================================================== %
 \section{Konzepterstellung Greifereinheit}~\label{appendix:Greifereinheit}
 
-In diesem Abschntt wird die Entwicklung des Greifarmkonzepts behandelt.
+In diesem Abschntt wird die Entwicklung des Greifkonzepts behandelt.
 Zunächst werden die benötigten Anforderungen erfasst. 
 Danach werden die verschiedenen Konzepte kommentiert.
 Schliesslich wird eine Entscheidung auf Grundlage der Testergebnisse getroffen und dokumentiert.
@@ -52,81 +52,64 @@ direkte Auswirkungen auf die Motorauswahl, die Geschwindigkeit und die Energieef
 % ============================================================================== %
 \subsection*{Konzeption}
 
+Die Ideen für die verschiedenen Konzepte wurden durch der Anwendung eines Brainstorming und eines morphologischen Kastens entwickelt.
+
 \subsubsection*{Konzept 1 - Greifer und Höhenverstellung - ein Motor}
 
 Bild \newline
 
-In diesem Konzept wird ein einzelner Motor sowohl für die Greiffunktion als auch für die Höhenverstellung eingesetzt. 
-Die Höhenverstellung erfolgt mit einem Zahnrad, welches von einen Motor angetrieben wird und einer Zahnstange, die
-sich vertikal nach oben oder unten bewegt.
-
-Der Greifer besteht aus zwei Backen: die vordere Backe ist fest montiert, während die hintere Backe beweglich 
-auf einer Gleitführung sitzt. Die Backen sind mit einem Gummiband vorgespannt, sodass sie im Ruhezustand 
-geschlossen bleiben. An den Seiten der hinteren Backe befinden sich Mitnehmer, die an einer linearen Nocke 
-auf beiden Seiten geführt wird. Diese Nocken bewegt die hintere Backe an die gewünschte Position.
-Dies ermöglicht die Öffnung und Schliessung des Greifers \newline
-
-
-Bild lineare Nocke (evtl.Bewegungsablauf erklären und noch Klappe) \newline
-Hier ist ein Bewegungsablauf... Klappe für verschiedenen Weg...
-
+Das Ziel dieses Konzepts ist es, einen einzigen Motor sowohl für die Greiffunktion als auch für die Höhenverstellung zu nutzen. 
+Der Servomotor treibt ein Zahnrad an, das eine Zahnstange vertikal bewegt und so die Höhe des Greifers einstellt.
+Der Greifer besteht aus zwei Backen: einer fest montierten vorderen Backe und einer hinteren Backe, die horizontal auf einer 
+Gleitführung beweglich ist. Die beiden Backen werden durch ein Gummiband vorgespannt, sodass sie im Ruhezustand geschlossen bleiben.
+An den Seiten der hinteren Backe befinden sich Mitnehmer, die entlang einer linearen Nocke geführt werden. Je nach eingestellter 
+Höhe des Greifers bewegen sich die Mitnehmer in der Nocke so, dass die hintere Backe horizontal verschoben wird. Dadurch öffnet 
+und schliesst sich der Greifer in Abhängigkeit von seiner Höhe.
 
 \subsubsection*{Konzept 2 - Greifer und Höhenverstellung - zwei Motoren}
 
 Bild \newline
 
-In diesem Konzept werden jeweils separate Motoren für die Greiffunktion und für die Höhenverstellung eingesetzt. 
-Der Greifer wird als Parallelgreifer umgesetzt. Ein Motor, der mit einem Zahnrad gekoppelt ist, treibt zwei 
-Zahnstangen an, wodurch sich die beiden Greiferbacken horizontal bewegen.
-
-Die Höhenverstellung erfolgt über die Ausgangswelle eines weiteren Motors, die fest mit einem Zahnrad verbunden ist.
-Dieses Zahnrad treibt eine Zahnstange an, die eine vertikale Bewegung nach oben oder unten ermöglicht.
+Das Ziel dieses Konzepts ist die Umsetzung eines einfachen und zuverlässigen Mechanismus. Aus diesem Grund werden separate Motoren 
+für die Greiffunktion und die Höhenverstellung eingesetzt.
+Der Greifer ist als Parallelgreifer konstruiert. Ein Servomotor treibt ein zentrales Zahnrad an, das die Bewegung auf 
+zwei Zahnstangen überträgt. Diese bewegen sich in entgegengesetzte Richtungen, wobei an jeder Zahnstange eine Greiferbacke befestigt ist.
+Die Höhenverstellung erfolgt über einen weiteren Servomotor, der ein Zahnrad antreibt, das eine Zahnstange vertikal bewegt. 
+Dadurch kann der Greifer präzise auf die gewünschte Höhe eingestellt werden.
 
 
 \subsubsection*{Konzept 3 - Gabelstapler - ein Motor}
 
 Bild \newline
 
-In diesem Konzept wird das Prinzip eines Gabelstaplers nachgebildet. Die Gabeln werden in die dafür vorgesehene 
-Öffnung des Hindernisses eingeführt. Anschliessend wird das Hindernis mithilfe eines Motors vertikal angehoben, 
-wobei die Hebebewegung durch ein Zahnstangen-Zahnrad-System realisiert wird.
+Dieses Konzept basiert auf dem Prinzip eines Gabelstaplers. Die Gabeln werden in die Öffnung des Hindernisses eingeführt. 
+Anschliessend hebt ein Servomotor, der ein Zahnrad antreibt, eine Zahnstange vertikal an und hebt so das Hindernis an.
 
-\end{document}
 
 \newpage
 
 \subsubsection*{Fazit und Entscheidung der Konzeptphase}
 
-Aus der Nutzwertanalyse hat sich herauskristallisiert, dass das Konzept 1 und Konzept 2 weiterverfolgt wird.
-Beim Konzept 3 ist das Risiko des Einführen des Gabelln als zu hoch bewertet.
-
-%Als Team wurde entschieden, dass das Konzept 1 weiterverfolgt wird.
-%Falls dies jedoch nicht realisierbar ist wird das Konzept 2 weiterentwickelt.
+Die Nutzwertanalyse hat ergeben, dass die Variante mit Parallelgreifer und Höhenverstellung weiterverfolgt werden soll. 
+Daher werden die Konzepte 1 und 2 weiterentwickelt und anschliessend getestet.
 
 \subsection*{Versuche}
 
-(mehr Text!)
-
 \paragraph{Konzept 1}
-Probleme
- - Reibung
- - Wiederholgenauigkeit
- - Zeit für die Entwicklung
 
-Lösungen
- - mehr Zeit
- - Alternative Materialwahl als PLA (3D Druck)
+Nach mehreren Iterationen wurde ein Prototyp entwickelt, der teilweise funktioniert, jedoch noch nicht den gewünschten 
+Anforderungen entspricht. Das Grundprinzip ist zwar funktionsfähig, jedoch führt der Einsatz eines Gummibands zur Vorspannung 
+zu einer leichten Deformation des Materials. Dies erhöht die innere Reibung, welche der Servomotor nicht überwinden kann. 
+Für die nächste Iteration stellt sich daher die Frage, ob ein anderes Material anstelle des 3D-Drucks besser geeignet wäre.
 
 \paragraph{Konzept 2}
-Probleme
- - 
-Lösungen
-Weitere Probleme etc.
+
+Bereits nach einer Iteration hat der Prototyp gute Ergebnisse geliefert. 
+Die Reibung kann jedoch durch eine leichte Erhöhung der Toleranzen im CAD weiter reduziert werden.
 
 \subsection*{Fazit und Ausblick}
 
-(mehr Text!)
-Aus den Testergebnissen hat sich herausgestellt, dass das Konzept 1 fehleranfälliger ist und mit mehr Zeit nicht sehr nicht gut optimiert 
-werden kann. Das Konzept 2 hat ein viel geringeres Risiko und darum wird diese weiterverfolgt.
+Die Testergebnisse haben gezeigt, dass Konzept 1 schwer umzusetzen ist, insbesondere im Vergleich zu Konzept 2, 
+das bereits funktionsfähig wäre. Aufgrund des deutlich geringeren Risikos eines Fehlschlags wird daher Konzept 2 weiterverfolgt.
 
-
+\end{document}
