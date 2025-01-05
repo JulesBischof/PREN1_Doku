@@ -9,34 +9,106 @@
 
 % Template
 
-\subsection{Fazit und Ausblick}
+\subsection{Fazit}
 
-========= Elektrozeugs
+Das PREN 1-Projekt ermöglichte es unserem Team, die Grundlagen für die  
+Entwicklung eines autonomen Roboters zu schaffen. In der frühen Phase der  
+Ideenentwicklung war es naturgemäss herausfordernd, fachübergreifende  
+Abhängigkeiten im Voraus vollständig zu planen. Viele Verknüpfungen zwischen  
+Mechanik, Elektronik und Informatik wurden erst im Projektverlauf sichtbar,  
+wodurch die Arbeitsweise häufig reaktiv gestaltet werden musste.\\
 
-- Leiterplatten bestellen und zusammenlöten
-- Firmware schreiben für Boards / Antriebe / co.
-- Strombedarf evaluieren
--
+Trotz dieser Herausforderungen konnten wir ein solides Gesamtkonzept entwickeln,  
+das den Anforderungen gerecht wird und die Grundlage für die nächste  
+Projektphase legt. Die Fähigkeit, flexibel auf neue Situationen zu reagieren,  
+sowie die kreative Problemlösung im Team waren entscheidend für den Erfolg  
+in diesem Modul. Gleichzeitig wurde deutlich, dass für PREN 2 eine gezielte  
+Verbesserung in der Planung und Abstimmung erforderlich ist, um effizienter  
+zu arbeiten und Synergien besser zu nutzen. 
 
-========= Mechanikzeugs
+\subsubsection{Erfüllung der Anforderungen}  
+Der Erfüllungsgrad der Anforderungen in PREN 1 zeigt, dass viele zentrale Ziele  
+erreicht wurden. Dennoch gibt es einige offene Punkte, insbesondere bei den  
+Festanforderungen, die in PREN 2 priorisiert bearbeitet werden müssen 
+(siehe Anhang~\ref{appendix:Erfüllung_Anforderungsliste}).\\
 
-- Chassis und Gewicht wird überarbeitet
-- Prototyp möglichst früh fertigen und zusammenbauen
-- Räder könnten zu wenig Griff haben
--
+Zu den offenen Festanforderungen gehören vor allem das Gewicht und die Sicherheit.  
+Das System liegt aktuell knapp innerhalb des Gewichtslimits, jedoch ist eine gezielte  
+Optimierung notwendig, um Spielraum für zukünftige Anpassungen zu schaffen.  
+Zusätzlich fehlen wichtige Sicherheitsmassnahmen, wie robuste Notfallmechanismen,  
+die für einen sicheren Betrieb unverzichtbar sind.\\
 
-========= Informatikzeugs
+Eine für die Testphase besonders relevante Wunschanforderung ist die Akkulaufzeit.  
+Diese konnte in PREN 1 noch nicht ausreichend evaluiert werden, was im nächsten  
+Modul priorisiert erfolgen sollte, um realistische Tests des Systems zu ermöglichen.  
+Weitere Wunschanforderungen, wie die Zeitauswertung während des Parcours oder  
+die Debug-Schnittstelle, bleiben sekundär und können je nach Projektverlauf  
+ergänzt oder verworfen werden.\\
 
-- Genug genaue KArte mappen / getsalten
-- Charaktererkennung mit der Kamera muss getestet werden
-- Erkennung von Abgängen über Kamera
-- Algorhitmus auf Raspberry-taugliche Sprache umschreiben (ressourcenschonend)
--
+Zusammenfassend zeigt der Erfüllungsgrad der Anforderungen, dass das Projekt auf  
+einem soliden Fundament steht. Die offenen Punkte bieten klare Handlungsfelder  
+für PREN 2 und können gezielt weiterentwickelt werden, um die vollständige  
+Erfüllung aller Anforderungen sicherzustellen.
 
-========= Allgemeines
+\subsubsection{Ausblick und Risiken}  
+Basierend auf den Erfahrungen aus PREN 1 ergeben sich für PREN 2 konkrete  
+Handlungsfelder sowie potenzielle Risiken, die es zu adressieren gilt:  
 
-- Massnahmen für Projektplanung umsetzen
-- Abhängigkeiten feststellen und abstimmen, damit jeder immer arbeiten kann
--
+\subsubsection*{Elektronik}  
+\begin{itemize}  
+    \item \textbf{Leiterplatten bestellen und zusammenbauen:}  
+    Verzögerungen bei der Beschaffung könnten die Inbetriebnahme der  
+    Elektronik verzögern. Eine rechtzeitige Bestellung ist daher essenziell.  
+    \item \textbf{Firmwareentwicklung:}  
+    Die Firmware für die Steuerung der Boards und Antriebe muss entwickelt  
+    und getestet werden, wobei Fehler in der Programmierung die Funktionalität  
+    beeinträchtigen könnten.  
+    \item \textbf{Strombedarf evaluieren:}  
+    Eine fehlerhafte Bewertung des Strombedarfs könnte zu Problemen mit der  
+    Energieeffizienz oder einer unzureichenden Batteriekapazität führen.  
+\end{itemize}  
+
+\subsubsection*{Mechanik}  
+\begin{itemize}  
+    \item \textbf{Überarbeitung von Chassis und Gewicht:}  
+    Das Design des Chassis muss überarbeitet werden, um das  
+    Gewicht zu optimieren.
+    \item \textbf{Prototyp fertigen und testen:}  
+    Ein früher Prototyp ist notwendig, um potenzielle Probleme rechtzeitig zu  
+    identifizieren. Verzögerungen könnten die Tests und die Integration mit  
+    anderen Disziplinen beeinträchtigen. 
+    \item \textbf{Räder mit unzureichendem Grip:}  
+    Sollten die Räder nicht genügend Traktion bieten, könnte dies die Navigation  
+    und Manövrierfähigkeit des Roboters negativ beeinflussen.  
+\end{itemize}  
+
+\subsubsection*{Informatik}  
+\begin{itemize}  
+    \item \textbf{Karten erstellen und optimieren:}  
+    Die Entwicklung einer präzisen Kartierungsstrategie  
+    ist essenziell. Fehlerhafte Karten könnten die erfolgreiche Navigation behindern.  
+    \item \textbf{Charakter- und Abgangserkennung:}  
+    Die Kamerafunktionen zur Erkennung von Wegabgängen und Buchstaben müssen  
+    umfangreich getestet werden. Unzureichende Ergebnisse könnten die  
+    Zielerreichung gefährden.  
+    \item \textbf{Algorithmusanpassung:}  
+    Der Algorithmus muss auf eine ressourcenschonende Sprache für den Raspberry Pi  
+    umgeschrieben werden, um Speicher- und Rechenressourcen effizient zu nutzen.
+\end{itemize}  
+
+\subsubsection*{Allgemeines}  
+\begin{itemize}  
+    \item \textbf{Projektplanung verbessern:}  
+    Massnahmen zur besseren Abstimmung zwischen den Disziplinen sind entscheidend,  
+    um Leerlaufzeiten zu minimieren. Eine unzureichende Planung könnte Verzögerungen  
+    verursachen.  
+    \item \textbf{Abhängigkeiten erkennen:}  
+    Die Identifikation und Berücksichtigung fachübergreifender Abhängigkeiten ist  
+    notwendig, damit alle Teilbereiche parallel arbeiten können.  
+\end{itemize}  
+
+Durch die frühzeitige Berücksichtigung dieser Risiken und die Umsetzung der genannten  
+Massnahmen wird es möglich sein, die offenen Punkte effizient zu bearbeiten und den  
+Roboter in PREN 2 erfolgreich weiterzuentwickeln.
 
 \end{document}
