@@ -310,13 +310,13 @@ unbedingt die gewünschten Geschwindigkeits- und Beschleunigungswerte erreicht
 werden, aber die Ansteuerung ist sehr einfach, die Treiber sind bereits
 integriert und zudem sind sie leicht.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.25\textwidth]{./fig_Antriebe/TMC_5240_EVAL.png}
     \caption{TMC 5240 Evaluation-Board}~\label{fig:TMC5240_EVAL}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.25\textwidth]{./fig_Antriebe/DFRobot_Stepper_FIT0278.png}
     \caption{DFROBOT FIT0278 Schrittmotor}~\label{fig:DFROBOT_FIT0278}
@@ -326,9 +326,9 @@ Dieser Motor soll durch einen echtzeitfähigen Mikroprozessor geregelt werden,
 dem auch die Sensordaten des Liniensensors zur Verfügung stehen. Der Antrieb
 soll auf das Feedback dieses Sensors geregelt werden. Dies ist in
 Abbildung~\ref{fig:RTC_Trinamic_Konzept} nochmals verdeutlicht.
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{./fig_Antriebe/Konzept_RTC_Trinamic.pdf}
+    \includegraphics[width=0.75\textwidth]{./fig_Antriebe/Konzept_Motoransteuerung.pdf}
     \caption{Konzept für die Ansteuerung der Schrittmotoren}~\label{fig:RTC_Trinamic_Konzept}
 \end{figure}
 
@@ -370,7 +370,12 @@ Anhang. Im Folgenden wird auf einige Baugruppen näher eingegangen.
           Kosten gespart werden können.
 \end{description}
 
+\newpage
+
 \subsubsection*{Schaltungsbeschreibung}
+
+Das Gesamte Schema befindet sich em Abgabedokument beigefügt als digitalen
+Anhang in Form eines eigenständigen pdf Dokuments.
 
 \paragraph{Spannungsversorgung}
 
@@ -379,22 +384,26 @@ zunächst mit einem DC-DC-Wandler auf 5,5V heruntergeregelt, bevor sie über 2
 LDOs zunächst auf 5V und dann nochmals auf 3,3V heruntergeregelt werden.
 Abbildung~\ref{fig:Schema_Spannungsversorgung} zeigt genau diese Schaltung.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=2,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema Spannungsversorgung}~\label{fig:Schema_Spannungsversorgung}
 \end{figure}
+
+\newpage
 
 \paragraph{Verbindungen an TMC5240}
 Die Abbildung~\ref{fig:Schema_TMC5240} zeigt, wie die Motortreiber über 2
 44-polige Steckerleisten einfach auf den Motion Controller aufgesteckt werden
 können. 2 LEDs zeigen die aktuell gewählte Strombegrenzung an.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=3,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema TMC5240 - Anbindung}~\label{fig:Schema_TMC5240}
 \end{figure}
+
+\newpage
 
 \paragraph{Kommunikationsschnittstellen}
 Abbildung~\ref{fig:Schema_Kommunikation} zeigt den Anschluss der beiden
@@ -404,11 +413,13 @@ allerdings sind diese Zustände beim Systemstart noch nicht zwingend definiert.
 Um Bit-Banging auf der Kommunikationsleitung zu vermeiden, sind diese Signale
 dennoch mit Pullup-Widerständen versehen.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=4,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema Kommunikationsschnittstellen}~\label{fig:Schema_Kommunikation}
 \end{figure}
+
+\newpage
 
 \paragraph{Digital Eingänge}
 Abbildung~\ref{fig:Schema_DInput} zeigt einen digitalen Eingang des Motion
@@ -419,11 +430,13 @@ digitalen Eingänge sind fest auf 12V konfiguriert. Das eingehende Signal wird
 über ein RC-Glied und einen Schmitt-Trigger entprellt. Eine LED zeigt an, dass
 der Eingang geschaltet ist.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./fig_Antriebe/Schema_DIN_Umschaltbar.png}
     \caption{Auszug Schema Digitaler Eingang}~\label{fig:Schema_DInput}
 \end{figure}
+
+\newpage
 
 \paragraph{Analoge Eingänge}
 Abbildung~\ref{fig:Schema_AIn} zeigt den Anschluss der Analogsignale an den
@@ -434,11 +447,13 @@ Dadurch ist es möglich, den Sensor bei Bedarf nur dann einzuschalten, wenn
 gerade gemessen wird. UV-Strahlung ist für das menschliche Auge schädlich und
 kann so zum Personenschutz beitragen.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=7,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema Analogeingänge}~\label{fig:Schema_AIn}
 \end{figure}
+
+\newpage
 
 \paragraph{Digitale Ausgänge}
 Abbildung~\ref{fig:Schema_DOut} zeigt die 4 digitalen Ausgänge des Motion
@@ -449,11 +464,13 @@ Ausgangspegel vorgesehen. Über sie kann z.B. auch ein PWM-Signal ausgegeben
 werden. Die Pull-Down-Widerstände ermöglichen einen schnellen Übergang nach
 GND, wenn logische Rechtecksignale schnell geschaltet werden müssen.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=8,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema Digitale Ausgänge}~\label{fig:Schema_DOut}
 \end{figure}
+
+\newpage
 
 \paragraph{I2C Schnittstellen}
 In der Abbildung~\ref{fig:Schema_I2C} sind 3 $I^2C$-Schnittstellen dargestellt.
@@ -462,11 +479,13 @@ Der Motion Controller verfügt über 2 I2C-Schnittstellen, die auf einem
 Schnittstellen können Sensoren wie Lidar oder auch LCD Displays angeschlossen
 werden.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=9,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema I2C Verbindungen}~\label{fig:Schema_I2C}
 \end{figure}
+
+\newpage
 
 \paragraph{Gyroskop und Ultraschallsensor}
 Diese Schaltung ist in Abbildung\ref{fig:Schema_sonstige_Sensoren} dargestellt.
@@ -477,7 +496,7 @@ Ultraschallsensor HC-SR04 arbeitet auf einem 5V-Pegel und wird über einen
 MOSFET angesteuert. Damit das Echo-Signal den Eingang nicht beschädigt, wird
 der Spannungspegel über einen Spannungsteiler auf 3,3V reduziert.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[page=10,width=\textwidth]{../Anhang_pdfs/MotionController.pdf}
     \caption{Auszug Schema Gyroskop und HCSR-04}~\label{fig:Schema_sonstige_Sensoren}

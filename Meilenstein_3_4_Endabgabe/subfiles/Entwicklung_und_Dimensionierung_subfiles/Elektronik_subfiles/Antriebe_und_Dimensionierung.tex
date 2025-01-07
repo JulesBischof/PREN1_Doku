@@ -73,7 +73,7 @@ Funktionsgruppen auf der entsprechenden Platine enthalten sind.
     \caption{Blockschaltbild Motion Controller}~\label{fig:Blockschaltbild_Motioncontroller}
 \end{figure}
 
-Der Motion Controller verfügt über digitale Ein- und Ausgänge mit schaltbaren
+Der Motion Controller verfügt über digitale Ein- und Ausgänge mit umschaltbaren
 Spannungspegeln als Reserve, falls im Verlauf des Folgemoduls PREN2 Sensoren
 angepasst oder zusätzliche Aktoren hinzugefügt werden
 müssen.Abbildung~\ref{fig:MotionBoard_PCB} zeigt das Motion Controller PCB in
@@ -90,13 +90,14 @@ breiten Steckerleisten an den Aussenkanten befinden.
     \caption{3D-Ansicht Motion Controller}~\label{fig:MotionBoard_PCB}
 \end{figure}
 
-\end{document}
-
-Nach dem derzeitigen Stand des Konzepts für PREN1 wäre dieser Controller in der
-Lage, auch die Aufgabe des Greifers zu übernehmen. Es ist jedoch nicht ganz
-klar, inwieweit der Greifer in seinem jetzigen Zustand implementiert werden
-kann und ob noch weitere Ein-/Ausgänge benötigt werden. Daher ist für das
-Folgemodul eine eigene Platine für die Greiferaufgabe vorgesehen.
+Nach dem derzeitigen Stand der Konzeption von PREN1 wäre dieser Controller
+prinzipiell in der Lage, auch die Aufgabe des Greifers zu übernehmen. Es ist
+jedoch noch nicht abschliessend getestet, inwieweit der Greifer in seinem
+jetzigen Zustand implementiert werden kann und ob noch weitere Ein-/Ausgänge
+benötigt werden. Daher ist für das Folgemodul ein eigener Controller für die
+Greifeinheit vorgesehen, der eine strombegrenzte Spannungsversorgung für die
+Servomotoren bietet. Der MotionController besitzt dagegen nur Lastschalter,
+deren Stromausgang nicht begrenzt ist.
 
 \subsubsection*{Software}
 
@@ -105,27 +106,29 @@ auf Basis des FreeRTOS-Kernels geplant.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.75\linewidth]{fig_Antriebe_und_Dimensionierung/Konzept_Steuerablauf.pdf}
-    \caption{Steuerablauf Motion Controller}~\label{fig:MotionController_Firmware}
+    \includegraphics[width = 1\linewidth]{fig_Antriebe_und_Dimensionierung/Konzept_Steuerablauf.pdf}
+    \caption{Steuerablauf Motion Controller Konzept}~\label{fig:MotionController_Firmware}
 \end{figure}
 
 Abbildung~\ref{fig:MotionController_Firmware} zeigt schematisch, wie die
-Firmware des Motion Controllers zu implementieren ist. Es sollte eine
-\textit{UART_rx}- und eine \textit{UART_tx}-Task geben, die nur auf eingehende
-und ausgehende Signale warten. Dadurch wird verhindert, dass mehrere Tasks
-gleichzeitig auf dieselbe UART-Schnittstelle zugreifen. Wenn der Befehl für die
-Steuerung bestimmt und validiert ist, wird er in eine Queue eingereiht.
+Firmware des Motion Controllers zu implementieren ist. Es wird einen
+\textit{UART\_RX}- und einen \textit{UART\_TX}-Task geben, die nur auf
+eingehende und ausgehende Signale warten. Dadurch wird verhindert, dass mehrere
+Tasks gleichzeitig auf dieselbe UART-Schnittstelle zugreifen. Wenn der Befehl
+für die Steuerung bestimmt und validiert ist, wird er in eine Queue eingereiht.
 Die zugehörige Task arbeitet dann in Form einer Zustandsmaschine die
-eingehenden Befehle in ihrer Queue ab. Durch diese Struktur ist die Firmware
-sehr modular aufgebaut, was spätere Anpassungen oder Erweiterungen wesentlich
-vereinfacht.
+eingehenden Befehle in der je eigenen Queue ab. Durch diese Struktur ist die
+Firmware sehr modular aufgebaut, was spätere Anpassungen oder Erweiterungen
+wesentlich vereinfacht.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.75\linewidth]{fig_Antriebe_und_Dimensionierung/Konzept_ClassDiagramm.pdf}
-    \caption{Klassendiagramm Motion Controller}~\label{fig:MotionController_ClassDiagramm}
+    \includegraphics[width = 1\linewidth]{fig_Antriebe_und_Dimensionierung/Konzept_ClassDiagramm.pdf}
+    \caption{Klassendiagramm Konzept Motion Controller}~\label{fig:MotionController_ClassDiagramm}
 \end{figure}
 
 In Abbildung~\ref{fig:MotionController_ClassDiagramm} ist konzeptionell
-dargestellt, wie die zu erstellenden Klassen und Objekte zueinander in
-Beziehung stehen.
+dargestellt, wie die noch zu erstellenden Klassen und Objekte zueinander in
+Beziehung stehen werden.
+
+\end{document}

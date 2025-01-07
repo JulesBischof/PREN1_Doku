@@ -9,47 +9,51 @@
 
 \subsection{Gewichtsbudget}
 
-Gemäss der Aufgabenstellung ist das Gewicht des Fahrzeugs auf 2 Kilogramm begrenzt. 
-Daher ist eine sorgfältige Gewichtsanalyse bereits in der Planungsphase von entscheidender Bedeutung. 
-In Tabelle~\ref{tab:Gewichtsbudget} sind die Gewichte der verschiedenen Komponenten aufgeführt. 
-Für Zukaufteile wurden die Gewichte den Herstellerdaten entnommen, während bei Eigenkonstruktionen 
-die Gewichtswerte anhand von Abschätzungen im CAD unter Berücksichtigung des verwendeten Materials berechnet wurden.
-Die Gewichtsanalyse zeigt, dass das Fahrzeug knapp unter der Gewichtslimite ist, leider ist diese zu knapp bemessen.
+Gemäss der Aufgabenstellung ist das Gewicht des Fahrzeugs auf 2 Kilogramm
+begrenzt. Daher ist eine sorgfältige Gewichtsanalyse bereits in der
+Planungsphase von entscheidender Bedeutung. In Tabelle~\ref{tab:Gewichtsbudget}
+sind die Gewichte der verschiedenen Komponenten aufgeführt. Für Zukaufteile
+wurden die Gewichte den Herstellerdaten entnommen, während bei
+Eigenkonstruktionen die Gewichtswerte anhand von Abschätzungen im CAD unter
+Berücksichtigung des verwendeten Materials berechnet wurden. Die
+Gewichtsanalyse zeigt, dass das Fahrzeug knapp unter der Gewichtslimite ist,
+leider ist diese zu knapp bemessen.
 
-\begin{table}[h!]
+\begin{table}[H]
     \centering
     \scriptsize % Schriftgrösse verkleinern
     \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
         \hline
-        \textbf{Komponente}              & \textbf{Hersteller} & \textbf{Hersteller Nr.} & \textbf{Anzahl} & \textbf{Gewicht [g]/stk} & \textbf{Gewicht total[g]}\\ \hline
-        \rowcolor{lightgray} Motor       &                     &                         &                 &                          &                          \\ \hline
-        Schrittmotoren                   & DFRobot             & FIT0278                 & 2               & 287                      & 574                      \\ \hline
-        Schrittmotorentreiber            & DFRobot             & DRI0043                 & 2               & 38                       & 76                       \\ \hline
-        Servomotor                       & ~                   & ~                       & 2               & 80                       & 160                      \\ \hline
-        \rowcolor{lightgray} Elektronik  &                     &                         &                 &                          &                          \\ \hline
-        Akkupack                         & Swaytronic          & ~                       & 1               & 167                      & 167                      \\ \hline
-        LCD                              & ~                   & ~                       & 0               & 70                       & 0                        \\ \hline
-        zusätzliche PCBs                 & JLCPCB              & ~                       & 4               & 60                       & 240                      \\ \hline
-        Sensorpauschale                  & diverse             & ~                       & 9               & 10                       & 90                       \\ \hline
-        Microcontroller                  & Raspberry Pico      & ~                       & 2               & 4                        & 8                        \\ \hline
-        Controller                       & Raspberry Pi 5      & ~                       & 1               & 46                       & 46                       \\ \hline
-        \rowcolor{lightgray} Mechanik    &                     &                         &                 &                          &                          \\ \hline
-        Räder                            & Pauschale           & ~                       & 2               & 40                       & 80                       \\ \hline
-        Chassis                          & Pauschale           & ~                       & 1               & 200                      & 200                      \\ \hline
-        Greifeinheit                     & ~                   & ~                       & 1               & 100                      & 175                      \\ \hline
-        Verkabelungspauschale            & ~                   & ~                       & 1               & 100                      & 100                      \\ \hline
-        Schraubenpauschale               & ~                   & ~                       & 1               & 50                       & 50                       \\ \hline
-        \textbf{Summe}                   &                     &                         &                 &                          & \textbf{1996}            \\ \hline
+        \textbf{Komponente}             & \textbf{Hersteller} & \textbf{Hersteller Nr.} & \textbf{Anzahl} & \textbf{Gewicht [g]/stk} & \textbf{Gewicht total[g]} \\ \hline
+        \rowcolor{lightgray} Motor      &                     &                         &                 &                          &                           \\ \hline
+        Schrittmotoren                  & DFRobot             & FIT0278                 & 2               & 287                      & 574                       \\ \hline
+        Schrittmotorentreiber           & DFRobot             & DRI0043                 & 2               & 38                       & 76                        \\ \hline
+        Servomotor                      & ~                   & ~                       & 2               & 80                       & 160                       \\ \hline
+        \rowcolor{lightgray} Elektronik &                     &                         &                 &                          &                           \\ \hline
+        Akkupack                        & Swaytronic          & ~                       & 1               & 167                      & 167                       \\ \hline
+        LCD                             & ~                   & ~                       & 0               & 70                       & 0                         \\ \hline
+        zusätzliche PCBs                & JLCPCB              & ~                       & 4               & 60                       & 240                       \\ \hline
+        Sensorpauschale                 & diverse             & ~                       & 9               & 10                       & 90                        \\ \hline
+        Microcontroller                 & Raspberry Pico      & ~                       & 2               & 4                        & 8                         \\ \hline
+        Controller                      & Raspberry Pi 5      & ~                       & 1               & 46                       & 46                        \\ \hline
+        \rowcolor{lightgray} Mechanik   &                     &                         &                 &                          &                           \\ \hline
+        Räder                           & Pauschale           & ~                       & 2               & 40                       & 80                        \\ \hline
+        Chassis                         & Pauschale           & ~                       & 1               & 200                      & 200                       \\ \hline
+        Greifeinheit                    & ~                   & ~                       & 1               & 100                      & 175                       \\ \hline
+        Verkabelungspauschale           & ~                   & ~                       & 1               & 100                      & 100                       \\ \hline
+        Schraubenpauschale              & ~                   & ~                       & 1               & 50                       & 50                        \\ \hline
+        \textbf{Summe}                  &                     &                         &                 &                          & \textbf{1996}             \\ \hline
     \end{tabularx}
     \caption{Gewichtsbudget}~\label{tab:Gewichtsbudget}
 \end{table}
 
-Während der Entwicklung wurde deutlich, dass die Greifereinheit und das Chassis schwerer sind als ursprünglich im Gewichtsbudget angenommen. 
-In der nächsten Iteration wird das Chassis vollständig im 3D-Druckverfahren gefertigt, voraussichtlich mit einem Wabenmuster,
-um durch gezielte Aussparungen Gewicht zu reduzieren. Die PCBs werden in einem kompakten Turm mithilfe von Disanzbuchsen 
-übereinandergestapelt, wodurch mehrere Stützen und 3D-Druck Platten eingespart werden. Jedoch werden diese Gewichtsoptimierungen
-erst im PREN2 umgesetzt.
-
-
+Während der Entwicklung wurde deutlich, dass die Greifereinheit und das Chassis
+schwerer sind als ursprünglich im Gewichtsbudget angenommen. In der nächsten
+Iteration wird das Chassis vollständig im 3D-Druckverfahren gefertigt,
+voraussichtlich mit einem Wabenmuster, um durch gezielte Aussparungen Gewicht
+zu reduzieren. Die PCBs werden in einem kompakten Turm mithilfe von
+Disanzbuchsen übereinandergestapelt, wodurch mehrere Stützen und 3D-Druck
+Platten eingespart werden. Jedoch werden diese Gewichtsoptimierungen erst im
+PREN2 umgesetzt.
 
 \end{document}
