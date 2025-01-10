@@ -18,15 +18,14 @@ Diese erfüllt die folgenden Aufgaben
 
 \begin{description}
       \item[Digitale Ein- \& Ausgänge] Im Hinblick auf die digitale Ein- und
-            Ausgangs-Funktionalität der Leiterplatte ist festzustellen, dass diese über
-            vier digitale Eingänge verfügt, die auf einem Spannungspegel von 12 V arbeiten.
-            Zwei digitale Ausgänge sind in der Lage, auch grössere Lasten bis zu 3 A zu
-            schalten, wobei hier auf den Energiebedarf des Gesamtsystems geachtet werden
-            muss.
-      \item[Schnittstellen Schalter] Im Hinblick auf die Schnittstellen ist festzuhalten,
-            dass sowohl ein Wahlschalter als auch ein Starttaster mit dem Raspberry Pi
-            verbunden werden können. Der Starttaster wird mit einem Komparator und einem
-            RC-Filter bereits in Hardware entprellt.
+            Ausgangs-Funktionalität der Leiterplatte verfügt diese über vier digitale
+            Eingänge, die auf einem Spannungspegel von 12 V arbeiten. Zwei digitale
+            Ausgänge sind in der Lage, auch grössere Lasten bis zu 3 A zu schalten, wobei
+            hier auf den Energiebedarf des Gesamtsystems geachtet werden muss.
+      \item[Schnittstellen Schalter] Es befinden sich Schnittstellen auf der Leiterplatte,
+            die ermöglichen, dass sowohl ein Wahlschalter als auch ein Starttaster mit dem
+            Raspberry Pi verbunden werden können. Der Starttaster wird mit einem Komparator
+            und einem RC-Glied bereits in Hardware entprellt.
       \item[Schnittstelle Kommunikation] Die Schnittstelle zur Kommunikation wird durch den
             UART-Kanal des Raspberry Pis mit einer RS422-Schnittstelle zur Kommunikation
             mit dem Gesamtsystem aufbereitet.
@@ -35,10 +34,12 @@ Diese erfüllt die folgenden Aufgaben
             und 3.3V Logikpegel vorhanden, was die Leiterplatte sehr vielseitig einsetzbar
             macht.
       \item[Spannungsversorgung] Im Hinblick auf die Spannungsversorgung wird die
-            12-Volt-Versorgungsspannung mit einem 5-Volt-3-Ampere-DCDC-Steller und LDO für
-            den Raspberry Pi aufbereitet und gefiltert.
+            12-Volt-Versorgungsspannung mit einem 5V/3A-DCDC-Steller und LDO für den
+            Raspberry Pi aufbereitet und gefiltert. Diese Schaltung muss mehr Leistung zur
+            Verfügung stellen können, als für die anderen Leiterplatten. Daher
+            unterschiedet sich diese Speisung von der der anderen.
       \item[Sonstige Besonderheiten] Darüber hinaus bietet die RaspberryHAT-Leiterplatte
-            einige optische Anzeigeelemente, die zu Debugzwecken einfache digitale Signale
+            einige optische Anzeigeelemente, die zu Debug-Zwecken einfache digitale Signale
             optisch darstellen können. Daneben ist das Board mit einem Piezo Summer
             ausgestattet, welcher die akustische Signalisierung von Betriebszuständen, wie
             z.B. das Erreichen eines Zielpunkts zulässt.
@@ -62,9 +63,10 @@ ersichtlich, wie der Raspberry Pi an dieses Board angeschlossen wird.
 \end{figure}
 
 Bei der Entwicklung dieser Leiterplatte ist zum grössten Teil auf
-Teilbaugruppen des Motioncontrollers sowie des Gripcontrollers zurückgegriffen
+Teilbaugruppen des MotionControllers sowie des GripControllers zurückgegriffen
 worden. Aus Gründen der Übersichtlichkeit ist auf eine separate
-Schaltungsdimensionierung und -beschreibung verzichtet. Die entsprechenden
-Designfiles befinden sich nichtsdestotrotz im digitalen Anhang.
+Schaltungsdimensionierung und -beschreibung verzichtet, da sich diese mit denen
+der anderen Leiterplatten decken. Die entsprechenden Designfiles befinden sich
+im digitalen Anhang.
 
 \end{document}

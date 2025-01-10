@@ -12,10 +12,10 @@
 \subsubsection{Antriebe und Dimensionierung}
 
 Dieser Abschnitt befasst sich mit der Auswahl eines geeigneten Antriebs mit
-Steuerung für den Roboter. Die Evaluation der Antriebe,
-siehe Anhang~\ref{appendix:Antriebe}, hat ergeben, dass ein Schrittmotor der
-Firma DFRobot, siehe Abbildung~\ref{Schrittmotor_FIT0278}, eingesetzt wird.
-Dieser ist in der Lage, den Roboter mit 1.7A auf bis zu $2\frac{m}{s}$ zu
+Steuerung für den Roboter. Die Evaluation der Antriebe, siehe
+Anhang~\ref{appendix:Antriebe}, hat ergeben, dass ein Schrittmotor der Firma
+DFRobot, siehe Abbildung~\ref{Schrittmotor_FIT0278}, eingesetzt wird. Dieser
+ist in der Lage, den Roboter mit 1.7A auf bis zu $2\frac{m}{s}$ zu
 beschleunigen.
 \begin{figure}[H]
     \centering
@@ -29,13 +29,13 @@ beschleunigen.
     \caption{Evaluationboard TMC5240}~\label{Schrittmotorentreiber_EVAL}
 \end{figure}
 
-Die Ansteuerung dieser Motoren erfolgt über einen
-vollintegrierten Schrittmotortreiber der Firma ADI-Trinamic. Um den
-Entwicklungsaufwand geringzu halten, wird auf 2 Evaluation-Boards des
-Treiber-IC's \textit{TMC-5240} zurückgegriffen, wie in
-Abbildung~\ref{Schrittmotorentreiber_EVAL} gezeigt.Eines der Teammitglieder hat
-bereits Erfahrung mit diesem speziellen Treiber und kann auf entsprechende
-Treiber-Evaluation-Boards aus seinem beruflichenUmfeld zurückgreifen.
+Die Ansteuerung dieser Motoren erfolgt über einen vollintegrierten
+Schrittmotortreiber der Firma ADI-Trinamic. Um den Entwicklungsaufwand gering
+zu halten, wird auf 2 Evaluation-Boards des Treiber-IC's \textit{TMC-5240}
+zurückgegriffen, wie in Abbildung~\ref{Schrittmotorentreiber_EVAL}
+gezeigt.Eines der Teammitglieder hat bereits Erfahrung mit diesem speziellen
+Treiber und kann auf entsprechende Treiber-Evaluation-Boards aus seinem
+beruflichen Umfeld zurückgreifen.
 
 Abbildung~\ref{Ansteuerungstopologie_Schrittmotorentreiber} zeigt
 schematisch,wie diese Treiber angesteuert werden.
@@ -75,9 +75,9 @@ Funktionsgruppen auf der entsprechenden Platine enthalten sind.
 
 Der Motion Controller verfügt über digitale Ein- und Ausgänge mit umschaltbaren
 Spannungspegeln als Reserve, falls im Verlauf des Folgemoduls PREN2 Sensoren
-angepasst oder zusätzliche Aktoren hinzugefügt werden
-müssen. Abbildung~\ref{fig:MotionBoard_PCB} zeigt das Motion Controller PCB in
-einer 3D-Ansicht. Es verfügt über 3 $I^2C$-Anschlüsse, ein spezielles
+angepasst oder zusätzliche Aktoren hinzugefügt werden müssen.
+Abbildung~\ref{fig:MotionBoard_PCB} zeigt das Motion Controller PCB in einer
+3D-Ansicht. Es verfügt über 3 $I^2C$-Anschlüsse, ein spezielles
 HC-SR04-Ultraschallsensor-Interface und die bereits erwähnten digitalen
 Ein-/Ausgänge. Zusätzlich ist eine Schnittstelle für den Liniensensor
 vorgesehen und ein Gyroskop zur Winkelerfassung integriert. Es wird wie eine
